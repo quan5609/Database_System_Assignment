@@ -157,7 +157,7 @@ CREATE TABLE Class_Registration.dbo.Compose(
 	PRIMARY KEY (Author_ssn, Book_id)
 );
 
---Thuộc tính đa trị: Linh vực
+--Thuộc tính đa trị: Lĩnh vực
 CREATE TABLE Class_Registration.dbo.Field(
 	Book_id  VARCHAR(10),
 	Field VARCHAR(50),
