@@ -1,4 +1,4 @@
-IF db_id('Class_Registration') IS NULL 
+﻿IF db_id('Class_Registration') IS NULL 
     CREATE DATABASE Class_Registration
 
 GO
@@ -62,6 +62,10 @@ CREATE TABLE Class_Registration.dbo.Teacher(
 );
 
 /*Create MainTeacher*/
+CREATE TABLE Class_Registration.dbo.MainTeacher(
+	ssn VARCHAR(10) PRIMARY KEY,
+	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Teacher(ssn)
+);
 
 /*Create Student*/
 CREATE TABLE Class_Registration.dbo.Student(
@@ -93,7 +97,7 @@ CREATE TABLE Class_Registration.dbo.ReferenceBook(
 );
 
 /*Create Author*/
-CREATE TABLE Author(
+CREATE TABLE Class_Registration.dbo.Author(
 	ssn varchar(10) PRIMARY KEY,
 	firstName varchar(50),
 	lastName varchar(50),
@@ -121,3 +125,87 @@ ALTER TABLE Class_Registration.dbo.Student
 ADD 
 	dId varchar(10) NOT NULL,
 	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id);
+
+--Relationship: Mở
+CREATE TABLE Class_Registration.dbo.Opens(
+	Semester_id varchar(10),
+	Subject_id varchar(10),
+	Department_id varchar(10),
+	FOREIGN KEY (Semester_id) REFERENCES Class_Registration.dbo.Semester(id),
+	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.Subject(id),
+	FOREIGN KEY (Department_id) REFERENCES Class_Registration.dbo.Department(id),
+	PRIMARY KEY (Semester_id, Subject_id)
+);
+
+--Relationship: Sử dụng
+CREATE TABLE Class_Registration.dbo.Uses(
+	Subject_id VARCHAR(10),
+	MainTeacher_ssn VARCHAR(10),
+	ReferenceBook_id VARCHAR(10),
+	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.SUBJECT(id),
+	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.Teacher(ssn),
+	FOREIGN KEY (ReferenceBook_id) REFERENCES Class_Registration.dbo.ReferenceBook(id),
+	PRIMARY KEY (Subject_id, MainTeacher_ssn, ReferenceBook_id)
+);
+
+--Relatiónhship: Biên soạn
+CREATE TABLE Class_Registration.dbo.Compose(
+	Author_ssn VARCHAR(10),
+	Book_id VARCHAR(10),
+	FOREIGN KEY (Author_ssn) REFERENCES Class_Registration.dbo.Author(ssn),
+	FOREIGN KEY (Book_id) REFERENCES Class_Registration.dbo.ReferenceBook(id),
+	PRIMARY KEY (Author_ssn, Book_id)
+);
+
+--Thuộc tính đa trị: Linh vực
+CREATE TABLE Class_Registration.dbo.Field(
+	Book_id  VARCHAR(10),
+	Field VARCHAR(50),
+	FOREIGN KEY (Book_id) REFERENCES Class_Registration.dbo.ReferenceBook(id),
+	PRIMARY KEY (Book_id, Field)
+);
+
+--Relationship: Thuộc
+ALTER TABLE Class_Registration.dbo.ReferenceBook
+ADD
+	Publisher_id VARCHAR(10) NOT NULL,
+	FOREIGN KEY (Publisher_id) REFERENCES Class_Registration.dbo.Publisher(id)
+
+--Relationship: Ðăng kí
+CREATE TABLE Class_Registration.dbo.Register(
+	Student_id VARCHAR(10),
+	Class_id VARCHAR(10),
+	Semester_id VARCHAR(10),
+	Subject_id VARCHAR(10),
+	FOREIGN KEY (Student_id) REFERENCES Class_Registration.dbo.Student(ssn),
+	FOREIGN KEY (Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Class(Semester_id, Subject_id, id),
+	PRIMARY KEY (Semester_id, Subject_id, Class_id, Student_id)
+);
+
+--Relationship: Phụ trách chính
+ALTER TABLE Class_Registration.dbo.Class
+ADD 
+	MainTeacher_ssn VARCHAR(10) NOT NULL,
+	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.MainTeacher(ssn)
+
+--Relationship: Phụ trách
+CREATE TABLE Class_Registration.dbo.Charge_Of(
+	Teacher_ssn VARCHAR(10),
+	Class_id VARCHAR(10),
+	Semester_id varchar(10),
+	Subject_id varchar(10),
+	FOREIGN KEY (Teacher_ssn) REFERENCES Class_Registration.dbo.Teacher(ssn),
+	FOREIGN KEY (Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Class(Semester_id, Subject_id,id),
+	PRIMARY KEY (Teacher_ssn, Semester_id, Subject_id, Class_id)
+);
+
+--Thuộc tính đa trị: Tuần học
+CREATE TABLE Class_Registration.dbo.Weeks(
+	Teacher_ssn VARCHAR(10),
+	Semester_id varchar(10),
+	Subject_id varchar(10),
+	Class_id VARCHAR(10),
+	week INT,
+	FOREIGN KEY (Teacher_ssn,Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Charge_Of(Teacher_ssn, Semester_id, Subject_id,Class_id),
+	PRIMARY KEY (Teacher_ssn, Semester_id, Subject_id, Class_id, week)
+);
