@@ -89,8 +89,9 @@ CREATE TABLE Class_Registration.dbo.Publisher(
 CREATE TABLE Class_Registration.dbo.Class(
 	id varchar(10),
 	maxStudent int,
+	Semester_id varchar(10),
+	Subject_id varchar(10),
 	FOREIGN KEY (Semester_id) REFERENCES  Class_Registration.dbo.Semester(id),
 	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.Subject(id),
-	PRIMARY KEY (Semestier_id, Subject_id, id)
+	PRIMARY KEY (Semester_id, Subject_id, id)
 );
-
