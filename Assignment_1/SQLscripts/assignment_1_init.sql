@@ -3,28 +3,28 @@ IF db_id('Class_Registration') IS NULL
 
 GO
 
-
 /*Create Education Agency*/
 CREATE TABLE Class_Registration.dbo.EducationAgency(
 	phone varchar(10),
 	departmentLocation varchar(10),
 	email varchar(50),
+	id varchar(10) PRIMARY KEY
 );
 
 /*Create Study Office*/
 CREATE TABLE Class_Registration.dbo.StudyOffice(
-	ssn varchar(10),
+	id varchar(10) PRIMARY KEY,
+	eaId varchar(10),
+	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id)
 );
 
 /*Create Department*/
 CREATE TABLE Class_Registration.dbo.Department(
-	ssn varchar(10),
+	id varchar(10) PRIMARY KEY,
 	name varchar(50),
+	eaId varchar(10),
+	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id)
 );
-
-/*CREATE Study Office Employee*/
-
-/*Create Department Employee*/
 
 /*Create Employee*/
 CREATE TABLE Class_Registration.dbo.Employee(
@@ -35,9 +35,30 @@ CREATE TABLE Class_Registration.dbo.Employee(
 	ssn varchar(10) PRIMARY KEY
 );
 
+/*CREATE Study Office Employee*/
+CREATE TABLE Class_Registration.dbo.StudyOfficeEmployee(
+	soId varchar(10) UNIQUE NOT NULL,
+	ssn varchar(10) PRIMARY KEY,
+	FOREIGN KEY (soId) REFERENCES Class_Registration.dbo.StudyOffice(id),
+	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn),
+);
+
+/*Create Department Employee*/
+CREATE TABLE Class_Registration.dbo.DepartmentEmployee(
+	dId varchar(10) UNIQUE NOT NULL,
+	ssn varchar(10) PRIMARY KEY,
+	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id),
+	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn),
+);
+
+
 /*Create Teacher*/
 CREATE TABLE Class_Registration.dbo.Teacher(
 	studyDegree varchar(50),
+	dId varchar(10) UNIQUE NOT NULL,
+	ssn varchar(10) PRIMARY KEY,
+	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id),
+	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn)
 );
 
 /*Create MainTeacher*/
@@ -95,3 +116,8 @@ CREATE TABLE Class_Registration.dbo.Class(
 	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.Subject(id),
 	PRIMARY KEY (Semester_id, Subject_id, id)
 );
+
+ALTER TABLE Class_Registration.dbo.Student
+ADD 
+	dId varchar(10) NOT NULL,
+	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id);
