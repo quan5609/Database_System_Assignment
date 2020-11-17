@@ -14,8 +14,9 @@ CREATE TABLE Class_Registration.dbo.EducationAgency(
 /*Create Study Office*/
 CREATE TABLE Class_Registration.dbo.StudyOffice(
 	id varchar(10) PRIMARY KEY,
+	name varchar(50),
 	eaId varchar(10),
-	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id)
+	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id) ON DELETE CASCADE
 );
 
 /*Create Department*/
@@ -23,7 +24,7 @@ CREATE TABLE Class_Registration.dbo.Department(
 	id varchar(10) PRIMARY KEY,
 	name varchar(50),
 	eaId varchar(10),
-	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id)
+	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id) ON DELETE CASCADE
 );
 
 /*Create Employee*/
@@ -39,16 +40,16 @@ CREATE TABLE Class_Registration.dbo.Employee(
 CREATE TABLE Class_Registration.dbo.StudyOfficeEmployee(
 	soId varchar(10) UNIQUE NOT NULL,
 	ssn varchar(10) PRIMARY KEY,
-	FOREIGN KEY (soId) REFERENCES Class_Registration.dbo.StudyOffice(id),
-	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn),
+	FOREIGN KEY (soId) REFERENCES Class_Registration.dbo.StudyOffice(id) ON DELETE SET NULL,
+	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn) ON DELETE CASCADE,
 );
 
 /*Create Department Employee*/
 CREATE TABLE Class_Registration.dbo.DepartmentEmployee(
 	dId varchar(10) UNIQUE NOT NULL,
 	ssn varchar(10) PRIMARY KEY,
-	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id),
-	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn),
+	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id) ON DELETE SET NULL,
+	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn) ON DELETE CASCADE,
 );
 
 
@@ -57,8 +58,8 @@ CREATE TABLE Class_Registration.dbo.Teacher(
 	studyDegree varchar(50),
 	dId varchar(10) UNIQUE NOT NULL,
 	ssn varchar(10) PRIMARY KEY,
-	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id),
-	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn)
+	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id) ON DELETE SET NULL,
+	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn) ON DELETE CASCADE
 );
 
 /*Create MainTeacher*/
@@ -124,7 +125,7 @@ CREATE TABLE Class_Registration.dbo.Class(
 ALTER TABLE Class_Registration.dbo.Student
 ADD 
 	dId varchar(10) NOT NULL,
-	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id);
+	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id) ON DELETE SET NULL;
 
 --Relationship: Mở
 CREATE TABLE Class_Registration.dbo.Opens(

@@ -1,0 +1,61 @@
+ssn,firstName,lastName,phone,email,role
+offic20000,A,Le Phung,1351731936,alephung@hcmut.edu.vn,office
+offic80001,C,Tran Mai Tran Hua,5428927881,ctranmaitranhua@hcmut.edu.vn,office
+offic10002,D,Le Hua,785264597,dlehua@hcmut.edu.vn,office
+offic80003,D,Tran Nguyen,6945101122,dtrannguyen@hcmut.edu.vn,office
+offic10004,A,Hua Vu Tran Le,147480869,ahuavutranle@hcmut.edu.vn,office
+offic00005,A,Nguyen Le Tran,8169646681,anguyenletran@hcmut.edu.vn,office
+offic70006,E,Tran Hua Hua,5399793441,etranhuahua@hcmut.edu.vn,office
+offic60007,A,Vu Bui,1765828657,avubui@hcmut.edu.vn,office
+offic90008,B,Vu Vu Le Mai,6966271428,bvuvulemai@hcmut.edu.vn,office
+offic70009,E,Phung Vu Phung,1460428220,ephungvuphung@hcmut.edu.vn,office
+offic90010,E,Vu Nguyen Mai Vu,5068249426,evunguyenmaivu@hcmut.edu.vn,office
+offic60011,E,Mai Nguyen,4524153890,emainguyen@hcmut.edu.vn,office
+offic40012,B,Nguyen Bui Le Bui,2446925605,bnguyenbuilebui@hcmut.edu.vn,office
+offic60013,D,Tran Le Le Phung,4746383165,dtranlelephung@hcmut.edu.vn,office
+offic50014,D,Tran Vu,9809765360,dtranvu@hcmut.edu.vn,office
+offic80015,B,Mai Vu Phung,3929728018,bmaivuphung@hcmut.edu.vn,office
+offic80016,D,Le Phung Hua Mai,995056844,dlephunghuamai@hcmut.edu.vn,office
+offic80017,E,Phung Nguyen Bui Tran,4638983672,ephungnguyenbuitran@hcmut.edu.vn,office
+offic50018,B,Tran Phung,3331177746,btranphung@hcmut.edu.vn,office
+offic30019,E,Vu Bui Le,4691146550,evubuile@hcmut.edu.vn,office
+depar40000,A,Tran Bui,4413155757,atranbui@hcmut.edu.vn,department
+depar90001,D,Tran Tran,692590314,dtrantran@hcmut.edu.vn,department
+depar40002,A,Phung Hua Bui Phung,5139592557,aphunghuabuiphung@hcmut.edu.vn,department
+depar00003,E,Mai Bui Hua Phung,9517994782,emaibuihuaphung@hcmut.edu.vn,department
+depar50004,E,Nguyen Vu Mai Le,9681647062,enguyenvumaile@hcmut.edu.vn,department
+depar10005,D,Hua Nguyen Vu Phung,8514446634,dhuanguyenvuphung@hcmut.edu.vn,department
+depar00006,A,Bui Bui Bui Hua,8187131417,abuibuibuihua@hcmut.edu.vn,department
+depar40007,C,Hua Vu Vu Tran,7834708442,chuavuvutran@hcmut.edu.vn,department
+depar30008,B,Mai Phung Hua Mai,9742103827,bmaiphunghuamai@hcmut.edu.vn,department
+depar60009,E,Phung Le Vu,329183521,ephunglevu@hcmut.edu.vn,department
+depar30010,D,Tran Phung,5438097318,dtranphung@hcmut.edu.vn,department
+depar90011,A,Phung Bui Le,5181753721,aphungbuile@hcmut.edu.vn,department
+depar50012,E,Nguyen Nguyen,9193430687,enguyennguyen@hcmut.edu.vn,department
+depar20013,E,Tran Bui Nguyen Nguyen,9838715259,etranbuinguyennguyen@hcmut.edu.vn,department
+depar40014,E,Nguyen Le Phung,2261010423,enguyenlephung@hcmut.edu.vn,department
+depar60015,C,Nguyen Le,5623954261,cnguyenle@hcmut.edu.vn,department
+depar70016,C,Vu Le Mai Vu,3520698831,cvulemaivu@hcmut.edu.vn,department
+depar00017,A,Hua Phung Mai Phung,2819739124,ahuaphungmaiphung@hcmut.edu.vn,department
+depar70018,D,Hua Le Tran,7948978968,dhualetran@hcmut.edu.vn,department
+depar40019,D,Vu Vu,8394129832,dvuvu@hcmut.edu.vn,department
+teach50000,E,Bui Nguyen Hua Phung,692047554,ebuinguyenhuaphung@hcmut.edu.vn,teacher
+teach70001,B,Nguyen Hua Nguyen,6668579783,bnguyenhuanguyen@hcmut.edu.vn,teacher
+teach70002,A,Nguyen Bui Nguyen,5362419573,anguyenbuinguyen@hcmut.edu.vn,teacher
+teach00003,D,Tran Nguyen Mai,5999780506,dtrannguyenmai@hcmut.edu.vn,teacher
+teach40004,C,Tran Nguyen,5858885473,ctrannguyen@hcmut.edu.vn,teacher
+teach10005,B,Nguyen Mai Nguyen,8004647192,bnguyenmainguyen@hcmut.edu.vn,teacher
+teach60006,D,Mai Le,8904796013,dmaile@hcmut.edu.vn,teacher
+teach70007,D,Vu Bui Tran,8890360283,dvubuitran@hcmut.edu.vn,teacher
+teach40008,D,Hua Nguyen Mai Le,6886468814,dhuanguyenmaile@hcmut.edu.vn,teacher
+teach30009,B,Hua Le Hua,5424885120,bhualehua@hcmut.edu.vn,teacher
+teach50010,B,Nguyen Phung,7803342469,bnguyenphung@hcmut.edu.vn,teacher
+teach80011,A,Tran Bui Tran Hua,4152485920,atranbuitranhua@hcmut.edu.vn,teacher
+teach90012,C,Mai Vu Vu,9879745754,cmaivuvu@hcmut.edu.vn,teacher
+teach30013,C,Phung Tran Bui Bui,8564302715,cphungtranbuibui@hcmut.edu.vn,teacher
+teach80014,E,Hua Bui Nguyen,9610204574,ehuabuinguyen@hcmut.edu.vn,teacher
+teach90015,E,Hua Tran Bui,8754989327,ehuatranbui@hcmut.edu.vn,teacher
+teach40016,D,Nguyen Vu Le Hua,9517650574,dnguyenvulehua@hcmut.edu.vn,teacher
+teach60017,E,Phung Vu Bui Vu,1960657721,ephungvubuivu@hcmut.edu.vn,teacher
+teach10018,A,Bui Tran,9894195059,abuitran@hcmut.edu.vn,teacher
+teach90019,A,Nguyen Phung,5046541146,anguyenphung@hcmut.edu.vn,teacher
