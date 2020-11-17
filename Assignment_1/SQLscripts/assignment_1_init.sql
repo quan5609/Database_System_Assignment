@@ -22,7 +22,7 @@ CREATE TABLE Class_Registration.dbo.StudyOffice(
 /*Create Department*/
 CREATE TABLE Class_Registration.dbo.Department(
 	id varchar(10) PRIMARY KEY,
-	name varchar(50),
+	[name] varchar(50),
 	eaId varchar(10),
 	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id) ON DELETE CASCADE
 );
@@ -70,7 +70,7 @@ CREATE TABLE Class_Registration.dbo.MainTeacher(
 
 /*Create Student*/
 CREATE TABLE Class_Registration.dbo.Student(
-	ssn varchar(10) PRIMARY KEY,
+	id varchar(10) PRIMARY KEY,
 	firstName varchar(50),
 	lastName varchar(50),
 	studyStatus bit,
@@ -86,14 +86,14 @@ CREATE TABLE Class_Registration.dbo.Semester(
 /*Create Subject*/
 CREATE TABLE Class_Registration.dbo.Subject(
 	id varchar(10) PRIMARY KEY,
-	name varchar(50),
+	[name] varchar(50),
 	credit int,
 );
 
 /*Create ReferenceBook*/
 CREATE TABLE Class_Registration.dbo.ReferenceBook(
 	id varchar(10) PRIMARY KEY,
-	name varchar(50),
+	[name] varchar(50),
 	releasedDate date,
 );
 
@@ -107,7 +107,7 @@ CREATE TABLE Class_Registration.dbo.Author(
 /*Create Publisher*/
 CREATE TABLE Class_Registration.dbo.Publisher(
 	id varchar(10) PRIMARY KEY,
-	name varchar(50),
+	[name] varchar(50),
 	nation varchar(50),
 );
 
