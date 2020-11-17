@@ -1,0 +1,3423 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/21/2020 12:24:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-RKK1QS1"
+  DTS:CreatorName="DESKTOP-RKK1QS1\quanb"
+  DTS:DTSID="{879D0D93-413F-4A13-9F3A-21AF3B4B4BA0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{F7A878B6-8F61-4464-8E06-54CAA095349F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dynamic Connection]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{48D44226-AF52-4916-93D4-28717DF07A32}"
+      DTS:ObjectName="Dynamic Connection">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::File]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{8008C80E-F5CF-4700-8B68-27FA3FD0CB6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="province"
+              DTS:DTSID="{3DDBA25B-92C5-4746-BE09-99D658364EB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="district"
+              DTS:DTSID="{0464D7A7-AA59-4F57-8893-99CFE15091AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age_source1"
+              DTS:DTSID="{6C35AE32-FA4A-40E2-AB16-4D20DEDED584}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age_source2"
+              DTS:DTSID="{6B336033-FCE5-4F56-9581-656C721EA131}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_1"
+              DTS:DTSID="{DA0B89C6-EB05-4355-8B82-09446BBC0058}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_2"
+              DTS:DTSID="{CB413A7B-989B-4984-AFC4-7F47F940D8F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_3"
+              DTS:DTSID="{1DC0FC65-9021-439B-98AD-B369C1F333E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_4"
+              DTS:DTSID="{AA3050A3-7040-45F1-90E8-1A61D8B4FA27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_5"
+              DTS:DTSID="{8513D5B6-2AA4-4F61-A165-96455DA6C4AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_6"
+              DTS:DTSID="{5560A537-0322-4EBC-B04B-9235DA1AF036}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_8"
+              DTS:DTSID="{A1061BF8-A031-4E8A-8089-0CD7B7D62B3C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_9"
+              DTS:DTSID="{D0FB3F42-F250-40C8-AA50-EC5EBC6AC76C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_10"
+              DTS:DTSID="{15C4915A-F300-4E0D-A260-DEF4166C3FB6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_11"
+              DTS:DTSID="{F4AA2CBB-98FD-459C-B78E-E6222DDA0254}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_12"
+              DTS:DTSID="{0F9035D3-7A75-41EB-8481-969467D3C755}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_13"
+              DTS:DTSID="{D131CDFA-1204-4B34-A9A7-B2B9F26BC1BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_14"
+              DTS:DTSID="{76DDDF03-C36A-405F-8B1A-66DCFD0AC219}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_15"
+              DTS:DTSID="{A2823F68-6FFC-4C67-B657-FFCB131F89DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_16"
+              DTS:DTSID="{F9F7A698-77F8-4FB5-9003-E7F38D673748}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_17"
+              DTS:DTSID="{0731B33B-BBB4-4330-B5B2-CB1915BF72B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_18"
+              DTS:DTSID="{1130730B-F751-4096-9CD4-95EB9D1ED830}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_19"
+              DTS:DTSID="{FC726BE5-2625-4333-858B-BD0ACB36BCA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_20"
+              DTS:DTSID="{CB453C96-9755-4705-9880-515C6177BBFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_21"
+              DTS:DTSID="{EF904332-A408-4516-9B65-E46E9DCD1295}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_22"
+              DTS:DTSID="{D4BF47DB-6C77-430D-A56F-A4A95437F554}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_23"
+              DTS:DTSID="{ABFC5C7D-39AA-490A-9FD9-63098E839487}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_24"
+              DTS:DTSID="{2ED3B4D9-6F19-42E9-863D-CCCC61CD2085}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_25"
+              DTS:DTSID="{2D633E39-89A8-4197-8520-BCD27CAFA668}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_26"
+              DTS:DTSID="{B64F3503-FAC5-4E5D-93B1-18AB6B78AC04}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_27"
+              DTS:DTSID="{2ED60409-1239-41B6-BE4B-67E8B80A10AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_28"
+              DTS:DTSID="{D312678B-1696-4971-A225-6B32DBBBE466}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_29"
+              DTS:DTSID="{5A07B721-0656-4000-B517-0B6DC9515636}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_30"
+              DTS:DTSID="{D70D6A80-B4CB-4F0F-A981-F2E51D5264DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_31"
+              DTS:DTSID="{0B830FB8-86E2-446C-8CBB-C57E9C7B1C48}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_32"
+              DTS:DTSID="{EB28B7FF-C8C8-4910-BE1A-F1C4B0B6A2C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_33"
+              DTS:DTSID="{955C6A35-A9D7-4DB7-81E4-6B74597B5E06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_34"
+              DTS:DTSID="{32F27C28-6461-49EE-B1B7-CFA2358ECC29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_35"
+              DTS:DTSID="{D72BD18F-C1B3-4552-BBF4-9BCA6EE5AFFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_36"
+              DTS:DTSID="{EEDAC489-7278-4D64-AE33-7C0B9CF8057B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_37"
+              DTS:DTSID="{941890A4-5159-44CE-B090-97CE29D03D8E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_38"
+              DTS:DTSID="{970F941E-7567-4F32-B57D-003D0F2DAC90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_39"
+              DTS:DTSID="{5A48B1DF-B6C6-43D0-918D-992BB4DFA583}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_40"
+              DTS:DTSID="{B33A5994-09AA-4E78-8B24-F81E14C90BF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_41"
+              DTS:DTSID="{44416F79-6602-404C-B2C4-FF5DE597295B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_42"
+              DTS:DTSID="{2258575E-CB4D-4BE6-95F6-B7A3D930C2FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_43"
+              DTS:DTSID="{4E26649F-EFDB-4554-A86C-6E168962528E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_44"
+              DTS:DTSID="{28D1B2A9-17A0-4B16-B9CF-5D97D944C027}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_45"
+              DTS:DTSID="{59B4EF1C-3757-45C7-8A28-3272E7217F0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_46"
+              DTS:DTSID="{77100BE5-232C-497B-B2CE-700A2910ED08}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_47"
+              DTS:DTSID="{D16C8E2B-8E6E-4FE2-B329-AC15407DE615}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_48"
+              DTS:DTSID="{FC66563D-FB09-4560-AF17-56DECCC058AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_49"
+              DTS:DTSID="{052D08DE-0A33-4ED0-8C8C-10689B9559D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_50"
+              DTS:DTSID="{AB178233-60EC-49FA-9359-906F66A78A3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_51"
+              DTS:DTSID="{1E7EA9C8-3023-4B77-A89F-909F37C4C2F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_52"
+              DTS:DTSID="{FEE3AA35-47D8-4F36-947D-14305D859CDF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_53"
+              DTS:DTSID="{9789A06B-88FB-4FC4-BDC1-7DC464679576}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_54"
+              DTS:DTSID="{F1B173D8-0FDF-47AC-857E-C96C4681E460}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_55"
+              DTS:DTSID="{5D9DC88C-D1A1-46F8-BF7C-DDDB300E094A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_56"
+              DTS:DTSID="{65E3FED7-02D3-49F0-88DD-C3082F0DA9F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_57"
+              DTS:DTSID="{13A4FD42-B6EE-4574-A711-45455B1DDA8C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[New Dynamic Loader]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{55B5138D-7D2C-41F1-8CB0-3FBE8977359B}"
+      DTS:ObjectName="New Dynamic Loader">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\quanb\Documents\kalapa\data\test_drop.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{FBA549C6-EFA7-4F79-983E-8DB870F5D484}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="province"
+              DTS:DTSID="{4D430E33-63E2-4952-8AC7-DD7F4FDB875D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="district"
+              DTS:DTSID="{FB2C24DD-A684-49BF-80D2-3D32E4001792}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age_source1"
+              DTS:DTSID="{7A2F9251-C53A-4E73-BEA4-4AA1D1FD6E7C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age_source2"
+              DTS:DTSID="{30EF3397-8440-44E3-9B64-63B23356BC9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_1"
+              DTS:DTSID="{FA32B9E6-8A5A-45F3-8B33-D01EF3F70AED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_2"
+              DTS:DTSID="{B2420338-18E0-4F1A-889C-EA0CFA1336D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_3"
+              DTS:DTSID="{751A51A4-5A54-4F8A-8612-67CCD0D39006}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_4"
+              DTS:DTSID="{20D83311-8B8A-4840-BB16-3EC46C9104E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_5"
+              DTS:DTSID="{75C4A0FE-5F36-4DB7-8FB1-36567F92592A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_6"
+              DTS:DTSID="{9C52D28D-5737-4857-8F57-89AE1C67F6F6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_8"
+              DTS:DTSID="{5F44861C-D422-4458-A873-A60C4B4E4910}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_9"
+              DTS:DTSID="{F2F1D126-5776-4179-B5E3-EE5837E60DED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_10"
+              DTS:DTSID="{E44A2BD7-8EC2-4E36-BE4B-A325BAECB234}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_11"
+              DTS:DTSID="{350D5FE4-BF22-471F-BA4E-87FFF90AA4CF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_12"
+              DTS:DTSID="{26B4FD74-1374-428D-8AD3-F0F2F540F8ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_13"
+              DTS:DTSID="{7F711301-3B8D-4634-B4F7-C5659EACFD07}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_14"
+              DTS:DTSID="{4721548F-E703-4C3E-8569-EE6229101D63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_15"
+              DTS:DTSID="{566BB81A-1345-4ABD-B226-34907D167192}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_16"
+              DTS:DTSID="{5177D263-0A2B-432B-A4BF-CBA338BA71DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_17"
+              DTS:DTSID="{BF590236-66A9-4C56-9B0C-173AC53EBCAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_18"
+              DTS:DTSID="{3A741383-5B59-48E5-91D1-C8D6EB071F51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_19"
+              DTS:DTSID="{24F94D2C-9170-4DC3-9B57-43AEAAA9BFFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_20"
+              DTS:DTSID="{ED5A164D-10F1-4823-A045-EE7AC1C1B1F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_21"
+              DTS:DTSID="{F8CE40C3-62C6-4B6C-8070-E5011E2DA103}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_22"
+              DTS:DTSID="{6955C79C-4F2C-4E28-AFE4-FF7A767E7F1C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_23"
+              DTS:DTSID="{DA6AAD89-1D38-4F45-8773-063734B70969}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_24"
+              DTS:DTSID="{626BA541-843C-4ECC-9DB2-3211A1F1D64D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_25"
+              DTS:DTSID="{46B17815-3883-4DA6-9DC6-DD5B7A268660}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_26"
+              DTS:DTSID="{82BF156E-3F70-4781-9886-BEFEA3E512DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_27"
+              DTS:DTSID="{40BB483F-D3D5-4416-8CFD-2AEBC2269BE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_28"
+              DTS:DTSID="{96FBAB96-BEFC-4DCA-890F-595974CBF9A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_29"
+              DTS:DTSID="{B6CF986A-107F-4F27-B4D1-6C262B7EFA7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_30"
+              DTS:DTSID="{2445448C-56D3-41EE-97EA-49429BBB432C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_31"
+              DTS:DTSID="{68EC528D-967B-4C04-8F7E-3546CDFF3D9E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_32"
+              DTS:DTSID="{14B0BDDB-27A7-4974-B79E-B6674AE2AC65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_33"
+              DTS:DTSID="{70C12CAB-F519-40C2-9CBB-846DE82BE5A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_34"
+              DTS:DTSID="{8D6E2EBE-F367-4FA1-8F57-831D42F63031}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_35"
+              DTS:DTSID="{0972AD3C-ABED-4BDF-86EA-65003F0A7250}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_36"
+              DTS:DTSID="{1CFE378C-B8AF-4765-8DEC-55ABCA4CD789}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_37"
+              DTS:DTSID="{6652981F-1FD3-460D-94E0-E782B23BD100}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_38"
+              DTS:DTSID="{1618D3F4-84FA-4BD8-96B0-87E92B3D5B1C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_39"
+              DTS:DTSID="{098AB0EA-C545-4029-9F78-DECEBB343B97}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_40"
+              DTS:DTSID="{E58654FC-5A2B-4498-899F-2F58E33263BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_41"
+              DTS:DTSID="{73752C90-186C-417F-A528-930C3868895C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_42"
+              DTS:DTSID="{026A830C-B981-4B0F-AEF1-83C8EBD164BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_43"
+              DTS:DTSID="{3512C1F3-C74D-48E2-B788-8B16DAE43804}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_44"
+              DTS:DTSID="{F30574FC-F5BE-4EEF-A1BC-A51F6397D75B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_45"
+              DTS:DTSID="{AEAC7E53-2577-4AA4-A9DB-A62A123B899B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_46"
+              DTS:DTSID="{62212890-E563-419A-BBDA-E4C2174C7F28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_47"
+              DTS:DTSID="{E8574A29-8DB3-4A31-B89A-F83B9DD8ABC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_48"
+              DTS:DTSID="{BD159D94-DC6D-4C2F-85C3-F66B7E55C267}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_49"
+              DTS:DTSID="{F205480F-ACC2-4D47-980C-4A72B03D3E42}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_50"
+              DTS:DTSID="{40674DDD-C9CD-4F08-93D4-4F2A26D3238F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_51"
+              DTS:DTSID="{25FB352D-1384-4A3A-9F14-0E18981B5AE4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_52"
+              DTS:DTSID="{C84E5169-EA28-4DCE-9A00-B3EFBD0D32C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_53"
+              DTS:DTSID="{4F27023D-57BE-4991-8176-4AC8EDB6F9C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_54"
+              DTS:DTSID="{5B603485-B27F-4152-A57C-9384C3482D98}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_55"
+              DTS:DTSID="{FB26CFC3-E789-4A09-AA15-B9F0F5F7AFE7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_56"
+              DTS:DTSID="{16EF5FB2-A32D-44D9-AEB5-1DDCA60E8A51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIELD_57"
+              DTS:DTSID="{03A4E63F-10AD-48B6-899F-DF13B35F82FE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import Test"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{515C21BB-8C22-4213-8F92-6373095DCAEF}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Test"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Test\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Test\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Test\Data Conversion.Inputs[Data Conversion Input].Columns[id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id"
+                      lineageId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Import Test\Data Conversion.Inputs[Data Conversion Input].Columns[province]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="province"
+                      lineageId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].Columns[province]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Test\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import Test\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Test\Data Conversion.Outputs[Data Conversion Output].Columns[copy of id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Test\Data Conversion.Outputs[Data Conversion Output].Columns[copy of id]"
+                      name="copy of id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Test\Flat File Source.Outputs[Flat File Source Output].Columns[id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Test\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Test\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]"
+                      name="copy of province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Test\Flat File Source.Outputs[Flat File Source Output].Columns[province]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Test\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import Test\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Test\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Test\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Test\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Test\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Test\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Test\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Test\Derived Column.Inputs[Derived Column Input].Columns[copy of province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="copy of province"
+                      lineageId="Package\Import Test\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Test\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Test\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Test\Derived Column.Outputs[Derived Column Output].Columns[setLabel]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="4"
+                      lineageId="Package\Import Test\Derived Column.Outputs[Derived Column Output].Columns[setLabel]"
+                      name="setLabel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"test"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"test"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Test\Derived Column.Outputs[Derived Column Output].Columns[region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="4"
+                      lineageId="Package\Import Test\Derived Column.Outputs[Derived Column Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[FINDSTRING](#{Package\Import Test\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]},"tỉnh",1) &gt; 0 ? "tỉnh" : "tp"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">FINDSTRING([copy of province],"tỉnh",1) &gt; 0 ? "tỉnh" : "tp"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Test\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Test\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Test\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Test\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Test\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Test\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Test\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Test\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="{B70F4DBE-EBF6-4E0B-8D09-BBBFF99FCAF6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[kalapa_raw_test_drop]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      length="50"
+                      lineageId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                      name="province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[district]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_source1]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="age_source1" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_source2]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="age_source2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_1]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_1" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_2]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_3]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_3" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_4]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_4" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_5]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_5" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_6]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_6" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_8]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_8" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_9]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_9" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_10]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_10" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_11]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_11" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_12]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_12" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_13]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_13" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_14]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_14" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_15]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_15" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_16]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_16" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_17]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_17" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_18]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_18" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_19]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_19" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_20]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_20" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_21]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_21" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_22]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_22" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_23]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_23" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_24]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_24" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_25]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_25" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_26]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_26" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_27]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_27" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_28]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_28" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_29]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_29" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_30]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_30" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_31]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_31" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_32]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_32" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_33]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_33" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_34]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_34" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_35]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_35" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_36]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_36" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_37]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_37" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_38]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_38" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_39]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_39" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_40]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_40" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_41]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_41" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_42]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_42" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_43]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_43" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_44]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_44" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_45]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_45" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_46]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_46" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_47]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_47" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_48]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_48" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_49]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_49" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_50]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_50" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_51]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_51" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_52]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_52" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_53]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_53" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_54]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_54" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_55]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_55" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_56]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_56" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_57]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_57" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import Test\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Test\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Test\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Test\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Test\Missing data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Missing data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Test\Missing data.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Test\Missing data.Inputs[Derived Column Input].Columns[copy of province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="copy of province"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Test\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Import Test\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]} == "" ? "none" : [LOWER](#{Package\Import Test\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[copy of province] == "" ? "none" : LOWER([copy of province])</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Test\Missing data.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Test\Missing data.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Test\Missing data.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Test\Missing data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Test\Missing data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Test\Missing data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Test\Missing data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Test\Missing data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Test\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[province_label]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Test\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{F9F11B1F-FABE-4211-8E25-F21557FF1801}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-RKK1QS1_SQLEXPRESS.CreditScoreKalapa 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[setLabel]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="setLabel"
+                      externalMetadataColumnId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[setLabel]"
+                      lineageId="Package\Import Test\Derived Column.Outputs[Derived Column Output].Columns[setLabel]" />
+                    <inputColumn
+                      refId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[region]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      lineageId="Package\Import Test\Derived Column.Outputs[Derived Column Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[copy of province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="copy of province"
+                      externalMetadataColumnId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[province]"
+                      lineageId="Package\Import Test\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[province]"
+                      dataType="wstr"
+                      length="50"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[setLabel]"
+                      dataType="dbDate"
+                      name="setLabel" />
+                    <externalMetadataColumn
+                      refId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      dataType="wstr"
+                      length="50"
+                      name="region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Test\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Test\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Test\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Test\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Test\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Test.Paths[Data Conversion Output]"
+              endId="Package\Import Test\Missing data.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Test\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import Test.Paths[Derived Column Output]"
+              endId="Package\Import Test\Derived Column.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Import Test\Missing data.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Test.Paths[Derived Column Output1]"
+              endId="Package\Import Test\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Import Test\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Test.Paths[Flat File Source Output]"
+              endId="Package\Import Test\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Import Test\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import Train"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{99ef4b02-564c-4870-89a2-9ca5acb45b69}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Train"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Train\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Train\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Train\Data Conversion.Inputs[Data Conversion Input].Columns[id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id"
+                      lineageId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Import Train\Data Conversion.Inputs[Data Conversion Input].Columns[province]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="province"
+                      lineageId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].Columns[province]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Train\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import Train\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Train\Data Conversion.Outputs[Data Conversion Output].Columns[copy of id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Train\Data Conversion.Outputs[Data Conversion Output].Columns[copy of id]"
+                      name="copy of id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Train\Flat File Source.Outputs[Flat File Source Output].Columns[id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Train\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Train\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]"
+                      name="copy of province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Train\Flat File Source.Outputs[Flat File Source Output].Columns[province]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Train\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import Train\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Train\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Train\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Train\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Train\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Train\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Train\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Train\Derived Column.Inputs[Derived Column Input].Columns[copy of province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="copy of province"
+                      lineageId="Package\Import Train\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Train\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Train\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Train\Derived Column.Outputs[Derived Column Output].Columns[setLabel]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Import Train\Derived Column.Outputs[Derived Column Output].Columns[setLabel]"
+                      name="setLabel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"train"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"train"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Train\Derived Column.Outputs[Derived Column Output].Columns[region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="4"
+                      lineageId="Package\Import Train\Derived Column.Outputs[Derived Column Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[FINDSTRING](#{Package\Import Train\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]},"tỉnh",1) &gt; 0 ? "tỉnh" : "tp"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">FINDSTRING([copy of province],"tỉnh",1) &gt; 0 ? "tỉnh" : "tp"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Train\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Train\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Train\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Train\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Train\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Train\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Train\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Train\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="{5A2F5654-870A-47FC-9305-8202D5A672A6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[kalapa_raw_train_drop]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      length="50"
+                      lineageId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                      name="province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[district]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_source1]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="age_source1" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_source2]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="age_source2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_1]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_1" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_2]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_3]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_3" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_4]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_4" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_5]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_5" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_6]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_6" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_8]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_8" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_9]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_9" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_10]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_10" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_11]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_11" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_12]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_12" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_13]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_13" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_14]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_14" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_15]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_15" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_16]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_16" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_17]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_17" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_18]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_18" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_19]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_19" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_20]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_20" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_21]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_21" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_22]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_22" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_23]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_23" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_24]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_24" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_25]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_25" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_26]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_26" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_27]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_27" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_28]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_28" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_29]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_29" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_30]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_30" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_31]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_31" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_32]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_32" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_33]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_33" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_34]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_34" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_35]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_35" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_36]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_36" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_37]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_37" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_38]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_38" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_39]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_39" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_40]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_40" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_41]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_41" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_42]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_42" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_43]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_43" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_44]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_44" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_45]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_45" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_46]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_46" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_47]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_47" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_48]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_48" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_49]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_49" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_50]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_50" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_51]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_51" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_52]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_52" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_53]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_53" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_54]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_54" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_55]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_55" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_56]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_56" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_57]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_57" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import Train\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Train\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Train\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Train\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Train\Missing data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Missing data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Train\Missing data.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Train\Missing data.Inputs[Derived Column Input].Columns[copy of province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="copy of province"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Train\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Import Train\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]} == "" ? "none" : [LOWER](#{Package\Import Train\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[copy of province] == "" ? "none" : LOWER([copy of province])</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Train\Missing data.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Train\Missing data.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Train\Missing data.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Train\Missing data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Train\Missing data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Train\Missing data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Train\Missing data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Train\Missing data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Train\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[province_label]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Train\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{F9F11B1F-FABE-4211-8E25-F21557FF1801}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-RKK1QS1_SQLEXPRESS.CreditScoreKalapa 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[setLabel]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="setLabel"
+                      externalMetadataColumnId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[setLabel]"
+                      lineageId="Package\Import Train\Derived Column.Outputs[Derived Column Output].Columns[setLabel]" />
+                    <inputColumn
+                      refId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[region]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      lineageId="Package\Import Train\Derived Column.Outputs[Derived Column Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[copy of province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="copy of province"
+                      externalMetadataColumnId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[province]"
+                      lineageId="Package\Import Train\Data Conversion.Outputs[Data Conversion Output].Columns[copy of province]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[province]"
+                      dataType="wstr"
+                      length="50"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[setLabel]"
+                      dataType="dbDate"
+                      name="setLabel" />
+                    <externalMetadataColumn
+                      refId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      dataType="wstr"
+                      length="50"
+                      name="region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Train\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Train\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Train\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Train\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Train\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Train.Paths[Data Conversion Output]"
+              endId="Package\Import Train\Missing data.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Train\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import Train.Paths[Derived Column Output]"
+              endId="Package\Import Train\Derived Column.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Import Train\Missing data.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Train.Paths[Derived Column Output1]"
+              endId="Package\Import Train\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Import Train\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Train.Paths[Flat File Source Output]"
+              endId="Package\Import Train\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Import Train\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6BC15C4B-AD93-42B3-B4C1-5B742636329C}"
+      DTS:From="Package\Import Test"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import Train" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Import Test"
+          TopLeft="419.666650209163,49.70000035127" />
+        <NodeLayout
+          Size="134.4,41.6"
+          Id="Package\Import Train"
+          TopLeft="437.499982615313,169.866668016646" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="485.266650209163,91.30000035127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.4333324061499,78.5666676653757"
+              Start="0,0"
+              End="19.4333324061499,71.0666676653757">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.2833338326878" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.2833338326878"
+                    Point2="0,39.2833338326878"
+                    Point3="4,39.2833338326878" />
+                  <mssgle:LineSegment
+                    End="15.4333324061499,39.2833338326878" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.4333324061499,39.2833338326878"
+                    Point2="19.4333324061499,39.2833338326878"
+                    Point3="19.4333324061499,43.2833338326878" />
+                  <mssgle:LineSegment
+                    End="19.4333324061499,71.0666676653757" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Test">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Import Test\Flat File Source"
+          TopLeft="491.5,49.5" />
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\Import Test\Missing data"
+          TopLeft="478.5,257.5" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Import Test\Data Conversion"
+          TopLeft="491.5,171.5" />
+        <EdgeLayout
+          Id="Package\Import Test.Paths[Flat File Source Output]"
+          TopLeft="568.3,91.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80.4"
+              Start="0,0"
+              End="0,72.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Test.Paths[Data Conversion Output]"
+          TopLeft="569.5,213.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.5999999999999,44.4"
+              Start="0,0"
+              End="-22.5999999999999,36.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.2"
+                    Point2="0,22.2"
+                    Point3="-4,22.2" />
+                  <mssgle:LineSegment
+                    End="-18.5999999999999,22.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5999999999999,22.2"
+                    Point2="-22.5999999999999,22.2"
+                    Point3="-22.5999999999999,26.2" />
+                  <mssgle:LineSegment
+                    End="-22.5999999999999,36.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Import Test\Derived Column"
+          TopLeft="474.5,326.5" />
+        <EdgeLayout
+          Id="Package\Import Test.Paths[Derived Column Output]"
+          TopLeft="548.9,299.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.3999999999999"
+              Start="0,0"
+              End="0,19.8999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Import Test\OLE DB Destination"
+          TopLeft="488.5,429.5" />
+        <EdgeLayout
+          Id="Package\Import Test.Paths[Derived Column Output1]"
+          TopLeft="550.9,368.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.2,61.4000000000001"
+              Start="0,0"
+              End="23.2,53.9000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.7"
+                    Point2="0,30.7"
+                    Point3="4,30.7" />
+                  <mssgle:LineSegment
+                    End="19.2,30.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.2,30.7"
+                    Point2="23.2,30.7"
+                    Point3="23.2,34.7" />
+                  <mssgle:LineSegment
+                    End="23.2,53.9000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Test\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Import Train">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\Import Train\Missing data"
+          TopLeft="478.5,257.5" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Import Train\Data Conversion"
+          TopLeft="491.5,171.5" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Import Train\Derived Column"
+          TopLeft="474.5,326.5" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Import Train\Flat File Source"
+          TopLeft="491.5,49.5" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Import Train\OLE DB Destination"
+          TopLeft="488.5,429.5" />
+        <EdgeLayout
+          Id="Package\Import Train.Paths[Data Conversion Output]"
+          TopLeft="569.5,213.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.5999999999999,44.4"
+              Start="0,0"
+              End="-22.5999999999999,36.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.2"
+                    Point2="0,22.2"
+                    Point3="-4,22.2" />
+                  <mssgle:LineSegment
+                    End="-18.5999999999999,22.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5999999999999,22.2"
+                    Point2="-22.5999999999999,22.2"
+                    Point3="-22.5999999999999,26.2" />
+                  <mssgle:LineSegment
+                    End="-22.5999999999999,36.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Train.Paths[Flat File Source Output]"
+          TopLeft="568.3,91.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80.4"
+              Start="0,0"
+              End="0,72.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Train.Paths[Derived Column Output]"
+          TopLeft="548.9,299.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.3999999999999"
+              Start="0,0"
+              End="0,19.8999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Train.Paths[Derived Column Output1]"
+          TopLeft="550.9,368.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.2,61.4000000000001"
+              Start="0,0"
+              End="23.2,53.9000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.7"
+                    Point2="0,30.7"
+                    Point3="4,30.7" />
+                  <mssgle:LineSegment
+                    End="19.2,30.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.2,30.7"
+                    Point2="23.2,30.7"
+                    Point3="23.2,34.7" />
+                  <mssgle:LineSegment
+                    End="23.2,53.9000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Train\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

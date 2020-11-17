@@ -1,0 +1,2768 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/20/2020 12:28:44 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-RKK1QS1"
+  DTS:CreatorName="DESKTOP-RKK1QS1\quanb"
+  DTS:DTSID="{C41BF63B-979B-4CC5-9A31-C3FC4BD5B0FC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{295D8F1F-9B7D-4002-ACAD-D040FFC8193A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-RKK1QS1\SQLEXPRESS.CreditScoreKalapa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ADF811CC-E321-4A28-8BC4-C09D8BC2BBA4}"
+      DTS:ObjectName="DESKTOP-RKK1QS1\SQLEXPRESS.CreditScoreKalapa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-RKK1QS1\SQLEXPRESS;User ID=;Initial Catalog=CreditScoreKalapa;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Synchronize Database"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C04E5DF3-435A-4DDC-B8B1-AC7B9ED5CC81}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Synchronize Database"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Synchronize Database\Clean Missing Data"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Clean Missing Data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Synchronize Database\Clean Missing Data.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Clean Missing Data.Inputs[Derived Column Input].Columns[pr_province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of province"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of province]"
+                      name="pr_province"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of province]}) ? "none" : [LOWER](#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of province]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(pr_province) ? "none" : LOWER(pr_province)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Clean Missing Data.Inputs[Derived Column Input].Columns[pr_district]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of district"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of district]"
+                      name="pr_district"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of district]}) ? "none" : [LOWER](#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of district]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(pr_district) ? "none" : LOWER(pr_district)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Clean Missing Data.Inputs[Derived Column Input].Columns[pr_age_source1]"
+                      cachedDataType="ui4"
+                      cachedName="Copy of age_source1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source1]"
+                      name="pr_age_source1"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source1]}) ? 0 : #{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source1]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(pr_age_source1) ? 0 : pr_age_source1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Clean Missing Data.Inputs[Derived Column Input].Columns[pr_age_source2]"
+                      cachedDataType="ui4"
+                      cachedName="Copy of age_source2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source2]"
+                      name="pr_age_source2"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source2]}) ? 0 : #{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source2]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(pr_age_source2) ? 0 : pr_age_source2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\Clean Missing Data.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Synchronize Database\Clean Missing Data.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Synchronize Database\Clean Missing Data.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Synchronize Database\Clean Missing Data.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Clean Missing Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Clean Missing Data.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\Clean Missing Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Clean Missing Data.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\Concat Age Source"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Concat Age Source"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Synchronize Database\Concat Age Source.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Concat Age Source.Inputs[Derived Column Input].Columns[Copy of age_source1]"
+                      cachedDataType="ui4"
+                      cachedName="Copy of age_source1"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source1]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Concat Age Source.Inputs[Derived Column Input].Columns[Copy of age_source2]"
+                      cachedDataType="ui4"
+                      cachedName="Copy of age_source2"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source2]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Synchronize Database\Concat Age Source.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Output].Columns[pr_age]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Output].Columns[pr_age]"
+                      name="pr_age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source1]} &gt; 0 &amp;&amp; #{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source2]} &gt; 0 ? [ROUND]((#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source1]} + #{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source2]}) / 2,0) : (#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source1]} &gt; 0 ? #{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source1]} : #{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source2]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">pr_age_source1 &gt; 0 &amp;&amp; pr_age_source2 &gt; 0 ? ROUND((pr_age_source1 + pr_age_source2) / 2,0) : (pr_age_source1 &gt; 0 ? pr_age_source1 : pr_age_source2)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Synchronize Database\Concat Age Source.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Synchronize Database\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Conditional Split.Inputs[Conditional Split Input].Columns[Copy of id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[Copy of id]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Conditional Split.Inputs[Conditional Split Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\Conditional Split.Outputs[UpdateCurrentDB]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="UpdateCurrentDB"
+                  synchronousInputId="Package\Synchronize Database\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[id]}) &amp;&amp; ![ISNULL](#{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[Copy of id]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(id) &amp;&amp; !ISNULL([Copy of id])</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Synchronize Database\Conditional Split.Outputs[CreateNewRecords]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="CreateNewRecords"
+                  synchronousInputId="Package\Synchronize Database\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[id]}) &amp;&amp; ![ISNULL](#{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[Copy of id]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(id) &amp;&amp; !ISNULL([Copy of id])</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Synchronize Database\Conditional Split.Outputs[RemainDB]"
+                  description="Output 3 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="RemainDB"
+                  synchronousInputId="Package\Synchronize Database\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[id]}) &amp;&amp; [ISNULL](#{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[Copy of id]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(id) &amp;&amp; ISNULL([Copy of id])</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Synchronize Database\Conditional Split.Outputs[Conditional Split Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Output"
+                  synchronousInputId="Package\Synchronize Database\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Synchronize Database\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Synchronize Database\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\Create New Records"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Create New Records"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[basicInformation]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Synchronize Database\Create New Records.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RKK1QS1\SQLEXPRESS.CreditScoreKalapa]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RKK1QS1\SQLEXPRESS.CreditScoreKalapa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].Columns[Copy of id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id"
+                      externalMetadataColumnId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[Copy of id]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].Columns[pr_province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="pr_province"
+                      externalMetadataColumnId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].ExternalColumns[province]"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_province]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].Columns[pr_district]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="pr_district"
+                      externalMetadataColumnId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].ExternalColumns[district]"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_district]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].Columns[pr_age]"
+                      cachedDataType="i8"
+                      cachedName="pr_age"
+                      externalMetadataColumnId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_age]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].ExternalColumns[province]"
+                      dataType="wstr"
+                      length="50"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].ExternalColumns[district]"
+                      dataType="wstr"
+                      length="50"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      dataType="i4"
+                      name="age" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\Create New Records.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Create New Records.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Create New Records.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\Create New Records.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Create New Records.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Synchronize Database\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Inputs[Data Conversion Input].Columns[id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Inputs[Data Conversion Input].Columns[province]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="province"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Inputs[Data Conversion Input].Columns[district]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="district"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[district]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Inputs[Data Conversion Input].Columns[age_source1]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="age_source1"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_source1]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Inputs[Data Conversion Input].Columns[age_source2]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="age_source2"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_source2]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Synchronize Database\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of id]"
+                      name="Copy of id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of province]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of province]"
+                      name="Copy of province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of district]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of district]"
+                      name="Copy of district"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[district]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source1]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source1]"
+                      name="Copy of age_source1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_source1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source2]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of age_source2]"
+                      name="Copy of age_source2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_source2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Synchronize Database\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[basicInformation]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Synchronize Database\DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RKK1QS1\SQLEXPRESS.CreditScoreKalapa]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RKK1QS1\SQLEXPRESS.CreditScoreKalapa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[province]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].ExternalColumns[province]"
+                      length="50"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[province]"
+                      name="province"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[district]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].ExternalColumns[district]"
+                      length="50"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[district]"
+                      name="district"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].ExternalColumns[age]"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].ExternalColumns[province]"
+                      dataType="wstr"
+                      length="50"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].ExternalColumns[district]"
+                      dataType="wstr"
+                      length="50"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].ExternalColumns[age]"
+                      dataType="i4"
+                      name="age" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[province]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[province]"
+                      name="province" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[district]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[district]"
+                      name="district" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[age]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Synchronize Database\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="{5A2F5654-870A-47FC-9305-8202D5A672A6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[kalapa_raw_train_drop]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                      name="province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[district]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[district]"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[district]"
+                      name="district"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_source1]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_source1]"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_source1]"
+                      name="age_source1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_source2]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_source2]"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_source2]"
+                      name="age_source2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[district]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="district" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_source1]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="age_source1" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_source2]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="age_source2" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_1]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_1" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_2]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_2" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_3]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_3" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_4]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_4" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_5]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_5" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_6]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_6" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_8]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_8" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_9]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_9" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_10]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_10" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_11]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_11" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_12]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_12" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_13]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_13" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_14]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_14" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_15]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_15" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_16]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_16" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_17]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_17" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_18]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_18" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_19]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_19" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_20]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_20" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_21]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_21" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_22]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_22" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_23]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_23" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_24]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_24" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_25]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_25" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_26]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_26" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_27]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_27" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_28]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_28" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_29]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_29" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_30]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_30" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_31]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_31" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_32]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_32" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_33]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_33" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_34]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_34" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_35]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_35" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_36]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_36" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_37]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_37" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_38]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_38" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_39]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_39" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_40]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_40" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_41]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_41" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_42]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_42" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_43]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_43" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_44]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_44" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_45]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_45" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_46]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_46" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_47]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_47" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_48]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_48" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_49]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_49" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_50]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_50" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_51]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_51" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_52]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_52" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_53]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_53" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_54]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_54" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_55]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_55" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_56]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_56" />
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FIELD_57]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="FIELD_57" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\isRecordChanged"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="isRecordChanged"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input].Columns[pr_province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="pr_province"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_province]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input].Columns[province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="province"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[province]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input].Columns[pr_district]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="pr_district"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_district]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input].Columns[district]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="district"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[district]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input].Columns[age]"
+                      cachedDataType="i4"
+                      cachedName="age"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input].Columns[pr_age]"
+                      cachedDataType="i8"
+                      cachedName="pr_age"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\isRecordChanged.Outputs[ChangedRecords]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="ChangedRecords"
+                  synchronousInputId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_province]} != (DT_WSTR,50)#{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[province]} || #{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_district]} != (DT_WSTR,50)#{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[district]} || #{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_age]} != #{Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[age]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">pr_province != (DT_WSTR,50)province || pr_district != (DT_WSTR,50)district || pr_age != age</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Synchronize Database\isRecordChanged.Outputs[Conditional Split Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Output"
+                  synchronousInputId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Synchronize Database\isRecordChanged.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\isRecordChanged.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\isRecordChanged.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\isRecordChanged.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\isRecordChanged.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Left Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Left Input].Columns[province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="province"
+                      lineageId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[province]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Left Input].Columns[district]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="district"
+                      lineageId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[district]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Left Input].Columns[age]"
+                      cachedDataType="i4"
+                      cachedName="age"
+                      lineageId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Right Input].Columns[Copy of id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[Copy of id]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Right Input].Columns[pr_province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="pr_province"
+                      lineageId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[pr_province]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Right Input].Columns[pr_district]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="pr_district"
+                      lineageId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[pr_district]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Right Input].Columns[pr_age]"
+                      cachedDataType="i8"
+                      cachedName="pr_age"
+                      lineageId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[pr_age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[Copy of id]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[Copy of id]"
+                      name="Copy of id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Synchronize Database\Merge Join.Inputs[Merge Join Right Input].Columns[Copy of id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[id]"
+                      name="id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Synchronize Database\Merge Join.Inputs[Merge Join Left Input].Columns[id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_province]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_province]"
+                      name="pr_province">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Synchronize Database\Merge Join.Inputs[Merge Join Right Input].Columns[pr_province]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_district]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_district]"
+                      name="pr_district">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Synchronize Database\Merge Join.Inputs[Merge Join Right Input].Columns[pr_district]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[province]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[province]"
+                      name="province">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Synchronize Database\Merge Join.Inputs[Merge Join Left Input].Columns[province]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[district]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[district]"
+                      name="district">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Synchronize Database\Merge Join.Inputs[Merge Join Left Input].Columns[district]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[age]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[age]"
+                      name="age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Synchronize Database\Merge Join.Inputs[Merge Join Left Input].Columns[age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_age]"
+                      dataType="i8"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_age]"
+                      name="pr_age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Synchronize Database\Merge Join.Inputs[Merge Join Right Input].Columns[pr_age]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Synchronize Database\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Sort.Inputs[Sort Input].Columns[Copy of id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Sort.Inputs[Sort Input].Columns[Copy of province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of province"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of province]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Sort.Inputs[Sort Input].Columns[Copy of district]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of district"
+                      lineageId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of district]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Sort.Inputs[Sort Input].Columns[pr_age]"
+                      cachedDataType="i8"
+                      cachedName="pr_age"
+                      lineageId="Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Output].Columns[pr_age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[Copy of id]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[Copy of id]"
+                      name="Copy of id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[pr_province]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[pr_province]"
+                      name="pr_province">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of province]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[pr_district]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[pr_district]"
+                      name="pr_district">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of district]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[pr_age]"
+                      dataType="i8"
+                      lineageId="Package\Synchronize Database\Sort.Outputs[Sort Output].Columns[pr_age]"
+                      name="pr_age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Output].Columns[pr_age]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\Sort Database"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Database"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Synchronize Database\Sort Database.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Sort Database.Inputs[Sort Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Sort Database.Inputs[Sort Input].Columns[province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="province"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[province]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Sort Database.Inputs[Sort Input].Columns[district]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="district"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[district]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Sort Database.Inputs[Sort Input].Columns[age]"
+                      cachedDataType="i4"
+                      cachedName="age"
+                      lineageId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\Sort Database.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[id]"
+                      name="id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[province]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[province]"
+                      name="province">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[province]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[district]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[district]"
+                      name="district">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[district]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[age]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Sort Database.Outputs[Sort Output].Columns[age]"
+                      name="age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output].Columns[age]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Synchronize Database\Update New Records"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update New Records"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update basicInformation
+set province =?,
+district =?,
+age=?
+where id =?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Synchronize Database\Update New Records.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-RKK1QS1\SQLEXPRESS.CreditScoreKalapa]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-RKK1QS1\SQLEXPRESS.CreditScoreKalapa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].Columns[pr_province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="pr_province"
+                      externalMetadataColumnId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_province]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].Columns[pr_district]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="pr_district"
+                      externalMetadataColumnId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_district]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].Columns[pr_age]"
+                      cachedDataType="i8"
+                      cachedName="pr_age"
+                      externalMetadataColumnId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[pr_age]" />
+                    <inputColumn
+                      refId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].Columns[Copy of id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of id"
+                      externalMetadataColumnId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output].Columns[Copy of id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Synchronize Database\Update New Records.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Synchronize Database\Update New Records.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Synchronize Database\Update New Records.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Update New Records.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Synchronize Database\Update New Records.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Synchronize Database\Update New Records.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Synchronize Database.Paths[ChangedRecords]"
+              endId="Package\Synchronize Database\Update New Records.Inputs[OLE DB Command Input]"
+              name="ChangedRecords"
+              startId="Package\Synchronize Database\isRecordChanged.Outputs[ChangedRecords]" />
+            <path
+              refId="Package\Synchronize Database.Paths[CreateNewRecords]"
+              endId="Package\Synchronize Database\Create New Records.Inputs[OLE DB Destination Input]"
+              name="CreateNewRecords"
+              startId="Package\Synchronize Database\Conditional Split.Outputs[CreateNewRecords]" />
+            <path
+              refId="Package\Synchronize Database.Paths[Data Conversion Output]"
+              endId="Package\Synchronize Database\Clean Missing Data.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Synchronize Database\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Synchronize Database.Paths[Derived Column Output]"
+              endId="Package\Synchronize Database\Concat Age Source.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Synchronize Database\Clean Missing Data.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Synchronize Database.Paths[Derived Column Output1]"
+              endId="Package\Synchronize Database\Sort.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Synchronize Database\Concat Age Source.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Synchronize Database.Paths[Flat File Source Output]"
+              endId="Package\Synchronize Database\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Synchronize Database\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Synchronize Database.Paths[Merge Join Output]"
+              endId="Package\Synchronize Database\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\Synchronize Database\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Synchronize Database.Paths[OLE DB Source Output]"
+              endId="Package\Synchronize Database\Sort Database.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Synchronize Database\DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Synchronize Database.Paths[Sort Output]"
+              endId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Synchronize Database\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Synchronize Database.Paths[Sort Output1]"
+              endId="Package\Synchronize Database\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Synchronize Database\Sort Database.Outputs[Sort Output]" />
+            <path
+              refId="Package\Synchronize Database.Paths[UpdateCurrentDB]"
+              endId="Package\Synchronize Database\isRecordChanged.Inputs[Conditional Split Input]"
+              name="UpdateCurrentDB"
+              startId="Package\Synchronize Database\Conditional Split.Outputs[UpdateCurrentDB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\Synchronize Database"
+          TopLeft="396.333317803013,85.233333966997" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Synchronize Database">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Synchronize Database\isRecordChanged"
+          TopLeft="625.166666501099,531.466666818195" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Synchronize Database\Conditional Split"
+          TopLeft="497.5,433.7" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Synchronize Database\DB Source"
+          TopLeft="397,91" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Synchronize Database\Flat File Source"
+          TopLeft="647.333352473047,22" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Synchronize Database\Concat Age Source"
+          TopLeft="643.5,212.56862745098" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Synchronize Database\Create New Records"
+          TopLeft="340.833319789834,532.266668925815" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Synchronize Database\Merge Join"
+          TopLeft="512,365" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Synchronize Database\Sort"
+          TopLeft="662,292.4" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Synchronize Database\Sort Database"
+          TopLeft="395,265" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Synchronize Database\Data Conversion"
+          TopLeft="656,86" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Synchronize Database\Clean Missing Data"
+          TopLeft="638.5,147.56862745098" />
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[UpdateCurrentDB]"
+          TopLeft="598.566666666667,475.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.399999834432,56.1666668181952"
+              Start="0,0"
+              End="107.399999834432,48.6666668181952">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.8140894086277" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.8140894086277"
+                    Point2="0,22.8140894086277"
+                    Point3="4,22.8140894086277" />
+                  <mssgle:LineSegment
+                    End="103.399999834432,22.8140894086277" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.399999834432,22.8140894086277"
+                    Point2="107.399999834432,22.8140894086277"
+                    Point3="107.399999834432,26.8140894086277" />
+                  <mssgle:LineSegment
+                    End="107.399999834432,48.6666668181952" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="14.580234292216,27.8140894086277,78.23953125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[Sort Output]"
+          TopLeft="710.8,334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-113.733333333333,31"
+              Start="0,0"
+              End="-113.733333333333,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.3731707317073" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.3731707317073"
+                    Point2="0,18.3731707317073"
+                    Point3="-4,18.3731707317073" />
+                  <mssgle:LineSegment
+                    End="-109.733333333333,18.3731707317073" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-109.733333333333,18.3731707317073"
+                    Point2="-113.733333333333,18.3731707317073"
+                    Point3="-113.733333333333,22.3731707317073" />
+                  <mssgle:LineSegment
+                    End="-113.733333333333,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[Merge Join Output]"
+          TopLeft="575.55,406.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.1000000000001"
+              Start="0,0"
+              End="0,19.6000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.6000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[Flat File Source Output]"
+          TopLeft="647.333352473047,42.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.66664752695306,64"
+              Start="0,0"
+              End="1.16664752695306,64">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,60"
+                    Point2="-22.5,64"
+                    Point3="-18.5,64" />
+                  <mssgle:LineSegment
+                    End="1.16664752695306,64" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[Derived Column Output1]"
+          TopLeft="727.5,254.16862745098">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.7,38.2313725490197"
+              Start="0,0"
+              End="-16.7,30.7313725490197">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1156862745098" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.1156862745098"
+                    Point2="0,19.1156862745098"
+                    Point3="-4,19.1156862745098" />
+                  <mssgle:LineSegment
+                    End="-12.7,19.1156862745098" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.7,19.1156862745098"
+                    Point2="-16.7,19.1156862745098"
+                    Point3="-16.7,23.1156862745098" />
+                  <mssgle:LineSegment
+                    End="-16.7,30.7313725490197" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[Derived Column Output]"
+          TopLeft="725.2,189.16862745098">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.4000000000001"
+              Start="0,0"
+              End="0,15.9000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.9000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[Data Conversion Output]"
+          TopLeft="812,106.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-4.69999999999982,61.5686274509802"
+              Start="0,0"
+              End="2.80000000000018,61.5686274509802">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,57.5686274509802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,57.5686274509802"
+                    Point2="22.5,61.5686274509802"
+                    Point3="18.5,61.5686274509802" />
+                  <mssgle:LineSegment
+                    End="2.80000000000018,61.5686274509802" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[CreateNewRecords]"
+          TopLeft="550.033333333333,475.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-122.000013543499,56.9666689258153"
+              Start="0,0"
+              End="-122.000013543499,49.4666689258153">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1390387183209" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1390387183209"
+                    Point2="0,23.1390387183209"
+                    Point3="-4,23.1390387183209" />
+                  <mssgle:LineSegment
+                    End="-118.000013543499,23.1390387183209" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-118.000013543499,23.1390387183209"
+                    Point2="-122.000013543499,23.1390387183209"
+                    Point3="-122.000013543499,27.1390387183209" />
+                  <mssgle:LineSegment
+                    End="-122.000013543499,49.4666689258153" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-103.330104428,28.1390387183209,84.6601953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[OLE DB Source Output]"
+          TopLeft="464.4,132.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,132.4"
+              Start="0,0"
+              End="0,124.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,124.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[Sort Output1]"
+          TopLeft="467.4,306.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.1333333333333,58.4"
+              Start="0,0"
+              End="89.1333333333333,50.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6126829268293" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.6126829268293"
+                    Point2="0,34.6126829268293"
+                    Point3="4,34.6126829268293" />
+                  <mssgle:LineSegment
+                    End="85.1333333333333,34.6126829268293" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.1333333333333,34.6126829268293"
+                    Point2="89.1333333333333,34.6126829268293"
+                    Point3="89.1333333333333,38.6126829268293" />
+                  <mssgle:LineSegment
+                    End="89.1333333333333,50.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Synchronize Database\Update New Records"
+          TopLeft="617.499975462756,603.93333770699" />
+        <EdgeLayout
+          Id="Package\Synchronize Database.Paths[ChangedRecords]"
+          TopLeft="705.933320981927,573.066666818195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.8666708887946"
+              Start="0,0"
+              End="0,23.3666708887946">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3666708887946" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-37.66509765625,5.8517924756473,75.3301953125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Synchronize Database\DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Synchronize Database\Create New Records">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

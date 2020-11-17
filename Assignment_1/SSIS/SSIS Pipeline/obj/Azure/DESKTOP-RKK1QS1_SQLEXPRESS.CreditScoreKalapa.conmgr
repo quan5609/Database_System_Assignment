@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-RKK1QS1_SQLEXPRESS.CreditScoreKalapa"
+  DTS:DTSID="{8EB53638-CF28-4D83-BF2C-9141CA4D726C}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=DESKTOP-RKK1QS1\SQLEXPRESS;Initial Catalog=CreditScoreKalapa;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
