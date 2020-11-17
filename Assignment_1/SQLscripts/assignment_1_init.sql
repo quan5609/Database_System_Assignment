@@ -65,7 +65,7 @@ CREATE TABLE Class_Registration.dbo.Teacher(
 /*Create MainTeacher*/
 CREATE TABLE Class_Registration.dbo.MainTeacher(
 	ssn VARCHAR(10) PRIMARY KEY,
-	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Teacher(ssn)
+	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Teacher(ssn) ON DELETE CASCADE
 );
 
 /*Create Student*/
@@ -81,20 +81,21 @@ CREATE TABLE Class_Registration.dbo.Semester(
 	id varchar(10) PRIMARY KEY,
 	startDate date,
 	endDate date,
+	CHECK (DATEDIFF(DAY, startDate, endDate) > 0)
 );
 
 /*Create Subject*/
 CREATE TABLE Class_Registration.dbo.Subject(
 	id varchar(10) PRIMARY KEY,
 	[name] varchar(50),
-	credit int,
+	credit INT CHECK (credit >=1 AND credit <=3),
 );
 
 /*Create ReferenceBook*/
 CREATE TABLE Class_Registration.dbo.ReferenceBook(
 	id varchar(10) PRIMARY KEY,
 	[name] varchar(50),
-	releasedDate date,
+	releasedDate DATE CHECK(DATEDIFF(YEAR, releasedDate, GETDATE()) <= 10),
 );
 
 /*Create Author*/
@@ -114,11 +115,11 @@ CREATE TABLE Class_Registration.dbo.Publisher(
 /*CREATE Class*/
 CREATE TABLE Class_Registration.dbo.Class(
 	id varchar(10),
-	maxStudent int,
+	maxStudent INT CHECK (maxStudent < 60),
 	Semester_id varchar(10),
 	Subject_id varchar(10),
-	FOREIGN KEY (Semester_id) REFERENCES  Class_Registration.dbo.Semester(id),
-	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.Subject(id),
+	FOREIGN KEY (Semester_id) REFERENCES  Class_Registration.dbo.Semester(id) ON DELETE CASCADE,
+	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.Subject(id) ON DELETE CASCADE,
 	PRIMARY KEY (Semester_id, Subject_id, id)
 );
 
@@ -144,13 +145,13 @@ CREATE TABLE Class_Registration.dbo.Uses(
 	MainTeacher_ssn VARCHAR(10),
 	ReferenceBook_id VARCHAR(10),
 	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.SUBJECT(id),
-	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.Teacher(ssn),
+	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.MainTeacher(ssn),
 	FOREIGN KEY (ReferenceBook_id) REFERENCES Class_Registration.dbo.ReferenceBook(id),
 	PRIMARY KEY (Subject_id, MainTeacher_ssn, ReferenceBook_id)
 );
 
 --Relatiónhship: Biên soạn
-CREATE TABLE Class_Registration.dbo.Compose(
+CREATE TABLE Class_Registration.dbo.Write(
 	Author_ssn VARCHAR(10),
 	Book_id VARCHAR(10),
 	FOREIGN KEY (Author_ssn) REFERENCES Class_Registration.dbo.Author(ssn),
@@ -170,27 +171,27 @@ CREATE TABLE Class_Registration.dbo.Field(
 ALTER TABLE Class_Registration.dbo.ReferenceBook
 ADD
 	Publisher_id VARCHAR(10) NOT NULL,
-	FOREIGN KEY (Publisher_id) REFERENCES Class_Registration.dbo.Publisher(id)
+	FOREIGN KEY (Publisher_id) REFERENCES Class_Registration.dbo.Publisher(id) ON DELETE CASCADE
 
 --Relationship: Ðăng kí
 CREATE TABLE Class_Registration.dbo.Register(
-	Student_id VARCHAR(10),
+	Student_ssn VARCHAR(10),
 	Class_id VARCHAR(10),
 	Semester_id VARCHAR(10),
 	Subject_id VARCHAR(10),
-	FOREIGN KEY (Student_id) REFERENCES Class_Registration.dbo.Student(ssn),
+	FOREIGN KEY (Student_ssn) REFERENCES Class_Registration.dbo.Student(ssn),
 	FOREIGN KEY (Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Class(Semester_id, Subject_id, id),
-	PRIMARY KEY (Semester_id, Subject_id, Class_id, Student_id)
+	PRIMARY KEY (Semester_id, Subject_id, Class_id, Student_ssn)
 );
 
 --Relationship: Phụ trách chính
 ALTER TABLE Class_Registration.dbo.Class
 ADD 
 	MainTeacher_ssn VARCHAR(10) NOT NULL,
-	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.MainTeacher(ssn)
+	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.MainTeacher(ssn) ON DELETE CASCADE
 
 --Relationship: Phụ trách
-CREATE TABLE Class_Registration.dbo.Charge_Of(
+CREATE TABLE Class_Registration.dbo.Resposible(
 	Teacher_ssn VARCHAR(10),
 	Class_id VARCHAR(10),
 	Semester_id varchar(10),
@@ -201,12 +202,12 @@ CREATE TABLE Class_Registration.dbo.Charge_Of(
 );
 
 --Thuộc tính đa trị: Tuần học
-CREATE TABLE Class_Registration.dbo.Weeks(
+CREATE TABLE Class_Registration.dbo.[Week](
 	Teacher_ssn VARCHAR(10),
 	Semester_id varchar(10),
 	Subject_id varchar(10),
 	Class_id VARCHAR(10),
-	week INT,
-	FOREIGN KEY (Teacher_ssn,Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Charge_Of(Teacher_ssn, Semester_id, Subject_id,Class_id),
-	PRIMARY KEY (Teacher_ssn, Semester_id, Subject_id, Class_id, week)
-);
+	[week] INT,
+	FOREIGN KEY (Teacher_ssn,Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Resposible(Teacher_ssn, Semester_id, Subject_id,Class_id),
+	PRIMARY KEY (Teacher_ssn, Semester_id, Subject_id, Class_id, [week])
+);	
