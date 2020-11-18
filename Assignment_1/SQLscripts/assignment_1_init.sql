@@ -115,7 +115,7 @@ CREATE TABLE Class_Registration.dbo.Publisher(
 /*CREATE Class*/
 CREATE TABLE Class_Registration.dbo.Class(
 	id varchar(10),
-	maxStudent INT CHECK (maxStudent < 60),
+	maxStudent INT CHECK (maxStudent <= 60),
 	Semester_id varchar(10),
 	Subject_id varchar(10),
 	FOREIGN KEY (Semester_id) REFERENCES  Class_Registration.dbo.Semester(id) ON DELETE CASCADE,
