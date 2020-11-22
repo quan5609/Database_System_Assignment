@@ -197,16 +197,6 @@ ADD
 	MainTeacher_ssn VARCHAR(10) NOT NULL,
 	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.MainTeacher(ssn) ON DELETE CASCADE
 
---Relationship: responsible
-CREATE TABLE Class_Registration.dbo.Resposible(
-	Teacher_ssn VARCHAR(10),
-	Class_id VARCHAR(10),
-	Semester_id varchar(10),
-	Subject_id varchar(10),
-	FOREIGN KEY (Teacher_ssn) REFERENCES Class_Registration.dbo.Teacher(ssn),
-	FOREIGN KEY (Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Class(Semester_id, Subject_id,id),
-	PRIMARY KEY (Teacher_ssn, Semester_id, Subject_id, Class_id)
-);
 
 --Weak Entity: Week
 CREATE TABLE Class_Registration.dbo.[Week](
