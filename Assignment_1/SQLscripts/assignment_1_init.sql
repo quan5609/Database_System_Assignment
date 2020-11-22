@@ -182,13 +182,13 @@ ADD
 
 --Relationship: Register
 CREATE TABLE Class_Registration.dbo.Register(
-	Student_ssn VARCHAR(10),
+	Student_id VARCHAR(10),
 	Class_id VARCHAR(10),
 	Semester_id VARCHAR(10),
 	Subject_id VARCHAR(10),
-	FOREIGN KEY (Student_ssn) REFERENCES Class_Registration.dbo.Student(ssn),
+	FOREIGN KEY (Student_id) REFERENCES Class_Registration.dbo.Student(id),
 	FOREIGN KEY (Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Class(Semester_id, Subject_id, id),
-	PRIMARY KEY (Semester_id, Subject_id, Class_id, Student_ssn)
+	PRIMARY KEY (Semester_id, Subject_id, Class_id, Student_id)
 );
 
 --Relationship: main responsible
