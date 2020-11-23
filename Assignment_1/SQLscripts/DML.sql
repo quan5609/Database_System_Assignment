@@ -2,6 +2,68 @@
 -- *****************************************************************************************************************
 
 --(i.1). Cap nhat dang ki mon hoc cua cac lop.
+-- Them
+CREATE PROCEDURE addRegister(
+	@newStudentId AS varchar(10),
+	@newClassId AS varchar(10),
+	@newSemesterId AS varchar(10),
+	@newSubjectId AS varchar(10)
+	)
+AS
+BEGIN
+	INSERT INTO Register
+	VALUES 
+		(@newStudentId, @newClassId, @newSemesterId, @newSubjectId)
+END;
+
+-- Xoa
+GO
+CREATE PROCEDURE removeRegister(
+	@oldStudentId AS varchar(10),
+	@oldClassId AS varchar(10),
+	@oldSemesterId AS varchar(10),
+	@oldSubjectId AS varchar(10)
+	)
+AS
+BEGIN
+	DELETE FROM Register
+	WHERE 
+		Student_id = @oldStudentId
+		AND Class_id = @oldClassId
+		AND Semester_id = @oldSemesterId
+		AND Subject_id = @oldSubjectId
+END;
+
+-- Sua
+GO
+CREATE PROCEDURE updateRegister(
+	@oldStudentId AS varchar(10),
+	@oldClassId AS varchar(10),
+	@oldSemesterId AS varchar(10),
+	@oldSubjectId AS varchar(10),
+
+	@newStudentId AS varchar(10),
+	@newClassId AS varchar(10),
+	@newSemesterId AS varchar(10),
+	@newSubjectId AS varchar(10)
+	)
+AS
+BEGIN
+	UPDATE Register
+	SET 
+		Student_id = @newStudentId,
+		Class_id = @newClassId,
+		Semester_id = @newSemesterId,
+		Subject_id = @newSubjectId
+	WHERE 
+		Student_id = @oldStudentId
+		AND Class_id = @oldClassId
+		AND Semester_id = @oldSemesterId
+		AND Subject_id = @oldSubjectId
+END;
+
+
+GO
 --(i.2). Xem danh sach lop da duoc dang ky boi mot sinh vien o mot hoc ky.
 CREATE PROCEDURE registeredClass(
 	@studentId AS varchar(10),
