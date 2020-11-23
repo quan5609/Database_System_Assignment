@@ -143,7 +143,30 @@ END;
 
 --Khoa
 --ii.1
+GO
+CREATE PROCEDURE UpdateSubject(
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10),
+	@subjectId AS VARCHAR(10)
+)
+AS
+BEGIN
+	INSERT INTO dbo.Opens VALUES(@semesterId, @subjectId, @departmentId)
+END;
 --ii.2
+GO
+
+CREATE PROCEDURE UpdateTeacherOfClass(
+	@teacherSsn AS varchar(10),
+	@classId AS VARCHAR(10),
+	@subjectId AS VARCHAR(10),
+	@semesterId AS VARCHAR(10),
+	@weekId AS VARCHAR(10)
+)
+AS
+BEGIN
+	INSERT INTO dbo.Responsible VALUES(@semesterId, @subjectId, @classId, @weekId, @semesterId, @teacherSsn)
+END;
 --ii.3
 GO
 CREATE PROCEDURE SubjectOnSemester(
