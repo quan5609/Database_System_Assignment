@@ -1,4 +1,6 @@
--- PDT
+-- 												(i) PDT
+-- *****************************************************************************************************************
+
 --(i.1). Cap nhat dang ki mon hoc cua cac lop.
 --(i.2). Xem danh sach lop da duoc dang ky boi mot sinh vien o mot hoc ky.
 CREATE PROCEDURE registeredClass(
@@ -22,7 +24,7 @@ CREATE PROCEDURE reponsibleClass(
 AS
 BEGIN
 	SELECT DISTINCT Class_id Ma_lop_hoc,Subject_id Ma_mon_hoc
-	FROM [Week]
+	FROM Responsible
 	WHERE Teacher_ssn = @teacherSsn
 		AND Semester_id = @semesterId;
 END;
@@ -61,7 +63,7 @@ BEGIN
 	SELECT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, Class_id Ma_lop, 
 		Teacher_ssn SSN, firstName Ten, lastName Ho
 			
-	FROM [Week],Employee,Class c,Opens o
+	FROM Responsible,Employee,Class c,Opens o
 	WHERE Teacher_ssn = ssn 
 		AND Class_id = c.id
 		AND c.Subject_id = o.Subject_id
@@ -141,7 +143,9 @@ BEGIN
 	GROUP BY o.Department_id, c.Subject_id
 END;
 
---Khoa
+-- 												(ii) Khoa
+-- *****************************************************************************************************************
+
 --ii.1
 GO
 CREATE PROCEDURE UpdateSubject(
