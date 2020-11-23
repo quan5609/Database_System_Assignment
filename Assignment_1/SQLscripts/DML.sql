@@ -1,4 +1,6 @@
--- PDT
+-- 												(i) PDT
+-- *****************************************************************************************************************
+
 --(i.1). Cap nhat dang ki mon hoc cua cac lop.
 --(i.2). Xem danh sach lop da duoc dang ky boi mot sinh vien o mot hoc ky.
 CREATE PROCEDURE registeredClass(
@@ -141,7 +143,9 @@ BEGIN
 	GROUP BY o.Department_id, c.Subject_id
 END;
 
---Khoa
+-- 												(ii) Khoa
+-- *****************************************************************************************************************
+
 --ii.1
 GO
 CREATE PROCEDURE UpdateSubject(
@@ -297,24 +301,92 @@ BEGIN
 			GROUP BY Semester_id, startDate) a
 END;
 
---Sinh vien
+-- 												(iii) Giang vien
+-- *****************************************************************************************************************
+-- (iii.1). Cap nhat giao trinh chinh cho mon hoc do minh phu trach.
+GO
+CREATE PROCEDURE UpdateReferenceBook(
+	@teacherSsn AS varchar(10),
+	@subjectId AS varchar(10),
+	@bookId AS varchar(10),
+	@semesterId AS varchar(10)
+	)
+AS
+BEGIN
+	IF (SELECT COUNT(*) FROM Uses WHERE Subject_id = @subjectId) < 3
+		INSERT INTO Uses 
+		(Subject_id,MainTeacher_ssn,ReferenceBook_id)
+		VALUES (@subjectId, @teacherSsn, @bookId)
+	ELSE 
+		RAISERROR('This subject can not have more than 3 reference books',-1,-1);
+END;
+
+-- (iii.2). Xem danh sach lop hoc cua moi mon hoc do minh phu trach o mot hoc ky.
+GO
+CREATE PROCEDURE responsibleClasses 
+	(@teacherSsn AS varchar(10),
+	 @semesterId AS varchar(10)
+	)
+AS
+BEGIN
+	SELECT Semester_id Ma_hoc_ky, Subject_id Ma_mon_hoc,Class_id Ma_lop_hoc
+	FROM Responsible
+	WHERE Teacher_ssn = @teacherSsn
+	GROUP BY Semester_id, Subject_id,Class_id
+END;
+
+-- (iii.3). Xem danh sach sinh vien cua moi lop hoc do minh phu trach o mot hoc ky.
+GO
+CREATE PROCEDURE studentOfResopnsibleClass (@teacherSsn AS varchar(10))
+AS
+BEGIN
+	SELECT rp.Semester_id Ma_hoc_ky, rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
+	FROM Responsible rp, Register rg, Student st
+	WHERE rp.Class_id = rg.Class_id
+		AND rg.Student_id = st.id
+		AND Teacher_ssn = @teacherSsn
+	GROUP BY rp.Semester_id, rp.Class_id,Student_id, firstName, lastName
+END;
+
+-- (iii.4). Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc do minh phu trach o mot hoc ky.
+GO
+CREATE PROCEDURE referenceBookOfResponsibleSubject 
+	(@teacherSsn AS varchar(10))
+AS
+BEGIN
+	SELECT rp.Semester_id Ma_hoc_ky, rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
+	FROM Responsible rp, Register rg, Student st
+	WHERE rp.Class_id = rg.Class_id
+		AND rg.Student_id = st.id
+		AND Teacher_ssn = @teacherSsn
+	GROUP BY rp.Semester_id, rp.Class_id,Student_id, firstName, lastName
+END;
+-- (iii.5). Xem tong so sinh vien cua moi lop hoc do minh phu trach o mot hoc ky.
+-- (iii.6). Xem so lop hoc do minh phu trach o moi hoc ky trong 3 nam lien tiep gan day nhat.
+-- (iii.7). Xem 5 lop hoc co so sinh vien cao nhat ma giang vien tung phu trach.
+-- (iii.8). Xem 5 hoc ky co so lop nhieu nhat ma giang vien tung phu trach.
+
+
+-- 												(iv) Sinh vien
+-- *****************************************************************************************************************
+
 --iv.1
 GO
 CREATE PROCEDURE RegisterSubject(
-	@studentSsn AS VARCHAR(10), 
+	@studentId AS VARCHAR(10), 
 	@classId AS VARCHAR(10),
 	@semesterId AS VARCHAR(10),
 	@subjectId AS VARCHAR(10)
 )
 AS
 BEGIN
-	INSERT INTO dbo.Register VALUES (@studentSsn, @classId, @semesterId, @subjectId)
+	INSERT INTO dbo.Register VALUES (@studentId, @classId, @semesterId, @subjectId)
 END;
 
 --iv.2
 GO
 CREATE PROCEDURE SubjectClassTeacher(
-	@studentSsn AS varchar(10)
+	@studentId AS varchar(10)
 )
 AS
 BEGIN
@@ -322,26 +394,26 @@ BEGIN
 	FROM dbo.Responsible
 	WHERE Semester_id IN (SELECT semesterId 
 								FROM dbo.StudyStatus
-								WHERE [sid] = @studentSsn AND [status] = 'nomal')
+								WHERE [sid] = @studentId AND [status] = 'nomal')
 END;
 
 --iv.3
 GO
 CREATE PROCEDURE SubjectReferenceBook(
-	@studentSsn AS varchar(10),
+	@studentId AS varchar(10),
 	@semesterId AS VARCHAR(10)
 )
 AS
 BEGIN
 	SELECT DISTINCT Register.Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh
 	FROM dbo.Register JOIN dbo.Uses ON Register.Subject_id = Uses.Subject_id
-	WHERE Student_id = @studentSsn AND Semester_id = @semesterId
+	WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;
 
 --iv4
 GO
 CREATE PROCEDURE ClassOfSubject(
-	@studentSsn AS VARCHAR(10),
+	@studentId AS VARCHAR(10),
 	@semesterId AS VARCHAR(10)
 )
 AS
@@ -350,13 +422,13 @@ BEGIN
 	FROM dbo.Class
 	WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon
 							FROM dbo.Register
-							WHERE Student_id = @studentSsn AND Semester_id = @semesterId)
+							WHERE Student_id = @studentId AND Semester_id = @semesterId)
 END;
 
 --iv.5
 GO
 CREATE PROCEDURE ClassOfSubjectMoreThan1Teacher(
-	@studentSsn AS VARCHAR(10),
+	@studentId AS VARCHAR(10),
 	@semesterId AS VARCHAR(10)
 )
 AS
@@ -365,7 +437,7 @@ BEGIN
 	FROM dbo.Responsible
 	WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon
 							FROM dbo.Register
-							WHERE Student_id = @studentSsn AND Semester_id = @semesterId)
+							WHERE Student_id = @studentId AND Semester_id = @semesterId)
 	GROUP BY Subject_id, Class_id
 	HAVING COUNT(DISTINCT Teacher_ssn) > 1
 END;
@@ -373,39 +445,39 @@ END;
 --iv.6
 GO
 CREATE PROCEDURE SumCredit(
-	@studentSsn AS VARCHAR(10),
+	@studentId AS VARCHAR(10),
 	@semesterId AS VARCHAR(10)
 )
 AS
 BEGIN
 	SELECT SUM(DISTINCT credit)
 	FROM dbo.Register JOIN dbo.Subject ON Subject_id = id
-	WHERE Student_id = @studentSsn AND Semester_id = @semesterId
+	WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;
 
 --iv.7
 GO
 CREATE PROCEDURE SumSubject(
-	@studentSsn AS VARCHAR(10),
+	@studentId AS VARCHAR(10),
 	@semesterId AS VARCHAR(10)
 )
 AS
 BEGIN
 	SELECT SUM(DISTINCT Subject_id)
 	FROM dbo.Register
-	WHERE Student_id = @studentSsn AND Semester_id = @semesterId
+	WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;
 
 --iv.8
 GO
 CREATE PROCEDURE First3MaxCredit(
-	@studentSsn AS VARCHAR(10)
+	@studentId AS VARCHAR(10)
 )
 AS
 BEGIN
 	SELECT TOP 3 Semester_id, SUM(DISTINCT credit)
 	FROM dbo.Register JOIN dbo.Subject ON Subject_id = id
-	WHERE Student_id = @studentSsn
+	WHERE Student_id = @studentId
 	GROUP BY Semester_id
 	ORDER BY SUM(DISTINCT credit)
 END;
