@@ -13,15 +13,15 @@ CREATE TABLE Class_Registration.dbo.EducationAgency(
 
 /*Create Study Office*/
 CREATE TABLE Class_Registration.dbo.StudyOffice(
-	eaId varchar(10) PRIMARY KEY,
-	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id) ON DELETE CASCADE
+	id varchar(10) PRIMARY KEY,
+	FOREIGN KEY (id) REFERENCES Class_Registration.dbo.EducationAgency(id) ON DELETE CASCADE
 );
 
 /*Create Department*/
 CREATE TABLE Class_Registration.dbo.Department(
-	eaId varchar(10) PRIMARY KEY,
+	id varchar(10) PRIMARY KEY,
 	[name] varchar(50),
-	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id) ON DELETE CASCADE
+	FOREIGN KEY (id) REFERENCES Class_Registration.dbo.EducationAgency(id) ON DELETE CASCADE
 );
 
 /*Create Employee*/
@@ -194,8 +194,8 @@ CREATE TABLE Class_Registration.dbo.Register(
 CREATE TABLE Class_Registration.dbo.MainResponsible(
 	Semester_id varchar(10),
 	Subject_id varchar(10),
-	MainTeacher_id varchar(10),
-	FOREIGN KEY (MainTeacher_id) REFERENCES Class_Registration.dbo.MainTeacher(id),
+	MainTeacher_ssn varchar(10),
+	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.MainTeacher(ssn),
 	FOREIGN KEY (Semester_id) REFERENCES Class_Registration.dbo.Semester(id),
 	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.Subject(id),
 	PRIMARY KEY (Semester_id, Subject_id)
@@ -219,9 +219,9 @@ CREATE TABLE Class_Registration.dbo.Responsible(
 	Week_id int,
 	Week_Semester_id varchar(10),
 	CHECK(Week_Semester_id = Semester_id),
-	Teacher_id varchar(10),
+	Teacher_ssn varchar(10),
 	FOREIGN KEY (Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Class(Semester_id, Subject_id, id),
-	FOREIGN KEY (Week_id, Week_Semester_id) REFERENCES Class_Registration.dbo.Class(id, Semester_id),
-	FOREIGN KEY (Teacher_id) REFERENCES Class_Registration.dbo.Teacher(id),
+	FOREIGN KEY (Week_id, Week_Semester_id) REFERENCES Class_Registration.dbo.[Week](id, Semester_id),
+	FOREIGN KEY (Teacher_ssn) REFERENCES Class_Registration.dbo.Teacher(ssn),
 	PRIMARY KEY (Semester_id, Subject_id, Class_id, Week_id)
 );
