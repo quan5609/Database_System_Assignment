@@ -22,7 +22,7 @@ CREATE PROCEDURE reponsibleClass(
 AS
 BEGIN
 	SELECT DISTINCT Class_id Ma_lop_hoc,Subject_id Ma_mon_hoc
-	FROM [Week]
+	FROM Responsible
 	WHERE Teacher_ssn = @teacherSsn
 		AND Semester_id = @semesterId;
 END;
@@ -61,7 +61,7 @@ BEGIN
 	SELECT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, Class_id Ma_lop, 
 		Teacher_ssn SSN, firstName Ten, lastName Ho
 			
-	FROM [Week],Employee,Class c,Opens o
+	FROM Responsible,Employee,Class c,Opens o
 	WHERE Teacher_ssn = ssn 
 		AND Class_id = c.id
 		AND c.Subject_id = o.Subject_id
@@ -188,7 +188,7 @@ AS
 BEGIN
 	SELECT DISTINCT Teacher_ssn Ma_giang_vien
 	FROM dbo.Responsible
-	WHERE Semester_Class_id = @semesterId
+	WHERE Semester_id = @semesterId
 END;
 
 GO
@@ -199,7 +199,7 @@ CREATE PROCEDURE ClassOfTeacher(
 )
 AS
 BEGIN
-	SELECT DISTINCT Class_id Ma_lop, Semester_Class_id Ma_hoc_ky, Subject_id Ma_mon
+	SELECT DISTINCT Class_id Ma_lop, Semester_id Ma_hoc_ky, Subject_id Ma_mon
 	FROM dbo.Responsible
 	WHERE Semester_id = @semesterId AND Teacher_ssn = @teacherSsn
 END;
@@ -211,9 +211,9 @@ CREATE PROCEDURE TeacherOfClass(
 )
 AS
 BEGIN
-	SELECT DISTINCT Class_id Ma_lop, Semester_Class_id Ma_hoc_ky, Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
+	SELECT DISTINCT Class_id Ma_lop, Semester_id Ma_hoc_ky, Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
 	FROM dbo.Responsible
-	WHERE Semester_Class_id = @semesterId
+	WHERE Semester_id = @semesterId
 END;
 
 GO
@@ -235,7 +235,7 @@ CREATE PROCEDURE StudentOfClass(
 )
 AS
 BEGIN
-	SELECT Class_id Ma_lop, Subject_id Ma_mon, Student_ssn Ma_sinh_vien
+	SELECT Class_id Ma_lop, Subject_id Ma_mon, Student_id Ma_sinh_vien
 	FROM dbo.Register
 	WHERE Semester_id = @semesterId
 END;
@@ -247,7 +247,7 @@ CREATE PROCEDURE NumStudentOfSemester(
 )
 AS
 BEGIN
-	SELECT COUNT(DISTINCT Student_ssn) Tong_sinh_vien
+	SELECT COUNT(DISTINCT Student_id) Tong_sinh_vien
 	FROM dbo.Register
 	WHERE Semester_id = @semesterId
 END;
@@ -274,12 +274,12 @@ BEGIN
 	SELECT Subject_id 
 	FROM (SELECT Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
 			FROM dbo.Responsible
-			WHERE Semester_Class_id = @semesterId
+			WHERE Semester_id = @semesterId
 			GROUP BY Subject_id) a
 	WHERE a.Num_Of_Tea = (SELECT MAX(Num_Of_Tea) 
 							FROM (SELECT Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
 									FROM dbo.Responsible
-									WHERE Semester_Class_id = @semesterId
+									WHERE Semester_id = @semesterId
 									GROUP BY Subject_id) b)
 END;
 
@@ -291,7 +291,7 @@ CREATE PROCEDURE AvgNumStudent(
 AS
 BEGIN
 	SELECT AVG(a.So_sinh_vien) 
-	FROM (SELECT 100 Semester_id, dbo.Semester.startDate Ngay_bat_dau, COUNT(DISTINCT Student_ssn) So_sinh_vien
+	FROM (SELECT 100 Semester_id, dbo.Semester.startDate Ngay_bat_dau, COUNT(DISTINCT Student_id) So_sinh_vien
 			FROM dbo.Register JOIN dbo.Semester ON Semester_id = dbo.Semester.id
 			WHERE Subject_id = @subjectId AND DATEDIFF(YEAR, startDate, GETDATE()) <= 3
 			GROUP BY Semester_id, startDate) a
