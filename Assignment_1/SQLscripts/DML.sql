@@ -140,3 +140,137 @@ BEGIN
 		AND c.Subject_id = o.Subject_id
 	GROUP BY o.Department_id, c.Subject_id
 END;
+
+--Khoa
+--ii.1
+--ii.2
+--ii.3
+GO
+CREATE PROCEDURE SubjectOnSemester(
+	@semesterId AS varchar(10)
+)
+AS
+BEGIN
+	SELECT Id Ma_mon
+	FROM dbo.Subject JOIN dbo.Opens ON Opens.Subject_id = Subject.id
+	WHERE dbo.Opens.Semester_id = @semesterId
+END;
+
+GO
+--ii.4
+CREATE PROCEDURE TeacherOnSemester(
+	@semesterId AS varchar(10)
+)
+AS
+BEGIN
+	SELECT DISTINCT Teacher_ssn Ma_giang_vien
+	FROM dbo.Responsible
+	WHERE Semester_Class_id = @semesterId
+END;
+
+GO
+--ii.5
+CREATE PROCEDURE ClassOfTeacher(
+	@teacherSsn AS VARCHAR(10),
+	@semesterId AS varchar(10)
+)
+AS
+BEGIN
+	SELECT DISTINCT Class_id Ma_lop, Semester_Class_id Ma_hoc_ky, Subject_id Ma_mon
+	FROM dbo.Responsible
+	WHERE Semester_id = @semesterId AND Teacher_ssn = @teacherSsn
+END;
+
+GO
+--ii.6
+CREATE PROCEDURE TeacherOfClass(
+	@semesterId AS varchar(10)
+)
+AS
+BEGIN
+	SELECT DISTINCT Class_id Ma_lop, Semester_Class_id Ma_hoc_ky, Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
+	FROM dbo.Responsible
+	WHERE Semester_Class_id = @semesterId
+END;
+
+GO
+--ii.7
+CREATE PROCEDURE BookOfSubject(
+	@semesterId AS varchar(10)
+)
+AS
+BEGIN
+	SELECT DISTINCT Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh
+	FROM dbo.Uses
+	WHERE Subject_id = (SELECT Subject_id FROM dbo.Opens WHERE Semester_id = @semesterId)
+END;
+
+GO
+--ii.8
+CREATE PROCEDURE StudentOfClass(
+	@semesterId AS varchar(10)
+)
+AS
+BEGIN
+	SELECT Class_id Ma_lop, Subject_id Ma_mon, Student_ssn Ma_sinh_vien
+	FROM dbo.Register
+	WHERE Semester_id = @semesterId
+END;
+
+GO
+--ii.9
+CREATE PROCEDURE NumStudentOfSemester(
+	@semesterId AS varchar(10)
+)
+AS
+BEGIN
+	SELECT COUNT(DISTINCT Student_ssn) Tong_sinh_vien
+	FROM dbo.Register
+	WHERE Semester_id = @semesterId
+END;
+
+GO
+--ii.10
+CREATE PROCEDURE NumClassOfSemester(
+	@semesterId AS varchar(10)
+)
+AS
+BEGIN
+	SELECT COUNT(*) Tong_lop
+	FROM dbo.Class
+	WHERE Semester_id = @semesterId
+END;
+
+--ii.11
+GO
+CREATE PROCEDURE SubjectHavingMaxTeacher(
+	@semesterId AS varchar(10)
+)
+AS
+BEGIN
+	SELECT Subject_id 
+	FROM (SELECT Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
+			FROM dbo.Responsible
+			WHERE Semester_Class_id = @semesterId
+			GROUP BY Subject_id) a
+	WHERE a.Num_Of_Tea = (SELECT MAX(Num_Of_Tea) 
+							FROM (SELECT Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
+									FROM dbo.Responsible
+									WHERE Semester_Class_id = @semesterId
+									GROUP BY Subject_id) b)
+END;
+
+GO
+--ii.12
+CREATE PROCEDURE AvgNumStudent(
+	@subjectId AS VARCHAR(10)
+)
+AS
+BEGIN
+	SELECT AVG(a.So_sinh_vien) 
+	FROM (SELECT 100 Semester_id, dbo.Semester.startDate Ngay_bat_dau, COUNT(DISTINCT Student_ssn) So_sinh_vien
+			FROM dbo.Register JOIN dbo.Semester ON Semester_id = dbo.Semester.id
+			WHERE Subject_id = @subjectId AND DATEDIFF(YEAR, startDate, GETDATE()) <= 3
+			GROUP BY Semester_id, startDate) a
+END;
+
