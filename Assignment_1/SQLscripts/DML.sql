@@ -297,3 +297,115 @@ BEGIN
 			GROUP BY Semester_id, startDate) a
 END;
 
+--Sinh vien
+--iv.1
+GO
+CREATE PROCEDURE RegisterSubject(
+	@studentSsn AS VARCHAR(10), 
+	@classId AS VARCHAR(10),
+	@semesterId AS VARCHAR(10),
+	@subjectId AS VARCHAR(10)
+)
+AS
+BEGIN
+	INSERT INTO dbo.Register VALUES (@studentSsn, @classId, @semesterId, @subjectId)
+END;
+
+--iv.2
+GO
+CREATE PROCEDURE SubjectClassTeacher(
+	@studentSsn AS varchar(10)
+)
+AS
+BEGIN
+	SELECT DISTINCT Class_id Ma_lop, Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
+	FROM dbo.Responsible
+	WHERE Semester_id IN (SELECT semesterId 
+								FROM dbo.StudyStatus
+								WHERE [sid] = @studentSsn AND [status] = 'nomal')
+END;
+
+--iv.3
+GO
+CREATE PROCEDURE SubjectReferenceBook(
+	@studentSsn AS varchar(10),
+	@semesterId AS VARCHAR(10)
+)
+AS
+BEGIN
+	SELECT DISTINCT Register.Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh
+	FROM dbo.Register JOIN dbo.Uses ON Register.Subject_id = Uses.Subject_id
+	WHERE Student_id = @studentSsn AND Semester_id = @semesterId
+END;
+
+--iv4
+GO
+CREATE PROCEDURE ClassOfSubject(
+	@studentSsn AS VARCHAR(10),
+	@semesterId AS VARCHAR(10)
+)
+AS
+BEGIN
+	SELECT Subject_id Ma_mon, id Ma_lop
+	FROM dbo.Class
+	WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon
+							FROM dbo.Register
+							WHERE Student_id = @studentSsn AND Semester_id = @semesterId)
+END;
+
+--iv.5
+GO
+CREATE PROCEDURE ClassOfSubjectMoreThan1Teacher(
+	@studentSsn AS VARCHAR(10),
+	@semesterId AS VARCHAR(10)
+)
+AS
+BEGIN
+	SELECT Subject_id Ma_mon, Class_id Ma_lop
+	FROM dbo.Responsible
+	WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon
+							FROM dbo.Register
+							WHERE Student_id = @studentSsn AND Semester_id = @semesterId)
+	GROUP BY Subject_id, Class_id
+	HAVING COUNT(DISTINCT Teacher_ssn) > 1
+END;
+
+--iv.6
+GO
+CREATE PROCEDURE SumCredit(
+	@studentSsn AS VARCHAR(10),
+	@semesterId AS VARCHAR(10)
+)
+AS
+BEGIN
+	SELECT SUM(DISTINCT credit)
+	FROM dbo.Register JOIN dbo.Subject ON Subject_id = id
+	WHERE Student_id = @studentSsn AND Semester_id = @semesterId
+END;
+
+--iv.7
+GO
+CREATE PROCEDURE SumSubject(
+	@studentSsn AS VARCHAR(10),
+	@semesterId AS VARCHAR(10)
+)
+AS
+BEGIN
+	SELECT SUM(DISTINCT Subject_id)
+	FROM dbo.Register
+	WHERE Student_id = @studentSsn AND Semester_id = @semesterId
+END;
+
+--iv.8
+GO
+CREATE PROCEDURE First3MaxCredit(
+	@studentSsn AS VARCHAR(10)
+)
+AS
+BEGIN
+	SELECT TOP 3 Semester_id, SUM(DISTINCT credit)
+	FROM dbo.Register JOIN dbo.Subject ON Subject_id = id
+	WHERE Student_id = @studentSsn
+	GROUP BY Semester_id
+	ORDER BY SUM(DISTINCT credit)
+END;
