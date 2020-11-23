@@ -1,6 +1,4 @@
--- 												(i) PDT
--- *****************************************************************************************************************
-
+-- PDT
 --(i.1). Cap nhat dang ki mon hoc cua cac lop.
 --(i.2). Xem danh sach lop da duoc dang ky boi mot sinh vien o mot hoc ky.
 CREATE PROCEDURE registeredClass(
@@ -24,7 +22,7 @@ CREATE PROCEDURE reponsibleClass(
 AS
 BEGIN
 	SELECT DISTINCT Class_id Ma_lop_hoc,Subject_id Ma_mon_hoc
-	FROM Responsible
+	FROM [Week]
 	WHERE Teacher_ssn = @teacherSsn
 		AND Semester_id = @semesterId;
 END;
@@ -63,7 +61,7 @@ BEGIN
 	SELECT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, Class_id Ma_lop, 
 		Teacher_ssn SSN, firstName Ten, lastName Ho
 			
-	FROM Responsible,Employee,Class c,Opens o
+	FROM [Week],Employee,Class c,Opens o
 	WHERE Teacher_ssn = ssn 
 		AND Class_id = c.id
 		AND c.Subject_id = o.Subject_id
@@ -143,9 +141,7 @@ BEGIN
 	GROUP BY o.Department_id, c.Subject_id
 END;
 
--- 												(ii) Khoa
--- *****************************************************************************************************************
-
+--Khoa
 --ii.1
 GO
 CREATE PROCEDURE UpdateSubject(
@@ -174,7 +170,8 @@ END;
 --ii.3
 GO
 CREATE PROCEDURE SubjectOnSemester(
-	@semesterId AS varchar(10)
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
 )
 AS
 BEGIN
@@ -186,13 +183,14 @@ END;
 GO
 --ii.4
 CREATE PROCEDURE TeacherOnSemester(
-	@semesterId AS varchar(10)
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
 )
 AS
 BEGIN
 	SELECT DISTINCT Teacher_ssn Ma_giang_vien
-	FROM dbo.Responsible
-	WHERE Semester_id = @semesterId
+	FROM dbo.Responsible JOIN dbo.Teacher ON Teacher.ssn = Responsible.Teacher_ssn
+	WHERE Semester_id = @semesterId AND dId = @departmentId
 END;
 
 GO
@@ -211,80 +209,86 @@ END;
 GO
 --ii.6
 CREATE PROCEDURE TeacherOfClass(
-	@semesterId AS varchar(10)
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
 )
 AS
 BEGIN
-	SELECT DISTINCT Class_id Ma_lop, Semester_id Ma_hoc_ky, Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
-	FROM dbo.Responsible
-	WHERE Semester_id = @semesterId
+	SELECT DISTINCT Class_id Ma_lop, dbo.Responsible.Semester_id Ma_hoc_ky, dbo.Responsible.Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
+	FROM dbo.Responsible JOIN dbo.Opens ON Opens.Semester_id = Responsible.Semester_id AND Opens.Subject_id = Responsible.Subject_id
+	WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
 END;
 
 GO
 --ii.7
 CREATE PROCEDURE BookOfSubject(
-	@semesterId AS varchar(10)
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
 )
 AS
 BEGIN
 	SELECT DISTINCT Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh
 	FROM dbo.Uses
-	WHERE Subject_id = (SELECT Subject_id FROM dbo.Opens WHERE Semester_id = @semesterId)
+	WHERE Subject_id IN (SELECT Subject_id FROM dbo.Opens WHERE Semester_id = @semesterId AND Department_id = @departmentId)
 END;
 
 GO
 --ii.8
 CREATE PROCEDURE StudentOfClass(
-	@semesterId AS varchar(10)
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
 )
 AS
 BEGIN
-	SELECT Class_id Ma_lop, Subject_id Ma_mon, Student_id Ma_sinh_vien
-	FROM dbo.Register
-	WHERE Semester_id = @semesterId
+	SELECT Class_id Ma_lop, dbo.Register.Subject_id Ma_mon, Student_id Ma_sinh_vien
+	FROM dbo.Register JOIN dbo.Opens ON Opens.Semester_id = Register.Semester_id AND Opens.Subject_id = Register.Subject_id
+	WHERE dbo.Register.Semester_id = @semesterId AND Department_id = @departmentId
 END;
 
 GO
 --ii.9
 CREATE PROCEDURE NumStudentOfSemester(
-	@semesterId AS varchar(10)
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
 )
 AS
 BEGIN
 	SELECT COUNT(DISTINCT Student_id) Tong_sinh_vien
-	FROM dbo.Register
-	WHERE Semester_id = @semesterId
+	FROM dbo.Register JOIN dbo.Student ON Student.id = Register.Student_id
+	WHERE Semester_id = @semesterId AND dId = @departmentId
 END;
 
 GO
 --ii.10
 CREATE PROCEDURE NumClassOfSemester(
-	@semesterId AS varchar(10)
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
 )
 AS
 BEGIN
 	SELECT COUNT(*) Tong_lop
-	FROM dbo.Class
-	WHERE Semester_id = @semesterId
+	FROM dbo.Class JOIN dbo.Opens ON Opens.Semester_id = Class.Semester_id AND Opens.Subject_id = Class.Subject_id
+	WHERE dbo.Class.Semester_id = @semesterId AND Department_id = @departmentId
 END;
 
 --ii.11
 GO
 CREATE PROCEDURE SubjectHavingMaxTeacher(
-	@semesterId AS varchar(10)
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
 )
 AS
 BEGIN
 	SELECT Subject_id 
-	FROM (SELECT Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
-			FROM dbo.Responsible
-			WHERE Semester_id = @semesterId
-			GROUP BY Subject_id) a
+	FROM (SELECT dbo.Responsible.Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
+			FROM dbo.Responsible JOIN dbo.Opens ON Opens.Subject_id = Responsible.Subject_id AND Opens.Semester_id = Responsible.Semester_id 
+			WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
+			GROUP BY dbo.Responsible.Subject_id) a
 	WHERE a.Num_Of_Tea = (SELECT MAX(Num_Of_Tea) 
-							FROM (SELECT Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
-									FROM dbo.Responsible
-									WHERE Semester_id = @semesterId
-									GROUP BY Subject_id) b)
+							FROM (SELECT dbo.Responsible.Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
+									FROM dbo.Responsible JOIN dbo.Opens ON Opens.Subject_id = Responsible.Subject_id AND Opens.Semester_id = Responsible.Semester_id
+									WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
+									GROUP BY dbo.Responsible.Subject_id) b)
 END;
 
 GO
