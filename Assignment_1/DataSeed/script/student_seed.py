@@ -23,7 +23,7 @@ for suffix in suffix_seed:
             len(firstname_seed), size=1)[0]]
 
         department = np.random.randint(11, size=1)[0]
-        department = 'D'+str(department + 1)
+        department = str(department + 1)
         if np.random.uniform() < status_rate:
             student_status = False
         else:

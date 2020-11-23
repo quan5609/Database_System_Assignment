@@ -67,7 +67,7 @@ CREATE TABLE Class_Registration.dbo.MainTeacher(
 
 /*Create Student*/
 CREATE TABLE Class_Registration.dbo.Student(
-	id varchar(10) PRIMARY KEY,
+	ssn varchar(10) PRIMARY KEY,
 	firstName varchar(50),
 	lastName varchar(50),
 );
@@ -85,7 +85,7 @@ CREATE TABLE Class_Registration.dbo.StudyStatus(
 	semesterId varchar(10),
 	[status] varchar(50),
 	CHECK ([status] in ('normal','pause','stop')),
-	FOREIGN KEY ([sid]) REFERENCES Class_Registration.dbo.Student(id) ON DELETE CASCADE,
+	FOREIGN KEY ([sid]) REFERENCES Class_Registration.dbo.Student(ssn) ON DELETE CASCADE,
 	FOREIGN KEY (semesterId) REFERENCES Class_Registration.dbo.Semester(id) ON DELETE CASCADE,
 	PRIMARY KEY ([sid],semesterId),
 );
@@ -185,7 +185,7 @@ CREATE TABLE Class_Registration.dbo.Register(
 	Class_id VARCHAR(10),
 	Semester_id VARCHAR(10),
 	Subject_id VARCHAR(10),
-	FOREIGN KEY (Student_id) REFERENCES Class_Registration.dbo.Student(id),
+	FOREIGN KEY (Student_id) REFERENCES Class_Registration.dbo.Student(ssn),
 	FOREIGN KEY (Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Class(Semester_id, Subject_id, id),
 	PRIMARY KEY (Semester_id, Subject_id, Class_id, Student_id)
 );
