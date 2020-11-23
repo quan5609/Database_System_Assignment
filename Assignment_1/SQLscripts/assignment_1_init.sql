@@ -5,48 +5,46 @@ GO
 
 /*Create Education Agency*/
 CREATE TABLE Class_Registration.dbo.EducationAgency(
+	id varchar(10) PRIMARY KEY,
 	phone varchar(10),
 	departmentLocation varchar(10),
 	email varchar(50),
-	id varchar(10) PRIMARY KEY
 );
 
 /*Create Study Office*/
 CREATE TABLE Class_Registration.dbo.StudyOffice(
-	id varchar(10) PRIMARY KEY,
-	eaId varchar(10),
+	eaId varchar(10) PRIMARY KEY,
 	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id) ON DELETE CASCADE
 );
 
 /*Create Department*/
 CREATE TABLE Class_Registration.dbo.Department(
-	id varchar(10) PRIMARY KEY,
+	eaId varchar(10) PRIMARY KEY,
 	[name] varchar(50),
-	eaId varchar(10),
 	FOREIGN KEY (eaId) REFERENCES Class_Registration.dbo.EducationAgency(id) ON DELETE CASCADE
 );
 
 /*Create Employee*/
 CREATE TABLE Class_Registration.dbo.Employee(
+	ssn varchar(10) PRIMARY KEY,
 	phone varchar(10),
 	email varchar(50),
 	firstName varchar(50),
 	lastName varchar(50),
-	ssn varchar(10) PRIMARY KEY
 );
 
 /*CREATE Study Office Employee*/
 CREATE TABLE Class_Registration.dbo.StudyOfficeEmployee(
-	soId varchar(10) UNIQUE NOT NULL,
 	ssn varchar(10) PRIMARY KEY,
+	soId varchar(10) NOT NULL,
 	FOREIGN KEY (soId) REFERENCES Class_Registration.dbo.StudyOffice(id) ON DELETE CASCADE,
 	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn) ON DELETE CASCADE,
 );
 
 /*Create Department Employee*/
 CREATE TABLE Class_Registration.dbo.DepartmentEmployee(
-	dId varchar(10) UNIQUE NOT NULL,
 	ssn varchar(10) PRIMARY KEY,
+	dId varchar(10)  NOT NULL,
 	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id) ON DELETE CASCADE,
 	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn) ON DELETE CASCADE,
 );
@@ -54,9 +52,9 @@ CREATE TABLE Class_Registration.dbo.DepartmentEmployee(
 
 /*Create Teacher*/
 CREATE TABLE Class_Registration.dbo.Teacher(
-	studyDegree varchar(50),
-	dId varchar(10) UNIQUE NOT NULL,
 	ssn varchar(10) PRIMARY KEY,
+	studyDegree varchar(50),
+	dId varchar(10) NOT NULL,
 	FOREIGN KEY (dId) REFERENCES Class_Registration.dbo.Department(id) ON DELETE CASCADE,
 	FOREIGN KEY (ssn) REFERENCES Class_Registration.dbo.Employee(ssn) ON DELETE CASCADE
 );
@@ -87,8 +85,9 @@ CREATE TABLE Class_Registration.dbo.StudyStatus(
 	semesterId varchar(10),
 	[status] varchar(50),
 	CHECK ([status] in ('normal','pause','stop')),
-	FOREIGN KEY ([sid]) REFERENCES Class_Registration.dbo.Student(id),
-	PRIMARY KEY ([sid],semesterId,[status]),
+	FOREIGN KEY ([sid]) REFERENCES Class_Registration.dbo.Student(id) ON DELETE CASCADE,
+	FOREIGN KEY (semesterId) REFERENCES Class_Registration.dbo.Semester(id) ON DELETE CASCADE,
+	PRIMARY KEY ([sid],semesterId),
 );
 
 /*Create Subject*/
@@ -192,20 +191,37 @@ CREATE TABLE Class_Registration.dbo.Register(
 );
 
 --Relationship: main responsible
-ALTER TABLE Class_Registration.dbo.Class
-ADD 
-	MainTeacher_ssn VARCHAR(10) NOT NULL,
-	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.MainTeacher(ssn) ON DELETE CASCADE
+CREATE TABLE Class_Registration.dbo.MainResponsible(
+	Semester_id varchar(10),
+	Subject_id varchar(10),
+	MainTeacher_id varchar(10),
+	FOREIGN KEY (MainTeacher_id) REFERENCES Class_Registration.dbo.MainTeacher(id),
+	FOREIGN KEY (Semester_id) REFERENCES Class_Registration.dbo.Semester(id),
+	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.Subject(id),
+	PRIMARY KEY (Semester_id, Subject_id)
+);
 
 
 --Weak Entity: Week
 CREATE TABLE Class_Registration.dbo.[Week](
-	Teacher_ssn VARCHAR(10),
+	id int,
+	Semester_id varchar(10),
+	startDate date,
+	FOREIGN KEY (Semester_id) REFERENCES Class_Registration.dbo.Semester(id),
+	PRIMARY KEY (id, Semester_id)
+);
+
+--Relationship: Responsible
+CREATE TABLE Class_Registration.dbo.Responsible(
 	Semester_id varchar(10),
 	Subject_id varchar(10),
-	Class_id VARCHAR(10),
-	[week] INT,
+	Class_id varchar(10),
+	Week_id int,
+	Week_Semester_id varchar(10),
+	CHECK(Week_Semester_id = Semester_id),
+	Teacher_id varchar(10),
 	FOREIGN KEY (Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Class(Semester_id, Subject_id, id),
-	FOREIGN KEY (Teacher_ssn) REFERENCES Class_Registration.dbo.Teacher(ssn),
-	PRIMARY KEY (Semester_id, Subject_id, Class_id, [week])
-);	
+	FOREIGN KEY (Week_id, Week_Semester_id) REFERENCES Class_Registration.dbo.Class(id, Semester_id),
+	FOREIGN KEY (Teacher_id) REFERENCES Class_Registration.dbo.Teacher(id),
+	PRIMARY KEY (Semester_id, Subject_id, Class_id, Week_id)
+);
