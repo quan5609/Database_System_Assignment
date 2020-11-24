@@ -208,7 +208,7 @@ END;
 -- 												(ii) Khoa
 -- *****************************************************************************************************************
 
---ii.1
+--ii.1: Cap nhat danh sach mon hoc duoc mo truoc dau moi hoc ky.
 GO
 CREATE PROCEDURE UpdateSubject(
 	@semesterId AS varchar(10),
@@ -219,7 +219,7 @@ AS
 BEGIN
 	INSERT INTO dbo.Opens VALUES(@semesterId, @subjectId, @departmentId)
 END;
---ii.2
+--ii.2: Cap nhat danh sach giang vien phu trach moi lop hoc duoc mo truoc dau moi hoc ky.
 GO
 
 CREATE PROCEDURE UpdateTeacherOfClass(
@@ -233,7 +233,7 @@ AS
 BEGIN
 	INSERT INTO dbo.Responsible VALUES(@semesterId, @subjectId, @classId, @weekId, @semesterId, @teacherSsn)
 END;
---ii.3
+--ii.3: Xem danh sach mon hoc o mot hoc ky.
 GO
 CREATE PROCEDURE SubjectOnSemester(
 	@semesterId AS varchar(10),
@@ -247,7 +247,7 @@ BEGIN
 END;
 
 GO
---ii.4
+--ii.4: Xem danh sach giang vien o mot hoc ky.
 CREATE PROCEDURE TeacherOnSemester(
 	@semesterId AS varchar(10),
 	@departmentId AS VARCHAR(10)
@@ -260,7 +260,7 @@ BEGIN
 END;
 
 GO
---ii.5
+--ii.5: Xem danh sach lop duoc phu trach boi mot giang vien o mot hoc ky.
 CREATE PROCEDURE ClassOfTeacher(
 	@teacherSsn AS VARCHAR(10),
 	@semesterId AS varchar(10)
@@ -273,7 +273,7 @@ BEGIN
 END;
 
 GO
---ii.6
+--ii.6: Xem danh sach giang vien phu trach o moi lop o mot hoc ky.
 CREATE PROCEDURE TeacherOfClass(
 	@semesterId AS varchar(10),
 	@departmentId AS VARCHAR(10)
@@ -286,7 +286,7 @@ BEGIN
 END;
 
 GO
---ii.7
+--ii.7: Xem cac giao trinh duoc chi dinh cho moi mon hoc o mot hoc ky.
 CREATE PROCEDURE BookOfSubject(
 	@semesterId AS varchar(10),
 	@departmentId AS VARCHAR(10)
@@ -299,7 +299,7 @@ BEGIN
 END;
 
 GO
---ii.8
+--ii.8: Xem danh sach sinh vien dang ky cho moi lop o mot hoc ky.
 CREATE PROCEDURE StudentOfClass(
 	@semesterId AS varchar(10),
 	@departmentId AS VARCHAR(10)
@@ -312,7 +312,7 @@ BEGIN
 END;
 
 GO
---ii.9
+--ii.9: Xem tong so sinh vien dang ky o mot hoc ky.
 CREATE PROCEDURE NumStudentOfSemester(
 	@semesterId AS varchar(10),
 	@departmentId AS VARCHAR(10)
@@ -325,7 +325,7 @@ BEGIN
 END;
 
 GO
---ii.10
+--ii.10: Xem tong so lop duoc mo o mot hoc ky.
 CREATE PROCEDURE NumClassOfSemester(
 	@semesterId AS varchar(10),
 	@departmentId AS VARCHAR(10)
@@ -337,7 +337,7 @@ BEGIN
 	WHERE dbo.Class.Semester_id = @semesterId AND Department_id = @departmentId
 END;
 
---ii.11
+--ii.11: Xem nhung mon co nhieu giang vien cung phu trach nhat o mot hoc ky.
 GO
 CREATE PROCEDURE SubjectHavingMaxTeacher(
 	@semesterId AS varchar(10),
@@ -358,7 +358,7 @@ BEGIN
 END;
 
 GO
---ii.12
+--ii.12: Xem so sinh vien dang ky trung binh trong 3 nam gan nhat cho mot mon hoc o mot hoc ky.
 CREATE PROCEDURE AvgNumStudent(
 	@subjectId AS VARCHAR(10)
 )
@@ -498,7 +498,7 @@ END;
 -- 												(iv) Sinh vien
 -- *****************************************************************************************************************
 
---iv.1
+--iv.1: Dang ky mon hoc o hoc ky duoc dang ky.
 GO
 CREATE PROCEDURE RegisterSubject(
 	@studentId AS VARCHAR(10), 
@@ -511,7 +511,7 @@ BEGIN
 	INSERT INTO dbo.Register VALUES (@studentId, @classId, @semesterId, @subjectId)
 END;
 
---iv.2
+--iv.2: Xem danh sach mon hoc, lop hoc, va cac giang vien phu trach cho moi lop cua moi mon hoc o hoc ky duoc dang ky.
 GO
 CREATE PROCEDURE SubjectClassTeacher(
 	@studentId AS varchar(10)
@@ -525,7 +525,7 @@ BEGIN
 								WHERE [sid] = @studentId AND [status] = 'nomal')
 END;
 
---iv.3
+--iv.3: Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc ma minh dang ky o mot hoc ky.
 GO
 CREATE PROCEDURE SubjectReferenceBook(
 	@studentId AS varchar(10),
@@ -538,7 +538,7 @@ BEGIN
 	WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;
 
---iv4
+--iv4: Xem danh sach lop hoc cua moi mon hoc ma minh dang ky o mot hoc ky.  
 GO
 CREATE PROCEDURE ClassOfSubject(
 	@studentId AS VARCHAR(10),
@@ -553,7 +553,7 @@ BEGIN
 							WHERE Student_id = @studentId AND Semester_id = @semesterId)
 END;
 
---iv.5
+--iv.5: Xem danh sach lop hoc cua moi mon hoc ma minh dang ky co nhieu hon 1 giang vien phu trach o mot hoc ky.
 GO
 CREATE PROCEDURE ClassOfSubjectMoreThan1Teacher(
 	@studentId AS VARCHAR(10),
@@ -570,7 +570,7 @@ BEGIN
 	HAVING COUNT(DISTINCT Teacher_ssn) > 1
 END;
 
---iv.6
+--iv.6: Xem tong so tin chi da dang ky duoc o mot hoc ky.
 GO
 CREATE PROCEDURE SumCredit(
 	@studentId AS VARCHAR(10),
@@ -583,7 +583,7 @@ BEGIN
 	WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;
 
---iv.7
+--iv.7: Xem tong so mon hoc da dang ky duoc o mot hoc ky.
 GO
 CREATE PROCEDURE SumSubject(
 	@studentId AS VARCHAR(10),
@@ -596,7 +596,7 @@ BEGIN
 	WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;
 
---iv.8
+--iv.8: Xem 3 hoc ky co so tong so tin chi cao nhat ma minh da tung dang ky.
 GO
 CREATE PROCEDURE First3MaxCredit(
 	@studentId AS VARCHAR(10)
