@@ -1,3 +1,5 @@
+USE Class_Registration
+GO
 -- 												(i) PDT
 -- *****************************************************************************************************************
 
@@ -93,12 +95,15 @@ END;
 
 GO
 --(i.4). Xem danh sach mon hoc duoc dang ky o moi hoc ky o moi khoa.
-CREATE PROCEDURE listClass
+CREATE PROCEDURE listClass(
+	@departmentId AS varchar(10),
+	@semesterId AS varchar(10)
+)
 AS
 BEGIN
-	SELECT DISTINCT Department_id Ma_khoa, Semester_id Ma_hoc_ky, Subject_id Ma_mon_hoc
+	SELECT Subject_id Ma_mon_hoc
 	FROM Opens
-	GROUP BY Department_id,Semester_id,Subject_id
+	WHERE Department_id = @departmentId  AND Semester_id = @semesterId
 END;
 
 GO
@@ -107,14 +112,14 @@ CREATE PROCEDURE listStudent
 AS
 BEGIN
 	SELECT Department_id Ma_khoa, c.Semester_id Ma_hoc_ky, 
-			s.Id,firstName Ten, lastName Ho
+			s.ssn,firstName Ten, lastName Ho
 			
 	FROM Student s, Register, Class c, Opens o
-	WHERE s.Id = Student_id 
+	WHERE s.ssn = Student_id 
 		AND Class_id = c.id
 		AND c.Semester_id = o.Semester_id
 		AND c.Subject_id = o.Subject_id
-	GROUP BY Department_id, c.Semester_id,s.id,firstName,lastName
+	GROUP BY Department_id, c.Semester_id,s.ssn,firstName,lastName
 END;
 
 GO
@@ -134,15 +139,15 @@ END;
 
 GO
 --(i.7). Xem cac giao trinh duoc chi dinh cho moi mon hoc o moi hoc ky o moi khoa
-CREATE PROCEDURE listReferenceBook
+CREATE PROCEDURE listReferenceBook(
+	@semesterId AS varchar(10),
+	@subjectId AS varchar(10)
+)
 AS
 BEGIN
-	SELECT Department_id Ma_khoa, Semester_id Ma_hoc_ky, 
-			o.Subject_id, [name] Ten_sach
-	FROM Opens o,Uses u,ReferenceBook r
-	WHERE o.Subject_id = u.Subject_id
-		AND u.ReferenceBook_id = r.id
-	GROUP BY Department_id , Semester_id , o.Subject_id, [name]
+	SELECT ReferenceBook_id Ma_sach
+	FROM Uses
+	WHERE Semester_id = @semesterId AND Subject_id = @subjectId
 END;
 
 GO
@@ -320,7 +325,7 @@ CREATE PROCEDURE NumStudentOfSemester(
 AS
 BEGIN
 	SELECT COUNT(DISTINCT Student_id) Tong_sinh_vien
-	FROM dbo.Register JOIN dbo.Student ON Student.id = Register.Student_id
+	FROM dbo.Register JOIN dbo.Student ON Student.ssn = Register.Student_id
 	WHERE Semester_id = @semesterId AND dId = @departmentId
 END;
 
@@ -379,14 +384,15 @@ CREATE PROCEDURE UpdateReferenceBook(
 	@teacherSsn AS varchar(10),
 	@subjectId AS varchar(10),
 	@bookId AS varchar(10),
-	@semesterId AS varchar(10)
+	@semesterId AS varchar(10),
+	@classId AS varchar(10)
 	)
 AS
 BEGIN
 	IF (SELECT COUNT(*) FROM Uses WHERE Subject_id = @subjectId) < 3
 		INSERT INTO Uses 
-		(Subject_id,MainTeacher_ssn,ReferenceBook_id)
-		VALUES (@subjectId, @teacherSsn, @bookId)
+		(Subject_id,Semester_id, Class_id ,ReferenceBook_id, MainTeacher_ssn)
+		VALUES (@subjectId,@semesterId, @classId,  @bookId, @teacherSsn)
 	ELSE 
 		RAISERROR('This subject can not have more than 3 reference books',-1,-1);
 END;
@@ -416,7 +422,7 @@ BEGIN
 	SELECT rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
 	FROM Responsible rp, Register rg, Student st
 	WHERE rp.Class_id = rg.Class_id
-		AND rg.Student_id = st.id
+		AND rg.Student_id = st.ssn
 		AND Teacher_ssn = @teacherSsn
 		AND rp.Semester_id = @semesterId
 	GROUP BY rp.Class_id,Student_id, firstName, lastName
@@ -433,7 +439,7 @@ BEGIN
 	SELECT rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
 	FROM Responsible rp, Register rg, Student st
 	WHERE rp.Class_id = rg.Class_id
-		AND rg.Student_id = st.id
+		AND rg.Student_id = st.ssn
 		AND Teacher_ssn = @teacherSsn
 		AND rp.Semester_id = @semesterId
 	GROUP BY rp.Class_id,Student_id, firstName, lastName
@@ -535,7 +541,7 @@ AS
 BEGIN
 	SELECT DISTINCT Register.Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh
 	FROM dbo.Register JOIN dbo.Uses ON Register.Subject_id = Uses.Subject_id
-	WHERE Student_id = @studentId AND Semester_id = @semesterId
+	WHERE Student_id = @studentId AND Register.Semester_id = @semesterId
 END;
 
 --iv4: Xem danh sach lop hoc cua moi mon hoc ma minh dang ky o mot hoc ky.  
@@ -591,7 +597,7 @@ CREATE PROCEDURE SumSubject(
 )
 AS
 BEGIN
-	SELECT SUM(DISTINCT Subject_id)
+	SELECT COUNT(DISTINCT Subject_id)
 	FROM dbo.Register
 	WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;

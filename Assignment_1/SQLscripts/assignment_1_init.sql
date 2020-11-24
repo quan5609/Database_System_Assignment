@@ -152,11 +152,10 @@ CREATE TABLE Class_Registration.dbo.Uses(
 	Class_id varchar(10),
 	MainTeacher_ssn VARCHAR(10),
 	ReferenceBook_id VARCHAR(10),
-	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.[Subject](id),
 	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.MainTeacher(ssn),
 	FOREIGN KEY (ReferenceBook_id) REFERENCES Class_Registration.dbo.ReferenceBook(id),
 	FOREIGN KEY (Semester_id, Subject_id, Class_id) REFERENCES Class_Registration.dbo.Class(Semester_id, Subject_id, id),
-	PRIMARY KEY (Semester_id, Class_id, Subject_id, MainTeacher_ssn, ReferenceBook_id)
+	PRIMARY KEY (Semester_id, Class_id, Subject_id, ReferenceBook_id)
 );
 
 --Relatiónhship: Write
