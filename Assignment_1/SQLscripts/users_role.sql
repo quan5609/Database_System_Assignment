@@ -95,6 +95,7 @@ GRANT EXECUTE ON OBJECT::removeRegister TO soemployees
 GRANT EXECUTE ON OBJECT::updateRegister TO soemployees
 GRANT EXECUTE ON OBJECT::registeredClass TO soemployees
 GRANT EXECUTE ON OBJECT::reponsibleClass TO soemployees
+GRANT EXECUTE ON OBJECT::listClass TO soemployees
 GRANT EXECUTE ON OBJECT::listStudent TO soemployees
 GRANT EXECUTE ON OBJECT::listTeacher TO soemployees
 GRANT EXECUTE ON OBJECT::listReferenceBook TO soemployees
