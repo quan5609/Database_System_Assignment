@@ -209,7 +209,7 @@ CREATE TABLE Class_Registration.dbo.[Week](
 	id int,
 	Semester_id varchar(10),
 	startDate date,
-	FOREIGN KEY (Semester_id) REFERENCES Class_Registration.dbo.Semester(id),
+	FOREIGN KEY (Semester_id) REFERENCES Class_Registration.dbo.Semester(id) ON DELETE CASCADE,
 	PRIMARY KEY (id, Semester_id)
 );
 
