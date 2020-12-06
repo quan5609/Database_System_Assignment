@@ -54,46 +54,62 @@ ALTER ROLE  teachers
  
 
 --students permission
-GRANT ALL ON OBJECT::Register TO students
-GRANT SELECT ON OBJECT::[Subject] TO students
-GRANT SELECT ON OBJECT::Class TO students
-GRANT SELECT ON OBJECT::Opens TO students
-GRANT SELECT ON OBJECT::Responsible TO students
-GRANT SELECT ON OBJECT::StudyStatus TO students
-GRANT SELECT ON OBJECT::Uses TO students
-GRANT SELECT ON OBJECT::ReferenceBook TO students
-GRANT SELECT ON OBJECT::Author TO students
-GRANT SELECT ON OBJECT::Field TO students
-GRANT SELECT ON OBJECT::Teacher TO students
-GRANT SELECT ON OBJECT::MainTeacher TO students
-GRANT SELECT ON OBJECT::Semester TO students
+GRANT EXECUTE ON OBJECT::RegisterSubject TO students
+GRANT EXECUTE ON OBJECT::SubjectClassTeacher TO students
+GRANT EXECUTE ON OBJECT::SubjectReferenceBook TO students
+GRANT EXECUTE ON OBJECT::ClassOfSubject TO students
+GRANT EXECUTE ON OBJECT::ClassOfSubjectMoreThan1Teacher TO students
+GRANT EXECUTE ON OBJECT::SumCredit TO students
+GRANT EXECUTE ON OBJECT::SumSubject TO students
+GRANT EXECUTE ON OBJECT::First3MaxCredit TO students
 
 
 --teachers permission
-GRANT ALL ON OBJECT::Uses TO teachers
-GRANT SELECT ON SCHEMA::dbo TO teachers
+GRANT EXECUTE ON OBJECT::UpdateReferenceBook TO teachers
+GRANT EXECUTE ON OBJECT::responsibleClasses TO teachers
+GRANT EXECUTE ON OBJECT::studentOfResopnsibleClass TO teachers
+GRANT EXECUTE ON OBJECT::referenceBookOfResponsibleSubject TO teachers
+GRANT EXECUTE ON OBJECT::numOfStudents_ofResponsiblesClass TO teachers
+GRANT EXECUTE ON OBJECT::numOfResponsibleClass_3RecentYear TO teachers
+GRANT EXECUTE ON OBJECT::top5Class_mostStudent TO teachers
+GRANT EXECUTE ON OBJECT::top5Semester_mostClass TO teachers
 
 --department employee permission
-GRANT ALL ON OBJECT::Opens TO deemployees
-GRANT ALL ON OBJECT::Responsible TO deemployees
-GRANT ALL ON OBJECT::MainResponsible TO deemployees
-GRANT SELECT ON SCHEMA::dbo TO deemployees
+GRANT EXECUTE ON OBJECT::UpdateSubject TO deemployees
+GRANT EXECUTE ON OBJECT::UpdateTeacherOfClass TO deemployees
+GRANT EXECUTE ON OBJECT::SubjectOnSemester TO deemployees
+GRANT EXECUTE ON OBJECT::TeacherOnSemester TO deemployees
+GRANT EXECUTE ON OBJECT::ClassOfTeacher TO deemployees
+GRANT EXECUTE ON OBJECT::TeacherOfClass TO deemployees
+GRANT EXECUTE ON OBJECT::BookOfSubject TO deemployees
+GRANT EXECUTE ON OBJECT::StudentOfClass TO deemployees
+GRANT EXECUTE ON OBJECT::NumStudentOfSemester TO deemployees
+GRANT EXECUTE ON OBJECT::NumClassOfSemester TO deemployees
+GRANT EXECUTE ON OBJECT::SubjectHavingMaxTeacher TO deemployees
+GRANT EXECUTE ON OBJECT::AvgNumStudent TO deemployees
 
 
 --study office employee permission
-GRANT ALL ON OBJECT::Register TO soemployees
-GRANT ALL ON OBJECT::Class TO soemployees
-GRANT ALL ON OBJECT::StudyStatus TO soemployees
-GRANT SELECT ON SCHEMA::dbo TO soemployees
-
-
+GRANT EXECUTE ON OBJECT::addRegister TO soemployees
+GRANT EXECUTE ON OBJECT::removeRegister TO soemployees
+GRANT EXECUTE ON OBJECT::updateRegister TO soemployees
+GRANT EXECUTE ON OBJECT::registeredClass TO soemployees
+GRANT EXECUTE ON OBJECT::reponsibleClass TO soemployees
+GRANT EXECUTE ON OBJECT::listStudent TO soemployees
+GRANT EXECUTE ON OBJECT::listTeacher TO soemployees
+GRANT EXECUTE ON OBJECT::listReferenceBook TO soemployees
+GRANT EXECUTE ON OBJECT::numOfSubjects TO soemployees
+GRANT EXECUTE ON OBJECT::numOfClasses TO soemployees
+GRANT EXECUTE ON OBJECT::numOfStudents_class_sem TO soemployees
+GRANT EXECUTE ON OBJECT::numOfStudents_sub_sem TO soemployees
+GRANT EXECUTE ON OBJECT::numOfStudents_sub_dep TO soemployees
 
 
 
 /*USE Class_Registration
 
-SELECT * FROM Employee
-SELECT * FROM sys.database_principals
+EXECUTE * FROM Employee
+EXECUTE * FROM sys.database_principals
 DROP ROLE students
 DROP ROLE soemployees
 DROP ROLE deemployees
