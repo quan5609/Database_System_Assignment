@@ -199,7 +199,7 @@ CREATE TABLE Class_Registration.dbo.MainResponsible(
 	MainTeacher_ssn varchar(10),
 	FOREIGN KEY (MainTeacher_ssn) REFERENCES Class_Registration.dbo.MainTeacher(ssn),
 	FOREIGN KEY (Semester_id) REFERENCES Class_Registration.dbo.Semester(id),
-	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.Subject(id),
+	FOREIGN KEY (Subject_id) REFERENCES Class_Registration.dbo.[Subject](id),
 	PRIMARY KEY (Semester_id, Subject_id)
 );
 
