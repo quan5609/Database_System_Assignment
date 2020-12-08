@@ -1,0 +1,4 @@
+-- Check for number of students of a class less than or equal 60
+-- Check for total participation of Reference Book 
+-- Check for total participation of Main Teacher 
+-- Check for total participation of Class
