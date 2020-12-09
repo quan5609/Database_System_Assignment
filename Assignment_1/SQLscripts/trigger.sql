@@ -52,22 +52,6 @@ BEGIN
     END
 END
 
-DROP TRIGGER IF EXISTS total_participation_reference_book_3
-GO
-CREATE TRIGGER total_participation_reference_book_3 ON ReferenceBook
-AFTER INSERT,DELETE,UPDATE
-AS
-BEGIN
-    IF EXISTS
-        ((SELECT DISTINCT ID FROM ReferenceBook)
-        EXCEPT
-        (SELECT DISTINCT BOOK_ID ID FROM WRITE))
-    BEGIN
-        RAISERROR ('Reference Book must be written by (an) author',-1,-1)
-        ROLLBACK TRANSACTION
-    END
-END
-
 -- Check for total participation of Main Teacher 
 DROP TRIGGER IF EXISTS total_participation_main_teacher_1
 GO
