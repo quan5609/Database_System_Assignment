@@ -70,7 +70,7 @@ def login():
             token = encode_auth_token(username, role).decode("utf-8")
             return Response(
                 response=json.dumps({'token': token}),
-                status=400,
+                status=200,
                 mimetype='application/json'
             )
         else:
