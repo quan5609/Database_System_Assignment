@@ -246,9 +246,9 @@ CREATE PROCEDURE SubjectOnSemester(
 )
 AS
 BEGIN
-	SELECT Id Ma_mon
+	SELECT DISTINCT Id Ma_mon
 	FROM dbo.Subject JOIN dbo.Opens ON Opens.Subject_id = Subject.id
-	WHERE dbo.Opens.Semester_id = @semesterId
+	WHERE dbo.Opens.Semester_id = @semesterId AND dbo.Opens.Department_id = @departmentId
 END;
 
 GO
@@ -311,7 +311,7 @@ CREATE PROCEDURE StudentOfClass(
 )
 AS
 BEGIN
-	SELECT Class_id Ma_lop, dbo.Register.Subject_id Ma_mon, Student_id Ma_sinh_vien
+	SELECT DISTINCT Class_id Ma_lop, dbo.Register.Subject_id Ma_mon, Student_id Ma_sinh_vien
 	FROM dbo.Register JOIN dbo.Opens ON Opens.Semester_id = Register.Semester_id AND Opens.Subject_id = Register.Subject_id
 	WHERE dbo.Register.Semester_id = @semesterId AND Department_id = @departmentId
 END;
@@ -524,7 +524,7 @@ CREATE PROCEDURE SubjectClassTeacher(
 )
 AS
 BEGIN
-	SELECT DISTINCT Class_id Ma_lop, Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
+	SELECT DISTINCT Semester_id Ma_hoc_ky,Class_id Ma_lop, Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
 	FROM dbo.Responsible
 	WHERE Semester_id IN (SELECT semesterId 
 								FROM dbo.StudyStatus
