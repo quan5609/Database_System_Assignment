@@ -1,7 +1,5 @@
 class StoredProcedure():
     def __init__(self):
-        # self.login = {'username': {'type': 'string', 'required': True},
-        #               'password': {'type': 'sring', 'required': True},
-        #               'role': {'type': 'string', 'required': True}}
+        self.login = 'EXEC login_account ?,?'
 
-        self.register = "register_account ?, ?, ?"
+        self.register = 'EXEC register_account ?, ?, ?'

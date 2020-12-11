@@ -12,13 +12,13 @@ from SQLExec.hello import StoredProcedure
 from BackEnd.app import engine
 from BackEnd.Utils.auth import *
 from BackEnd.Utils.validator import *
+from BackEnd.Utils.execute_sp import *
 
 
 '''Global Variables'''
 hello_blueprint = Blueprint('hello', __name__)
 hello_blueprint_api = Api(hello_blueprint)
 stored_procedure = StoredProcedure()
-cursor = engine.raw_connection().cursor()
 request_schema = Schema()
 
 
@@ -45,27 +45,31 @@ def login():
             status=400
         )
 
-    '''Execute Stored Procedure'''
+    '''Get Request Data'''
     username = req_data['username']
     password = req_data['password']
     role = req_data['role']
 
-    if role == 'student':
-        sql_string = text('SELECT * FROM StudentAccount WHERE ssn = :username')
-    else:
-        sql_string = text(
-            'SELECT * FROM EmployeeAccount WHERE ssn = :username')
+    '''Execute Stored Procedure'''
+    params = [username, role]
+    res = execute_sp(engine, stored_procedure.login, params)
 
-    user = engine.execute(sql_string, username=username).first()
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps('INTERNAL SERVER ERROR'),
+            status=500,
+            mimetype='application/json'
+        )
 
-    if user is None:  # User does not exist
+    if res['payload'] is None:  # User does not exist
         return Response(
             response=json.dumps('User does not exist'),
             status=400,
             mimetype='application/json'
         )
     else:
-        user = dict(user)
+        user = res['payload'][0]
         if check_password(user['password'], password):
             token = encode_auth_token(username, role).decode("utf-8")
             return Response(
@@ -80,13 +84,6 @@ def login():
                 mimetype='application/json'
             )
 
-    response = Response(
-        response=json.dumps('OKE'),
-        status=200,
-        mimetype='application/json'
-    )
-    return response
-
 
 @hello_blueprint.route('/register', methods=['POST'])
 def register():
@@ -94,19 +91,35 @@ def register():
     schema = request_schema.register
     req_data = request.get_json()
 
-    '''Bad request'''
-    if not Validator(schema).validate(req_data):
+    '''Validate Request'''
+    if not validate_request_public(req_data, schema):
         return Response(
             response="Bad Request",
             status=400
         )
 
-    result = cursor.callproc(stored_procedure.register, [
-        req_data['username'], req_data['password'], req_data['role']]).fetchall()
-    cursor.close()
-    engine.commit()
+    '''Get Request Data'''
+    username = req_data['username']
+    password = hash_password(req_data['password'])
+    role = req_data['role']
+
+    '''Execute Stored Procedure'''
+    params = [username, password, role]
+    res = execute_sp(engine, stored_procedure.register,
+                     params, getResult=False)
+
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        print(res)
+        return Response(
+            response=json.dumps('Registration Failed'),
+            status=500,
+            mimetype='application/json'
+        )
+
+    print(res)
     return Response(
-        response=json.dumps(result),
+        response=json.dumps('Your account is ready'),
         status=200,
         mimetype='application/json'
     )
