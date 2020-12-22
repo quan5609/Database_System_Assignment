@@ -11,6 +11,7 @@ CREATE TABLE EmployeeAccount(
 INSERT INTO StudentAccount VALUES ('1600002', '$2b$05$iyllBYFvHiA8skgzZrD16O2AQBUjjrODVg1e5PMQayvnArLc5l4ke')
 INSERT INTO EmployeeAccount VALUES ('depar00003', '$2b$05$iyllBYFvHiA8skgzZrD16O2AQBUjjrODVg1e5PMQayvnArLc5l4ke')
 
+GO 
 CREATE PROCEDURE dbo.login_account 
     @username varchar(10),
     @role varchar(10)
@@ -21,6 +22,7 @@ AS
 		SELECT * FROM EmployeeAccount WHERE ssn = @username 
 RETURN 0 
 
+GO
 CREATE PROCEDURE dbo.register_account 
     @username varchar(10),
 	@password varchar(MAX),
