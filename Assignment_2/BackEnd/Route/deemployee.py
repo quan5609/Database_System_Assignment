@@ -7,12 +7,12 @@ from typing import List, Tuple, Dict, Optional
 
 from BackEnd.Utils.auth import *
 from BackEnd.Utils.validator import *
-from BackEnd.RequestSchema.employee import Schema
-from BackEnd.SQLExec.employee import StoredProcedure
+from BackEnd.RequestSchema.deemployee import Schema
+from BackEnd.SQLExec.deemployee import StoredProcedure
 from BackEnd.app import engine
 
-employee_blueprint = Blueprint('employee', __name__)
-employee_blueprint_api = Api(employee_blueprint)
+deemployee_blueprint = Blueprint('deemployee', __name__)
+deemployee_blueprint_api = Api(deemployee_blueprint)
 request_schema = Schema()
 stored_procedure = StoredProcedure()
 connection = engine.raw_connection()
@@ -20,7 +20,7 @@ connection = engine.raw_connection()
 '''Employee Hello Endpoint'''
 
 
-@employee_blueprint.route('/hello', methods=['GET'])
+@deemployee_blueprint.route('/hello', methods=['GET'])
 def hello():
     '''Define Schema'''
     schema = request_schema.hello
@@ -28,7 +28,6 @@ def hello():
     token = request.headers['Authorization'].split()[1]
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    print(user_info)
 
     '''Validate Request'''
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
