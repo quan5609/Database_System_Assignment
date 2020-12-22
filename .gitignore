@@ -1,1 +1,3 @@
-/Assignment_2/BackEnd/.env
+Pipfile*
+sqltools_*
+.env
