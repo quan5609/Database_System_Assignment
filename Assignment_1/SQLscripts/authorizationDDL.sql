@@ -53,3 +53,6 @@ RETURN 0
 -- EXEC register_account '1600002', '$2b$05$iyllBYFvHiA8skgzZrD16O2AQBUjjrODVg1e5PMQayvnArLc5l4ke', 'student'
 
 -- DROP PROCEDURE register_account
+
+-- DELETE from StudentAccount
+-- select * from StudentAccount
