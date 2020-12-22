@@ -44,7 +44,7 @@ AS
 				INSERT INTO EmployeeAccount VALUES(@username, @password)
 RETURN 0 
 
-EXEC register_account 'depar00003', '$2b$05$iyllBYFvHiA8skgzZrD16O2AQBUjjrODVg1e5PMQayvnArLc5l4ke', 'employee'
+EXEC register_account 'depar00006', '$2b$05$iyllBYFvHiA8skgzZrD16O2AQBUjjrODVg1e5PMQayvnArLc5l4ke', 'employee'
 EXEC register_account '1600002', '$2b$05$iyllBYFvHiA8skgzZrD16O2AQBUjjrODVg1e5PMQayvnArLc5l4ke', 'student'
 
 DROP PROCEDURE register_account
