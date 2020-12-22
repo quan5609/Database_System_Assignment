@@ -39,3 +39,27 @@ def hello():
         mimetype='application/json'
     )
     return response
+
+@student_blueprint.route('/subjects-and-books')
+def subjects_and_books():
+    '''Define Schema'''
+    schema = request_schema.subjects_and_books
+    req_data = request.get_json()
+    token = request.headers['Authorization'].split()[1]
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+
+    '''Validate Request'''
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Execute Stored Procedure'''
+    response = Response(
+        response=json.dumps('OK'),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
