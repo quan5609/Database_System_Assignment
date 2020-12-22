@@ -1,6 +1,11 @@
 import jwt
 import datetime
 import os
+from os.path import join,dirname
+from dotenv import load_dotenv
+dotenv_path = join('..', '.env')
+load_dotenv(dotenv_path)
+
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt()
 
@@ -54,7 +59,7 @@ def check_password(hash_pwd, pwd):
 
 if __name__ == "__main__":
     hash = hash_password('1234')
-    print(hash)
+    # print(hash)
     # print(bcrypt.check_password_hash(hash, '1234'))
-    # print(encode_auth_token(1))
+    # print(encode_auth_token('12','student'))
     # print(decode_auth_token('Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDc1MzA2NzAsImlhdCI6MTYwNzUzMDM3MCwic3ViIjoxfQ.myhM0pygj9YLMYeRkU7-gRP-PS65sioaf99P5Th7H1c'))
