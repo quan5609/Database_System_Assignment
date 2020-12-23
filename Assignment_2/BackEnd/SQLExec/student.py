@@ -10,6 +10,8 @@ class StoredProcedure():
         self.sumSubject = 'EXEC SumSubject ?,?'
         self.first3MaxCredit = 'EXEC First3MaxCredit ?'
 
+        self.getAllStudent = 'SELECT * FROM STUDENT' #draft
+
 """
 CREATE PROCEDURE RegisterSubject(
     @studentId AS VARCHAR(10), 
