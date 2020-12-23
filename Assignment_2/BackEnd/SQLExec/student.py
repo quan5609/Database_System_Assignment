@@ -9,3 +9,46 @@ class StoredProcedure():
         self.sumCredit = 'EXEC SumCredit ?,?'
         self.sumSubject = 'EXEC SumSubject ?,?'
         self.first3MaxCredit = 'EXEC First3MaxCredit ?'
+
+"""
+CREATE PROCEDURE RegisterSubject(
+	@studentId AS VARCHAR(10), 
+	@classId AS VARCHAR(10),
+	@semesterId AS VARCHAR(10),
+	@subjectId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE SubjectClassTeacher(
+	@studentId AS varchar(10)
+)
+
+CREATE PROCEDURE SubjectReferenceBook(
+	@studentId AS varchar(10),
+	@semesterId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE ClassOfSubject(
+	@studentId AS VARCHAR(10),
+	@semesterId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE ClassOfSubjectMoreThan1Teacher(
+	@studentId AS VARCHAR(10),
+	@semesterId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE SumCredit(
+	@studentId AS VARCHAR(10),
+	@semesterId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE SumSubject(
+	@studentId AS VARCHAR(10),
+	@semesterId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE First3MaxCredit(
+	@studentId AS VARCHAR(10)
+)
+
+"""
