@@ -7,6 +7,13 @@ class StoredProcedure():
         self.teacherOnSemester = 'EXEC TeacherOnSemester ?,?'
         self.classOfTeacher = 'EXEC ClassOfTeacher ?,?'
         self.teacherOfClass = 'EXEC TeacherOfClass ?,?'
+		self.bookOfSubject = 'EXEC UpdateSubject ?,?'
+        self.studentOfClass = 'EXEC UpdateTeacherOfClass ?,?'
+        self.numStudentOfSemester = 'EXEC NumStudentOfSemester ?,?'
+        self.numClassOfSemester = 'EXEC TeacherOnSemester ?,?'
+        self.subjectHavingMaxTeacher = 'EXEC ClassOfTeacher ?,?'
+        self.avgNumStudent = 'EXEC TeacherOfClass ?'
+
 
 
 
@@ -45,5 +52,34 @@ CREATE PROCEDURE ClassOfTeacher(
 CREATE PROCEDURE TeacherOfClass(
 	@semesterId AS varchar(10),
 	@departmentId AS VARCHAR(10)
+)
+->
+CREATE PROCEDURE BookOfSubject(
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE StudentOfClass(
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE NumStudentOfSemester(
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE NumClassOfSemester(
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE SubjectHavingMaxTeacher(
+	@semesterId AS varchar(10),
+	@departmentId AS VARCHAR(10)
+)
+
+CREATE PROCEDURE AvgNumStudent(
+	@subjectId AS VARCHAR(10)
 )
 """

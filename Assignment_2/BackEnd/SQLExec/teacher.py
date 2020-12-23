@@ -1,6 +1,6 @@
 class StoredProcedure():
     def __init__(self):
-        self.hello = 'EXEC employee_hello'
+        # self.hello = 'EXEC employee_hello'
         self.updateReferenceBook = 'EXEC UpdateReferenceBook ?,?,?,?,?'
         self.responsibleClasses = 'EXEC responsibleClasses ?,?'
         self.studentOfResopnsibleClass = 'EXEC studentOfResopnsibleClass ?,?'
