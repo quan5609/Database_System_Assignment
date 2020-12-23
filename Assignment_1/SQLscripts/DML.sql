@@ -514,9 +514,11 @@ CREATE PROCEDURE RegisterSubject(
 )
 AS
 BEGIN
-	INSERT INTO dbo.Register VALUES (@studentId, @classId, @semesterId, @subjectId)
+	IF EXISTS( SELECT 1 FROM dbo.StudyStatus WHERE [sid] = @studentId AND semesterId = @semesterId AND [status] = 'normal')
+		INSERT INTO dbo.Register VALUES (@studentId, @classId, @semesterId, @subjectId)
+	ELSE
+		RAISERROR('Invalid',-1,-1)
 END;
-
 --iv.2: Xem danh sach mon hoc, lop hoc, va cac giang vien phu trach cho moi lop cua moi mon hoc o hoc ky duoc dang ky.
 GO
 CREATE PROCEDURE SubjectClassTeacher(
