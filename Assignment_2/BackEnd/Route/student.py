@@ -50,8 +50,8 @@ def hello():
 
 # iv4: Xem danh sach lop hoc cua moi mon hoc ma minh dang ky o mot hoc ky.  
 # PROCEDURE ClassOfSubject(
-# 	@studentId AS VARCHAR(10),
-# 	@semesterId AS VARCHAR(10)
+#     @studentId AS VARCHAR(10),
+#     @semesterId AS VARCHAR(10)
 
 @student_blueprint.route('/class-of-subject',methods = ['POST'])
 def classOfSubject():

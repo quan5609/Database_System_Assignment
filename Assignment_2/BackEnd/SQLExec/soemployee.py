@@ -20,44 +20,44 @@ class StoredProcedure():
 
 """
 CREATE PROCEDURE addRegister(
-	@newStudentId AS varchar(10),
-	@newClassId AS varchar(10),
-	@newSemesterId AS varchar(10),
-	@newSubjectId AS varchar(10)
-	)
+    @newStudentId AS varchar(10),
+    @newClassId AS varchar(10),
+    @newSemesterId AS varchar(10),
+    @newSubjectId AS varchar(10)
+    )
 
 CREATE PROCEDURE removeRegister(
-	@oldStudentId AS varchar(10),
-	@oldClassId AS varchar(10),
-	@oldSemesterId AS varchar(10),
-	@oldSubjectId AS varchar(10)
-	)
+    @oldStudentId AS varchar(10),
+    @oldClassId AS varchar(10),
+    @oldSemesterId AS varchar(10),
+    @oldSubjectId AS varchar(10)
+    )
 
 CREATE PROCEDURE updateRegister(
-	@oldStudentId AS varchar(10),
-	@oldClassId AS varchar(10),
-	@oldSemesterId AS varchar(10),
-	@oldSubjectId AS varchar(10),
+    @oldStudentId AS varchar(10),
+    @oldClassId AS varchar(10),
+    @oldSemesterId AS varchar(10),
+    @oldSubjectId AS varchar(10),
 
-	@newStudentId AS varchar(10),
-	@newClassId AS varchar(10),
-	@newSemesterId AS varchar(10),
-	@newSubjectId AS varchar(10)
-	)
+    @newStudentId AS varchar(10),
+    @newClassId AS varchar(10),
+    @newSemesterId AS varchar(10),
+    @newSubjectId AS varchar(10)
+    )
 
 CREATE PROCEDURE registeredClass(
-	@studentId AS varchar(10),
-	@semesterId AS varchar(10)
-	)
+    @studentId AS varchar(10),
+    @semesterId AS varchar(10)
+    )
 
 CREATE PROCEDURE reponsibleClass(
-	@teacherSsn AS varchar(10),
-	@semesterId AS varchar(10)
+    @teacherSsn AS varchar(10),
+    @semesterId AS varchar(10)
 )
 
 CREATE PROCEDURE listClass(
-	@departmentId AS varchar(10),
-	@semesterId AS varchar(10)
+    @departmentId AS varchar(10),
+    @semesterId AS varchar(10)
 )
 
 CREATE PROCEDURE listStudent
@@ -65,8 +65,8 @@ CREATE PROCEDURE listStudent
 CREATE PROCEDURE listTeacher
 
 CREATE PROCEDURE listReferenceBook(
-	@semesterId AS varchar(10),
-	@subjectId AS varchar(10)
+    @semesterId AS varchar(10),
+    @subjectId AS varchar(10)
 )
 
 CREATE PROCEDURE numOfSubjects
