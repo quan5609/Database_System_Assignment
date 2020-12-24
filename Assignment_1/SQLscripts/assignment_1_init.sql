@@ -227,3 +227,8 @@ CREATE TABLE Class_Registration.dbo.Responsible(
 	FOREIGN KEY (Teacher_ssn) REFERENCES Class_Registration.dbo.Teacher(ssn),
 	PRIMARY KEY (Semester_id, Subject_id, Class_id, Week_id)
 );
+
+CREATE TABLE Class_Registration.dbo.SubjectDepartment(
+	subject_id varchar(10),
+	did varchar(10)
+);
