@@ -1,0 +1,501 @@
+ssn,firstName,lastName,studyStatus,department
+1680000,E,Tran Nguyen Phung Mai,True,1
+1630001,C,Tran Vu Le Vu,True,11
+1600002,D,Phung Tran,True,6
+1630003,C,Le Vu,True,3
+1640004,B,Phung Vu,True,7
+1660005,C,Mai Bui Nguyen,True,8
+1690006,E,Bui Hua Nguyen Tran,True,8
+1620007,B,Hua Nguyen Hua,False,1
+1610008,C,Nguyen Mai Vu Le,True,1
+1690009,E,Phung Vu Phung,True,4
+1640010,D,Bui Le Phung Nguyen,True,4
+1640011,C,Le Nguyen,True,4
+1600012,E,Vu Le Bui,True,11
+1660013,D,Mai Tran,True,1
+1640014,A,Mai Bui Tran,True,10
+1650015,E,Mai Bui Vu,True,1
+1630016,C,Phung Phung,True,9
+1690017,A,Le Le Le Hua,True,5
+1650018,C,Bui Nguyen Hua,True,3
+1660019,C,Bui Mai Vu Vu,True,4
+1680020,D,Vu Vu,True,8
+1670021,B,Hua Nguyen Phung Mai,True,9
+1670022,C,Vu Phung,True,6
+1630023,B,Nguyen Bui,False,7
+1680024,D,Nguyen Phung,True,6
+1610025,D,Bui Bui Hua,True,8
+1600026,D,Mai Vu Phung,True,3
+1650027,D,Bui Phung Vu Bui,True,10
+1610028,A,Hua Phung Bui,True,10
+1680029,C,Vu Phung Vu,True,1
+1690030,C,Le Tran,False,5
+1640031,D,Mai Hua,True,8
+1620032,D,Tran Le Tran Hua,True,9
+1660033,C,Le Mai Vu,True,7
+1630034,A,Mai Phung Phung Nguyen,True,8
+1610035,B,Phung Hua,True,1
+1640036,E,Phung Bui,True,2
+1670037,D,Bui Nguyen,True,5
+1630038,E,Vu Phung Hua,True,6
+1690039,E,Vu Hua Vu,True,5
+1630040,C,Hua Tran Le,True,8
+1620041,D,Nguyen Bui Vu Bui,True,8
+1680042,C,Le Nguyen,True,4
+1660043,B,Phung Le Tran Mai,False,7
+1620044,A,Hua Bui Mai,True,3
+1600045,A,Bui Nguyen,False,1
+1650046,B,Phung Le Tran,True,8
+1600047,A,Hua Bui Phung,True,8
+1670048,A,Nguyen Le Mai Bui,True,3
+1650049,A,Tran Tran Mai,True,7
+1600050,C,Mai Hua,False,5
+1620051,D,Vu Bui,True,5
+1620052,C,Hua Mai Phung,True,4
+1610053,C,Le Bui Bui Mai,True,8
+1620054,B,Hua Phung Mai,True,7
+1630055,E,Le Le Vu,True,2
+1650056,B,Nguyen Le Tran,True,5
+1600057,A,Hua Mai Vu Vu,True,9
+1690058,D,Bui Phung Mai,False,10
+1640059,D,Hua Vu Bui Mai,True,11
+1690060,B,Le Bui,True,3
+1660061,B,Tran Vu Bui,True,4
+1630062,D,Vu Mai,True,6
+1600063,A,Phung Tran Nguyen,True,7
+1640064,C,Hua Nguyen,True,10
+1680065,B,Vu Nguyen Le Phung,True,6
+1630066,A,Hua Hua Hua Vu,True,10
+1640067,C,Tran Nguyen,True,3
+1650068,D,Nguyen Tran,True,8
+1650069,D,Le Phung Hua Bui,True,8
+1600070,C,Le Hua Vu,True,9
+1690071,B,Phung Vu Vu Vu,True,9
+1620072,D,Phung Nguyen,True,8
+1680073,D,Le Phung Phung,False,1
+1650074,C,Hua Tran Vu Le,True,8
+1660075,D,Hua Hua,False,3
+1630076,B,Mai Phung,False,3
+1640077,D,Phung Mai,True,1
+1650078,A,Mai Phung Phung Nguyen,True,1
+1600079,C,Hua Vu Tran,True,1
+1630080,E,Hua Nguyen Vu Vu,True,11
+1680081,D,Phung Mai Le Nguyen,True,11
+1610082,E,Phung Vu Vu Hua,False,9
+1680083,A,Nguyen Hua Bui Le,True,8
+1660084,A,Bui Vu Bui Vu,True,4
+1620085,A,Hua Nguyen,True,8
+1610086,A,Mai Nguyen Phung,True,10
+1670087,D,Nguyen Bui Vu,True,4
+1670088,D,Phung Mai,False,7
+1650089,A,Bui Bui Nguyen,True,6
+1640090,A,Mai Nguyen Phung Le,False,11
+1610091,E,Nguyen Tran Phung,True,5
+1680092,A,Bui Nguyen Nguyen Nguyen,True,9
+1610093,D,Tran Mai Le Phung,True,3
+1640094,B,Mai Vu,False,11
+1610095,E,Tran Le,True,4
+1670096,B,Bui Tran Hua Le,True,5
+1670097,B,Nguyen Tran Phung,True,7
+1600098,C,Bui Hua Vu Nguyen,True,2
+1690099,C,Phung Tran Vu,True,4
+1730000,A,Mai Tran,True,2
+1700001,A,Nguyen Tran Vu Bui,True,10
+1790002,C,Vu Mai Le Mai,False,7
+1750003,B,Phung Le,True,11
+1700004,E,Phung Tran,True,3
+1720005,B,Mai Phung Le Le,True,5
+1770006,E,Le Bui,True,3
+1740007,A,Nguyen Mai Nguyen Nguyen,True,9
+1780008,A,Vu Bui,True,7
+1740009,D,Hua Mai,True,6
+1780010,E,Tran Vu Vu,True,1
+1790011,E,Hua Hua Hua,True,11
+1750012,C,Nguyen Mai Le,True,3
+1760013,D,Mai Nguyen Bui Nguyen,True,8
+1790014,A,Bui Phung Hua Vu,True,10
+1710015,D,Mai Le Nguyen Nguyen,True,2
+1730016,B,Mai Vu Vu,True,11
+1720017,C,Bui Hua,True,5
+1710018,A,Mai Tran,False,7
+1760019,C,Phung Le Hua,True,8
+1790020,B,Nguyen Le Phung,True,3
+1790021,E,Vu Mai,True,10
+1730022,E,Phung Tran Nguyen,True,5
+1710023,B,Le Le,True,9
+1710024,C,Mai Phung Hua,True,7
+1790025,D,Nguyen Mai,True,2
+1730026,E,Vu Le Tran,True,5
+1760027,A,Nguyen Bui,True,2
+1750028,C,Bui Le,True,7
+1700029,C,Mai Hua,True,1
+1790030,C,Phung Le,True,5
+1790031,D,Tran Nguyen Vu Nguyen,True,8
+1760032,A,Nguyen Phung,True,2
+1750033,C,Hua Phung,True,8
+1770034,C,Le Phung,True,11
+1760035,E,Vu Tran Vu,True,6
+1770036,C,Phung Bui Nguyen Hua,True,6
+1740037,A,Mai Phung,True,11
+1780038,B,Le Vu,True,5
+1740039,B,Vu Vu Vu,True,10
+1720040,A,Mai Phung,True,3
+1780041,D,Tran Bui Hua,True,4
+1730042,B,Vu Bui Vu,True,6
+1780043,E,Phung Le,True,2
+1710044,D,Tran Tran Mai,True,2
+1730045,A,Nguyen Phung Tran Le,False,10
+1710046,C,Le Bui Vu,True,5
+1710047,E,Hua Hua,True,7
+1770048,D,Mai Nguyen,True,9
+1760049,E,Hua Bui Hua Mai,False,7
+1700050,C,Phung Phung Vu Phung,True,4
+1700051,C,Le Hua,True,4
+1790052,D,Nguyen Mai,True,1
+1790053,C,Vu Bui Mai Bui,True,4
+1720054,C,Tran Mai Hua Hua,True,6
+1780055,A,Tran Mai Tran,True,1
+1770056,D,Vu Mai,True,1
+1750057,A,Phung Nguyen,True,3
+1750058,B,Nguyen Le,True,8
+1740059,D,Tran Vu Mai Bui,True,10
+1780060,E,Le Hua Phung,True,4
+1770061,E,Nguyen Tran Nguyen,True,10
+1750062,B,Vu Le,True,6
+1790063,A,Tran Tran,True,1
+1730064,D,Mai Bui,True,7
+1780065,D,Bui Vu,True,5
+1760066,D,Mai Nguyen,True,5
+1700067,D,Mai Le,True,1
+1740068,D,Hua Vu,True,1
+1750069,A,Mai Tran,True,2
+1760070,C,Bui Hua Le,True,9
+1760071,D,Tran Mai,True,6
+1720072,E,Bui Tran,True,8
+1700073,A,Phung Le,True,10
+1730074,A,Le Bui,True,2
+1720075,D,Hua Le Le Phung,True,3
+1720076,B,Bui Hua Vu,True,8
+1750077,E,Mai Phung Le,True,11
+1710078,D,Vu Mai,True,2
+1700079,B,Vu Bui,True,1
+1710080,B,Tran Mai Le Mai,True,1
+1790081,D,Bui Mai Mai,True,9
+1750082,D,Nguyen Hua,True,6
+1710083,C,Tran Le,True,3
+1750084,C,Vu Phung Bui Mai,True,8
+1730085,D,Tran Mai Le Vu,True,2
+1780086,E,Le Nguyen Bui,True,6
+1740087,D,Bui Bui Vu Vu,True,2
+1760088,E,Vu Bui,True,8
+1710089,A,Hua Le Le Hua,True,2
+1720090,A,Hua Phung,False,6
+1760091,A,Vu Tran,False,2
+1790092,D,Mai Hua,True,10
+1780093,E,Nguyen Hua Vu,True,5
+1700094,E,Vu Bui Tran,True,7
+1710095,B,Phung Bui,True,10
+1720096,E,Mai Phung Bui Le,True,7
+1780097,D,Bui Tran Mai,True,4
+1740098,A,Vu Le,True,6
+1730099,E,Vu Phung Bui,True,2
+1830000,A,Vu Nguyen Vu,True,8
+1880001,C,Bui Mai Phung,True,3
+1820002,A,Vu Bui,True,11
+1890003,A,Tran Tran Vu,True,3
+1870004,C,Phung Vu Bui,True,11
+1870005,E,Tran Tran,False,7
+1810006,B,Phung Vu Tran Vu,True,11
+1870007,D,Le Tran Tran,True,7
+1880008,D,Mai Nguyen,True,10
+1800009,E,Mai Bui Phung Nguyen,False,9
+1820010,B,Phung Hua Vu,True,4
+1860011,C,Le Vu Hua,True,7
+1890012,E,Hua Mai Tran Mai,True,3
+1830013,D,Tran Phung,True,10
+1870014,B,Vu Le Hua,True,10
+1850015,A,Vu Nguyen,True,5
+1870016,B,Hua Tran Nguyen,True,2
+1830017,D,Tran Mai,True,10
+1850018,B,Vu Mai Le,False,11
+1830019,B,Vu Bui Nguyen Hua,True,10
+1800020,D,Tran Vu Bui,True,11
+1890021,C,Le Nguyen Le,True,11
+1820022,D,Hua Hua Le Mai,True,10
+1810023,A,Mai Phung Phung,True,3
+1870024,C,Tran Nguyen Tran Mai,True,2
+1800025,E,Bui Vu Nguyen,True,4
+1880026,B,Tran Le Mai,True,4
+1870027,C,Le Le Phung Bui,True,3
+1840028,D,Nguyen Bui,True,6
+1840029,B,Vu Nguyen Mai,True,4
+1860030,D,Mai Hua Vu,True,1
+1800031,C,Mai Tran,True,4
+1820032,D,Hua Phung Nguyen Le,False,1
+1870033,E,Vu Phung Hua,True,10
+1890034,A,Mai Nguyen Phung,True,1
+1870035,C,Phung Le Le Bui,False,10
+1820036,D,Mai Nguyen Mai,True,3
+1870037,B,Tran Vu,True,8
+1810038,E,Bui Nguyen Bui,True,5
+1840039,B,Nguyen Hua,True,9
+1890040,A,Vu Mai Phung,True,5
+1800041,D,Phung Nguyen,True,6
+1840042,D,Phung Tran,True,2
+1830043,C,Phung Nguyen,True,6
+1860044,C,Mai Tran Vu Tran,True,2
+1820045,A,Phung Vu Tran Tran,True,1
+1890046,D,Mai Hua Bui Hua,True,2
+1870047,E,Tran Le Hua Le,True,7
+1860048,D,Phung Tran,True,3
+1830049,E,Tran Vu Tran,True,9
+1850050,A,Le Vu Bui,True,7
+1810051,E,Le Hua Phung Bui,True,5
+1840052,D,Phung Nguyen,True,7
+1850053,A,Bui Nguyen,True,1
+1820054,A,Phung Tran Le Bui,True,7
+1870055,C,Bui Phung,True,3
+1820056,B,Tran Hua Bui,True,7
+1810057,A,Tran Nguyen Mai Mai,True,10
+1860058,E,Mai Bui,True,8
+1850059,C,Hua Nguyen Hua,True,8
+1800060,C,Nguyen Le Mai,True,4
+1870061,E,Vu Phung Tran Le,True,1
+1840062,B,Vu Mai,True,9
+1850063,B,Hua Mai Tran,True,7
+1860064,D,Le Tran Tran,False,7
+1890065,D,Bui Vu Vu Mai,True,10
+1840066,A,Le Hua Tran Bui,True,4
+1800067,E,Bui Vu,True,7
+1890068,E,Phung Tran Vu,True,7
+1850069,D,Phung Bui Phung Tran,True,3
+1840070,A,Hua Bui Vu,True,1
+1830071,D,Nguyen Vu Tran,True,10
+1810072,E,Vu Bui Bui,True,1
+1890073,A,Nguyen Mai Bui Bui,True,3
+1820074,E,Vu Phung Hua Le,True,11
+1800075,A,Hua Phung Mai,True,1
+1890076,B,Mai Hua,True,11
+1820077,E,Phung Bui Tran Hua,True,6
+1840078,B,Hua Nguyen Vu,True,7
+1860079,A,Vu Bui,True,8
+1890080,A,Hua Hua Bui,True,10
+1880081,A,Le Hua Mai,True,11
+1810082,E,Le Tran,True,9
+1810083,B,Tran Mai,True,4
+1890084,A,Bui Vu,True,6
+1800085,E,Hua Vu Mai Vu,True,11
+1820086,E,Vu Nguyen Tran,True,5
+1820087,A,Le Hua,True,9
+1800088,D,Bui Bui,True,1
+1850089,B,Bui Nguyen Tran,True,3
+1850090,A,Le Vu,True,8
+1810091,C,Bui Le Tran Le,True,10
+1860092,E,Nguyen Bui Phung,True,5
+1870093,A,Tran Nguyen,True,11
+1800094,E,Phung Nguyen,True,10
+1820095,C,Nguyen Nguyen,True,2
+1890096,B,Bui Hua Vu Bui,True,4
+1850097,E,Tran Phung Bui Nguyen,True,3
+1860098,C,Phung Le Phung,True,1
+1890099,D,Bui Tran Mai Bui,False,9
+1940000,C,Vu Le Tran Tran,True,11
+1920001,D,Nguyen Phung,True,5
+1920002,B,Mai Tran Vu,True,1
+1910003,A,Nguyen Le,True,3
+1970004,E,Bui Vu,True,10
+1960005,C,Phung Tran Mai,True,11
+1900006,A,Tran Le,True,4
+1990007,B,Mai Le Hua Tran,True,2
+1940008,C,Le Phung Vu,True,5
+1960009,D,Hua Vu,True,2
+1900010,A,Nguyen Bui,True,3
+1990011,B,Tran Hua,True,8
+1960012,B,Tran Phung Mai,True,8
+1970013,D,Hua Phung,True,5
+1960014,E,Hua Vu Tran Phung,True,1
+1960015,A,Bui Hua Bui Hua,False,11
+1910016,A,Le Nguyen Hua,True,11
+1980017,D,Le Bui,True,5
+1900018,B,Le Nguyen Hua,True,11
+1900019,A,Phung Nguyen,True,11
+1930020,A,Mai Hua Phung,True,8
+1900021,E,Vu Tran,True,10
+1950022,A,Tran Vu Bui,True,1
+1900023,D,Le Le,True,3
+1990024,D,Vu Mai,True,6
+1930025,C,Tran Tran Phung,True,7
+1900026,E,Hua Tran,True,10
+1980027,E,Tran Le,True,7
+1930028,D,Nguyen Tran,True,10
+1910029,D,Vu Le Tran Mai,True,1
+1900030,B,Mai Nguyen Tran Phung,True,1
+1950031,E,Vu Mai Nguyen Hua,True,10
+1920032,D,Phung Mai Bui,True,6
+1960033,A,Vu Le,True,8
+1950034,E,Nguyen Vu Vu Nguyen,True,8
+1970035,D,Phung Bui Nguyen,True,8
+1930036,E,Vu Tran,True,6
+1930037,A,Hua Bui Le,True,2
+1940038,C,Vu Tran Hua,True,9
+1940039,A,Bui Hua,True,4
+1930040,C,Le Nguyen Phung,True,11
+1990041,B,Bui Le Le,True,6
+1950042,B,Phung Tran Le Bui,True,10
+1990043,E,Hua Tran Vu Tran,True,9
+1930044,A,Nguyen Nguyen Le Hua,True,3
+1940045,C,Bui Hua Hua Vu,False,3
+1900046,A,Nguyen Nguyen Le,True,4
+1910047,C,Mai Vu Le,True,8
+1950048,E,Hua Le Nguyen,True,2
+1950049,C,Bui Phung,True,3
+1920050,D,Nguyen Le Phung Tran,True,8
+1900051,D,Bui Mai,True,9
+1940052,A,Hua Bui Tran Le,True,5
+1930053,B,Vu Le,True,10
+1950054,C,Phung Nguyen Le,True,5
+1980055,C,Tran Phung,True,5
+1940056,D,Bui Bui Tran,True,9
+1910057,C,Tran Tran,True,6
+1970058,E,Phung Vu Mai,True,11
+1950059,C,Le Vu Tran Le,True,7
+1990060,B,Vu Tran Nguyen Nguyen,True,8
+1900061,A,Hua Tran Mai,True,6
+1930062,D,Nguyen Mai,True,2
+1950063,C,Tran Tran,True,5
+1980064,D,Tran Hua Nguyen Le,True,8
+1950065,D,Vu Tran Hua,True,2
+1990066,B,Nguyen Vu,True,2
+1930067,B,Hua Le,False,7
+1980068,C,Phung Vu,False,2
+1930069,D,Nguyen Bui,True,8
+1950070,E,Mai Nguyen Bui,True,4
+1970071,C,Phung Tran,True,11
+1930072,A,Mai Hua,True,7
+1960073,E,Bui Hua Vu Phung,True,8
+1920074,B,Phung Tran,True,1
+1910075,E,Phung Phung Mai,True,2
+1980076,C,Nguyen Bui Nguyen Hua,False,9
+1970077,E,Bui Bui,True,4
+1970078,E,Phung Nguyen Bui Phung,True,6
+1910079,A,Mai Hua Le,True,8
+1920080,B,Tran Vu Le,True,11
+1990081,A,Tran Hua Mai Tran,True,4
+1960082,A,Hua Vu Phung Vu,True,10
+1910083,B,Mai Hua Bui Hua,False,4
+1930084,D,Vu Bui Phung Tran,True,7
+1990085,C,Le Hua,True,3
+1930086,A,Vu Phung,True,6
+1960087,A,Tran Hua Le Bui,True,9
+1900088,D,Hua Mai,True,2
+1930089,E,Tran Bui,True,6
+1910090,B,Tran Nguyen Le,True,6
+1990091,B,Vu Nguyen Phung Le,True,3
+1920092,A,Le Phung Le Le,True,10
+1940093,C,Phung Vu Bui Nguyen,True,5
+1900094,A,Nguyen Vu,False,9
+1960095,D,Vu Le Phung,True,6
+1940096,C,Bui Hua Nguyen,True,4
+1900097,E,Le Hua Bui,True,5
+1940098,D,Bui Vu Mai Nguyen,True,4
+1980099,D,Nguyen Tran Hua Nguyen,False,1
+2040000,C,Nguyen Le Hua,True,5
+2060001,E,Hua Nguyen,True,5
+2000002,B,Nguyen Phung Le,True,5
+2070003,B,Nguyen Vu Vu Nguyen,True,5
+2080004,B,Tran Bui Le Le,True,6
+2070005,D,Nguyen Vu Hua Hua,True,6
+2000006,C,Nguyen Mai,True,10
+2000007,E,Phung Tran Hua,True,10
+2030008,A,Nguyen Nguyen,True,4
+2010009,D,Mai Vu Le,True,11
+2020010,D,Bui Mai Phung Vu,True,1
+2060011,C,Phung Vu Mai Vu,True,1
+2000012,C,Vu Hua Bui Hua,True,4
+2060013,A,Hua Bui Hua Hua,True,4
+2050014,A,Phung Tran,True,11
+2060015,D,Phung Bui Tran,True,7
+2050016,E,Le Le Hua Bui,True,3
+2090017,C,Bui Tran Le,True,8
+2020018,E,Hua Hua Vu,True,11
+2060019,E,Mai Nguyen,False,2
+2090020,A,Hua Tran,True,3
+2000021,B,Nguyen Tran,False,10
+2060022,A,Hua Vu,True,2
+2090023,B,Hua Phung,True,8
+2010024,C,Phung Mai Hua,True,6
+2040025,C,Phung Tran Nguyen Tran,True,10
+2020026,B,Vu Nguyen Le,True,11
+2090027,E,Phung Tran Hua,True,10
+2050028,D,Phung Phung,False,9
+2090029,D,Le Nguyen Le,True,10
+2010030,C,Tran Le Tran Tran,False,8
+2030031,E,Tran Hua Tran,True,7
+2000032,C,Le Bui Le,True,3
+2020033,D,Hua Mai,True,2
+2050034,E,Tran Bui,True,4
+2010035,E,Le Tran,True,6
+2070036,D,Phung Nguyen,False,10
+2080037,A,Phung Vu Tran Nguyen,True,4
+2000038,C,Nguyen Mai Bui Le,True,11
+2010039,E,Tran Tran,True,7
+2050040,B,Vu Tran Le Vu,True,6
+2070041,E,Mai Tran,True,6
+2080042,E,Bui Mai Tran,True,5
+2030043,E,Nguyen Mai,True,1
+2090044,A,Hua Vu,False,6
+2050045,B,Tran Bui,True,3
+2060046,E,Mai Nguyen,True,8
+2080047,C,Tran Le Phung,False,10
+2030048,B,Nguyen Hua Tran Mai,True,8
+2050049,E,Mai Bui Vu Mai,True,3
+2010050,C,Le Nguyen Hua Tran,True,10
+2080051,B,Nguyen Phung Vu Mai,True,10
+2060052,E,Hua Le Phung,True,8
+2020053,B,Le Bui,True,10
+2060054,C,Bui Le,True,8
+2030055,C,Tran Le,True,8
+2050056,D,Le Phung,True,4
+2050057,B,Tran Bui Tran Le,True,2
+2040058,D,Mai Phung Nguyen Tran,True,9
+2020059,C,Hua Vu,True,6
+2020060,B,Bui Le Phung Le,True,6
+2070061,B,Tran Nguyen Hua,True,5
+2010062,A,Phung Le Phung Hua,True,5
+2010063,B,Vu Vu Tran Phung,True,3
+2080064,E,Nguyen Tran Mai,True,11
+2030065,A,Phung Phung Bui Vu,True,9
+2020066,C,Le Tran Nguyen Mai,True,10
+2010067,B,Tran Mai Mai,True,2
+2000068,B,Phung Le Le Bui,False,10
+2030069,D,Nguyen Phung Tran,True,5
+2030070,E,Vu Bui,True,4
+2060071,C,Vu Vu Le,True,11
+2050072,A,Bui Mai,True,7
+2040073,C,Nguyen Vu Nguyen,False,1
+2020074,B,Nguyen Hua Nguyen Bui,True,10
+2080075,B,Phung Mai Vu Hua,True,3
+2070076,E,Nguyen Hua,True,6
+2050077,B,Phung Nguyen Le Vu,False,10
+2080078,C,Le Le Bui,True,9
+2040079,A,Phung Vu Nguyen,False,6
+2070080,D,Bui Hua Nguyen Le,True,8
+2090081,A,Le Vu Bui Hua,True,11
+2070082,B,Hua Vu Phung Le,True,9
+2000083,E,Nguyen Phung,True,5
+2000084,A,Bui Tran,True,8
+2050085,C,Bui Mai Mai,True,3
+2080086,E,Hua Hua Bui Phung,True,10
+2030087,E,Le Le,True,1
+2020088,C,Bui Nguyen,True,6
+2000089,D,Tran Phung,True,2
+2050090,A,Tran Tran Phung Nguyen,True,7
+2090091,B,Mai Phung,True,1
+2090092,E,Nguyen Hua,True,2
+2000093,B,Nguyen Hua Vu,True,9
+2090094,E,Bui Vu,True,2
+2010095,A,Nguyen Vu Vu,True,5
+2000096,E,Vu Tran Nguyen Nguyen,False,3
+2090097,D,Bui Tran,False,9
+2080098,B,Hua Le Mai Bui,True,10
+2090099,A,Le Vu Phung Mai,True,8

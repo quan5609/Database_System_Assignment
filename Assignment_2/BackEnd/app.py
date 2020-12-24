@@ -11,6 +11,7 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+app.debug = True
 
 '''DB Connection'''
 connection_string = os.environ.get('SQLALCHEMY_DATABASE_URI')
