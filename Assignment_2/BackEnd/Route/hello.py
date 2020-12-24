@@ -62,7 +62,7 @@ def login():
             mimetype='application/json'
         )
 
-    if res['payload'] is None:  # User does not exist
+    if not res['payload']:  # User does not exist
         return Response(
             response=json.dumps('User does not exist'),
             status=400,

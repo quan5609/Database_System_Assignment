@@ -41,3 +41,6 @@ DROP PROCEDURE [dbo].[studentOfResopnsibleClass];
 DROP PROCEDURE [dbo].[referenceBookOfResponsibleSubject];
 DROP PROCEDURE [dbo].[listReferenceBook];
 DROP PROCEDURE [dbo].[SubjectReferenceBook];
+DROP PROCEDURE [dbo].[register_account];
+DROP PROCEDURE [dbo].[login_account];
+

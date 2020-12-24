@@ -6,20 +6,20 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CreditScoreKalapa", "CreditScoreKalapa.dtproj", "{292BD7EE-D28D-441F-8984-CD0EB6831146}"
 EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Azure|Default = Azure|Default
-		Development|Default = Development|Default
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{292BD7EE-D28D-441F-8984-CD0EB6831146}.Azure|Default.ActiveCfg = Azure
-		{292BD7EE-D28D-441F-8984-CD0EB6831146}.Azure|Default.Build.0 = Azure
-		{292BD7EE-D28D-441F-8984-CD0EB6831146}.Development|Default.ActiveCfg = Development
-		{292BD7EE-D28D-441F-8984-CD0EB6831146}.Development|Default.Build.0 = Development
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {95A60E65-6743-44B0-A786-428656EBDF0C}
-	EndGlobalSection
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Azure|Default = Azure|Default
+        Development|Default = Development|Default
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {292BD7EE-D28D-441F-8984-CD0EB6831146}.Azure|Default.ActiveCfg = Azure
+        {292BD7EE-D28D-441F-8984-CD0EB6831146}.Azure|Default.Build.0 = Azure
+        {292BD7EE-D28D-441F-8984-CD0EB6831146}.Development|Default.ActiveCfg = Development
+        {292BD7EE-D28D-441F-8984-CD0EB6831146}.Development|Default.Build.0 = Development
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+    GlobalSection(ExtensibilityGlobals) = postSolution
+        SolutionGuid = {95A60E65-6743-44B0-A786-428656EBDF0C}
+    EndGlobalSection
 EndGlobal
