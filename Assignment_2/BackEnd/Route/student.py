@@ -50,8 +50,8 @@ def hello():
 
 # iv4: Xem danh sach lop hoc cua moi mon hoc ma minh dang ky o mot hoc ky.  
 # PROCEDURE ClassOfSubject(
-# 	@studentId AS VARCHAR(10),
-# 	@semesterId AS VARCHAR(10)
+#     @studentId AS VARCHAR(10),
+#     @semesterId AS VARCHAR(10)
 
 @student_blueprint.route('/class-of-subject',methods = ['POST'])
 def classOfSubject():
@@ -92,13 +92,56 @@ def classOfSubject():
             mimetype='application/json'
         )
     else:
-        pass
+        return Response(
+            response=json.dumps({'res':res['payload']}),
+            status=200,
+            mimetype='application/json'
+        )
 
-    response = Response(
-        response=json.dumps('OK'),
-        status=200,
-        mimetype='application/json'
-    )
-    return response
+@student_blueprint.route('/get-all',methods = ['POST'])
+def getAllStudent():
+    '''Define Schema'''
+    schema = request_schema.classOfSubject
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+    # studentId = user_info['sub']
+    # semesterId = req_data['semester']
+
+    '''Execute Stored Procedure'''
+    # params = [studentId,semesterId]
+    params = []
+    res = execute_sp(engine,stored_procedure.getAllStudent,params)
+    print(res)
+
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps('INTERNAL SERVER ERROR'),
+            status=500,
+            mimetype='application/json'
+        )
+    
+    if not res['payload']:  
+        return Response(
+            response=json.dumps('Empty'),
+            status=400,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps({'res':res['payload']}),
+            status=200,
+            mimetype='application/json'
+        )
 
 

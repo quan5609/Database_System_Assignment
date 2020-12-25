@@ -38,19 +38,19 @@ CREATE ROLE teachers
 
 --Add student
 ALTER ROLE  students  
-	ADD MEMBER student;
+    ADD MEMBER student;
 
 --Add so
 ALTER ROLE  soemployees  
-	ADD MEMBER soemployee;
+    ADD MEMBER soemployee;
 
 --Add de
 ALTER ROLE  deemployees  
-	ADD MEMBER deemployee;
+    ADD MEMBER deemployee;
 
 --Add teacher
 ALTER ROLE  teachers  
-	ADD MEMBER teacher;  
+    ADD MEMBER teacher;  
  
 
 --students permission
