@@ -2598,3 +2598,744 @@ VALUES
 -- 9, 'Electricity', '2014-02-03', 5
 -- );
 
+-------------------------------------------- Week --------------------------------------------------------------------
+/* INSERT QUERY NO: 1 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq171', '9/1/16'
+);
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+2, 'cq171', '9/8/16'
+);
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+3, 'cq171', '9/15/17'
+);
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq172', '2/1/18'
+);
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+2, 'cq172', '2/8/18'
+);
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+3, 'cq172', '2/15/18'
+);
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq173', '6/1/18'
+);
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+2, 'cq173', '6/8/18'
+);
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+3, 'cq173', '6/15/18'
+);
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq181', '9/1/18'
+);
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+2, 'cq181', '9/8/18'
+);
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+3, 'cq181', '9/15/18'
+);
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq182', '2/1/19'
+);
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+2, 'cq182', '2/8/19'
+);
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq183', '6/1/19'
+);
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+2, 'cq183', '6/8/19'
+);
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq191', '9/1/19'
+);
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+2, 'cq191', '9/8/19'
+);
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq192', '2/1/20'
+);
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+2, 'cq192', '2/8/20'
+);
+
+/* INSERT QUERY NO: 21 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq193', '6/1/20'
+);
+
+/* INSERT QUERY NO: 22 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq201', '9/1/20'
+);
+
+/* INSERT QUERY NO: 23 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+2, 'cq201', '9/8/20'
+);
+
+/* INSERT QUERY NO: 24 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+3, 'cq201', '9/15/21'
+);
+
+/* INSERT QUERY NO: 25 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq202', '2/1/21'
+);
+
+/* INSERT QUERY NO: 26 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+2, 'cq202', '2/8/21'
+);
+
+/* INSERT QUERY NO: 27 */
+INSERT INTO Week(id, Semester_id, startDate)
+VALUES
+(
+1, 'cq203', '6/1/21'
+);
+
+-------------------------------------------- MainTeacher --------------------------------------------------------------------
+/* INSERT QUERY NO: 1 */
+INSERT INTO MainTeacher(ssn)
+VALUES
+(
+'teach10005'
+);
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO MainTeacher(ssn)
+VALUES
+(
+'teach10018'
+);
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO MainTeacher(ssn)
+VALUES
+(
+'teach30009'
+);
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO MainTeacher(ssn)
+VALUES
+(
+'teach30013'
+);
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO MainTeacher(ssn)
+VALUES
+(
+'teach40004'
+);
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO MainTeacher(ssn)
+VALUES
+(
+'teach40008'
+);
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO MainTeacher(ssn)
+VALUES
+(
+'teach40016'
+);
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO MainTeacher(ssn)
+VALUES
+(
+'teach50000'
+);
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO MainTeacher(ssn)
+VALUES
+(
+'teach70001'
+);
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO MainTeacher(ssn)
+VALUES
+(
+'teach70002'
+);
+
+----------------------------------------- Uses --------------------------------------------------------
+/* INSERT QUERY NO: 1 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq171', 'AS1003', 'L01', 'teach40016', 0
+);
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq171', 'CI2003', 'L01', 'teach50000', 1
+);
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq171', 'EE1011', 'L01', 'teach50010', 2
+);
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq171', 'CI2003', 'L01', 'teach70001', 3
+);
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq171', 'CO2007', 'L01', 'teach70002', 4
+);
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'CH2021', 'L01', 'teach70007', 5
+);
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'AS2001', 'L01', 'teach80011', 6
+);
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'CI1033', 'L01', 'teach80014', 7
+);
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'IM3047', 'L01', 'teach90012', 8
+);
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'EE1015', 'L01', 'teach90015', 0
+);
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'AS1003', 'L01', 'teach90019', 1
+);
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CI2003', 'L01', 'teach40016', 2
+);
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'EE1011', 'L01', 'teach50000', 9
+);
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CI2003', 'L01', 'teach50010', 10
+);
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CO2007', 'L01', 'teach40016', 12
+);
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'CI2003', 'L01', 'teach50010', 13
+);
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'IM3047', 'L01', 'teach60006', 14
+);
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'EE1011', 'L01', 'teach60017', 15
+);
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'CO2007', 'L01', 'teach00003', 16
+);
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'CH2021', 'L01', 'teach10005', 17
+);
+
+/* INSERT QUERY NO: 21 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'AS2001', 'L01', 'teach10018', 18
+);
+
+/* INSERT QUERY NO: 22 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'CI1033', 'L01', 'teach30009', 19
+);
+
+/* INSERT QUERY NO: 23 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'IM3047', 'L01', 'teach30013', 0
+);
+
+/* INSERT QUERY NO: 24 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'EE1015', 'L01', 'teach40004', 1
+);
+
+/* INSERT QUERY NO: 25 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'AS1003', 'L01', 'teach70001', 1
+);
+
+/* INSERT QUERY NO: 26 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'CI2003', 'L01', 'teach90015', 3
+);
+
+/* INSERT QUERY NO: 27 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'EE1011', 'L01', 'teach90019', 5
+);
+
+/* INSERT QUERY NO: 28 */
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'CI2003', 'L01', 'teach00003', 8
+);
+
+--------------------------------------- Responsible --------------------------------
+/* INSERT QUERY NO: 1 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq171', 'AS1003', 'L01', 1, 'cq171', 'teach00003'
+);
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq171', 'CH1007', 'L01', 2, 'cq171', 'teach10005'
+);
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CH2021', 'L01', 1, 'cq172', 'teach10018'
+);
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CI1007', 'L01', 2, 'cq172', 'teach30009'
+);
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'CI1033', 'L01', 1, 'cq173', 'teach30013'
+);
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CI2003', 'L01', 1, 'cq181', 'teach40004'
+);
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CO1009', 'L01', 2, 'cq181', 'teach40008'
+);
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'CO2007', 'L01', 1, 'cq182', 'teach40016'
+);
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'EE2007', 'L01', 2, 'cq182', 'teach50000'
+);
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'GE2009', 'L01', 1, 'cq183', 'teach50010'
+);
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'IM3047', 'L01', 1, 'cq191', 'teach60006'
+);
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'IM3051', 'L01', 2, 'cq191', 'teach60017'
+);
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'AS1003', 'L01', 1, 'cq192', 'teach70001'
+);
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'CH1007', 'L01', 2, 'cq192', 'teach70002'
+);
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'CH2021', 'L01', 1, 'cq193', 'teach70007'
+);
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'CI1007', 'L01', 1, 'cq201', 'teach80011'
+);
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'CI1033', 'L01', 2, 'cq201', 'teach80014'
+);
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CI2003', 'L01', 1, 'cq202', 'teach90012'
+);
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CO1009', 'L01', 2, 'cq202', 'teach50000'
+);
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'CO2007', 'L01', 1, 'cq203', 'teach50010'
+);
+
+---------------------------------------- MainResponsible ------------------------------------------
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq171', 'AS1003', 'teach10005'
+);
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq171', 'CH1007', 'teach10018'
+);
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CH2021', 'teach30009'
+);
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CI1007', 'teach30013'
+);
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'CI1033', 'teach40004'
+);
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CI2003', 'teach40008'
+);
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CO1009', 'teach40016'
+);
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'CO2007', 'teach50000'
+);
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'EE2007', 'teach70001'
+);
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'GE2009', 'teach70002'
+);
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'IM3047', 'teach70001'
+);
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'IM3051', 'teach70002'
+);
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'AS1003', 'teach10005'
+);
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'CH1007', 'teach10018'
+);
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'CH2021', 'teach30009'
+);
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'CI1007', 'teach30013'
+);
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'CI1033', 'teach40004'
+);
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CI2003', 'teach40008'
+);
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CO1009', 'teach40016'
+);
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'CO2007', 'teach50000'
+);
+
