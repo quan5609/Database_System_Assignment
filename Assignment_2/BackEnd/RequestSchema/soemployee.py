@@ -36,13 +36,13 @@ class Schema():
             'semesterId': {'type': 'string', 'required': True}
         }
 
-        self.reponsibleClass = {
+        self.responsibleClass = {
             'token': {'type': 'string', 'required': True},
             'teacherSsn': {'type': 'string', 'required': True},
             'semesterId': {'type': 'string', 'required': True}
         }
 
-        self.listClass = {
+        self.listSubject = {
             'token': {'type': 'string', 'required': True}
         }
 
@@ -55,9 +55,7 @@ class Schema():
         }
 
         self.listReferenceBook = {
-            'token': {'type': 'string', 'required': True},
-            'semesterId': {'type': 'string', 'required': True},
-            'subjectId': {'type': 'string', 'required': True}
+            'token': {'type': 'string', 'required': True}
         }
 
         self.numOfSubjects = {
@@ -70,10 +68,13 @@ class Schema():
 
         self.numOfStudents_class_sem = {
             'token': {'type': 'string', 'required': True},
+            'subject_id': {'type':'string','required': True},
+            'semester_id': {'type':'string','required': True}
         }
 
         self.numOfStudents_sub_sem = {
             'token': {'type': 'string', 'required': True},
+            'semester_id': {'type':'string','required': True}
         }
 
         self.numOfStudents_sub_dep = {

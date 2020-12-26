@@ -1,10 +1,12 @@
 USE Class_Registration
 GO
---                                                 (i) PDT
+--SECTION (i) PDT
 -- *****************************************************************************************************************
 
 --(i.1). Cap nhat dang ki mon hoc cua cac lop.
 -- Them
+DROP PROCEDURE addRegister
+GO
 CREATE PROCEDURE addRegister(
     @newStudentId AS varchar(10),
     @newClassId AS varchar(10),
@@ -13,9 +15,24 @@ CREATE PROCEDURE addRegister(
     )
 AS
 BEGIN
-    INSERT INTO Register
-    VALUES 
-        (@newStudentId, @newClassId, @newSemesterId, @newSubjectId)
+    IF NOT EXISTS (SELECT 1 FROM Student WHERE ssn = @newStudentId)
+        RAISERROR('Invalid StudentID',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Class WHERE id = @newClassId AND semester_id = @newSemesterId AND subject_id = @newSubjectId)
+            RAISERROR('Invalid Class',16,0)
+        ELSE
+            IF EXISTS (
+                SELECT 1 FROM Register
+                WHERE student_id = @newStudentId
+                    AND class_id = @newClassId
+                    AND semester_id = @newSemesterId
+                    AND subject_id = @newSubjectId
+            )
+                RAISERROR('Existed Register',16,0)
+            ELSE
+                INSERT INTO Register
+                VALUES 
+                    (@newStudentId, @newClassId, @newSemesterId, @newSubjectId)
 END;
 
 -- Xoa
@@ -73,7 +90,7 @@ CREATE PROCEDURE registeredClass(
     )
 AS
 BEGIN
-    SELECT Class_id Ma_lop_hoc, Subject_id Ma_mon_hoc
+    SELECT DISTINCT Class_id Ma_lop_hoc, Subject_id Ma_mon_hoc
     FROM REGISTER 
     WHERE Student_id = @studentId
         AND Semester_id = @semesterId
@@ -81,7 +98,7 @@ END;
 
 GO
 --(i.3). Xem danh sach lop duoc phu trach boi mot giang vien o mot hoc ky.
-CREATE PROCEDURE reponsibleClass(
+CREATE PROCEDURE responsibleClass(
     @teacherSsn AS varchar(10),
     @semesterId AS varchar(10)
 )
@@ -95,12 +112,10 @@ END;
 
 GO
 --(i.4). Xem danh sach mon hoc duoc dang ky o moi hoc ky o moi khoa.
-drop PROCEDURE listClass
-go
-CREATE PROCEDURE listClass
+CREATE PROCEDURE listSubject
 AS
 BEGIN
-    SELECT Department_id Ma_khoa, Semester_id Ma_hoc_ky, Subject_id Ma_mon_hoc
+    SELECT DISTINCT Department_id Ma_khoa, Semester_id Ma_hoc_ky, Subject_id Ma_mon_hoc
     FROM Opens
 END;
 
@@ -109,7 +124,7 @@ GO
 CREATE PROCEDURE listStudent
 AS
 BEGIN
-    SELECT Department_id Ma_khoa, c.Semester_id Ma_hoc_ky, 
+    SELECT DISTINCT Department_id Ma_khoa, c.Semester_id Ma_hoc_ky, c.id Ma_lop,
             s.ssn,firstName Ten, lastName Ho
             
     FROM Student s, Register, Class c, Opens o
@@ -117,7 +132,7 @@ BEGIN
         AND Class_id = c.id
         AND c.Semester_id = o.Semester_id
         AND c.Subject_id = o.Subject_id
-    GROUP BY Department_id, c.Semester_id,s.ssn,firstName,lastName
+    ORDER BY Department_id, c.Semester_id, c.id, s.ssn,firstName,lastName
 END;
 
 GO
@@ -125,27 +140,24 @@ GO
 CREATE PROCEDURE listTeacher
 AS
 BEGIN
-    SELECT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, Class_id Ma_lop, 
+    SELECT DISTINCT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, Class_id Ma_lop, 
         Teacher_ssn SSN, firstName Ten, lastName Ho
             
     FROM Responsible,Employee,Class c,Opens o
     WHERE Teacher_ssn = ssn 
         AND Class_id = c.id
         AND c.Subject_id = o.Subject_id
-    GROUP BY Department_id, c.Semester_id, Class_id, Teacher_ssn, firstName, lastName
+    ORDER BY Department_id, c.Semester_id, c.Subject_id, Class_id, Teacher_ssn, firstName, lastName
 END;
 
 GO
 --(i.7). Xem cac giao trinh duoc chi dinh cho moi mon hoc o moi hoc ky o moi khoa
-CREATE PROCEDURE listReferenceBook(
-    @semesterId AS varchar(10),
-    @subjectId AS varchar(10)
-)
+CREATE PROCEDURE listReferenceBook
 AS
 BEGIN
-    SELECT ReferenceBook_id Ma_sach
-    FROM Uses
-    WHERE Semester_id = @semesterId AND Subject_id = @subjectId
+    SELECT DISTINCT dId Ma_khoa, u.Semester_id Ma_hoc_ky, u.Subject_id Ma_mon_hoc, ReferenceBook_id Ma_sach, [name] Ten_sach
+    FROM Uses u JOIN SubjectDepartment s ON u.Subject_id = s.Subject_id JOIN ReferenceBook r ON u.Referencebook_id = r.id
+    ORDER BY did,u.Semester_id,u.Subject_id,ReferenceBook_id,[name]
 END;
 
 GO
@@ -156,7 +168,8 @@ BEGIN
     SELECT Department_id Ma_khoa, Semester_id Ma_hoc_ky, 
             COUNT(Subject_id) So_mon_hoc
     FROM Opens o
-    GROUP BY Department_id , Semester_id 
+    GROUP BY Department_id , Semester_id
+    ORDER BY Department_id , Semester_id
 END;
 
 GO
@@ -169,30 +182,35 @@ BEGIN
     FROM Opens o, Class c
     WHERE o.Subject_id = c.Subject_id
     GROUP BY Department_id , o.Semester_id 
+    ORDER BY Department_id, o.Semester_id
 END;
 
 GO
 --(i.10). Xem tong so sinh vien dang ky o moi lop cua mot mon hoc o mot hoc ky.
-CREATE PROCEDURE numOfStudents_class_sem
+CREATE PROCEDURE numOfStudents_class_sem(
+    @subject_id varchar(10),
+    @semester_id varchar(10)
+)
 AS
 BEGIN
-    SELECT c.Semester_id Ma_hoc_ky, c.id Ma_lop_hoc,
-            COUNT(r.Student_id) Tong_sinh_vien
-    FROM Register r,Class c
-    WHERE r.Class_id = c.id
-    GROUP BY c.Semester_id, c.id
+    SELECT DISTINCT c.id Ma_lop_hoc, COUNT(r.Student_id) Tong_sinh_vien
+    FROM Register r JOIN Class c ON r.Class_id = c.id AND r.Semester_id = c.Semester_id AND r.Subject_id = c.Subject_id
+    WHERE r.Subject_id = @subject_id AND r.Semester_id = @semester_id
+    GROUP BY c.id
+    ORDER BY c.id
 END;
 
 GO
 --(i.11). Xem so sinh vien dang ky o moi mon hoc o mot hoc ky.
-CREATE PROCEDURE numOfStudents_sub_sem
+CREATE PROCEDURE numOfStudents_sub_sem(
+    @semester_id varchar(10)
+)
 AS
 BEGIN
-    SELECT c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc,
-            COUNT(r.Student_id) Tong_sinh_vien
-    FROM Register r,Class c
-    WHERE r.Class_id = c.id
-    GROUP BY c.Semester_id, c.Subject_id
+    SELECT c.Subject_id Ma_mon_hoc, COUNT(DISTINCT r.Student_id) Tong_sinh_vien
+    FROM Register r JOIN Class c ON r.Class_id = c.id AND r.Semester_id = c.Semester_id AND r.Subject_id = c.Subject_id
+    WHERE r.Semester_id = @semester_id
+    GROUP BY c.Subject_id
 END;
 
 GO
@@ -200,15 +218,15 @@ GO
 CREATE PROCEDURE numOfStudents_sub_dep
 AS
 BEGIN
-    SELECT o.Department_id Ma_khoa, c.Subject_id Ma_mon_hoc,
+    SELECT sd.did Ma_khoa, c.Subject_id Ma_mon_hoc,
             COUNT(r.Student_id) Tong_sinh_vien
-    FROM Register r,Class c, Opens o
-    WHERE r.Class_id = c.id
-        AND c.Subject_id = o.Subject_id
-    GROUP BY o.Department_id, c.Subject_id
+    FROM Register r JOIN Class c ON r.Class_id = c.id AND r.Semester_id = c.Semester_id AND r.Subject_id = c.Subject_id
+        JOIN SubjectDepartment sd ON r.Subject_id = sd.subject_id
+    GROUP BY sd.did, c.Subject_id
+    ORDER BY sd.did, c.Subject_id
 END;
-
---                                                 (ii) Khoa
+--!SECTION
+--SECTION (ii) Khoa
 -- *****************************************************************************************************************
 
 --ii.1: Cap nhat danh sach mon hoc duoc mo truoc dau moi hoc ky.
@@ -374,7 +392,8 @@ BEGIN
             GROUP BY Semester_id, startDate) a
 END;
 
---                                                 (iii) Giang vien
+--!SECTION
+--SECTION (iii) Giang vien
 -- *****************************************************************************************************************
 -- (iii.1). Cap nhat giao trinh chinh cho mon hoc do minh phu trach.
 GO
@@ -498,8 +517,8 @@ BEGIN
     GROUP BY Semester_id
     ORDER BY COUNT(*) DESC
 END;
-
---                                                 (iv) Sinh vien
+--!SECTION
+--SECTION (iv) Sinh vien
 -- *****************************************************************************************************************
 
 --iv.1: Dang ky mon hoc o hoc ky duoc dang ky.
@@ -615,3 +634,4 @@ BEGIN
     GROUP BY Semester_id
     ORDER BY SUM(DISTINCT credit)
 END;
+--!SECTION
