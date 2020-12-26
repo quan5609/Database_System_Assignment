@@ -62,7 +62,8 @@ def updateSubject():
     '''
     PROCEDURE UpdateSubject(
             @semesterId AS varchar(10),
-            @subjectId AS VARCHAR(10)
+            @subjectId AS VARCHAR(10),
+            @departmentId AS varchar(10)
         )
     '''
     '''Define Schema'''
@@ -152,7 +153,8 @@ def updateTeacherOfClass():
 def subjectOnSemester():
     '''
     PROCEDURE SubjectOnSemester(
-        @semesterId AS varchar(10)
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
     )
     '''
     '''Define Schema'''
@@ -205,7 +207,8 @@ def subjectOnSemester():
 def teacherOnSemester():
     '''
     PROCEDURE TeacherOnSemester(
-        @semesterId AS varchar(10)
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
     )
     '''
     '''Define Schema'''
@@ -305,7 +308,8 @@ def classOfTeacher():
 def teacherOfClass():
     '''
     PROCEDURE TeacherOfClass(
-        @semesterId AS varchar(10)
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
     )
     '''
     '''Define Schema'''
@@ -359,7 +363,8 @@ def teacherOfClass():
 def bookOfSubject():
     '''
     PROCEDURE BookOfSubject(
-        @semesterId AS varchar(10)
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
     )
     '''
     '''Define Schema'''
@@ -412,7 +417,8 @@ def bookOfSubject():
 def studentOfClass():
     '''
     PROCEDURE StudentOfClass(
-        @semesterId AS varchar(10)
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
     )
     '''
 
@@ -468,7 +474,8 @@ def studentOfClass():
 def numStudentOfSemester():
     '''
     PROCEDURE NumStudentOfSemester(
-        @semesterId AS varchar(10)
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
     )
     '''
 
@@ -524,7 +531,8 @@ def numStudentOfSemester():
 def numClassOfSemester():
     '''
     PROCEDURE NumClassOfSemester(
-        @semesterId AS varchar(10)
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
     )
     '''
 
