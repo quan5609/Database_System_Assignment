@@ -228,7 +228,6 @@ END;
 --!SECTION
 --SECTION (ii) Khoa
 -- *****************************************************************************************************************
-
 --ii.1: Cap nhat danh sach mon hoc duoc mo truoc dau moi hoc ky.
 GO
 CREATE PROCEDURE UpdateSubject(
@@ -301,8 +300,9 @@ CREATE PROCEDURE TeacherOfClass(
 )
 AS
 BEGIN
-    SELECT DISTINCT Class_id Ma_lop, dbo.Responsible.Semester_id Ma_hoc_ky, dbo.Responsible.Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
+    SELECT DISTINCT Class_id Ma_lop, dbo.Responsible.Semester_id Ma_hoc_ky, dbo.Responsible.Subject_id Ma_mon, Teacher_ssn Ma_giang_vien, lastName Ho, firstName Ten
     FROM dbo.Responsible JOIN dbo.Opens ON Opens.Semester_id = Responsible.Semester_id AND Opens.Subject_id = Responsible.Subject_id
+        JOIN dbo.Employee ON Teacher_ssn = ssn
     WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
 END;
 
@@ -314,9 +314,9 @@ CREATE PROCEDURE BookOfSubject(
 )
 AS
 BEGIN
-    SELECT DISTINCT Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh
-    FROM dbo.Uses
-    WHERE Subject_id IN (SELECT Subject_id FROM dbo.Opens WHERE Semester_id = @semesterId AND Department_id = @departmentId)
+    SELECT DISTINCT Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
+    FROM dbo.Uses JOIN dbo.ReferenceBook ON ReferenceBook_id = id
+    WHERE Subject_id IN (SELECT Subject_id FROM dbo.SubjectDepartment WHERE did = @departmentId)
 END;
 
 GO
@@ -385,8 +385,8 @@ CREATE PROCEDURE AvgNumStudent(
 )
 AS
 BEGIN
-    SELECT AVG(a.So_sinh_vien) 
-    FROM (SELECT 100 Semester_id, dbo.Semester.startDate Ngay_bat_dau, COUNT(DISTINCT Student_id) So_sinh_vien
+    SELECT AVG(a.So_sinh_vien) So_sinh_vien_trung_binh_trong_3_nam_gan_nhat
+    FROM (SELECT Semester_id, dbo.Semester.startDate Ngay_bat_dau, COUNT(DISTINCT Student_id) So_sinh_vien
             FROM dbo.Register JOIN dbo.Semester ON Semester_id = dbo.Semester.id
             WHERE Subject_id = @subjectId AND DATEDIFF(YEAR, startDate, GETDATE()) <= 3
             GROUP BY Semester_id, startDate) a
