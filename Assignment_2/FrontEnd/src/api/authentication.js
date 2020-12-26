@@ -20,3 +20,23 @@ export const loginApi = (username, password, role) => {
       });
   });
 };
+
+export const registerApi = (username, password, role) => {
+  return new Promise((resolve, reject) => {
+    return axios({
+      method: 'post',
+      url: 'http://localhost:5000/register',
+      data: {
+        username,
+        password,
+        role,
+      },
+    })
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
+};

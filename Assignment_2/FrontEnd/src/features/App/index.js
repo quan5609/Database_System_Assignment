@@ -9,11 +9,12 @@ import './index.scss';
 import { getCookie } from 'utils/cookies';
 import PropTypes from 'prop-types';
 import LoginPage from 'features/App/pages/Login';
+import RegisterPage from 'features/App/pages/Register';
 import NotFound from 'components/NotFound';
 import PrivateRoute from 'components/PrivateRoute';
 import MainMenu from 'components/MainMenu';
 import Loading from 'components/Loading';
-import AuthProvider from 'features/App/pages/Login/AuthProvider';
+
 import { getStore } from 'store';
 import { login, onLogout } from './slice';
 
@@ -41,23 +42,24 @@ const Resource = React.lazy(() =>
 );
 
 function App(props) {
-  const {
-    account,
-    emailMessages,
-    error,
-    graphProfile,
-    onSignIn,
-    onSignOut,
-    idToken,
-    onRequestEmailToken,
-  } = props;
+  // const {
+  //   account,
+  //   emailMessages,
+  //   error,
+  //   graphProfile,
+  //   onSignIn,
+  //   onSignOut,
+  //   idToken,
+  //   onRequestEmailToken,
+  // } = props;
   const dispatch = useDispatch();
   const { token, loading } = useSelector(state => state.app);
   const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
     const tokenCookie = getCookie('token');
-    if (tokenCookie) dispatch(login({ token: tokenCookie }));
+    const roleCookie = getCookie('role');
+    if (tokenCookie) dispatch(login({ token: tokenCookie, role: roleCookie }));
   }, []);
 
   const handleLogout = () => {
@@ -122,6 +124,7 @@ function App(props) {
                   <PrivateRoute path="/users" component={User} />
                   <PrivateRoute path="/resources" component={Resource} />
                   <Route exact path="/login" component={LoginPage} />
+                  <Route exact path="/register" component={RegisterPage} />
                   <Route component={NotFound} />
                 </Switch>
               </Content>
@@ -133,14 +136,5 @@ function App(props) {
   );
 }
 
-LoginPage.propTypes = {
-  account: PropTypes.object,
-  emailMessages: PropTypes.object,
-  error: PropTypes.string,
-  idToken: PropTypes.string,
-  graphProfile: PropTypes.object,
-  onSignIn: PropTypes.func.isRequired,
-  onSignOut: PropTypes.func.isRequired,
-  onRequestEmailToken: PropTypes.func.isRequired,
-};
-export default AuthProvider(App);
+App.propTypes = {};
+export default App;

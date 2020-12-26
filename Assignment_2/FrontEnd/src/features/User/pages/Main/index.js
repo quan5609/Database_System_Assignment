@@ -41,9 +41,10 @@ const columns = [
 
 function MainPage() {
   const [data, setData] = useState([]);
-  const [pagination, setPagination] = useState({ current: 1, pageSize: 10, });
+  const [pagination, setPagination] = useState({ current: 1, pageSize: 10 });
   const [loading, setLoading] = useState(false);
-  const { startDate } = useSelector(state => state.users);
+  // const { startDate } = useSelector(state => state.app);
+  const { role } = useSelector(state => state.app.userInfo);
   useEffect(() => {
     fetch({ pagination });
   }, []);
@@ -59,26 +60,29 @@ function MainPage() {
 
   const fetch = (params = {}) => {
     setLoading(true);
-    return getUsersApi(getRandomuserParams(params))
-      .then(res => {
-        setLoading(false);
-        setData(res.results);
-        setPagination({
-          ...params.pagination,
-          total: 200,
-        })
+    return getUsersApi(getRandomuserParams(params)).then(res => {
+      setLoading(false);
+      setData(res.results);
+      setPagination({
+        ...params.pagination,
+        total: 200,
       });
+    });
   };
 
   return (
     <div>
+      <div>
+        <p>`This is a ${role}`</p>
+      </div>
       <Table
         columns={columns}
         rowKey={record => record.login.uuid}
         dataSource={data}
         pagination={pagination}
         loading={loading}
-        onChange={handleTableChange} />
+        onChange={handleTableChange}
+      />
     </div>
   );
 }

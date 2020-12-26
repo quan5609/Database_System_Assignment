@@ -16,9 +16,9 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
-LoginPage.propTypes = {};
+RegisterPage.propTypes = {};
 
-function LoginPage(props) {
+function RegisterPage(props) {
   const dispatch = useDispatch();
   const history = useHistory();
   const { Option } = Select;
@@ -34,10 +34,10 @@ function LoginPage(props) {
   //   onRequestEmailToken,
   // } = props;
   const onFinish = values => {
-    dispatch(onLogin(values.email, values.password, values.role))
+    dispatch(onSignUp(values.email, values.password, values.role))
       .then(() => {
-        message.success('login successfully');
-        history.push('/');
+        message.success('register successfully');
+        history.push('/login');
       })
       .catch(error => {
         message.error(error.response.data);
@@ -89,9 +89,8 @@ function LoginPage(props) {
           </Form.Item>
           <Form.Item {...tailLayout}>
             <Button type="primary" htmlType="submit">
-              Login
+              Register
             </Button>
-            |<Button href="/register">Register</Button>
           </Form.Item>
         </Form>
       </div>
@@ -99,5 +98,5 @@ function LoginPage(props) {
   );
 }
 
-LoginPage.propTypes = {};
-export default LoginPage;
+RegisterPage.propTypes = {};
+export default RegisterPage;

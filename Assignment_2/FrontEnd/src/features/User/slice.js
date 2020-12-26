@@ -14,8 +14,8 @@ const slice = createSlice({
       state.startDate = action.payload.startDate;
       state.endDate = action.payload.endDate;
     },
-  }
+  },
 });
 
-export const { setFilter } = slice.actions
-export default slice.reducer
+export const { setFilter } = slice.actions;
+export default slice.reducer;
