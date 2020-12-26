@@ -531,10 +531,10 @@ CREATE PROCEDURE RegisterSubject(
 )
 AS
 BEGIN
-    IF EXISTS( SELECT 1 FROM dbo.StudyStatus WHERE [sid] = @studentId AND semesterId = @semesterId AND [status] = 'normal')
+    IF EXISTS( SELECT * FROM dbo.StudyStatus WHERE [sid] = @studentId AND semesterId = @semesterId AND [status] = 'normal')
         INSERT INTO dbo.Register VALUES (@studentId, @classId, @semesterId, @subjectId)
     ELSE
-        RAISERROR('Invalid',-1,-1)
+        RAISERROR('Invalid Study status',16,0)
 END;
 --iv.2: Xem danh sach mon hoc, lop hoc, va cac giang vien phu trach cho moi lop cua moi mon hoc o hoc ky duoc dang ky.
 GO
@@ -547,7 +547,7 @@ BEGIN
     FROM dbo.Responsible
     WHERE Semester_id IN (SELECT semesterId 
                                 FROM dbo.StudyStatus
-                                WHERE [sid] = @studentId AND [status] = 'nomal')
+                                WHERE [sid] = '1600002' AND [status] = 'normal')
 END;
 
 --iv.3: Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc ma minh dang ky o mot hoc ky.
@@ -558,8 +558,9 @@ CREATE PROCEDURE SubjectReferenceBook(
 )
 AS
 BEGIN
-    SELECT DISTINCT Register.Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh
+    SELECT DISTINCT Register.Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
     FROM dbo.Register JOIN dbo.Uses ON Register.Subject_id = Uses.Subject_id
+        JOIN ReferenceBook ON Uses.ReferenceBook_id = ReferenceBook.id
     WHERE Student_id = @studentId AND Register.Semester_id = @semesterId
 END;
 
@@ -571,7 +572,7 @@ CREATE PROCEDURE ClassOfSubject(
 )
 AS
 BEGIN
-    SELECT Subject_id Ma_mon, id Ma_lop
+    SELECT DISTINCT Subject_id Ma_mon, id Ma_lop
     FROM dbo.Class
     WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon
                             FROM dbo.Register
@@ -586,7 +587,7 @@ CREATE PROCEDURE ClassOfSubjectMoreThan1Teacher(
 )
 AS
 BEGIN
-    SELECT Subject_id Ma_mon, Class_id Ma_lop
+    SELECT DISTINCT Subject_id Ma_mon, Class_id Ma_lop
     FROM dbo.Responsible
     WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon
                             FROM dbo.Register
@@ -603,7 +604,7 @@ CREATE PROCEDURE SumCredit(
 )
 AS
 BEGIN
-    SELECT SUM(DISTINCT credit)
+    SELECT SUM(DISTINCT credit) Tong_so_tin_chi
     FROM dbo.Register JOIN dbo.Subject ON Subject_id = id
     WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;
@@ -616,7 +617,7 @@ CREATE PROCEDURE SumSubject(
 )
 AS
 BEGIN
-    SELECT COUNT(DISTINCT Subject_id)
+    SELECT COUNT(DISTINCT Subject_id) Tong_so_mon_hoc_da_dang_ky
     FROM dbo.Register
     WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;
@@ -628,10 +629,10 @@ CREATE PROCEDURE First3MaxCredit(
 )
 AS
 BEGIN
-    SELECT TOP 3 Semester_id, SUM(DISTINCT credit)
+    SELECT TOP 3 Semester_id Ma_hoc_ky, SUM(DISTINCT credit) Tong_so_tin_chi
     FROM dbo.Register JOIN dbo.Subject ON Subject_id = id
     WHERE Student_id = @studentId
     GROUP BY Semester_id
-    ORDER BY SUM(DISTINCT credit)
+    ORDER BY SUM(DISTINCT credit) DESC
 END;
 --!SECTION
