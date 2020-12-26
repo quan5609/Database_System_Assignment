@@ -406,15 +406,26 @@ CREATE PROCEDURE UpdateReferenceBook(
     )
 AS
 BEGIN
-    IF (SELECT COUNT(*) FROM Uses WHERE Subject_id = @subjectId) < 3
-        INSERT INTO Uses 
-        (Subject_id,Semester_id, Class_id ,ReferenceBook_id, MainTeacher_ssn)
-        VALUES (@subjectId,@semesterId, @classId,  @bookId, @teacherSsn)
-    ELSE 
-        RAISERROR('This subject can not have more than 3 reference books',-1,-1);
+    IF NOT EXISTS (
+        SELECT 1 FROM MainResponsible
+        Where MainTeacher_ssn = @teacherSsn
+            AND Subject_id = @subjectId
+            AND Semester_id = @semesterId
+    )
+        RAISERROR('Only update book for your responsible subject',16,0)
+    ELSE
+        IF (SELECT COUNT(*) FROM Uses 
+            WHERE Subject_id = @subjectId 
+                AND Semester_id = @semesterId) < 3
+            INSERT INTO Uses 
+            (Subject_id,Semester_id, Class_id ,ReferenceBook_id, MainTeacher_ssn)
+            VALUES (@subjectId,@semesterId, @classId,  @bookId, @teacherSsn)
+        ELSE 
+            RAISERROR('This subject can not have more than 3 reference books',16,0);
 END;
 
 -- (iii.2). Xem danh sach lop hoc cua moi mon hoc do minh phu trach o mot hoc ky.
+DROP PROCEDURE responsibleClasses
 GO
 CREATE PROCEDURE responsibleClasses 
     (@teacherSsn AS varchar(10),
@@ -426,9 +437,11 @@ BEGIN
     FROM Responsible
     WHERE Teacher_ssn = @teacherSsn AND Semester_id = @semesterId
     GROUP BY Subject_id,Class_id
+    ORDER BY Subject_id,Class_id
 END;
 
 -- (iii.3). Xem danh sach sinh vien cua moi lop hoc do minh phu trach o mot hoc ky.
+DROP PROCEDURE studentOfResopnsibleClass
 GO
 CREATE PROCEDURE studentOfResopnsibleClass 
     (@teacherSsn AS varchar(10),
@@ -436,13 +449,14 @@ CREATE PROCEDURE studentOfResopnsibleClass
     )
 AS
 BEGIN
-    SELECT rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
+    SELECT DISTINCT rp.Subject_id Ma_mon_hoc,rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
     FROM Responsible rp, Register rg, Student st
     WHERE rp.Class_id = rg.Class_id
         AND rg.Student_id = st.ssn
         AND Teacher_ssn = @teacherSsn
         AND rp.Semester_id = @semesterId
-    GROUP BY rp.Class_id,Student_id, firstName, lastName
+    GROUP BY rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
+    ORDER BY rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
 END;
 
 -- (iii.4). Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc do minh phu trach o mot hoc ky.
@@ -453,16 +467,15 @@ CREATE PROCEDURE referenceBookOfResponsibleSubject
     )
 AS
 BEGIN
-    SELECT rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
-    FROM Responsible rp, Register rg, Student st
-    WHERE rp.Class_id = rg.Class_id
-        AND rg.Student_id = st.ssn
-        AND Teacher_ssn = @teacherSsn
-        AND rp.Semester_id = @semesterId
-    GROUP BY rp.Class_id,Student_id, firstName, lastName
+    SELECT rp.Subject_id Ma_mon_hoc, r.[name] Ten_giao_trinh
+    FROM Responsible rp JOIN Uses u ON rp.Subject_id = u.Subject_id 
+        JOIN ReferenceBook r ON u.ReferenceBook_id = r.id
+    WHERE rp.Semester_id = @semesterId AND u.Semester_id = @semesterId
+    GROUP BY rp.Subject_id,r.[name]
 END;
 
 -- (iii.5). Xem tong so sinh vien cua moi lop hoc do minh phu trach o mot hoc ky.
+DROP PROCEDURE numOfStudents_ofResponsiblesClass 
 GO
 CREATE PROCEDURE numOfStudents_ofResponsiblesClass 
     (@teacherSsn AS varchar(10),
@@ -470,12 +483,13 @@ CREATE PROCEDURE numOfStudents_ofResponsiblesClass
     )
 AS
 BEGIN
-    SELECT rp.Class_id Ma_lop_hoc, COUNT(*) tong_so_sinh_vien
+    SELECT rp.Subject_id Ma_mon_hoc,rp.Class_id Ma_lop_hoc, COUNT(DISTINCT rg.Student_id) tong_so_sinh_vien
     FROM Responsible rp, Register rg
     WHERE rp.Class_id = rg.Class_id
         AND Teacher_ssn = @teacherSsn
         AND rp.Semester_id = @semesterId
-    GROUP BY rp.Class_id
+        AND rg.Semester_id = @semesterId
+    GROUP BY rp.Subject_id, rp.Class_id
 END;
 
 -- (iii.6). Xem so lop hoc do minh phu trach o moi hoc ky trong 3 nam lien tiep gan day nhat.
@@ -493,25 +507,30 @@ BEGIN
 END;
 
 -- (iii.7). Xem 5 lop hoc co so sinh vien cao nhat ma giang vien tung phu trach.
+DROP PROCEDURE top5Class_mostStudent
 GO
 CREATE PROCEDURE top5Class_mostStudent
     (@teacherSsn AS varchar(10))
 AS
 BEGIN
-    SELECT TOP(5) rp.Class_id Ma_lop_hoc--, COUNT(*) tong_so_sinh_vien
+    SELECT TOP(5) rp.Class_id Ma_lop_hoc, COUNT(DISTINCT Student_id) Tong_so_sinh_vien
     FROM Responsible rp, Register rg
     WHERE rp.Class_id = rg.Class_id
         AND Teacher_ssn = @teacherSsn
+        AND rp.Semester_id = rg.Semester_id
+        AND rp.Subject_id = rg.Subject_id
     GROUP BY rp.Class_id
     ORDER BY COUNT(*) DESC
 END;
 -- (iii.8). Xem 5 hoc ky co so lop nhieu nhat ma giang vien tung phu trach.
 GO
+DROP PROCEDURE top5Semester_mostClass
+GO
 CREATE PROCEDURE top5Semester_mostClass
     (@teacherSsn AS varchar(10))
 AS
 BEGIN
-    SELECT TOP(5) Semester_id Ma_hoc_ky--, COUNT(*) tong_so_sinh_vien
+    SELECT TOP(5) Semester_id Ma_hoc_ky, COUNT(*) Tong_so_lop
     FROM Responsible 
     WHERE Teacher_ssn = @teacherSsn
     GROUP BY Semester_id
