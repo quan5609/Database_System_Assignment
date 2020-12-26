@@ -13,7 +13,8 @@ def execute_sp(engine, sp, params, getResult=True):
         res['status'] = 'OK'
     except Exception as e:
         res['status'] = 'ERROR'
-        res['error'] = e
+        # res['error'] = e
+        res['error'] = e.args[1].split(']')[-1].split('(')[0][:-1] #)
     finally:
         connection.close()
     return res
