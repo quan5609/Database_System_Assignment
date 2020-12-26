@@ -6,7 +6,7 @@ class StoredProcedure():
         self.updateRegister = 'EXEC updateRegister ?,?,?,?, ?,?,?,?'
         self.registeredClass = 'EXEC addRegister ?,?'
         self.reponsibleClass = 'EXEC addRegister ?,?'
-        self.listClass = 'EXEC listClass ?,?'
+        self.listClass = 'EXEC listClass'
         self.listStudent = 'EXEC listStudent'
         self.listTeacher = 'EXEC listTeacher'
         self.listReferenceBook = 'EXEC listReferenceBook ?,?'
@@ -15,6 +15,8 @@ class StoredProcedure():
         self.numOfStudents_class_sem = 'EXEC numOfStudents_class_sem'
         self.numOfStudents_sub_sem = 'EXEC numOfStudents_sub_sem'
         self.numOfStudents_sub_dep = 'EXEC numOfStudents_sub_dep'
+
+        self.getAll = 'SELECT * FROM Opens' #draft
 
 
 

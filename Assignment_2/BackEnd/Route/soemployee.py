@@ -7,6 +7,7 @@ from typing import List, Tuple, Dict, Optional
 
 from BackEnd.Utils.auth import *
 from BackEnd.Utils.validator import *
+from BackEnd.Utils.execute_sp import *
 from BackEnd.RequestSchema.soemployee import Schema
 from BackEnd.SQLExec.soemployee import StoredProcedure
 from BackEnd.app import engine
@@ -58,3 +59,89 @@ def hello():
         mimetype='application/json'
     )
     return response
+
+
+@soemployee_blueprint.route('/get-all',methods = ['POST'])
+def getAllStudent():
+    '''Define Schema'''
+    schema = request_schema.getAll
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+    
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+
+    '''Execute Stored Procedure'''
+    params = []
+    res = execute_sp(engine,stored_procedure.getAll,params)
+
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps('INTERNAL SERVER ERROR'),
+            status=500,
+            mimetype='application/json'
+        )
+    
+    if not res['payload']:  
+        return Response(
+            response=json.dumps('Empty'),
+            status=400,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps({'res':res['payload']}),
+            status=200,
+            mimetype='application/json'
+        )
+
+
+@soemployee_blueprint.route('/list-class',methods = ['POST'])
+def listClass():
+    '''Define Schema'''
+    schema = request_schema.listClass
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+    
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+    
+    '''Execute Stored Procedure'''
+    params = []
+    res = execute_sp(engine,stored_procedure.listClass,params)
+    print(res)
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps('INTERNAL SERVER ERROR'),
+            status=500,
+            mimetype='application/json'
+        )
+    
+    if not res['payload']:  
+        return Response(
+            response=json.dumps('Empty'),
+            status=400,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps({'res':res['payload']}),
+            status=200,
+            mimetype='application/json'
+        )
