@@ -43,9 +43,7 @@ class Schema():
         }
 
         self.listClass = {
-            'token': {'type': 'string', 'required': True},
-            'departmentId': {'type': 'string', 'required': True},
-            'semesterId': {'type': 'string', 'required': True}
+            'token': {'type': 'string', 'required': True}
         }
 
         self.listStudent = {
@@ -79,5 +77,9 @@ class Schema():
         }
 
         self.numOfStudents_sub_dep = {
+            'token': {'type': 'string', 'required': True},
+        }
+
+        self.getAll = {
             'token': {'type': 'string', 'required': True},
         }

@@ -121,7 +121,7 @@ def getAllStudent():
     # params = [studentId,semesterId]
     params = []
     res = execute_sp(engine,stored_procedure.getAllStudent,params)
-    print(res)
+    # print(res)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':

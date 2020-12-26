@@ -95,15 +95,13 @@ END;
 
 GO
 --(i.4). Xem danh sach mon hoc duoc dang ky o moi hoc ky o moi khoa.
-CREATE PROCEDURE listClass(
-    @departmentId AS varchar(10),
-    @semesterId AS varchar(10)
-)
+drop PROCEDURE listClass
+go
+CREATE PROCEDURE listClass
 AS
 BEGIN
-    SELECT Subject_id Ma_mon_hoc
+    SELECT Department_id Ma_khoa, Semester_id Ma_hoc_ky, Subject_id Ma_mon_hoc
     FROM Opens
-    WHERE Department_id = @departmentId  AND Semester_id = @semesterId
 END;
 
 GO
