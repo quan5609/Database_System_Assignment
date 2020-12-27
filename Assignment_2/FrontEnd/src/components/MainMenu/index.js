@@ -14,6 +14,18 @@ function MainMenu(props) {
         Student
         <Link to="/students" />
       </Menu.Item>
+      <Menu.Item key="/subjects" icon={<UserOutlined />}>
+        Subject
+        <Link to="/subjects" />
+      </Menu.Item>
+      <Menu.Item key="/teachers" icon={<UserOutlined />}>
+        Teacher
+        <Link to="/teachers" />
+      </Menu.Item>
+      <Menu.Item key="/classes" icon={<UserOutlined />}>
+        Class
+        <Link to="/classes" />
+      </Menu.Item>
       <Menu.Item key="/resources" icon={<VideoCameraOutlined />}>
         Resource
         <Link to="/resources" />

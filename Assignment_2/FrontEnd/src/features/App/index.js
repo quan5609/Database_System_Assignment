@@ -31,6 +31,46 @@ const Student = React.lazy(() =>
   }),
 );
 
+const Teacher = React.lazy(() =>
+  import('features/Teacher').then(async module => {
+    const reducer = await import('features/Teacher/slice').then(
+      slide => slide.default,
+    );
+    store.injectReducer('teachers', reducer);
+    return module;
+  }),
+);
+
+const Subject = React.lazy(() =>
+  import('features/Subject').then(async module => {
+    const reducer = await import('features/Subject/slice').then(
+      slide => slide.default,
+    );
+    store.injectReducer('subjects', reducer);
+    return module;
+  }),
+);
+
+const Classes = React.lazy(() =>
+  import('features/Classes').then(async module => {
+    const reducer = await import('features/Classes/slice').then(
+      slide => slide.default,
+    );
+    store.injectReducer('classes', reducer);
+    return module;
+  }),
+);
+
+const Book = React.lazy(() =>
+  import('features/Book').then(async module => {
+    const reducer = await import('features/Book/slice').then(
+      slide => slide.default,
+    );
+    store.injectReducer('books', reducer);
+    return module;
+  }),
+);
+
 const Resource = React.lazy(() =>
   import('features/Resource').then(async module => {
     const reducer = await import('features/Resource/slice').then(
@@ -122,10 +162,11 @@ function App(props) {
                   {/* <PrivateRoute path="/" component={User} /> */}
                   <Redirect exact from="/" to="/resources" />
                   <PrivateRoute path="/resources" component={Resource} />
-                  <PrivateRoute path="/subjects" component={Resource} />
-                  <PrivateRoute path="/teachers" component={Resource} />
-                  <PrivateRoute path="/classes" component={Resource} />
+                  <PrivateRoute path="/subjects" component={Subject} />
+                  <PrivateRoute path="/teachers" component={Teacher} />
+                  <PrivateRoute path="/classes" component={Classes} />
                   <PrivateRoute path="/students" component={Student} />
+                  <PrivateRoute path="/books" component={Book} />
                   <Route exact path="/login" component={LoginPage} />
                   <Route exact path="/register" component={RegisterPage} />
                   <Route component={NotFound} />

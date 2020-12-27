@@ -9,7 +9,7 @@ DELETE from Department
 DELETE from DepartmentEmployee
 DELETE from EducationAgency
 DELETE from Employee
-DELETE from EmployeeAccount
+--DELETE from EmployeeAccount
 DELETE from Field
 DELETE from MainResponsible
 DELETE from MainTeacher
@@ -773,7 +773,7 @@ VALUES
 -- !SECTION
 -- SECTION EmployeeAccount 
 -----------------------------------------------------------------------------------------------------------------------------
-INSERT INTO EmployeeAccount
+/*INSERT INTO EmployeeAccount
     (ssn, password)
 VALUES
     (
@@ -785,7 +785,7 @@ INSERT INTO EmployeeAccount
 VALUES
     (
         'depar00006', '$2b$05$iyllBYFvHiA8skgzZrD16O2AQBUjjrODVg1e5PMQayvnArLc5l4ke'
-);
+);*/
 -- !SECTION
 -- SECTION DepartmentEmployee 
 -----------------------------------------------------------------------------------------------------------------------------
