@@ -121,10 +121,12 @@ END;
 
 GO
 --(i.5). Xem danh sach sinh vien dang ky o moi lop o moi hoc ky o moi khoa.
+DROP PROCEDURE listStudent
+GO
 CREATE PROCEDURE listStudent
 AS
 BEGIN
-    SELECT DISTINCT Department_id Ma_khoa, c.Semester_id Ma_hoc_ky, c.id Ma_lop,
+    SELECT DISTINCT Department_id Ma_khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, c.id Ma_lop,
             s.ssn,firstName Ten, lastName Ho
             
     FROM Student s, Register, Class c, Opens o
@@ -132,7 +134,7 @@ BEGIN
         AND Class_id = c.id
         AND c.Semester_id = o.Semester_id
         AND c.Subject_id = o.Subject_id
-    ORDER BY Department_id, c.Semester_id, c.id, s.ssn,firstName,lastName
+    ORDER BY Department_id, c.Semester_id, c.Subject_id, c.id, s.ssn,firstName,lastName
 END;
 
 GO
@@ -513,7 +515,7 @@ CREATE PROCEDURE top5Class_mostStudent
     (@teacherSsn AS varchar(10))
 AS
 BEGIN
-    SELECT TOP(5) rp.Class_id Ma_lop_hoc, COUNT(DISTINCT Student_id) Tong_so_sinh_vien
+    SELECT TOP(5) rp.Semester_id Ma_hoc_ky, rp.Subject_id Ma_mon_hoc, rp.Class_id Ma_lop_hoc, COUNT(DISTINCT Student_id) Tong_so_sinh_vien
     FROM Responsible rp, Register rg
     WHERE rp.Class_id = rg.Class_id
         AND Teacher_ssn = @teacherSsn
