@@ -9,7 +9,7 @@ DELETE from Department
 DELETE from DepartmentEmployee
 DELETE from EducationAgency
 DELETE from Employee
-DELETE from EmployeeAccount
+DELETE from DepartmentEmployeeAccount
 DELETE from Field
 DELETE from MainResponsible
 DELETE from MainTeacher
@@ -773,14 +773,14 @@ VALUES
 -- !SECTION
 -- SECTION EmployeeAccount 
 -----------------------------------------------------------------------------------------------------------------------------
-INSERT INTO EmployeeAccount
+INSERT INTO DepartmentEmployeeAccount
     (ssn, password)
 VALUES
     (
         'depar00003', '$2b$05$iyllBYFvHiA8skgzZrD16O2AQBUjjrODVg1e5PMQayvnArLc5l4ke'
 );
 
-INSERT INTO EmployeeAccount
+INSERT INTO DepartmentEmployeeAccount
     (ssn, password)
 VALUES
     (
@@ -5536,6 +5536,9 @@ VALUES
 --!SECTION
 --SECTION Responsible
 -------------------------------------------------------------------------------------------------
+insert into Responsible values('cq171', 'CO1009', 'L01', 1, 'cq171', 'teach70001')
+insert into Responsible values('cq171', 'IM3061', 'L01', 1, 'cq171', 'teach70001')
+
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
@@ -6160,6 +6163,86 @@ VALUES
 --!SECTION
 --SECTION Register 
 -----------------------------------------------------------------------------------------------------------------------------
+-- Them
+/* INSERT QUERY NO: 1 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1640064, 'L01', 'cq192', 'EE1015'
+);
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1640067, 'L01', 'cq192', 'EE1015'
+);
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1640077, 'L01', 'cq192', 'EE1015'
+);
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1640090, 'L01', 'cq192', 'EE1015'
+);
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1640094, 'L01', 'cq192', 'EE1015'
+);
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1650015, 'L01', 'cq192', 'EE1015'
+);
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1650018, 'L01', 'cq192', 'EE1015'
+);
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1650027, 'L01', 'cq192', 'EE1015'
+);
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1650046, 'L01', 'cq192', 'EE1015'
+);
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1650049, 'L01', 'cq192', 'EE1015'
+);
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
+VALUES
+(
+1650056, 'L01', 'cq192', 'EE1015'
+);
+
+
+----
 INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
 VALUES
 (

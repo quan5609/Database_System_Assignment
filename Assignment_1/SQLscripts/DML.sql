@@ -519,8 +519,8 @@ BEGIN
         AND Teacher_ssn = @teacherSsn
         AND rp.Semester_id = rg.Semester_id
         AND rp.Subject_id = rg.Subject_id
-    GROUP BY rp.Class_id
-    ORDER BY COUNT(*) DESC
+    GROUP BY rp.Class_id, rp.Subject_id, rp.Semester_id
+    ORDER BY COUNT(DISTINCT Student_id) DESC
 END;
 -- (iii.8). Xem 5 hoc ky co so lop nhieu nhat ma giang vien tung phu trach.
 GO
