@@ -4,7 +4,6 @@ class Schema():
         self.updateSubject = {
             'token': {'type': 'string', 'required': True},
             'semesterId': {'type': 'string', 'required': True},
-            'departmentId': {'type': 'string', 'required': True},
             'subjectId': {'type': 'string', 'required': True}
         }
 
@@ -20,13 +19,11 @@ class Schema():
         self.subjectOnSemester = {
             'token': {'type': 'string', 'required': True},
             'semesterId': {'type': 'string', 'required': True},
-            'departmentId': {'type': 'string', 'required': True}
         }
 
         self.teacherOnSemester = {
             'token': {'type': 'string', 'required': True},
             'semesterId': {'type': 'string', 'required': True},
-            'departmentId': {'type': 'string', 'required': True}
         }
 
         self.classOfTeacher = {
@@ -38,37 +35,31 @@ class Schema():
         self.teacherOfClass = {
             'token': {'type': 'string', 'required': True},
             'semesterId': {'type': 'string', 'required': True},
-            'departmentId': {'type': 'string', 'required': True}
         }
 
         self.bookOfSubject = {
             'token': {'type': 'string', 'required': True},
             'semesterId': {'type': 'string', 'required': True},
-            'departmentId': {'type': 'string', 'required': True}
         }
 
         self.studentOfClass = {
             'token': {'type': 'string', 'required': True},
-            'semesterId': {'type': 'string', 'required': True},
-            'departmentId': {'type': 'string', 'required': True}
+            'semesterId': {'type': 'string', 'required': True}
         }
 
         self.numStudentOfSemester = {
             'token': {'type': 'string', 'required': True},
             'semesterId': {'type': 'string', 'required': True},
-            'departmentId': {'type': 'string', 'required': True}
         }
 
         self.numClassOfSemester = {
             'token': {'type': 'string', 'required': True},
             'semesterId': {'type': 'string', 'required': True},
-            'departmentId': {'type': 'string', 'required': True}
         }
 
         self.subjectHavingMaxTeacher = {
             'token': {'type': 'string', 'required': True},
             'semesterId': {'type': 'string', 'required': True},
-            'departmentId': {'type': 'string', 'required': True}
         }
 
         self.avgNumStudent = {

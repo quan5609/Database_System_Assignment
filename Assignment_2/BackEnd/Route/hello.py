@@ -112,7 +112,7 @@ def register():
     if res['status'] == 'ERROR':
         print(res)
         return Response(
-            response=json.dumps('Registration Failed'),
+            response=json.dumps(res['error']),#'Registration Failed'),
             status=500,
             mimetype='application/json'
         )

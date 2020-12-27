@@ -13,7 +13,11 @@ def execute_sp(engine, sp, params, getResult=True):
         res['status'] = 'OK'
     except Exception as e:
         res['status'] = 'ERROR'
-        res['error'] = e
+        # res['error'] = e
+        try:
+            res['error'] = e.args[1].split(']')[-1].split('(')[0][:-1] #)
+        except:
+            res['error'] = 'INTERNAL SERVER ERROR'
     finally:
         connection.close()
     return res
