@@ -5,7 +5,7 @@ import { SearchOutlined } from '@ant-design/icons';
 
 import './index.scss';
 
-import { getUsersApi } from 'api/user';
+import { getUsersApi } from 'api/student';
 import { useSelector } from 'react-redux';
 import { mock } from './mock';
 
