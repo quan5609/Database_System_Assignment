@@ -2,35 +2,35 @@ USE Class_Registration
 GO
 
 -- --please delete twice!
--- DELETE from Author
--- DELETE from Class
--- DELETE from Author
--- DELETE from Department
--- DELETE from DepartmentEmployee
--- DELETE from EducationAgency
--- DELETE from Employee
--- DELETE from EmployeeAccount
--- DELETE from Field
--- DELETE from MainResponsible
--- DELETE from MainTeacher
--- DELETE from Opens
--- DELETE from Publisher
--- DELETE from ReferenceBook
--- DELETE from Register
--- DELETE from Responsible
--- DELETE from Semester
--- DELETE from Student
--- DELETE from StudentAccount
--- DELETE from StudyOffice
--- DELETE from StudyOfficeEmployee
--- DELETE from StudyStatus
--- DELETE from Subject
--- DELETE from Teacher
--- DELETE from Uses
--- DELETE from Week
--- DELETE from [Write]
--- DELETE from SubjectDepartment
-
+/*
+DELETE from Author
+DELETE from Class
+DELETE from Author
+DELETE from Department
+DELETE from DepartmentEmployee
+DELETE from EducationAgency
+DELETE from Employee
+DELETE from Field
+DELETE from MainResponsible
+DELETE from MainTeacher
+DELETE from Opens
+DELETE from Publisher
+DELETE from ReferenceBook
+DELETE from Register
+DELETE from Responsible
+DELETE from Semester
+DELETE from Student
+DELETE from StudentAccount
+DELETE from StudyOffice
+DELETE from StudyOfficeEmployee
+DELETE from StudyStatus
+DELETE from Subject
+DELETE from Teacher
+DELETE from Uses
+DELETE from Week
+DELETE from [Write]
+DELETE from SubjectDepartment
+*/
 
 --                                               AUTHOR 
 -----------------------------------------------------------------------------------------------------------------------------

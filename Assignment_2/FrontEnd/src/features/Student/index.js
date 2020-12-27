@@ -7,9 +7,9 @@ import NotFound from '../../components/NotFound';
 import MainPage from './pages/Main';
 import DetailPage from './pages/Detail';
 
-User.propTypes = {};
+Student.propTypes = {};
 
-function User() {
+function Student() {
   const match = useRouteMatch();
   return (
     <Suspense fallback={<div>Loading ...</div>}>
@@ -19,8 +19,7 @@ function User() {
         <Route component={NotFound} />
       </Switch>
     </Suspense>
-
   );
 }
 
-export default User;
+export default Student;

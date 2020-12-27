@@ -21,12 +21,12 @@ import { login, onLogout } from './slice';
 const store = getStore();
 const { Header, Content, Sider } = Layout;
 
-const User = React.lazy(() =>
-  import('features/User').then(async module => {
-    const reducer = await import('features/User/slice').then(
+const Student = React.lazy(() =>
+  import('features/Student').then(async module => {
+    const reducer = await import('features/Student/slice').then(
       slide => slide.default,
     );
-    store.injectReducer('users', reducer);
+    store.injectReducer('students', reducer);
     return module;
   }),
 );
@@ -120,9 +120,12 @@ function App(props) {
               >
                 <Switch>
                   {/* <PrivateRoute path="/" component={User} /> */}
-                  <Redirect exact from="/" to="/users" />
-                  <PrivateRoute path="/users" component={User} />
+                  <Redirect exact from="/" to="/resources" />
                   <PrivateRoute path="/resources" component={Resource} />
+                  <PrivateRoute path="/subjects" component={Resource} />
+                  <PrivateRoute path="/teachers" component={Resource} />
+                  <PrivateRoute path="/classes" component={Resource} />
+                  <PrivateRoute path="/students" component={Student} />
                   <Route exact path="/login" component={LoginPage} />
                   <Route exact path="/register" component={RegisterPage} />
                   <Route component={NotFound} />

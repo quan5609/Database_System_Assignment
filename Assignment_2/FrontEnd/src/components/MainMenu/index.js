@@ -4,17 +4,15 @@ import { useLocation, Link } from 'react-router-dom';
 import { Menu } from 'antd';
 import { UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 
-MainMenu.propTypes = {
-
-};
+MainMenu.propTypes = {};
 
 function MainMenu(props) {
   const location = useLocation();
   return (
     <Menu theme="dark" mode="inline" selectedKeys={[location.pathname]}>
-      <Menu.Item key="/users" icon={<UserOutlined />}>
-        User
-        <Link to="/users" />
+      <Menu.Item key="/students" icon={<UserOutlined />}>
+        Student
+        <Link to="/students" />
       </Menu.Item>
       <Menu.Item key="/resources" icon={<VideoCameraOutlined />}>
         Resource

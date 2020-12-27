@@ -7,7 +7,7 @@ export const initialState = {
 };
 
 const slice = createSlice({
-  name: 'users',
+  name: 'students',
   initialState,
   reducers: {
     setFilter: (state, action) => {
