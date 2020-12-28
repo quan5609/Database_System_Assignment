@@ -207,7 +207,7 @@ function MainPage() {
         title: 'Class',
         dataIndex: 'Ma_lop_hoc',
         width: '10%',
-        ...getColumnSearchProps('Ma_lop'),
+        ...getColumnSearchProps('Ma_lop_hoc'),
       },
     ];
   }
@@ -316,7 +316,7 @@ function MainPage() {
               unCheckedChildren="Class"
               defaultChecked
               style={{ margin: 10 }}
-              onChange={e => onFilterChange(e, 'Ma_lop')}
+              onChange={e => onFilterChange(e, 'Ma_lop_hoc')}
             />
             {role !== 'teacher' && (
               <Switch

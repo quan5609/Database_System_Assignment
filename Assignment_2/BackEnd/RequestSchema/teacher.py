@@ -11,7 +11,7 @@ class Schema():
 
         self.responsibleClasses = {
             'token': {'type': 'string', 'required': True},
-            'semesterId': {'type': 'string', 'required': True}
+            # 'semesterId': {'type': 'string', 'required': True}
         }
 
         self.studentOfResopnsibleClass = {
@@ -21,7 +21,7 @@ class Schema():
 
         self.referenceBookOfResponsibleSubject = {
             'token': {'type': 'string', 'required': True},
-            'semesterId': {'type': 'string', 'required': True}
+            # 'semesterId': {'type': 'string', 'required': True}
         }
 
         self.numOfStudents_ofResponsiblesClass = {

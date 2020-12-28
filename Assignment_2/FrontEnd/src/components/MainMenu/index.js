@@ -22,10 +22,12 @@ function MainMenu(props) {
         Subject
         <Link to="/subjects" />
       </Menu.Item>
-      <Menu.Item key="/teachers" icon={<UserOutlined />}>
-        Teacher
-        <Link to="/teachers" />
-      </Menu.Item>
+      {role !== 'teacher' && (
+        <Menu.Item key="/teachers" icon={<UserOutlined />}>
+          Teacher
+          <Link to="/teachers" />
+        </Menu.Item>
+      )}
       <Menu.Item key="/books" icon={<UserOutlined />}>
         Reference Book
         <Link to="/books" />

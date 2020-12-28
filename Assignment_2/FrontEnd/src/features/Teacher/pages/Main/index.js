@@ -146,6 +146,12 @@ function MainPage() {
       ...getColumnSearchProps('Ten'),
     },
     {
+      title: 'Department',
+      dataIndex: 'Ma_khoa',
+      width: '10%',
+      ...getColumnSearchProps('Ma_khoa'),
+    },
+    {
       title: 'Semester',
       dataIndex: 'Ma_hoc_ky',
       width: '10%',
@@ -204,6 +210,7 @@ function MainPage() {
     'Ma_mon_hoc',
     'Ma_lop_hoc',
     'Ma_tuan_hoc',
+    'Ma_khoa',
   ]);
   const [tableData, setTableData] = useState(data);
   const [tab, setTab] = useState(1);
@@ -306,7 +313,7 @@ function MainPage() {
                 unCheckedChildren="Class"
                 defaultChecked
                 style={{ margin: 10 }}
-                onChange={e => onFilterChange(e, 'Ma_lop')}
+                onChange={e => onFilterChange(e, 'Ma_lop_hoc')}
               />
               <Switch
                 checkedChildren="Department"
@@ -314,6 +321,13 @@ function MainPage() {
                 defaultChecked
                 style={{ margin: 10 }}
                 onChange={e => onFilterChange(e, 'Ma_khoa')}
+              />
+              <Switch
+                checkedChildren="Week"
+                unCheckedChildren="Week"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_tuan_hoc')}
               />
             </div>
             <Table

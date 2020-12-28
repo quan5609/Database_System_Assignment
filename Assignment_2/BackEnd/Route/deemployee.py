@@ -196,7 +196,7 @@ def subjectOnSemester():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -251,7 +251,7 @@ def teacherOnSemester():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -298,7 +298,7 @@ def classOfTeacher():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -353,7 +353,7 @@ def teacherOfClass():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -408,7 +408,7 @@ def bookOfSubject():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -453,13 +453,7 @@ def studentOfClass():
         )
 
     '''Execute Stored Procedure'''
-<<<<<<< HEAD
     res = execute_sp(engine, stored_procedure.studentOfClass, params, True)
-    print(params)
-    print(res)
-=======
-    res = execute_sp(engine,stored_procedure.studentOfClass,params,True)
->>>>>>> 4db4670f4df725e56626fd50ed9b0550c08a0196
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -469,7 +463,7 @@ def studentOfClass():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -514,14 +508,8 @@ def numStudentOfSemester():
         )
 
     '''Execute Stored Procedure'''
-<<<<<<< HEAD
     res = execute_sp(
         engine, stored_procedure.numStudentOfSemester, params, True)
-    print(params)
-    print(res)
-=======
-    res = execute_sp(engine,stored_procedure.numStudentOfSemester,params,True)
->>>>>>> 4db4670f4df725e56626fd50ed9b0550c08a0196
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -531,7 +519,7 @@ def numStudentOfSemester():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -576,13 +564,7 @@ def numClassOfSemester():
         )
 
     '''Execute Stored Procedure'''
-<<<<<<< HEAD
     res = execute_sp(engine, stored_procedure.numClassOfSemester, params, True)
-    print(params)
-    print(res)
-=======
-    res = execute_sp(engine,stored_procedure.numClassOfSemester,params,True)
->>>>>>> 4db4670f4df725e56626fd50ed9b0550c08a0196
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -592,7 +574,7 @@ def numClassOfSemester():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -636,14 +618,8 @@ def subjectHavingMaxTeacher():
         )
 
     '''Execute Stored Procedure'''
-<<<<<<< HEAD
     res = execute_sp(
         engine, stored_procedure.subjectHavingMaxTeacher, params, True)
-    print(params)
-    print(res)
-=======
-    res = execute_sp(engine,stored_procedure.subjectHavingMaxTeacher,params,True)
->>>>>>> 4db4670f4df725e56626fd50ed9b0550c08a0196
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -653,7 +629,7 @@ def subjectHavingMaxTeacher():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -688,13 +664,7 @@ def avgNumStudent():
     '''Get request data'''
     params = list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-<<<<<<< HEAD
     res = execute_sp(engine, stored_procedure.avgNumStudent, params, True)
-    print(params)
-    print(res)
-=======
-    res = execute_sp(engine,stored_procedure.avgNumStudent,params,True)
->>>>>>> 4db4670f4df725e56626fd50ed9b0550c08a0196
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -704,7 +674,7 @@ def avgNumStudent():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -725,7 +695,7 @@ def listTeacher():
     )
     '''
     '''Define Schema'''
-    schema = request_schema.teacherOnSemester
+    schema = request_schema.listTeacher
     req_data = request.get_json()
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
@@ -759,7 +729,7 @@ def listTeacher():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -780,7 +750,7 @@ def listStudent():
     )
     '''
     '''Define Schema'''
-    schema = request_schema.teacherOnSemester
+    schema = request_schema.listStudent
     req_data = request.get_json()
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
@@ -814,7 +784,7 @@ def listStudent():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -835,7 +805,7 @@ def listSubject():
     )
     '''
     '''Define Schema'''
-    schema = request_schema.teacherOnSemester
+    schema = request_schema.listSubject
     req_data = request.get_json()
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
@@ -869,7 +839,7 @@ def listSubject():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -890,7 +860,7 @@ def listReferenceBook():
     )
     '''
     '''Define Schema'''
-    schema = request_schema.teacherOnSemester
+    schema = request_schema.listReferenceBook
     req_data = request.get_json()
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
@@ -924,7 +894,7 @@ def listReferenceBook():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )

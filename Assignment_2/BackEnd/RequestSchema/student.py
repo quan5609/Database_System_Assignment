@@ -11,6 +11,7 @@ class Schema():
 
         self.subjectClassTeacher = {
             'token': {'type': 'string', 'required': True},
+            'semesterId': {'type': 'string', 'required': True}
         }
 
         self.subjectReferenceBook = {

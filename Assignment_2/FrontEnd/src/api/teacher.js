@@ -5,7 +5,7 @@ export const getTeacherApi = role => {
   const apiUrl = {
     student: 'http://localhost:5000/student/class-of-subject',
     soemployee: 'http://localhost:5000/soemployee/list-teacher',
-    deemployee: 'http://localhost:5000/soemployee/list-teacher',
+    deemployee: 'http://localhost:5000/deemployee/list-teacher',
   };
   return new Promise((resolve, reject) => {
     return axios({

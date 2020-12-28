@@ -71,12 +71,7 @@ def getAllStudent():
     '''Execute Stored Procedure'''
     # params = [studentId,semesterId]
     params = []
-<<<<<<< HEAD
     res = execute_sp(engine, stored_procedure.getAllStudent, params)
-    # print(res)
-=======
-    res = execute_sp(engine,stored_procedure.getAllStudent,params)
->>>>>>> 4db4670f4df725e56626fd50ed9b0550c08a0196
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
@@ -167,7 +162,7 @@ def subjectClassTeacher():
         )
 
     '''Get request data'''
-    params = [user_info['sub']]
+    params = [user_info['sub'], req_data['semesterId']]
     '''Execute Stored Procedure'''
     res = execute_sp(
         engine, stored_procedure.subjectClassTeacher, params, getResult=True)

@@ -11,7 +11,7 @@ import './index.scss';
 
 import { getSubjectApi } from 'api/subject';
 import { useSelector } from 'react-redux';
-import { aggregateJson } from 'utils/aggregate';
+import { aggregateJson, multiAggregate } from 'utils/aggregate';
 
 MainPage.propTypes = {};
 
@@ -147,7 +147,7 @@ function MainPage() {
       ...getColumnSearchProps('Ma_mon_hoc'),
     },
   ];
-  if (role === 'student') {
+  if (role === 'student' || role === 'teacher') {
     detail_columns = [
       {
         title: 'Semester',
@@ -167,10 +167,16 @@ function MainPage() {
         width: '10%',
         ...getColumnSearchProps('Ma_lop_hoc'),
       },
+      {
+        title: 'Credit',
+        dataIndex: 'So_tin_chi',
+        width: '10%',
+        ...getColumnSearchProps('So_tin_chi'),
+      },
     ];
   }
 
-  const [filter, setFilter] = useState(['Ma_hoc_ky', 'Ma_khoa']);
+  const [filter, setFilter] = useState(['Ma_hoc_ky', 'Ma_khoa', 'Ma_mon_hoc']);
   const [tableData, setTableData] = useState(data);
   const [tab, setTab] = useState(1);
   const [tableColumns, setTableColumns] = useState(detail_columns);
@@ -196,8 +202,24 @@ function MainPage() {
       let filteredColumns = detail_columns.filter(value => {
         return filter.includes(value.dataIndex);
       });
+      if (role == 'student') {
+        filteredColumns = [
+          {
+            title: 'Semester',
+            dataIndex: 'Ma_hoc_ky',
+            width: '10%',
+            ...getColumnSearchProps('Ma_hoc_ky'),
+          },
+          {
+            title: 'Total Credit',
+            dataIndex: 'total_credit',
+            sorter: (a, b) => a.total - b.total,
+            width: '10%',
+          },
+        ];
+      }
       filteredColumns.push({
-        title: 'Total Subject',
+        title: role !== 'teacher' ? 'Total Subject' : 'Total Class',
         dataIndex: 'total',
         sorter: (a, b) => a.total - b.total,
         width: '10%',
@@ -214,7 +236,7 @@ function MainPage() {
         return filter.includes(value.dataIndex);
       });
       filteredColumns.push({
-        title: 'Total Subject',
+        title: role !== 'teacher' ? 'Total Subject' : 'Total Class',
         dataIndex: 'total',
         sorter: (a, b) => a.total - b.total,
         width: '10%',
@@ -224,6 +246,8 @@ function MainPage() {
       setTableData(filteredData);
     }
   }, [filter]);
+
+  const studentSummary = multiAggregate(data, ['Ma_hoc_ky']);
 
   return (
     <div>
@@ -249,16 +273,17 @@ function MainPage() {
             loading={loading}
           />
         </TabPane>
-        {role !== 'student' && (
-          <TabPane
-            tab={
-              <span>
-                <InfoCircleOutlined />
-                Summary
-              </span>
-            }
-            key="2"
-          >
+
+        <TabPane
+          tab={
+            <span>
+              <InfoCircleOutlined />
+              Summary
+            </span>
+          }
+          key="2"
+        >
+          {role !== 'teacher' && role !== 'student' && (
             <div>
               <Switch
                 checkedChildren="Department"
@@ -267,7 +292,16 @@ function MainPage() {
                 style={{ margin: 10 }}
                 onChange={e => onFilterChange(e, 'Ma_khoa')}
               />
+              <Switch
+                checkedChildren="Subject"
+                unCheckedChildren="Subject"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_mon_hoc')}
+              />
             </div>
+          )}
+          {role !== 'student' && (
             <Table
               key="table_2"
               columns={tableColumns}
@@ -276,8 +310,19 @@ function MainPage() {
               scroll={{ y: 480 }}
               loading={loading}
             />
-          </TabPane>
-        )}
+          )}
+
+          {role === 'student' && (
+            <Table
+              key="table_2"
+              columns={tableColumns}
+              dataSource={studentSummary}
+              // pagination={{ pageSize: 50 }}
+              scroll={{ y: 480 }}
+              loading={loading}
+            />
+          )}
+        </TabPane>
       </Tabs>
     </div>
   );

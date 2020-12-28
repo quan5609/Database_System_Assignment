@@ -66,4 +66,18 @@ class Schema():
             'token': {'type': 'string', 'required': True},
             'subjectId': {'type': 'string', 'required': True}
         }
+        self.listSubject = {
+            'token': {'type': 'string', 'required': True}
+        }
 
+        self.listStudent = {
+            'token': {'type': 'string', 'required': True}
+        }
+
+        self.listTeacher = {
+            'token': {'type': 'string', 'required': True}
+        }
+
+        self.listReferenceBook = {
+            'token': {'type': 'string', 'required': True}
+        }

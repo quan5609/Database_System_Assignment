@@ -160,7 +160,7 @@ function MainPage() {
     },
   ];
 
-  if (role === 'student') {
+  if (role === 'student' || role === 'teacher') {
     detail_columns = [
       {
         title: 'Book Number',
@@ -173,6 +173,12 @@ function MainPage() {
         dataIndex: 'Ten_giao_trinh',
         width: '10%',
         ...getColumnSearchProps('Ten_giao_trinh'),
+      },
+      {
+        title: 'Semester',
+        dataIndex: 'Ma_hoc_ky',
+        width: '10%',
+        ...getColumnSearchProps('Ma_hoc_ky'),
       },
       {
         title: 'Subject',
@@ -261,7 +267,7 @@ function MainPage() {
             loading={loading}
           />
         </TabPane>
-        {role !== 'student' && (
+        {role !== 'student' && role !== 'teacher' && (
           <TabPane
             tab={
               <span>

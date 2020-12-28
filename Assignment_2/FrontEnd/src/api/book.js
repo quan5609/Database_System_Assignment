@@ -5,7 +5,9 @@ export const getBookApi = role => {
   const apiUrl = {
     student: 'http://localhost:5000/student/subject-reference-book',
     soemployee: 'http://localhost:5000/soemployee/list-reference-book',
-    deemployee: 'http://localhost:5000/soemployee/list-reference-book',
+    deemployee: 'http://localhost:5000/deemployee/list-reference-book',
+    teacher:
+      'http://localhost:5000/teacher/reference-book-of-responsible-subject',
   };
   return new Promise((resolve, reject) => {
     return axios({
