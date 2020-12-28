@@ -5,7 +5,6 @@ GO
 
 --(i.1). Cap nhat dang ki mon hoc cua cac lop.
 -- Them
-DROP PROCEDURE addRegister
 GO
 CREATE PROCEDURE addRegister(
     @newStudentId AS varchar(10),
@@ -152,7 +151,6 @@ END;
 
 GO
 --(i.5). Xem danh sach sinh vien dang ky o moi lop o moi hoc ky o moi khoa.
-DROP PROCEDURE listStudent
 GO
 CREATE PROCEDURE listStudent
 AS
@@ -573,7 +571,6 @@ BEGIN
 END;
 
 -- (iii.2). Xem danh sach lop hoc cua moi mon hoc do minh phu trach o mot hoc ky.
-DROP PROCEDURE responsibleClasses
 GO
 CREATE PROCEDURE responsibleClasses 
     (@teacherSsn AS varchar(10),
@@ -593,7 +590,6 @@ BEGIN
 END;
 
 -- (iii.3). Xem danh sach sinh vien cua moi lop hoc do minh phu trach o mot hoc ky.
-DROP PROCEDURE studentOfResopnsibleClass
 GO
 CREATE PROCEDURE studentOfResopnsibleClass 
     (@teacherSsn AS varchar(10),
@@ -635,7 +631,6 @@ BEGIN
 END;
 
 -- (iii.5). Xem tong so sinh vien cua moi lop hoc do minh phu trach o mot hoc ky.
-DROP PROCEDURE numOfStudents_ofResponsiblesClass 
 GO
 CREATE PROCEDURE numOfStudents_ofResponsiblesClass 
     (@teacherSsn AS varchar(10),
@@ -671,7 +666,6 @@ BEGIN
 END;
 
 -- (iii.7). Xem 5 lop hoc co so sinh vien cao nhat ma giang vien tung phu trach.
-DROP PROCEDURE top5Class_mostStudent
 GO
 CREATE PROCEDURE top5Class_mostStudent
     (@teacherSsn AS varchar(10))
@@ -687,8 +681,6 @@ BEGIN
     ORDER BY COUNT(DISTINCT Student_id) DESC
 END;
 -- (iii.8). Xem 5 hoc ky co so lop nhieu nhat ma giang vien tung phu trach.
-GO
-DROP PROCEDURE top5Semester_mostClass
 GO
 CREATE PROCEDURE top5Semester_mostClass
     (@teacherSsn AS varchar(10))
