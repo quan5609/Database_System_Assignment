@@ -18,3 +18,7 @@ class StoredProcedure():
         self.numClassOfSemester = 'EXEC NumClassOfSemester ?,?'
         self.subjectHavingMaxTeacher = 'EXEC SubjectHavingMaxTeacher ?,?'
         self.avgNumStudent = 'EXEC AvgNumStudent ?'
+        self.listSubject = 'EXEC listSubjectDE ?'
+        self.listStudent = 'EXEC listStudentDE ?'
+        self.listTeacher = 'EXEC listTeacherDE ?'
+        self.listReferenceBook = 'EXEC listReferenceBookDE ?'

@@ -1,29 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Input, Button, Space } from 'antd';
+import { Table, Input, Button, Space, Tabs, Switch } from 'antd';
 import Highlighter from 'react-highlight-words';
-import { SearchOutlined } from '@ant-design/icons';
+import {
+  SearchOutlined,
+  TableOutlined,
+  InfoCircleOutlined,
+} from '@ant-design/icons';
 
 import './index.scss';
 
-import { getUsersApi } from 'api/student';
+import { getTeacherApi } from 'api/teacher';
 import { useSelector } from 'react-redux';
-import { mock } from './mock';
+import { aggregateJson } from 'utils/aggregate';
 
 MainPage.propTypes = {};
 
 function MainPage() {
+  const { TabPane } = Tabs;
   const [data, setData] = useState([]);
   const [pagination, setPagination] = useState({ current: 1, pageSize: 10 });
   const [loading, setLoading] = useState(false);
   const { role } = useSelector(state => state.app.userInfo);
   useEffect(() => {
-    fetch({ pagination });
+    fetch_detail({ pagination });
   }, []);
 
   const [state, setState] = useState({
     searchText: [],
     searchedColumn: '',
   });
+
   let searchInput = null;
   const getColumnSearchProps = dataIndex => ({
     filterDropdown: ({
@@ -41,7 +47,6 @@ function MainPage() {
           value={selectedKeys}
           onChange={e => {
             const values = e.target.value ? e.target.value.split(',') : [];
-            console.log(values);
             setSelectedKeys(values);
           }}
           onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
@@ -108,56 +113,233 @@ function MainPage() {
     setState({ searchText: [] });
   };
 
-  const fetch = (params = {}) => {
-    // setLoading(true);
-    // return getUsersApi(getRandomuserParams(params)).then(res => {
-    //   setLoading(false);
-    //   setData(res.results);
-    //   setPagination({
-    //     ...params.pagination,
-    //     total: 200,
-    //   });
-    // });
-    setData(mock.res);
-    setPagination({
-      ...params.pagination,
-      total: data.length,
+  const fetch_detail = (params = {}) => {
+    setLoading(true);
+    return getTeacherApi(role).then(data => {
+      setLoading(false);
+      setData(data.res);
+      setTableData(data.res);
+      setPagination({
+        ...params.pagination,
+        total: data.res.length,
+      });
     });
-    return mock;
   };
 
-  const columns = [
+  let detail_columns = [
+    {
+      title: 'Teacher Number',
+      dataIndex: 'SSN',
+      width: '20%',
+      ...getColumnSearchProps('SSN'),
+    },
+    {
+      title: 'Last Name',
+      dataIndex: 'Ho',
+      width: '20%',
+      ...getColumnSearchProps('Ho'),
+    },
+    {
+      title: 'First Name',
+      dataIndex: 'Ten',
+      width: '10%',
+      ...getColumnSearchProps('Ten'),
+    },
     {
       title: 'Department',
       dataIndex: 'Ma_khoa',
-      width: '20%',
+      width: '10%',
       ...getColumnSearchProps('Ma_khoa'),
     },
     {
       title: 'Semester',
       dataIndex: 'Ma_hoc_ky',
-      width: '20%',
+      width: '10%',
       ...getColumnSearchProps('Ma_hoc_ky'),
     },
     {
       title: 'Subject',
       dataIndex: 'Ma_mon_hoc',
+      width: '10%',
       ...getColumnSearchProps('Ma_mon_hoc'),
     },
+    {
+      title: 'Class',
+      dataIndex: 'Ma_lop_hoc',
+      width: '10%',
+      ...getColumnSearchProps('Ma_lop'),
+    },
+    {
+      title: 'Week',
+      dataIndex: 'Ma_tuan_hoc',
+      width: '10%',
+      ...getColumnSearchProps('Ma_tuan_hoc'),
+    },
   ];
+  if (role === 'student') {
+    detail_columns = [
+      {
+        title: 'Semester',
+        dataIndex: 'Ma_hoc_ky',
+        width: '10%',
+        ...getColumnSearchProps('Ma_hoc_ky'),
+      },
+      {
+        title: 'Subject',
+        dataIndex: 'Ma_mon_hoc',
+        width: '10%',
+        ...getColumnSearchProps('Ma_mon_hoc'),
+      },
+      {
+        title: 'Class',
+        dataIndex: 'Ma_lop_hoc',
+        width: '10%',
+        ...getColumnSearchProps('Ma_lop_hoc'),
+      },
+      {
+        title: 'Teacher',
+        dataIndex: 'Ma_giang_vien',
+        width: '10%',
+        ...getColumnSearchProps('Ma_giang_vien'),
+      },
+    ];
+  }
+
+  const [filter, setFilter] = useState([
+    'Ma_hoc_ky',
+    'Ma_mon_hoc',
+    'Ma_lop_hoc',
+    'Ma_tuan_hoc',
+    'Ma_khoa',
+  ]);
+  const [tableData, setTableData] = useState(data);
+  const [tab, setTab] = useState(1);
+  const [tableColumns, setTableColumns] = useState(detail_columns);
+
+  const onFilterChange = (e, field) => {
+    if (e) {
+      if (!filter.includes(field)) {
+        setFilter([...filter, field]);
+      }
+    }
+    if (filter.includes(field)) {
+      setFilter(filter.filter(value => value !== field));
+    }
+  };
+
+  const changeTab = e => {
+    if (e === '1') {
+      setTab(e);
+      setTableColumns(detail_columns);
+      setTableData(data);
+    } else {
+      setTab(e);
+      let filteredColumns = detail_columns.filter(value => {
+        return filter.includes(value.dataIndex);
+      });
+      filteredColumns.push({
+        title: 'Total Teacher',
+        dataIndex: 'total',
+        sorter: (a, b) => a.total - b.total,
+        width: '10%',
+      });
+      const filteredData = aggregateJson(data, filter);
+      setTableColumns(filteredColumns);
+      setTableData(filteredData);
+    }
+  };
+
+  React.useEffect(() => {
+    if (tab !== 1) {
+      let filteredColumns = detail_columns.filter(value => {
+        return filter.includes(value.dataIndex);
+      });
+      filteredColumns.push({
+        title: 'Total Teacher',
+        dataIndex: 'total',
+        sorter: (a, b) => a.total - b.total,
+        width: '10%',
+      });
+      const filteredData = aggregateJson(data, filter);
+      setTableColumns(filteredColumns);
+      setTableData(filteredData);
+    }
+  }, [filter]);
 
   return (
     <div>
       <div>
         <p>`This is a ${role}`</p>
       </div>
-      <Table
-        columns={columns}
-        dataSource={data}
-        // pagination={{ pageSize: 50 }}
-        scroll={{ y: 480 }}
-        loading={loading}
-      />
+      <Tabs defaultActiveKey="1" onChange={changeTab}>
+        <TabPane
+          tab={
+            <span>
+              <TableOutlined />
+              Detail
+            </span>
+          }
+          key="1"
+        >
+          <Table
+            columns={tableColumns}
+            dataSource={tableData}
+            // pagination={{ pageSize: 50 }}
+            scroll={{ y: 480 }}
+            loading={loading}
+          />
+        </TabPane>
+
+        {role !== 'student' && (
+          <TabPane
+            tab={
+              <span>
+                <InfoCircleOutlined />
+                Summary
+              </span>
+            }
+            key="2"
+          >
+            <div>
+              <Switch
+                checkedChildren="Subject"
+                unCheckedChildren="Subject"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_mon_hoc')}
+              />
+              <Switch
+                checkedChildren="Class"
+                unCheckedChildren="Class"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_lop_hoc')}
+              />
+              <Switch
+                checkedChildren="Department"
+                unCheckedChildren="Department"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_khoa')}
+              />
+              <Switch
+                checkedChildren="Week"
+                unCheckedChildren="Week"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_tuan_hoc')}
+              />
+            </div>
+            <Table
+              columns={tableColumns}
+              dataSource={tableData}
+              // pagination={{ pageSize: 50 }}
+              scroll={{ y: 480 }}
+              loading={loading}
+            />
+          </TabPane>
+        )}
+      </Tabs>
     </div>
   );
 }

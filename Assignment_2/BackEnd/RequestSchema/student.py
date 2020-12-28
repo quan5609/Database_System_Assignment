@@ -11,16 +11,17 @@ class Schema():
 
         self.subjectClassTeacher = {
             'token': {'type': 'string', 'required': True},
+            'semesterId': {'type': 'string', 'required': True}
         }
 
         self.subjectReferenceBook = {
             'token': {'type': 'string', 'required': True},
-            'semesterId': {'type': 'string', 'required': True}
+            # 'semesterId': {'type': 'string', 'required': True}
         }
 
         self.classOfSubject = {
             'token': {'type': 'string', 'required': True},
-            'semesterId': {'type': 'string', 'required': True}
+            # 'semesterId': {'type': 'string', 'required': True}
         }
 
         self.classOfSubjectMoreThan1Teacher = {

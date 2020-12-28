@@ -71,9 +71,39 @@ const Book = React.lazy(() =>
   }),
 );
 
-const Resource = React.lazy(() =>
-  import('features/Resource').then(async module => {
-    const reducer = await import('features/Resource/slice').then(
+const StudentHome = React.lazy(() =>
+  import('features/StudentHome').then(async module => {
+    const reducer = await import('features/StudentHome/slice').then(
+      slide => slide.default,
+    );
+    store.injectReducer('resources', reducer);
+    return module;
+  }),
+);
+
+const TeacherHome = React.lazy(() =>
+  import('features/TeacherHome').then(async module => {
+    const reducer = await import('features/TeacherHome/slice').then(
+      slide => slide.default,
+    );
+    store.injectReducer('resources', reducer);
+    return module;
+  }),
+);
+
+const DeHome = React.lazy(() =>
+  import('features/DeHome').then(async module => {
+    const reducer = await import('features/DeHome/slice').then(
+      slide => slide.default,
+    );
+    store.injectReducer('resources', reducer);
+    return module;
+  }),
+);
+
+const SoHome = React.lazy(() =>
+  import('features/SoHome').then(async module => {
+    const reducer = await import('features/SoHome/slice').then(
       slide => slide.default,
     );
     store.injectReducer('resources', reducer);
@@ -106,6 +136,7 @@ function App(props) {
     dispatch(onLogout());
   };
   const toggle = () => setCollapsed(!collapsed);
+  const { role } = useSelector(state => state.app.userInfo);
 
   return (
     <div className="app">
@@ -161,7 +192,21 @@ function App(props) {
                 <Switch>
                   {/* <PrivateRoute path="/" component={User} /> */}
                   <Redirect exact from="/" to="/resources" />
-                  <PrivateRoute path="/resources" component={Resource} />
+                  {role === 'student' && (
+                    <Redirect exact from="/students" to="/resources" />
+                  )}
+                  {role === 'teacher' && (
+                    <Redirect exact from="/teachers" to="/resources" />
+                  )}
+                  {role === 'student' ? (
+                    <PrivateRoute path="/resources" component={StudentHome} />
+                  ) : role === 'teacher' ? (
+                    <PrivateRoute path="/resources" component={TeacherHome} />
+                  ) : role === 'deemployee' ? (
+                    <PrivateRoute path="/resources" component={DeHome} />
+                  ) : (
+                    <PrivateRoute path="/resources" component={SoHome} />
+                  )}
                   <PrivateRoute path="/subjects" component={Subject} />
                   <PrivateRoute path="/teachers" component={Teacher} />
                   <PrivateRoute path="/classes" component={Classes} />

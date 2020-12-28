@@ -49,7 +49,7 @@ def hello():
     return response
 
 
-@student_blueprint.route('/get-all',methods = ['POST'])
+@student_blueprint.route('/get-all', methods=['POST'])
 def getAllStudent():
     '''Define Schema'''
     schema = request_schema.classOfSubject
@@ -71,7 +71,7 @@ def getAllStudent():
     '''Execute Stored Procedure'''
     # params = [studentId,semesterId]
     params = []
-    res = execute_sp(engine,stored_procedure.getAllStudent,params)
+    res = execute_sp(engine, stored_procedure.getAllStudent, params)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
@@ -80,21 +80,22 @@ def getAllStudent():
             status=500,
             mimetype='application/json'
         )
-    
-    if not res['payload']:  
+
+    if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
-@student_blueprint.route('/register-subject',methods = ['POST'])
+
+@student_blueprint.route('/register-subject', methods=['POST'])
 def registerSubject():
     '''
     PROCEDURE RegisterSubject(
@@ -121,12 +122,13 @@ def registerSubject():
     '''Get request data'''
     params = [user_info['sub']] + list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.registerSubject,params, getResult=False)
+    res = execute_sp(engine, stored_procedure.registerSubject,
+                     params, getResult=False)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps(res['error']),#('INTERNAL SERVER ERROR'),
+            response=json.dumps(res['error']),  # ('INTERNAL SERVER ERROR'),
             status=500,
             mimetype='application/json'
         )
@@ -137,7 +139,8 @@ def registerSubject():
             mimetype='application/json'
         )
 
-@student_blueprint.route('/subject-class-teacher',methods = ['POST'])
+
+@student_blueprint.route('/subject-class-teacher', methods=['POST'])
 def subjectClassTeacher():
     '''
     PROCEDURE SubjectClassTeacher(
@@ -159,31 +162,33 @@ def subjectClassTeacher():
         )
 
     '''Get request data'''
-    params = [user_info['sub']]
+    params = [user_info['sub'], req_data['semesterId']]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.subjectClassTeacher,params, getResult=True)
+    res = execute_sp(
+        engine, stored_procedure.subjectClassTeacher, params, getResult=True)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#(res['error'])
+            response=json.dumps('INTERNAL SERVER ERROR'),  # (res['error'])
             status=500,
             mimetype='application/json'
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
-@student_blueprint.route('/subject-reference-book',methods = ['POST'])
+
+@student_blueprint.route('/subject-reference-book', methods=['POST'])
 def subjectReferenceBook():
     '''
     PROCEDURE SubjectReferenceBook(
@@ -208,30 +213,31 @@ def subjectReferenceBook():
     '''Get request data'''
     params = [user_info['sub']] + list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.subjectReferenceBook,params, getResult=True)
+    res = execute_sp(
+        engine, stored_procedure.subjectReferenceBook, params, getResult=True)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#(res['error'])
+            response=json.dumps('INTERNAL SERVER ERROR'),  # (res['error'])
             status=500,
             mimetype='application/json'
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@student_blueprint.route('/class-of-subject',methods = ['POST'])
+@student_blueprint.route('/class-of-subject', methods=['POST'])
 def classOfSubject():
     '''
     PROCEDURE ClassOfSubject(
@@ -255,11 +261,12 @@ def classOfSubject():
 
     '''Get request data'''
     studentId = user_info['sub']
-    semesterId = req_data['semesterId']
+    # semesterId = req_data['semesterId']
 
     '''Execute Stored Procedure'''
-    params = [studentId,semesterId]
-    res = execute_sp(engine,stored_procedure.classOfSubject,params)
+    # params = [studentId, semesterId]
+    params = [studentId]
+    res = execute_sp(engine, stored_procedure.classOfSubject, params)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
@@ -268,22 +275,22 @@ def classOfSubject():
             status=500,
             mimetype='application/json'
         )
-    
-    if not res['payload']:  
+
+    if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@student_blueprint.route('/class-of-subject-more-than-1-teacher',methods = ['POST'])
+@student_blueprint.route('/class-of-subject-more-than-1-teacher', methods=['POST'])
 def classOfSubjectMoreThan1Teacher():
     '''
     PROCEDURE ClassOfSubjectMoreThan1Teacher(
@@ -308,29 +315,31 @@ def classOfSubjectMoreThan1Teacher():
     '''Get request data'''
     params = [user_info['sub']] + list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.classOfSubjectMoreThan1Teacher,params, getResult=True)
+    res = execute_sp(
+        engine, stored_procedure.classOfSubjectMoreThan1Teacher, params, getResult=True)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#(res['error'])
+            response=json.dumps('INTERNAL SERVER ERROR'),  # (res['error'])
             status=500,
             mimetype='application/json'
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
-@student_blueprint.route('/sum-credit',methods = ['POST'])
+
+@student_blueprint.route('/sum-credit', methods=['POST'])
 def sumCredit():
     '''
     PROCEDURE SumCredit(
@@ -355,29 +364,31 @@ def sumCredit():
     '''Get request data'''
     params = [user_info['sub']] + list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.sumCredit,params, getResult=True)
+    res = execute_sp(engine, stored_procedure.sumCredit,
+                     params, getResult=True)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#(res['error'])
+            response=json.dumps('INTERNAL SERVER ERROR'),  # (res['error'])
             status=500,
             mimetype='application/json'
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
-@student_blueprint.route('/sum-subject',methods = ['POST'])
+
+@student_blueprint.route('/sum-subject', methods=['POST'])
 def sumSubject():
     '''
     PROCEDURE SumSubject(
@@ -402,29 +413,31 @@ def sumSubject():
     '''Get request data'''
     params = [user_info['sub']] + list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.sumSubject,params, getResult=True)
+    res = execute_sp(engine, stored_procedure.sumSubject,
+                     params, getResult=True)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#(res['error'])
+            response=json.dumps('INTERNAL SERVER ERROR'),  # (res['error'])
             status=500,
             mimetype='application/json'
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
-@student_blueprint.route('/first-3-max-credit',methods = ['POST'])
+
+@student_blueprint.route('/first-3-max-credit', methods=['POST'])
 def first3MaxCredit():
     '''
     PROCEDURE First3MaxCredit(
@@ -448,24 +461,25 @@ def first3MaxCredit():
     '''Get request data'''
     params = [user_info['sub']]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.first3MaxCredit,params, getResult=True)
+    res = execute_sp(engine, stored_procedure.first3MaxCredit,
+                     params, getResult=True)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#(res['error'])
+            response=json.dumps('INTERNAL SERVER ERROR'),  # (res['error'])
             status=500,
             mimetype='application/json'
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )

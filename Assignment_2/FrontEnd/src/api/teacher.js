@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { getCookie } from 'utils/cookies';
 
-export const getStudentApi = role => {
+export const getTeacherApi = role => {
   const apiUrl = {
-    soemployee: 'http://localhost:5000/soemployee/list-student',
-    deemployee: 'http://localhost:5000/deemployee/list-student',
-    teacher: 'http://localhost:5000/teacher/student-of-resopnsible-class',
+    student: 'http://localhost:5000/student/class-of-subject',
+    soemployee: 'http://localhost:5000/soemployee/list-teacher',
+    deemployee: 'http://localhost:5000/deemployee/list-teacher',
   };
   return new Promise((resolve, reject) => {
     return axios({

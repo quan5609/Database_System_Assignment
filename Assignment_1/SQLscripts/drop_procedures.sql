@@ -1,11 +1,12 @@
+USE Class_Registration
 SELECT 'DROP PROCEDURE [' + SCHEMA_NAME(p.schema_id) + '].[' + p.NAME + '];'
 FROM sys.procedures p 
 DROP PROCEDURE [dbo].[addRegister];
 DROP PROCEDURE [dbo].[removeRegister];
 DROP PROCEDURE [dbo].[updateRegister];
 DROP PROCEDURE [dbo].[registeredClass];
-DROP PROCEDURE [dbo].[responsibleClass];
-DROP PROCEDURE [dbo].[listSubject];
+--DROP PROCEDURE [dbo].[responsibleClass];
+--DROP PROCEDURE [dbo].[listSubject];
 DROP PROCEDURE [dbo].[listTeacher];
 DROP PROCEDURE [dbo].[numOfSubjects];
 DROP PROCEDURE [dbo].[numOfClasses];

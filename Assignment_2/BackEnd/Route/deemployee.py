@@ -18,6 +18,7 @@ request_schema = Schema()
 stored_procedure = StoredProcedure()
 connection = engine.raw_connection()
 
+
 @deemployee_blueprint.route('/hello', methods=['GET'])
 def hello():
     '''Define Schema'''
@@ -172,7 +173,7 @@ def updateSubject():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -181,17 +182,17 @@ def updateSubject():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
-        params.insert(1,did['payload'][0]['dId'])
+        params.insert(1, did['payload'][0]['dId'])
     else:
         return Response(
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.updateSubject,params,False)
+    res = execute_sp(engine, stored_procedure.updateSubject, params, False)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -307,7 +308,7 @@ def updateTeacherOfClass():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -317,7 +318,8 @@ def updateTeacherOfClass():
     '''Get request data'''
     params = list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.updateTeacherOfClass,params,False)
+    res = execute_sp(
+        engine, stored_procedure.updateTeacherOfClass, params, False)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -346,7 +348,7 @@ def subjectOnSemester():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -355,7 +357,7 @@ def subjectOnSemester():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
         params += [did['payload'][0]['dId']]
     else:
@@ -363,9 +365,9 @@ def subjectOnSemester():
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.subjectOnSemester,params,True)
+    res = execute_sp(engine, stored_procedure.subjectOnSemester, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -375,16 +377,17 @@ def subjectOnSemester():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
+
 
 @deemployee_blueprint.route('/teacher-on-semester', methods=['POST'])
 def teacherOnSemester():
@@ -400,7 +403,7 @@ def teacherOnSemester():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -409,7 +412,7 @@ def teacherOnSemester():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
         params += [did['payload'][0]['dId']]
     else:
@@ -417,9 +420,9 @@ def teacherOnSemester():
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.teacherOnSemester,params,True)
+    res = execute_sp(engine, stored_procedure.teacherOnSemester, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -429,13 +432,13 @@ def teacherOnSemester():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -455,7 +458,7 @@ def classOfTeacher():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -464,9 +467,9 @@ def classOfTeacher():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.classOfTeacher,params,True)
+    res = execute_sp(engine, stored_procedure.classOfTeacher, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -476,16 +479,17 @@ def classOfTeacher():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
+
 
 @deemployee_blueprint.route('/teacher-of-class', methods=['POST'])
 def teacherOfClass():
@@ -501,7 +505,7 @@ def teacherOfClass():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -510,7 +514,7 @@ def teacherOfClass():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
         params += [did['payload'][0]['dId']]
     else:
@@ -518,9 +522,9 @@ def teacherOfClass():
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.teacherOfClass,params,True)
+    res = execute_sp(engine, stored_procedure.teacherOfClass, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -530,13 +534,13 @@ def teacherOfClass():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -556,7 +560,7 @@ def bookOfSubject():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -565,7 +569,7 @@ def bookOfSubject():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
         params += [did['payload'][0]['dId']]
     else:
@@ -573,9 +577,9 @@ def bookOfSubject():
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.bookOfSubject,params,True)
+    res = execute_sp(engine, stored_procedure.bookOfSubject, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -585,16 +589,17 @@ def bookOfSubject():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
+
 
 @deemployee_blueprint.route('/student-of-class', methods=['POST'])
 def studentOfClass():
@@ -619,7 +624,7 @@ def studentOfClass():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
         params += [did['payload'][0]['dId']]
     else:
@@ -627,9 +632,9 @@ def studentOfClass():
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.studentOfClass,params,True)
+    res = execute_sp(engine, stored_procedure.studentOfClass, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -639,16 +644,17 @@ def studentOfClass():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
+
 
 @deemployee_blueprint.route('/num-student-of-semester', methods=['POST'])
 def numStudentOfSemester():
@@ -673,7 +679,7 @@ def numStudentOfSemester():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
         params += [did['payload'][0]['dId']]
     else:
@@ -681,9 +687,10 @@ def numStudentOfSemester():
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.numStudentOfSemester,params,True)
+    res = execute_sp(
+        engine, stored_procedure.numStudentOfSemester, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -693,16 +700,17 @@ def numStudentOfSemester():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
+
 
 @deemployee_blueprint.route('/num-class-of-semester', methods=['POST'])
 def numClassOfSemester():
@@ -727,7 +735,7 @@ def numClassOfSemester():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
         params += [did['payload'][0]['dId']]
     else:
@@ -735,9 +743,9 @@ def numClassOfSemester():
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.numClassOfSemester,params,True)
+    res = execute_sp(engine, stored_procedure.numClassOfSemester, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -747,16 +755,17 @@ def numClassOfSemester():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
+
 
 @deemployee_blueprint.route('/subject-having-max-teacher', methods=['POST'])
 def subjectHavingMaxTeacher():
@@ -780,7 +789,7 @@ def subjectHavingMaxTeacher():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
         params += [did['payload'][0]['dId']]
     else:
@@ -788,9 +797,10 @@ def subjectHavingMaxTeacher():
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.subjectHavingMaxTeacher,params,True)
+    res = execute_sp(
+        engine, stored_procedure.subjectHavingMaxTeacher, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -800,16 +810,17 @@ def subjectHavingMaxTeacher():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
+
 
 @deemployee_blueprint.route('/avg-num-student', methods=['POST'])
 def avgNumStudent():
@@ -834,7 +845,7 @@ def avgNumStudent():
     '''Get request data'''
     params = list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.avgNumStudent,params,True)
+    res = execute_sp(engine, stored_procedure.avgNumStudent, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -844,13 +855,233 @@ def avgNumStudent():
         )
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
+            status=200,
+            mimetype='application/json'
+        )
+
+
+@deemployee_blueprint.route('/list-teacher', methods=['POST'])
+def listTeacher():
+    '''
+    PROCEDURE TeacherOnSemester(
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
+    )
+    '''
+    '''Define Schema'''
+    schema = request_schema.listTeacher
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+    params = list(req_data.values())[1:]
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
+    if did['payload']:
+        params += [did['payload'][0]['dId']]
+    else:
+        return Response(
+            response="Invalid Token",
+            status=400
+        )
+
+    '''Execute Stored Procedure'''
+    res = execute_sp(engine, stored_procedure.listTeacher, params, True)
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps(res['error']),
+            status=500,
+            mimetype='application/json'
+        )
+    if not res['payload']:
+        return Response(
+            response=json.dumps({'res': []}),
+            status=200,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps({'res': res['payload']}),
+            status=200,
+            mimetype='application/json'
+        )
+
+
+@deemployee_blueprint.route('/list-student', methods=['POST'])
+def listStudent():
+    '''
+    PROCEDURE TeacherOnSemester(
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
+    )
+    '''
+    '''Define Schema'''
+    schema = request_schema.listStudent
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+    params = list(req_data.values())[1:]
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
+    if did['payload']:
+        params += [did['payload'][0]['dId']]
+    else:
+        return Response(
+            response="Invalid Token",
+            status=400
+        )
+
+    '''Execute Stored Procedure'''
+    res = execute_sp(engine, stored_procedure.listStudent, params, True)
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps(res['error']),
+            status=500,
+            mimetype='application/json'
+        )
+    if not res['payload']:
+        return Response(
+            response=json.dumps({'res': []}),
+            status=200,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps({'res': res['payload']}),
+            status=200,
+            mimetype='application/json'
+        )
+
+
+@deemployee_blueprint.route('/list-subject', methods=['POST'])
+def listSubject():
+    '''
+    PROCEDURE TeacherOnSemester(
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
+    )
+    '''
+    '''Define Schema'''
+    schema = request_schema.listSubject
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+    params = list(req_data.values())[1:]
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
+    if did['payload']:
+        params += [did['payload'][0]['dId']]
+    else:
+        return Response(
+            response="Invalid Token",
+            status=400
+        )
+
+    '''Execute Stored Procedure'''
+    res = execute_sp(engine, stored_procedure.listSubject, params, True)
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps(res['error']),
+            status=500,
+            mimetype='application/json'
+        )
+    if not res['payload']:
+        return Response(
+            response=json.dumps({'res': []}),
+            status=200,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps({'res': res['payload']}),
+            status=200,
+            mimetype='application/json'
+        )
+
+
+@deemployee_blueprint.route('/list-reference-book', methods=['POST'])
+def listReferenceBook():
+    '''
+    PROCEDURE TeacherOnSemester(
+        @semesterId AS varchar(10),
+        @departmentId AS varchar(10)
+    )
+    '''
+    '''Define Schema'''
+    schema = request_schema.listReferenceBook
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+    params = list(req_data.values())[1:]
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
+    if did['payload']:
+        params += [did['payload'][0]['dId']]
+    else:
+        return Response(
+            response="Invalid Token",
+            status=400
+        )
+
+    '''Execute Stored Procedure'''
+    res = execute_sp(engine, stored_procedure.listReferenceBook, params, True)
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps(res['error']),
+            status=500,
+            mimetype='application/json'
+        )
+    if not res['payload']:
+        return Response(
+            response=json.dumps({'res': []}),
+            status=200,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
