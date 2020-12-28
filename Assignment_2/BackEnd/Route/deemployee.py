@@ -428,7 +428,6 @@ def studentOfClass():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    print(user_info)
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -448,8 +447,6 @@ def studentOfClass():
     
     '''Execute Stored Procedure'''
     res = execute_sp(engine,stored_procedure.studentOfClass,params,True)
-    print(params)
-    print(res)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -485,7 +482,6 @@ def numStudentOfSemester():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    print(user_info)
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -505,8 +501,6 @@ def numStudentOfSemester():
     
     '''Execute Stored Procedure'''
     res = execute_sp(engine,stored_procedure.numStudentOfSemester,params,True)
-    print(params)
-    print(res)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -542,7 +536,6 @@ def numClassOfSemester():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    print(user_info)
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -562,8 +555,6 @@ def numClassOfSemester():
     
     '''Execute Stored Procedure'''
     res = execute_sp(engine,stored_procedure.numClassOfSemester,params,True)
-    print(params)
-    print(res)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -598,7 +589,6 @@ def subjectHavingMaxTeacher():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    print(user_info)
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -618,8 +608,6 @@ def subjectHavingMaxTeacher():
     
     '''Execute Stored Procedure'''
     res = execute_sp(engine,stored_procedure.subjectHavingMaxTeacher,params,True)
-    print(params)
-    print(res)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -654,7 +642,6 @@ def avgNumStudent():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    print(user_info)
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -665,8 +652,6 @@ def avgNumStudent():
     params = list(req_data.values())[1:]
     '''Execute Stored Procedure'''
     res = execute_sp(engine,stored_procedure.avgNumStudent,params,True)
-    print(params)
-    print(res)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
