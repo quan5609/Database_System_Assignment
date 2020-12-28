@@ -271,7 +271,7 @@ END;
 -- *****************************************************************************************************************
 --ii.1: Cap nhat danh sach mon hoc duoc mo truoc dau moi hoc ky.
 GO
-CREATE PROCEDURE UpdateSubject(
+CREATE PROCEDURE addSubject(
     @semesterId AS varchar(10),
     @departmentId AS VARCHAR(10),
     @subjectId AS VARCHAR(10)
@@ -298,10 +298,57 @@ BEGIN
 					-- Code chinh
 					INSERT INTO dbo.Opens VALUES(@semesterId, @subjectId, @departmentId)
 END;
+
+GO
+CREATE PROCEDURE removeSubject(
+    @semesterId AS varchar(10),
+    @departmentId AS VARCHAR(10),
+    @subjectId AS VARCHAR(10)
+)
+AS
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM Opens
+        WHERE Department_id = @departmentId
+            AND Semester_id = @semesterId
+            AND Subject_id = @subjectId
+    )
+        RAISERROR('Subject not exist',16,0)
+    ELSE
+        -- Code chinh
+        DELETE FROM dbo.Opens 
+        WHERE Department_id = @departmentId
+            AND Semester_id = @semesterId
+            AND Subject_id = @subjectId
+END;
+
+GO
+CREATE PROCEDURE updateSubject(
+    @semesterId AS varchar(10),
+    @departmentId AS VARCHAR(10),
+    @oldSubjectId AS VARCHAR(10),
+    @newSubjectId AS VARCHAR(10)
+)
+AS
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM Opens
+        WHERE Department_id = @departmentId
+            AND Semester_id = @semesterId
+            AND Subject_id = @oldSubjectId
+    )
+        RAISERROR('Subject not exist',16,0)
+    ELSE
+        -- Code chinh
+        UPDATE dbo.Opens 
+        SET Subject_id = @newSubjectId
+        WHERE Department_id = @departmentId
+            AND Semester_id = @semesterId
+            AND Subject_id = @oldSubjectId
+END;
 --ii.2: Cap nhat danh sach giang vien phu trach moi lop hoc duoc mo truoc dau moi hoc ky.
 GO
-
-CREATE PROCEDURE UpdateTeacherOfClass(
+CREATE PROCEDURE addTeacherOfClass(
     @teacherSsn AS varchar(10),
     @classId AS VARCHAR(10),
     @subjectId AS VARCHAR(10),
@@ -331,6 +378,67 @@ BEGIN
 				ELSE
 					-- Code chinh
 					INSERT INTO dbo.Responsible VALUES(@semesterId, @subjectId, @classId, @weekId, @semesterId, @teacherSsn)
+END;
+
+GO
+CREATE PROCEDURE removeTeacherOfClass(
+    @teacherSsn AS varchar(10),
+    @classId AS VARCHAR(10),
+    @subjectId AS VARCHAR(10),
+    @semesterId AS VARCHAR(10),
+    @weekId AS VARCHAR(10)
+)
+AS
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM Responsible
+        WHERE Teacher_ssn = @teacherSsn
+            AND Class_id = @classId
+            AND Semester_id = @semesterId
+            AND Subject_id = @subjectId
+            AND Week_id = @weekId
+    )
+        RAISERROR('Responsible not exist',16,0)
+    ELSE
+        -- Code chinh
+        DELETE FROM dbo.responsible
+        WHERE Teacher_ssn = @teacherSsn
+            AND Class_id = @classId
+            AND Semester_id = @semesterId
+            AND Subject_id = @subjectId
+            AND Week_id = @weekId
+END;
+
+
+GO
+CREATE PROCEDURE updateTeacherOfClass(
+    @classId AS VARCHAR(10),
+    @subjectId AS VARCHAR(10),
+    @semesterId AS VARCHAR(10),
+    @weekId AS VARCHAR(10),
+    @oldTeacherSsn AS varchar(10),
+    @newTeacherSsn AS varchar(10)
+)
+AS
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM Responsible
+        WHERE Teacher_ssn = @oldTeacherSsn
+            AND Class_id = @classId
+            AND Semester_id = @semesterId
+            AND Subject_id = @subjectId
+            AND Week_id = @weekId
+    )
+        RAISERROR('Responsible not exist',16,0)
+    ELSE
+        -- Code chinh
+        UPDATE dbo.responsible
+        SET Teacher_ssn = @newTeacherSsn
+        WHERE Teacher_ssn = @oldTeacherSsn
+            AND Class_id = @classId
+            AND Semester_id = @semesterId
+            AND Subject_id = @subjectId
+            AND Week_id = @weekId
 END;
 --ii.3: Xem danh sach mon hoc o mot hoc ky.
 GO
@@ -542,7 +650,7 @@ END;
 -- *****************************************************************************************************************
 -- (iii.1). Cap nhat giao trinh chinh cho mon hoc do minh phu trach.
 GO
-CREATE PROCEDURE UpdateReferenceBook(
+CREATE PROCEDURE addReferenceBook(
     @teacherSsn AS varchar(10),
     @subjectId AS varchar(10),
     @bookId AS varchar(10),
@@ -567,6 +675,71 @@ BEGIN
             VALUES (@subjectId,@semesterId, @classId,  @bookId, @teacherSsn)
         ELSE 
             RAISERROR('This subject can not have more than 3 reference books',16,0);
+END;
+
+GO
+CREATE PROCEDURE removeReferenceBook(
+    @teacherSsn AS varchar(10),
+    @subjectId AS varchar(10),
+    @bookId AS varchar(10),
+    @semesterId AS varchar(10),
+    @classId AS varchar(10)
+    )
+AS
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM MainResponsible
+        Where MainTeacher_ssn = @teacherSsn
+            AND Subject_id = @subjectId
+            AND Semester_id = @semesterId
+    )
+        RAISERROR('Only update book for your responsible subject',16,0)
+    ELSE
+        IF (SELECT COUNT(*) FROM Uses 
+            WHERE Subject_id = @subjectId 
+                AND Semester_id = @semesterId) > 1
+            DELETE FROM Uses 
+            WHERE Subject_id = @subjectId
+                AND Semester_id = @semesterId
+                AND Class_id = @classId
+                AND ReferenceBook_id = @bookId
+        ELSE 
+            RAISERROR('This subject must have reference book',16,0);
+END;
+
+GO
+CREATE PROCEDURE updateReferenceBook(
+    @teacherSsn AS varchar(10),
+    @subjectId AS varchar(10),
+    @semesterId AS varchar(10),
+    @classId AS varchar(10),
+    @oldBookId AS varchar(10),
+    @newBookId AS varchar(10)
+    )
+AS
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM MainResponsible
+        Where MainTeacher_ssn = @teacherSsn
+            AND Subject_id = @subjectId
+            AND Semester_id = @semesterId
+    )
+        RAISERROR('Only update book for your responsible subject',16,0)
+    ELSE
+        IF EXISTS (SELECT 1 FROM Uses 
+            WHERE Subject_id = @subjectId
+                AND Semester_id = @semesterId
+                AND Class_id = @classId
+                AND ReferenceBook_id = @oldBookId)
+
+            UPDATE Uses 
+            SET ReferenceBook_id = @newBookId
+            WHERE Subject_id = @subjectId
+                AND Semester_id = @semesterId
+                AND Class_id = @classId
+                AND ReferenceBook_id = @oldBookId
+        ELSE 
+            RAISERROR('Invalid Reference Book',16,0);
 END;
 
 -- (iii.2). Xem danh sach lop hoc cua moi mon hoc do minh phu trach o mot hoc ky.

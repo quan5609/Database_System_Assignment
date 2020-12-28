@@ -1,12 +1,29 @@
 class Schema():
     def __init__(self):
         self.hello = {}
-        self.updateReferenceBook = {
+        self.addReferenceBook = {
             'token': {'type':'string','required':True},
             'subjectId': {'type':'string','required':True},
             'bookId': {'type':'string','required':True},
             'semesterId': {'type':'string','required':True},
             'classId': {'type':'string','required':True}
+        }
+
+        self.removeReferenceBook = {
+            'token': {'type':'string','required':True},
+            'subjectId': {'type':'string','required':True},
+            'bookId': {'type':'string','required':True},
+            'semesterId': {'type':'string','required':True},
+            'classId': {'type':'string','required':True}
+        }
+
+        self.updateReferenceBook = {
+            'token': {'type':'string','required':True},
+            'subjectId': {'type':'string','required':True},
+            'semesterId': {'type':'string','required':True},
+            'classId': {'type':'string','required':True},
+            'oldBookId': {'type':'string','required':True},
+            'newBookId': {'type':'string','required':True}
         }
 
         self.responsibleClasses = {

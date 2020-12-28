@@ -65,7 +65,9 @@ GRANT EXECUTE ON OBJECT::First3MaxCredit TO students
 
 
 --teachers permission
-GRANT EXECUTE ON OBJECT::UpdateReferenceBook TO teachers
+GRANT EXECUTE ON OBJECT::addReferenceBook TO teachers
+GRANT EXECUTE ON OBJECT::removeReferenceBook TO teachers
+GRANT EXECUTE ON OBJECT::updateReferenceBook TO teachers
 GRANT EXECUTE ON OBJECT::responsibleClasses TO teachers
 GRANT EXECUTE ON OBJECT::studentOfResopnsibleClass TO teachers
 GRANT EXECUTE ON OBJECT::referenceBookOfResponsibleSubject TO teachers
@@ -75,8 +77,12 @@ GRANT EXECUTE ON OBJECT::top5Class_mostStudent TO teachers
 GRANT EXECUTE ON OBJECT::top5Semester_mostClass TO teachers
 
 --department employee permission
-GRANT EXECUTE ON OBJECT::UpdateSubject TO deemployees
-GRANT EXECUTE ON OBJECT::UpdateTeacherOfClass TO deemployees
+GRANT EXECUTE ON OBJECT::addSubject TO deemployees
+GRANT EXECUTE ON OBJECT::removeSubject TO deemployees
+GRANT EXECUTE ON OBJECT::updateSubject TO deemployees
+GRANT EXECUTE ON OBJECT::addTeacherOfClass TO deemployees
+GRANT EXECUTE ON OBJECT::removeTeacherOfClass TO deemployees
+GRANT EXECUTE ON OBJECT::updateTeacherOfClass TO deemployees
 GRANT EXECUTE ON OBJECT::SubjectOnSemester TO deemployees
 GRANT EXECUTE ON OBJECT::TeacherOnSemester TO deemployees
 GRANT EXECUTE ON OBJECT::ClassOfTeacher TO deemployees

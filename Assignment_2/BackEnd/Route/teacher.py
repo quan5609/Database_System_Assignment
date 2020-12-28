@@ -60,15 +60,104 @@ def hello():
     )
     return response
 
-@teacher_blueprint.route('/update-reference-book',methods = ['POST'])
-def updateReferenceBook():
+@teacher_blueprint.route('/add-reference-book',methods = ['POST'])
+def addReferenceBook():
     '''
-    PROCEDURE UpdateReferenceBook(
+    PROCEDURE addReferenceBook(
         @teacherSsn AS varchar(10),
         @subjectId AS varchar(10),
         @bookId AS varchar(10),
         @semesterId AS varchar(10),
         @classId AS varchar(10)
+        )
+    '''
+
+    '''Define Schema'''
+    schema = request_schema.addReferenceBook
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+    params = [user_info['sub']] + list(req_data.values())[1:]
+    '''Execute Stored Procedure'''
+    res = execute_sp(engine,stored_procedure.addReferenceBook,params, getResult=False)
+
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps('INTERNAL SERVER ERROR'),#(res['error'])
+            status=500,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps('OK'),
+            status=200,
+            mimetype='application/json'
+        )
+
+@teacher_blueprint.route('/remove-reference-book',methods = ['POST'])
+def removeReferenceBook():
+    '''
+    PROCEDURE removeReferenceBook(
+        @teacherSsn AS varchar(10),
+        @subjectId AS varchar(10),
+        @bookId AS varchar(10),
+        @semesterId AS varchar(10),
+        @classId AS varchar(10)
+        )
+    '''
+
+    '''Define Schema'''
+    schema = request_schema.removeReferenceBook
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+    params = [user_info['sub']] + list(req_data.values())[1:]
+    '''Execute Stored Procedure'''
+    res = execute_sp(engine,stored_procedure.removeReferenceBook,params, getResult=False)
+
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps('INTERNAL SERVER ERROR'),#(res['error'])
+            status=500,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps('OK'),
+            status=200,
+            mimetype='application/json'
+        )
+
+@teacher_blueprint.route('/update-reference-book',methods = ['POST'])
+def updateReferenceBook():
+    '''
+    PROCEDURE updateReferenceBook(
+        @teacherSsn AS varchar(10),
+        @subjectId AS varchar(10),
+        @semesterId AS varchar(10),
+        @classId AS varchar(10)
+        @oldBookId AS varchar(10),
+        @newBookId AS varchar(10)
         )
     '''
 
