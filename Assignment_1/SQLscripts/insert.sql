@@ -785,7 +785,7 @@ INSERT INTO DepartmentEmployeeAccount
 VALUES
     (
         'depar00006', '$2b$05$iyllBYFvHiA8skgzZrD16O2AQBUjjrODVg1e5PMQayvnArLc5l4ke'
-);*/
+);
 -- !SECTION
 -- SECTION DepartmentEmployee 
 -----------------------------------------------------------------------------------------------------------------------------

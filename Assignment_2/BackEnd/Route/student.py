@@ -232,7 +232,7 @@ def subjectReferenceBook():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -333,7 +333,7 @@ def classOfSubjectMoreThan1Teacher():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -382,7 +382,7 @@ def sumCredit():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -431,7 +431,7 @@ def sumSubject():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -479,7 +479,7 @@ def first3MaxCredit():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )

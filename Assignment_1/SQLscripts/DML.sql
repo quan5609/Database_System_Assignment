@@ -45,12 +45,22 @@ CREATE PROCEDURE removeRegister(
     )
 AS
 BEGIN
-    DELETE FROM Register
-    WHERE 
-        Student_id = @oldStudentId
-        AND Class_id = @oldClassId
-        AND Semester_id = @oldSemesterId
-        AND Subject_id = @oldSubjectId
+	IF NOT EXISTS (
+        SELECT 1 FROM Register
+        WHERE Student_id = @oldStudentId
+            AND Class_id = @oldClassId
+            AND Semester_id = @oldSemesterId
+            AND Subject_id = @oldSubjectId
+    )
+        RAISERROR('Invalid Register',16,0)
+    ELSE
+		--Code chinh
+		DELETE FROM Register
+		WHERE 
+			Student_id = @oldStudentId
+			AND Class_id = @oldClassId
+			AND Semester_id = @oldSemesterId
+			AND Subject_id = @oldSubjectId
 END;
 
 -- Sua
@@ -68,17 +78,27 @@ CREATE PROCEDURE updateRegister(
     )
 AS
 BEGIN
-    UPDATE Register
-    SET 
-        Student_id = @newStudentId,
-        Class_id = @newClassId,
-        Semester_id = @newSemesterId,
-        Subject_id = @newSubjectId
-    WHERE 
-        Student_id = @oldStudentId
-        AND Class_id = @oldClassId
-        AND Semester_id = @oldSemesterId
-        AND Subject_id = @oldSubjectId
+	IF NOT EXISTS (
+		SELECT 1 FROM Register
+		WHERE Student_id = @oldStudentId
+			AND Class_id = @oldClassId
+			AND Semester_id = @oldSemesterId
+			AND Subject_id = @oldSubjectId
+	)
+		RAISERROR('Invalid Register',16,0)
+	ELSE
+		-- Code chinh
+		UPDATE Register
+		SET 
+			Student_id = @newStudentId,
+			Class_id = @newClassId,
+			Semester_id = @newSemesterId,
+			Subject_id = @newSubjectId
+		WHERE 
+			Student_id = @oldStudentId
+			AND Class_id = @oldClassId
+			AND Semester_id = @oldSemesterId
+			AND Subject_id = @oldSubjectId
 END;
 
 
@@ -90,10 +110,14 @@ CREATE PROCEDURE registeredClass(
     )
 AS
 BEGIN
-    SELECT DISTINCT Class_id Ma_lop_hoc, Subject_id Ma_mon_hoc
-    FROM REGISTER 
-    WHERE Student_id = @studentId
-        AND Semester_id = @semesterId
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+		RAISERROR('Invalid SemesterID',16,0)
+	ELSE
+		-- Code chinh
+		SELECT DISTINCT Class_id Ma_lop_hoc, Subject_id Ma_mon_hoc
+		FROM REGISTER 
+		WHERE Student_id = @studentId
+			AND Semester_id = @semesterId
 END;
 
 GO
@@ -104,10 +128,17 @@ CREATE PROCEDURE responsibleClass(
 )
 AS
 BEGIN
-    SELECT DISTINCT Class_id Ma_lop_hoc,Subject_id Ma_mon_hoc
-    FROM Responsible
-    WHERE Teacher_ssn = @teacherSsn
-        AND Semester_id = @semesterId;
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+		RAISERROR('Invalid SemesterID',16,0)
+	ELSE
+		IF NOT EXISTS (SELECT 1 FROM Teacher WHERE ssn = @teacherSsn)
+			RAISERROR('Invalid Teacher',16,0)
+		ELSE
+			-- Code chinh
+			SELECT DISTINCT Class_id Ma_lop_hoc,Subject_id Ma_mon_hoc
+			FROM Responsible
+			WHERE Teacher_ssn = @teacherSsn
+				AND Semester_id = @semesterId;
 END;
 
 GO
@@ -126,7 +157,7 @@ GO
 CREATE PROCEDURE listStudent
 AS
 BEGIN
-    SELECT DISTINCT Department_id Ma_khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, c.id Ma_lop,
+    SELECT DISTINCT Department_id Ma_khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, c.id Ma_lop_hoc,
             s.ssn,firstName Ten, lastName Ho
             
     FROM Student s, Register, Class c, Opens o
@@ -142,7 +173,7 @@ GO
 CREATE PROCEDURE listTeacher
 AS
 BEGIN
-    SELECT DISTINCT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, Class_id Ma_lop, 
+    SELECT DISTINCT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, Class_id Ma_lop_hoc, 
         Teacher_ssn SSN, firstName Ten, lastName Ho
             
     FROM Responsible,Employee,Class c,Opens o
@@ -157,7 +188,7 @@ GO
 CREATE PROCEDURE listReferenceBook
 AS
 BEGIN
-    SELECT DISTINCT dId Ma_khoa, u.Semester_id Ma_hoc_ky, u.Subject_id Ma_mon_hoc, ReferenceBook_id Ma_sach, [name] Ten_sach
+    SELECT DISTINCT dId Ma_khoa, u.Semester_id Ma_hoc_ky, u.Subject_id Ma_mon_hoc, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
     FROM Uses u JOIN SubjectDepartment s ON u.Subject_id = s.Subject_id JOIN ReferenceBook r ON u.Referencebook_id = r.id
     ORDER BY did,u.Semester_id,u.Subject_id,ReferenceBook_id,[name]
 END;
@@ -195,11 +226,18 @@ CREATE PROCEDURE numOfStudents_class_sem(
 )
 AS
 BEGIN
-    SELECT DISTINCT c.id Ma_lop_hoc, COUNT(r.Student_id) Tong_sinh_vien
-    FROM Register r JOIN Class c ON r.Class_id = c.id AND r.Semester_id = c.Semester_id AND r.Subject_id = c.Subject_id
-    WHERE r.Subject_id = @subject_id AND r.Semester_id = @semester_id
-    GROUP BY c.id
-    ORDER BY c.id
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semester_id)
+		RAISERROR('Invalid SemesterID',16,0)
+	ELSE
+		IF NOT EXISTS (SELECT 1 FROM Subject WHERE id = @subject_id)
+			RAISERROR('Invalid SubjectID',16,0)
+		ELSE
+			-- Code chinh
+			SELECT DISTINCT c.id Ma_lop_hoc, COUNT(r.Student_id) Tong_sinh_vien
+			FROM Register r JOIN Class c ON r.Class_id = c.id AND r.Semester_id = c.Semester_id AND r.Subject_id = c.Subject_id
+			WHERE r.Subject_id = @subject_id AND r.Semester_id = @semester_id
+			GROUP BY c.id
+			ORDER BY c.id
 END;
 
 GO
@@ -209,10 +247,14 @@ CREATE PROCEDURE numOfStudents_sub_sem(
 )
 AS
 BEGIN
-    SELECT c.Subject_id Ma_mon_hoc, COUNT(DISTINCT r.Student_id) Tong_sinh_vien
-    FROM Register r JOIN Class c ON r.Class_id = c.id AND r.Semester_id = c.Semester_id AND r.Subject_id = c.Subject_id
-    WHERE r.Semester_id = @semester_id
-    GROUP BY c.Subject_id
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semester_id)
+		RAISERROR('Invalid SemesterID',16,0)
+	ELSE
+		-- Code chinh
+		SELECT c.Subject_id Ma_mon_hoc, COUNT(DISTINCT r.Student_id) Tong_sinh_vien
+		FROM Register r JOIN Class c ON r.Class_id = c.id AND r.Semester_id = c.Semester_id AND r.Subject_id = c.Subject_id
+		WHERE r.Semester_id = @semester_id
+		GROUP BY c.Subject_id
 END;
 
 GO
@@ -239,7 +281,25 @@ CREATE PROCEDURE UpdateSubject(
 )
 AS
 BEGIN
-    INSERT INTO dbo.Opens VALUES(@semesterId, @subjectId, @departmentId)
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+        RAISERROR('Invalid SemesterID',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
+            RAISERROR('Invalid DepartmentID',16,0)
+        ELSE
+			IF NOT EXISTS (SELECT 1 FROM Subject WHERE id = @subjectId)
+				RAISERROR('Invalid SubjectID',16,0)
+			ELSE
+				IF EXISTS (
+					SELECT 1 FROM Opens
+					WHERE Department_id = @departmentId
+						AND Semester_id = @semesterId
+						AND Subject_id = @subjectId
+				)
+					RAISERROR('Existed Opens',16,0)
+				ELSE
+					-- Code chinh
+					INSERT INTO dbo.Opens VALUES(@semesterId, @subjectId, @departmentId)
 END;
 --ii.2: Cap nhat danh sach giang vien phu trach moi lop hoc duoc mo truoc dau moi hoc ky.
 GO
@@ -253,7 +313,27 @@ CREATE PROCEDURE UpdateTeacherOfClass(
 )
 AS
 BEGIN
-    INSERT INTO dbo.Responsible VALUES(@semesterId, @subjectId, @classId, @weekId, @semesterId, @teacherSsn)
+	IF NOT EXISTS (SELECT 1 FROM Teacher WHERE Ssn = @teacherSsn)
+        RAISERROR('Invalid TeacherSsn',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Class WHERE id = @classId AND Semester_id = @semesterId AND subject_id = @subjectId)
+            RAISERROR('Invalid Class',16,0)
+        ELSE
+			IF NOT EXISTS (SELECT 1 FROM Week WHERE id = @weekId AND Semester_id = @semesterId)
+				RAISERROR('Invalid Week',16,0)
+			ELSE
+				IF EXISTS (
+					SELECT 1 FROM Responsible
+					WHERE Teacher_ssn = @teacherSsn
+						AND Class_id = @classId
+						AND Semester_id = @semesterId
+						AND Subject_id = @subjectId
+						AND Week_id = @weekId
+				)
+					RAISERROR('Existed Responsible',16,0)
+				ELSE
+					-- Code chinh
+					INSERT INTO dbo.Responsible VALUES(@semesterId, @subjectId, @classId, @weekId, @semesterId, @teacherSsn)
 END;
 --ii.3: Xem danh sach mon hoc o mot hoc ky.
 GO
@@ -263,9 +343,16 @@ CREATE PROCEDURE SubjectOnSemester(
 )
 AS
 BEGIN
-    SELECT DISTINCT Id Ma_mon
-    FROM dbo.Subject JOIN dbo.Opens ON Opens.Subject_id = Subject.id
-    WHERE dbo.Opens.Semester_id = @semesterId AND dbo.Opens.Department_id = @departmentId
+	IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
+        RAISERROR('Invalid Department',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT DISTINCT Id Ma_mon_hoc
+			FROM dbo.Subject JOIN dbo.Opens ON Opens.Subject_id = Subject.id
+			WHERE dbo.Opens.Semester_id = @semesterId AND dbo.Opens.Department_id = @departmentId
 END;
 
 GO
@@ -276,9 +363,16 @@ CREATE PROCEDURE TeacherOnSemester(
 )
 AS
 BEGIN
-    SELECT DISTINCT Teacher_ssn Ma_giang_vien
-    FROM dbo.Responsible JOIN dbo.Teacher ON Teacher.ssn = Responsible.Teacher_ssn
-    WHERE Semester_id = @semesterId AND dId = @departmentId
+	IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
+        RAISERROR('Invalid Department',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT DISTINCT Teacher_ssn Ma_giang_vien
+			FROM dbo.Responsible JOIN dbo.Teacher ON Teacher.ssn = Responsible.Teacher_ssn
+			WHERE Semester_id = @semesterId AND dId = @departmentId
 END;
 
 GO
@@ -289,9 +383,16 @@ CREATE PROCEDURE ClassOfTeacher(
 )
 AS
 BEGIN
-    SELECT DISTINCT Class_id Ma_lop, Semester_id Ma_hoc_ky, Subject_id Ma_mon
-    FROM dbo.Responsible
-    WHERE Semester_id = @semesterId AND Teacher_ssn = @teacherSsn
+	IF NOT EXISTS (SELECT 1 FROM Teacher WHERE ssn = @teacherSsn)
+        RAISERROR('Invalid Teacher',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT DISTINCT Class_id Ma_lop_hoc, Semester_id Ma_hoc_ky, Subject_id Ma_mon_hoc
+			FROM dbo.Responsible
+			WHERE Semester_id = @semesterId AND Teacher_ssn = @teacherSsn
 END;
 
 GO
@@ -302,10 +403,17 @@ CREATE PROCEDURE TeacherOfClass(
 )
 AS
 BEGIN
-    SELECT DISTINCT Class_id Ma_lop, dbo.Responsible.Semester_id Ma_hoc_ky, dbo.Responsible.Subject_id Ma_mon, Teacher_ssn Ma_giang_vien, lastName Ho, firstName Ten
-    FROM dbo.Responsible JOIN dbo.Opens ON Opens.Semester_id = Responsible.Semester_id AND Opens.Subject_id = Responsible.Subject_id
-        JOIN dbo.Employee ON Teacher_ssn = ssn
-    WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
+	IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
+        RAISERROR('Invalid Department',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT DISTINCT Class_id Ma_lop_hoc, dbo.Responsible.Semester_id Ma_hoc_ky, dbo.Responsible.Subject_id Ma_mon_hoc, Teacher_ssn Ma_giang_vien, lastName Ho, firstName Ten
+			FROM dbo.Responsible JOIN dbo.Opens ON Opens.Semester_id = Responsible.Semester_id AND Opens.Subject_id = Responsible.Subject_id
+				JOIN dbo.Employee ON Teacher_ssn = ssn
+			WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
 END;
 
 GO
@@ -316,9 +424,16 @@ CREATE PROCEDURE BookOfSubject(
 )
 AS
 BEGIN
-    SELECT DISTINCT Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
-    FROM dbo.Uses JOIN dbo.ReferenceBook ON ReferenceBook_id = id
-    WHERE Subject_id IN (SELECT Subject_id FROM dbo.SubjectDepartment WHERE did = @departmentId)
+	IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
+        RAISERROR('Invalid Department',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT DISTINCT Subject_id Ma_mon_hoc, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
+			FROM dbo.Uses JOIN dbo.ReferenceBook ON ReferenceBook_id = id
+			WHERE Subject_id IN (SELECT Subject_id FROM dbo.SubjectDepartment WHERE did = @departmentId)
 END;
 
 GO
@@ -329,9 +444,16 @@ CREATE PROCEDURE StudentOfClass(
 )
 AS
 BEGIN
-    SELECT DISTINCT Class_id Ma_lop, dbo.Register.Subject_id Ma_mon, Student_id Ma_sinh_vien
-    FROM dbo.Register JOIN dbo.Opens ON Opens.Semester_id = Register.Semester_id AND Opens.Subject_id = Register.Subject_id
-    WHERE dbo.Register.Semester_id = @semesterId AND Department_id = @departmentId
+	IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
+        RAISERROR('Invalid Department',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT DISTINCT Class_id Ma_lop_hoc, dbo.Register.Subject_id Ma_mon_hoc, Student_id Ma_sinh_vien
+			FROM dbo.Register JOIN dbo.Opens ON Opens.Semester_id = Register.Semester_id AND Opens.Subject_id = Register.Subject_id
+			WHERE dbo.Register.Semester_id = @semesterId AND Department_id = @departmentId
 END;
 
 GO
@@ -342,9 +464,16 @@ CREATE PROCEDURE NumStudentOfSemester(
 )
 AS
 BEGIN
-    SELECT COUNT(DISTINCT Student_id) Tong_sinh_vien
-    FROM dbo.Register JOIN dbo.Student ON Student.ssn = Register.Student_id
-    WHERE Semester_id = @semesterId AND dId = @departmentId
+	IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
+        RAISERROR('Invalid Department',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT COUNT(DISTINCT Student_id) Tong_sinh_vien
+			FROM dbo.Register JOIN dbo.Student ON Student.ssn = Register.Student_id
+			WHERE Semester_id = @semesterId AND dId = @departmentId
 END;
 
 GO
@@ -355,9 +484,16 @@ CREATE PROCEDURE NumClassOfSemester(
 )
 AS
 BEGIN
-    SELECT COUNT(*) Tong_lop
-    FROM dbo.Class JOIN dbo.Opens ON Opens.Semester_id = Class.Semester_id AND Opens.Subject_id = Class.Subject_id
-    WHERE dbo.Class.Semester_id = @semesterId AND Department_id = @departmentId
+	IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
+        RAISERROR('Invalid Department',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT COUNT(*) Tong_lop
+			FROM dbo.Class JOIN dbo.Opens ON Opens.Semester_id = Class.Semester_id AND Opens.Subject_id = Class.Subject_id
+			WHERE dbo.Class.Semester_id = @semesterId AND Department_id = @departmentId
 END;
 
 --ii.11: Xem nhung mon co nhieu giang vien cung phu trach nhat o mot hoc ky.
@@ -368,16 +504,23 @@ CREATE PROCEDURE SubjectHavingMaxTeacher(
 )
 AS
 BEGIN
-    SELECT Subject_id 
-    FROM (SELECT dbo.Responsible.Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
-            FROM dbo.Responsible JOIN dbo.Opens ON Opens.Subject_id = Responsible.Subject_id AND Opens.Semester_id = Responsible.Semester_id 
-            WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
-            GROUP BY dbo.Responsible.Subject_id) a
-    WHERE a.Num_Of_Tea = (SELECT MAX(Num_Of_Tea) 
-                            FROM (SELECT dbo.Responsible.Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
-                                    FROM dbo.Responsible JOIN dbo.Opens ON Opens.Subject_id = Responsible.Subject_id AND Opens.Semester_id = Responsible.Semester_id
-                                    WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
-                                    GROUP BY dbo.Responsible.Subject_id) b)
+	IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
+        RAISERROR('Invalid Department',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT Subject_id 
+			FROM (SELECT dbo.Responsible.Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
+					FROM dbo.Responsible JOIN dbo.Opens ON Opens.Subject_id = Responsible.Subject_id AND Opens.Semester_id = Responsible.Semester_id 
+					WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
+					GROUP BY dbo.Responsible.Subject_id) a
+			WHERE a.Num_Of_Tea = (SELECT MAX(Num_Of_Tea) 
+									FROM (SELECT dbo.Responsible.Subject_id, COUNT(DISTINCT Teacher_ssn) AS Num_Of_Tea
+											FROM dbo.Responsible JOIN dbo.Opens ON Opens.Subject_id = Responsible.Subject_id AND Opens.Semester_id = Responsible.Semester_id
+											WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
+											GROUP BY dbo.Responsible.Subject_id) b)
 END;
 
 GO
@@ -387,11 +530,14 @@ CREATE PROCEDURE AvgNumStudent(
 )
 AS
 BEGIN
-    SELECT AVG(a.So_sinh_vien) So_sinh_vien_trung_binh_trong_3_nam_gan_nhat
-    FROM (SELECT Semester_id, dbo.Semester.startDate Ngay_bat_dau, COUNT(DISTINCT Student_id) So_sinh_vien
-            FROM dbo.Register JOIN dbo.Semester ON Semester_id = dbo.Semester.id
-            WHERE Subject_id = @subjectId AND DATEDIFF(YEAR, startDate, GETDATE()) <= 3
-            GROUP BY Semester_id, startDate) a
+	IF NOT EXISTS (SELECT 1 FROM Subject WHERE id = @subjectId)
+        RAISERROR('Invalid Subject',16,0)
+    ELSE
+		SELECT AVG(a.So_sinh_vien) So_sinh_vien_trung_binh_trong_3_nam_gan_nhat
+		FROM (SELECT Semester_id, dbo.Semester.startDate Ngay_bat_dau, COUNT(DISTINCT Student_id) So_sinh_vien
+				FROM dbo.Register JOIN dbo.Semester ON Semester_id = dbo.Semester.id
+				WHERE Subject_id = @subjectId AND DATEDIFF(YEAR, startDate, GETDATE()) <= 3
+				GROUP BY Semester_id, startDate) a
 END;
 
 --!SECTION
@@ -435,11 +581,15 @@ CREATE PROCEDURE responsibleClasses
     )
 AS
 BEGIN
-    SELECT Subject_id Ma_mon_hoc,Class_id Ma_lop_hoc
-    FROM Responsible
-    WHERE Teacher_ssn = @teacherSsn AND Semester_id = @semesterId
-    GROUP BY Subject_id,Class_id
-    ORDER BY Subject_id,Class_id
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT Subject_id Ma_mon_hoc,Class_id Ma_lop_hoc
+			FROM Responsible
+			WHERE Teacher_ssn = @teacherSsn AND Semester_id = @semesterId
+			GROUP BY Subject_id,Class_id
+			ORDER BY Subject_id,Class_id
 END;
 
 -- (iii.3). Xem danh sach sinh vien cua moi lop hoc do minh phu trach o mot hoc ky.
@@ -451,14 +601,18 @@ CREATE PROCEDURE studentOfResopnsibleClass
     )
 AS
 BEGIN
-    SELECT DISTINCT rp.Subject_id Ma_mon_hoc,rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
-    FROM Responsible rp, Register rg, Student st
-    WHERE rp.Class_id = rg.Class_id
-        AND rg.Student_id = st.ssn
-        AND Teacher_ssn = @teacherSsn
-        AND rp.Semester_id = @semesterId
-    GROUP BY rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
-    ORDER BY rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT DISTINCT rp.Subject_id Ma_mon_hoc,rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
+			FROM Responsible rp, Register rg, Student st
+			WHERE rp.Class_id = rg.Class_id
+				AND rg.Student_id = st.ssn
+				AND Teacher_ssn = @teacherSsn
+				AND rp.Semester_id = @semesterId
+			GROUP BY rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
+			ORDER BY rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
 END;
 
 -- (iii.4). Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc do minh phu trach o mot hoc ky.
@@ -469,11 +623,15 @@ CREATE PROCEDURE referenceBookOfResponsibleSubject
     )
 AS
 BEGIN
-    SELECT rp.Subject_id Ma_mon_hoc, r.[name] Ten_giao_trinh
-    FROM Responsible rp JOIN Uses u ON rp.Subject_id = u.Subject_id 
-        JOIN ReferenceBook r ON u.ReferenceBook_id = r.id
-    WHERE rp.Semester_id = @semesterId AND u.Semester_id = @semesterId
-    GROUP BY rp.Subject_id,r.[name]
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT rp.Subject_id Ma_mon_hoc, r.[name] Ten_giao_trinh
+			FROM Responsible rp JOIN Uses u ON rp.Subject_id = u.Subject_id 
+				JOIN ReferenceBook r ON u.ReferenceBook_id = r.id
+			WHERE rp.Semester_id = @semesterId AND u.Semester_id = @semesterId
+			GROUP BY rp.Subject_id,r.[name]
 END;
 
 -- (iii.5). Xem tong so sinh vien cua moi lop hoc do minh phu trach o mot hoc ky.
@@ -485,13 +643,17 @@ CREATE PROCEDURE numOfStudents_ofResponsiblesClass
     )
 AS
 BEGIN
-    SELECT rp.Subject_id Ma_mon_hoc,rp.Class_id Ma_lop_hoc, COUNT(DISTINCT rg.Student_id) tong_so_sinh_vien
-    FROM Responsible rp, Register rg
-    WHERE rp.Class_id = rg.Class_id
-        AND Teacher_ssn = @teacherSsn
-        AND rp.Semester_id = @semesterId
-        AND rg.Semester_id = @semesterId
-    GROUP BY rp.Subject_id, rp.Class_id
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT rp.Subject_id Ma_mon_hoc,rp.Class_id Ma_lop_hoc, COUNT(DISTINCT rg.Student_id) tong_so_sinh_vien
+			FROM Responsible rp, Register rg
+			WHERE rp.Class_id = rg.Class_id
+				AND Teacher_ssn = @teacherSsn
+				AND rp.Semester_id = @semesterId
+				AND rg.Semester_id = @semesterId
+			GROUP BY rp.Subject_id, rp.Class_id
 END;
 
 -- (iii.6). Xem so lop hoc do minh phu trach o moi hoc ky trong 3 nam lien tiep gan day nhat.
@@ -565,7 +727,7 @@ CREATE PROCEDURE SubjectClassTeacher(
 )
 AS
 BEGIN
-    SELECT DISTINCT Semester_id Ma_hoc_ky,Class_id Ma_lop, Subject_id Ma_mon_hoc, Teacher_ssn Ma_giang_vien
+    SELECT DISTINCT Semester_id Ma_hoc_ky,Class_id Ma_lop_hoc, Subject_id Ma_mon_hoc, Teacher_ssn Ma_giang_vien
     FROM dbo.Responsible
     WHERE Semester_id IN (SELECT semesterId 
                                 FROM dbo.StudyStatus
@@ -580,10 +742,14 @@ CREATE PROCEDURE SubjectReferenceBook(
 )
 AS
 BEGIN
-    SELECT DISTINCT Register.Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
-    FROM dbo.Register JOIN dbo.Uses ON Register.Subject_id = Uses.Subject_id
-        JOIN ReferenceBook ON Uses.ReferenceBook_id = ReferenceBook.id
-    WHERE Student_id = @studentId AND Register.Semester_id = @semesterId
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT DISTINCT Register.Subject_id Ma_mon_hoc, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
+			FROM dbo.Register JOIN dbo.Uses ON Register.Subject_id = Uses.Subject_id
+				JOIN ReferenceBook ON Uses.ReferenceBook_id = ReferenceBook.id
+			WHERE Student_id = @studentId AND Register.Semester_id = @semesterId
 END;
 
 --iv4: Xem danh sach lop hoc cua moi mon hoc ma minh dang ky o mot hoc ky.  
@@ -594,11 +760,15 @@ CREATE PROCEDURE ClassOfSubject(
 )
 AS
 BEGIN
-    SELECT DISTINCT Subject_id Ma_mon, id Ma_lop
-    FROM dbo.Class
-    WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon
-                            FROM dbo.Register
-                            WHERE Student_id = @studentId AND Semester_id = @semesterId)
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT DISTINCT Subject_id Ma_mon_hoc, id Ma_lop_hoc
+			FROM dbo.Class
+			WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon_hoc
+									FROM dbo.Register
+									WHERE Student_id = @studentId AND Semester_id = @semesterId)
 END;
 
 --iv.5: Xem danh sach lop hoc cua moi mon hoc ma minh dang ky co nhieu hon 1 giang vien phu trach o mot hoc ky.
@@ -609,13 +779,17 @@ CREATE PROCEDURE ClassOfSubjectMoreThan1Teacher(
 )
 AS
 BEGIN
-    SELECT DISTINCT Subject_id Ma_mon, Class_id Ma_lop
-    FROM dbo.Responsible
-    WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon
-                            FROM dbo.Register
-                            WHERE Student_id = @studentId AND Semester_id = @semesterId)
-    GROUP BY Subject_id, Class_id
-    HAVING COUNT(DISTINCT Teacher_ssn) > 1
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT DISTINCT Subject_id Ma_mon_hoc, Class_id Ma_lop_hoc
+			FROM dbo.Responsible
+			WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon_hoc
+									FROM dbo.Register
+									WHERE Student_id = @studentId AND Semester_id = @semesterId)
+			GROUP BY Subject_id, Class_id
+			HAVING COUNT(DISTINCT Teacher_ssn) > 1
 END;
 
 --iv.6: Xem tong so tin chi da dang ky duoc o mot hoc ky.
@@ -626,9 +800,13 @@ CREATE PROCEDURE SumCredit(
 )
 AS
 BEGIN
-    SELECT SUM(DISTINCT credit) Tong_so_tin_chi
-    FROM dbo.Register JOIN dbo.Subject ON Subject_id = id
-    WHERE Student_id = @studentId AND Semester_id = @semesterId
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT SUM(DISTINCT credit) Tong_so_tin_chi
+			FROM dbo.Register JOIN dbo.Subject ON Subject_id = id
+			WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;
 
 --iv.7: Xem tong so mon hoc da dang ky duoc o mot hoc ky.
@@ -639,9 +817,13 @@ CREATE PROCEDURE SumSubject(
 )
 AS
 BEGIN
-    SELECT COUNT(DISTINCT Subject_id) Tong_so_mon_hoc_da_dang_ky
-    FROM dbo.Register
-    WHERE Student_id = @studentId AND Semester_id = @semesterId
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh
+			SELECT COUNT(DISTINCT Subject_id) Tong_so_mon_hoc_da_dang_ky
+			FROM dbo.Register
+			WHERE Student_id = @studentId AND Semester_id = @semesterId
 END;
 
 --iv.8: Xem 3 hoc ky co so tong so tin chi cao nhat ma minh da tung dang ky.
