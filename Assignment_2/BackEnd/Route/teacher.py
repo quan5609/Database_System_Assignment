@@ -146,7 +146,7 @@ def responsibleClasses():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -193,7 +193,7 @@ def studentOfResopnsibleClass():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -240,7 +240,7 @@ def referenceBookOfResponsibleSubject():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -287,7 +287,7 @@ def numOfStudents_ofResponsiblesClass():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -332,7 +332,7 @@ def numOfResponsibleClass_3RecentYear():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -378,7 +378,7 @@ def top5Class_mostStudent():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -423,7 +423,7 @@ def top5Semester_mostClass():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )

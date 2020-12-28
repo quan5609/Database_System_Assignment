@@ -279,7 +279,7 @@ def registeredClass():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -327,7 +327,7 @@ def responsibleClass():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )

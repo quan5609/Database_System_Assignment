@@ -198,7 +198,7 @@ def subjectOnSemester():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -252,7 +252,7 @@ def teacherOnSemester():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -299,7 +299,7 @@ def classOfTeacher():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -353,7 +353,7 @@ def teacherOfClass():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -408,7 +408,7 @@ def bookOfSubject():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -465,7 +465,7 @@ def studentOfClass():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -522,7 +522,7 @@ def numStudentOfSemester():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -579,7 +579,7 @@ def numClassOfSemester():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -635,7 +635,7 @@ def subjectHavingMaxTeacher():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -682,7 +682,7 @@ def avgNumStudent():
         )
     else:
         return Response(
-            response=json.dumps(res['payload']),
+            response=json.dumps({'res':res['payload']}),
             status=200,
             mimetype='application/json'
         )

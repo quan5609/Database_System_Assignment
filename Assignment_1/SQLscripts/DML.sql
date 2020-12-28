@@ -157,7 +157,7 @@ GO
 CREATE PROCEDURE listStudent
 AS
 BEGIN
-    SELECT DISTINCT Department_id Ma_khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, c.id Ma_lop,
+    SELECT DISTINCT Department_id Ma_khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, c.id Ma_lop_hoc,
             s.ssn,firstName Ten, lastName Ho
             
     FROM Student s, Register, Class c, Opens o
@@ -173,7 +173,7 @@ GO
 CREATE PROCEDURE listTeacher
 AS
 BEGIN
-    SELECT DISTINCT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, Class_id Ma_lop, 
+    SELECT DISTINCT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, Class_id Ma_lop_hoc, 
         Teacher_ssn SSN, firstName Ten, lastName Ho
             
     FROM Responsible,Employee,Class c,Opens o
@@ -188,7 +188,7 @@ GO
 CREATE PROCEDURE listReferenceBook
 AS
 BEGIN
-    SELECT DISTINCT dId Ma_khoa, u.Semester_id Ma_hoc_ky, u.Subject_id Ma_mon_hoc, ReferenceBook_id Ma_sach, [name] Ten_sach
+    SELECT DISTINCT dId Ma_khoa, u.Semester_id Ma_hoc_ky, u.Subject_id Ma_mon_hoc, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
     FROM Uses u JOIN SubjectDepartment s ON u.Subject_id = s.Subject_id JOIN ReferenceBook r ON u.Referencebook_id = r.id
     ORDER BY did,u.Semester_id,u.Subject_id,ReferenceBook_id,[name]
 END;
@@ -350,7 +350,7 @@ BEGIN
             RAISERROR('Invalid Semester',16,0)
         ELSE
 			-- Code chinh
-			SELECT DISTINCT Id Ma_mon
+			SELECT DISTINCT Id Ma_mon_hoc
 			FROM dbo.Subject JOIN dbo.Opens ON Opens.Subject_id = Subject.id
 			WHERE dbo.Opens.Semester_id = @semesterId AND dbo.Opens.Department_id = @departmentId
 END;
@@ -390,7 +390,7 @@ BEGIN
             RAISERROR('Invalid Semester',16,0)
         ELSE
 			-- Code chinh
-			SELECT DISTINCT Class_id Ma_lop, Semester_id Ma_hoc_ky, Subject_id Ma_mon
+			SELECT DISTINCT Class_id Ma_lop_hoc, Semester_id Ma_hoc_ky, Subject_id Ma_mon_hoc
 			FROM dbo.Responsible
 			WHERE Semester_id = @semesterId AND Teacher_ssn = @teacherSsn
 END;
@@ -410,7 +410,7 @@ BEGIN
             RAISERROR('Invalid Semester',16,0)
         ELSE
 			-- Code chinh
-			SELECT DISTINCT Class_id Ma_lop, dbo.Responsible.Semester_id Ma_hoc_ky, dbo.Responsible.Subject_id Ma_mon, Teacher_ssn Ma_giang_vien, lastName Ho, firstName Ten
+			SELECT DISTINCT Class_id Ma_lop_hoc, dbo.Responsible.Semester_id Ma_hoc_ky, dbo.Responsible.Subject_id Ma_mon_hoc, Teacher_ssn Ma_giang_vien, lastName Ho, firstName Ten
 			FROM dbo.Responsible JOIN dbo.Opens ON Opens.Semester_id = Responsible.Semester_id AND Opens.Subject_id = Responsible.Subject_id
 				JOIN dbo.Employee ON Teacher_ssn = ssn
 			WHERE dbo.Responsible.Semester_id = @semesterId AND Department_id = @departmentId
@@ -431,7 +431,7 @@ BEGIN
             RAISERROR('Invalid Semester',16,0)
         ELSE
 			-- Code chinh
-			SELECT DISTINCT Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
+			SELECT DISTINCT Subject_id Ma_mon_hoc, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
 			FROM dbo.Uses JOIN dbo.ReferenceBook ON ReferenceBook_id = id
 			WHERE Subject_id IN (SELECT Subject_id FROM dbo.SubjectDepartment WHERE did = @departmentId)
 END;
@@ -451,7 +451,7 @@ BEGIN
             RAISERROR('Invalid Semester',16,0)
         ELSE
 			-- Code chinh
-			SELECT DISTINCT Class_id Ma_lop, dbo.Register.Subject_id Ma_mon, Student_id Ma_sinh_vien
+			SELECT DISTINCT Class_id Ma_lop_hoc, dbo.Register.Subject_id Ma_mon_hoc, Student_id Ma_sinh_vien
 			FROM dbo.Register JOIN dbo.Opens ON Opens.Semester_id = Register.Semester_id AND Opens.Subject_id = Register.Subject_id
 			WHERE dbo.Register.Semester_id = @semesterId AND Department_id = @departmentId
 END;
@@ -726,7 +726,7 @@ CREATE PROCEDURE SubjectClassTeacher(
 )
 AS
 BEGIN
-    SELECT DISTINCT Semester_id Ma_hoc_ky,Class_id Ma_lop, Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
+    SELECT DISTINCT Semester_id Ma_hoc_ky,Class_id Ma_lop_hoc, Subject_id Ma_mon_hoc, Teacher_ssn Ma_giang_vien
     FROM dbo.Responsible
     WHERE Semester_id IN (SELECT semesterId 
                                 FROM dbo.StudyStatus
@@ -745,7 +745,7 @@ BEGIN
             RAISERROR('Invalid Semester',16,0)
         ELSE
 			-- Code chinh
-			SELECT DISTINCT Register.Subject_id Ma_mon, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
+			SELECT DISTINCT Register.Subject_id Ma_mon_hoc, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
 			FROM dbo.Register JOIN dbo.Uses ON Register.Subject_id = Uses.Subject_id
 				JOIN ReferenceBook ON Uses.ReferenceBook_id = ReferenceBook.id
 			WHERE Student_id = @studentId AND Register.Semester_id = @semesterId
@@ -763,9 +763,9 @@ BEGIN
             RAISERROR('Invalid Semester',16,0)
         ELSE
 			-- Code chinh
-			SELECT DISTINCT Subject_id Ma_mon, id Ma_lop
+			SELECT DISTINCT Subject_id Ma_mon_hoc, id Ma_lop_hoc
 			FROM dbo.Class
-			WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon
+			WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon_hoc
 									FROM dbo.Register
 									WHERE Student_id = @studentId AND Semester_id = @semesterId)
 END;
@@ -782,9 +782,9 @@ BEGIN
             RAISERROR('Invalid Semester',16,0)
         ELSE
 			-- Code chinh
-			SELECT DISTINCT Subject_id Ma_mon, Class_id Ma_lop
+			SELECT DISTINCT Subject_id Ma_mon_hoc, Class_id Ma_lop_hoc
 			FROM dbo.Responsible
-			WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon
+			WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon_hoc
 									FROM dbo.Register
 									WHERE Student_id = @studentId AND Semester_id = @semesterId)
 			GROUP BY Subject_id, Class_id
