@@ -1,29 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Input, Button, Space } from 'antd';
+import { Table, Input, Button, Space, Tabs, Switch } from 'antd';
 import Highlighter from 'react-highlight-words';
-import { SearchOutlined } from '@ant-design/icons';
+import {
+  SearchOutlined,
+  TableOutlined,
+  InfoCircleOutlined,
+} from '@ant-design/icons';
 
 import './index.scss';
 
-import { getUsersApi } from 'api/student';
+import { getBookApi } from 'api/book';
 import { useSelector } from 'react-redux';
-import { mock } from './mock';
+import { aggregateJson } from 'utils/aggregate';
 
 MainPage.propTypes = {};
 
 function MainPage() {
+  const { TabPane } = Tabs;
   const [data, setData] = useState([]);
   const [pagination, setPagination] = useState({ current: 1, pageSize: 10 });
   const [loading, setLoading] = useState(false);
   const { role } = useSelector(state => state.app.userInfo);
   useEffect(() => {
-    fetch({ pagination });
+    fetch_detail({ pagination });
   }, []);
 
   const [state, setState] = useState({
     searchText: [],
     searchedColumn: '',
   });
+
   let searchInput = null;
   const getColumnSearchProps = dataIndex => ({
     filterDropdown: ({
@@ -108,56 +114,164 @@ function MainPage() {
     setState({ searchText: [] });
   };
 
-  const fetch = (params = {}) => {
-    // setLoading(true);
-    // return getUsersApi(getRandomuserParams(params)).then(res => {
-    //   setLoading(false);
-    //   setData(res.results);
-    //   setPagination({
-    //     ...params.pagination,
-    //     total: 200,
-    //   });
-    // });
-    setData(mock.res);
-    setPagination({
-      ...params.pagination,
-      total: data.length,
+  const fetch_detail = (params = {}) => {
+    setLoading(true);
+    return getBookApi().then(data => {
+      setLoading(false);
+      setData(data.res);
+      setTableData(data.res);
+      setPagination({
+        ...params.pagination,
+        total: data.res.length,
+      });
     });
-    return mock;
   };
 
-  const columns = [
+  const detail_columns = [
+    {
+      title: 'Book Number',
+      dataIndex: 'Ma_sach',
+      width: '20%',
+      ...getColumnSearchProps('Ma_sach'),
+    },
+    {
+      title: 'Name',
+      dataIndex: 'Ten_sach',
+      width: '20%',
+      ...getColumnSearchProps('Ten_sach'),
+    },
     {
       title: 'Department',
       dataIndex: 'Ma_khoa',
-      width: '20%',
+      width: '10%',
       ...getColumnSearchProps('Ma_khoa'),
     },
     {
       title: 'Semester',
       dataIndex: 'Ma_hoc_ky',
-      width: '20%',
+      width: '10%',
       ...getColumnSearchProps('Ma_hoc_ky'),
     },
     {
       title: 'Subject',
       dataIndex: 'Ma_mon_hoc',
+      width: '10%',
       ...getColumnSearchProps('Ma_mon_hoc'),
     },
   ];
+
+  const [filter, setFilter] = useState(['Ma_hoc_ky', 'Ma_mon_hoc', 'Ma_khoa']);
+  const [tableData, setTableData] = useState(data);
+  const [tab, setTab] = useState(1);
+  const [tableColumns, setTableColumns] = useState(detail_columns);
+
+  const onFilterChange = (e, field) => {
+    if (e) {
+      if (!filter.includes(field)) {
+        setFilter([...filter, field]);
+      }
+    }
+    if (filter.includes(field)) {
+      setFilter(filter.filter(value => value !== field));
+    }
+  };
+
+  const changeTab = e => {
+    if (e === '1') {
+      setTab(e);
+      setTableColumns(detail_columns);
+      setTableData(data);
+    } else {
+      setTab(e);
+      let filteredColumns = detail_columns.filter(value => {
+        return filter.includes(value.dataIndex);
+      });
+      filteredColumns.push({
+        title: 'Total Book',
+        dataIndex: 'total',
+        sorter: (a, b) => a.total - b.total,
+        width: '10%',
+      });
+      const filteredData = aggregateJson(data, filter);
+      setTableColumns(filteredColumns);
+      setTableData(filteredData);
+    }
+  };
+
+  React.useEffect(() => {
+    if (tab !== 1) {
+      let filteredColumns = detail_columns.filter(value => {
+        return filter.includes(value.dataIndex);
+      });
+      filteredColumns.push({
+        title: 'Total Book',
+        dataIndex: 'total',
+        sorter: (a, b) => a.total - b.total,
+        width: '10%',
+      });
+      const filteredData = aggregateJson(data, filter);
+      setTableColumns(filteredColumns);
+      setTableData(filteredData);
+    }
+  }, [filter]);
 
   return (
     <div>
       <div>
         <p>`This is a ${role}`</p>
       </div>
-      <Table
-        columns={columns}
-        dataSource={data}
-        // pagination={{ pageSize: 50 }}
-        scroll={{ y: 480 }}
-        loading={loading}
-      />
+      <Tabs defaultActiveKey="1" onChange={changeTab}>
+        <TabPane
+          tab={
+            <span>
+              <TableOutlined />
+              Detail
+            </span>
+          }
+          key="1"
+        >
+          <Table
+            columns={tableColumns}
+            dataSource={tableData}
+            // pagination={{ pageSize: 50 }}
+            scroll={{ y: 480 }}
+            loading={loading}
+          />
+        </TabPane>
+        <TabPane
+          tab={
+            <span>
+              <InfoCircleOutlined />
+              Summary
+            </span>
+          }
+          key="2"
+        >
+          <div>
+            <Switch
+              checkedChildren="Subject"
+              unCheckedChildren="Subject"
+              defaultChecked
+              style={{ margin: 10 }}
+              onChange={e => onFilterChange(e, 'Ma_mon_hoc')}
+            />
+            <Switch
+              checkedChildren="Department"
+              unCheckedChildren="Department"
+              defaultChecked
+              style={{ margin: 10 }}
+              onChange={e => onFilterChange(e, 'Ma_khoa')}
+            />
+          </div>
+          <Table
+            columns={tableColumns}
+            dataSource={tableData}
+            // pagination={{ pageSize: 50 }}
+            scroll={{ y: 480 }}
+            loading={loading}
+          />
+        </TabPane>
+      </Tabs>
     </div>
   );
 }

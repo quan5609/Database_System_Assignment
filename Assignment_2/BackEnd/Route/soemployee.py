@@ -61,7 +61,7 @@ def hello():
     return response
 
 
-@soemployee_blueprint.route('/get-all',methods = ['POST'])
+@soemployee_blueprint.route('/get-all', methods=['POST'])
 def getAllStudent():
     '''Define Schema'''
     schema = request_schema.getAll
@@ -69,7 +69,7 @@ def getAllStudent():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
         return Response(
             response="Bad Request",
@@ -80,7 +80,7 @@ def getAllStudent():
 
     '''Execute Stored Procedure'''
     params = []
-    res = execute_sp(engine,stored_procedure.getAll,params)
+    res = execute_sp(engine, stored_procedure.getAll, params)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
@@ -89,8 +89,8 @@ def getAllStudent():
             status=500,
             mimetype='application/json'
         )
-    
-    if not res['payload']:  
+
+    if not res['payload']:
         return Response(
             response=json.dumps('Empty'),
             status=400,
@@ -98,13 +98,13 @@ def getAllStudent():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@soemployee_blueprint.route('/add-register',methods = ['POST'])
+@soemployee_blueprint.route('/add-register', methods=['POST'])
 def addRegister():
     '''PROCEDURE addRegister(
             @newStudentId AS varchar(10),
@@ -119,7 +119,7 @@ def addRegister():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -127,10 +127,11 @@ def addRegister():
         )
 
     '''Get request data'''
-    newStudentId,newClassId,newSemesterId,newSubjectId = list(req_data.values())[1:]
+    newStudentId, newClassId, newSemesterId, newSubjectId = list(req_data.values())[
+        1:]
     '''Execute Stored Procedure'''
-    params = [newStudentId,newClassId,newSemesterId,newSubjectId]
-    res = execute_sp(engine,stored_procedure.addRegister,params,False)
+    params = [newStudentId, newClassId, newSemesterId, newSubjectId]
+    res = execute_sp(engine, stored_procedure.addRegister, params, False)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -146,8 +147,7 @@ def addRegister():
         )
 
 
-
-@soemployee_blueprint.route('/remove-register',methods = ['POST'])
+@soemployee_blueprint.route('/remove-register', methods=['POST'])
 def removeRegister():
     '''
     PROCEDURE removeRegister(
@@ -157,14 +157,14 @@ def removeRegister():
         @oldSubjectId AS varchar(10)
         )
     '''
-    
+
     '''Define Schema'''
     schema = request_schema.removeRegister
     req_data = request.get_json()
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -172,14 +172,15 @@ def removeRegister():
         )
 
     '''Get request data'''
-    oldStudentId,oldClassId,oldSemesterId,oldSubjectId = list(req_data.values())[1:]
+    oldStudentId, oldClassId, oldSemesterId, oldSubjectId = list(req_data.values())[
+        1:]
     '''Execute Stored Procedure'''
-    params = [oldStudentId,oldClassId,oldSemesterId,oldSubjectId]
-    res = execute_sp(engine,stored_procedure.removeRegister,params,False)
+    params = [oldStudentId, oldClassId, oldSemesterId, oldSubjectId]
+    res = execute_sp(engine, stored_procedure.removeRegister, params, False)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#res['error']),
+            response=json.dumps('INTERNAL SERVER ERROR'),  # res['error']),
             status=500,
             mimetype='application/json'
         )
@@ -190,7 +191,8 @@ def removeRegister():
             mimetype='application/json'
         )
 
-@soemployee_blueprint.route('/update-register',methods = ['POST'])
+
+@soemployee_blueprint.route('/update-register', methods=['POST'])
 def updateRegister():
     '''
     PROCEDURE updateRegister(
@@ -205,14 +207,14 @@ def updateRegister():
         @newSubjectId AS varchar(10)
     )
     '''
-    
+
     '''Define Schema'''
     schema = request_schema.updateRegister
     req_data = request.get_json()
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -222,11 +224,11 @@ def updateRegister():
     '''Get request data'''
     params = list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.updateRegister,params,False)
+    res = execute_sp(engine, stored_procedure.updateRegister, params, False)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#res['error']),
+            response=json.dumps('INTERNAL SERVER ERROR'),  # res['error']),
             status=500,
             mimetype='application/json'
         )
@@ -237,7 +239,8 @@ def updateRegister():
             mimetype='application/json'
         )
 
-@soemployee_blueprint.route('/registered-class',methods = ['POST'])
+
+@soemployee_blueprint.route('/registered-class', methods=['POST'])
 def registeredClass():
     '''
     PROCEDURE registeredClass(
@@ -245,14 +248,14 @@ def registeredClass():
             @semesterId AS varchar(10)
         )
     '''
-    
+
     '''Define Schema'''
     schema = request_schema.registeredClass
     req_data = request.get_json()
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -262,11 +265,11 @@ def registeredClass():
     '''Get request data'''
     params = list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.registeredClass,params,True)
+    res = execute_sp(engine, stored_procedure.registeredClass, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#res['error']),
+            response=json.dumps('INTERNAL SERVER ERROR'),  # res['error']),
             status=500,
             mimetype='application/json'
         )
@@ -285,7 +288,7 @@ def registeredClass():
         )
 
 
-@soemployee_blueprint.route('/responsible-class',methods = ['POST'])
+@soemployee_blueprint.route('/responsible-class', methods=['POST'])
 def responsibleClass():
     '''
     PROCEDURE responsibleClass(
@@ -293,14 +296,14 @@ def responsibleClass():
             @semesterId AS varchar(10)
         )
     '''
-    
+
     '''Define Schema'''
     schema = request_schema.responsibleClass
     req_data = request.get_json()
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -310,11 +313,11 @@ def responsibleClass():
     '''Get request data'''
     params = list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.responsibleClass,params,True)
+    res = execute_sp(engine, stored_procedure.responsibleClass, params, True)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#res['error']),
+            response=json.dumps('INTERNAL SERVER ERROR'),  # res['error']),
             status=500,
             mimetype='application/json'
         )
@@ -332,7 +335,8 @@ def responsibleClass():
             mimetype='application/json'
         )
 
-@soemployee_blueprint.route('/list-subject',methods = ['POST'])
+
+@soemployee_blueprint.route('/list-subject', methods=['POST'])
 def listSubject():
     '''PROCEDURE listSubject()'''
 
@@ -342,18 +346,18 @@ def listSubject():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
-    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False, check_role=False):
         return Response(
             response="Bad Request",
             status=400
         )
 
     '''Get request data'''
-    
+
     '''Execute Stored Procedure'''
     params = []
-    res = execute_sp(engine,stored_procedure.listSubject,params)
+    res = execute_sp(engine, stored_procedure.listSubject, params)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -361,8 +365,8 @@ def listSubject():
             status=500,
             mimetype='application/json'
         )
-    
-    if not res['payload']:  
+
+    if not res['payload']:
         return Response(
             response=json.dumps('Empty'),
             status=400,
@@ -370,13 +374,13 @@ def listSubject():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@soemployee_blueprint.route('/list-student',methods = ['POST'])
+@soemployee_blueprint.route('/list-student', methods=['POST'])
 def listStudent():
     '''PROCEDURE listStudent()'''
 
@@ -386,18 +390,18 @@ def listStudent():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
-    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False, check_role=False):
         return Response(
             response="Bad Request",
             status=400
         )
 
     '''Get request data'''
-    
+
     '''Execute Stored Procedure'''
     params = []
-    res = execute_sp(engine,stored_procedure.listStudent,params)
+    res = execute_sp(engine, stored_procedure.listStudent, params)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -405,8 +409,8 @@ def listStudent():
             status=500,
             mimetype='application/json'
         )
-    
-    if not res['payload']:  
+
+    if not res['payload']:
         return Response(
             response=json.dumps('Empty'),
             status=400,
@@ -414,13 +418,13 @@ def listStudent():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@soemployee_blueprint.route('/list-teacher',methods = ['POST'])
+@soemployee_blueprint.route('/list-teacher', methods=['POST'])
 def listTeacher():
     '''PROCEDURE listTeacher()'''
 
@@ -430,18 +434,18 @@ def listTeacher():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
-    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False, check_role=False):
         return Response(
             response="Bad Request",
             status=400
         )
 
     '''Get request data'''
-    
+
     '''Execute Stored Procedure'''
     params = []
-    res = execute_sp(engine,stored_procedure.listTeacher,params)
+    res = execute_sp(engine, stored_procedure.listTeacher, params)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -450,7 +454,7 @@ def listTeacher():
             mimetype='application/json'
         )
 
-    if not res['payload']:  
+    if not res['payload']:
         return Response(
             response=json.dumps('Empty'),
             status=400,
@@ -458,13 +462,13 @@ def listTeacher():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@soemployee_blueprint.route('/list-reference-book',methods = ['POST'])
+@soemployee_blueprint.route('/list-reference-book', methods=['POST'])
 def listReferenceBook():
     '''PROCEDURE listReferenceBook()'''
 
@@ -474,18 +478,18 @@ def listReferenceBook():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
-    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=False, check_role=False):
         return Response(
             response="Bad Request",
             status=400
         )
 
     '''Get request data'''
-    
+
     '''Execute Stored Procedure'''
     params = []
-    res = execute_sp(engine,stored_procedure.listReferenceBook,params)
+    res = execute_sp(engine, stored_procedure.listReferenceBook, params)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -494,7 +498,7 @@ def listReferenceBook():
             mimetype='application/json'
         )
 
-    if not res['payload']:  
+    if not res['payload']:
         return Response(
             response=json.dumps('Empty'),
             status=400,
@@ -502,13 +506,13 @@ def listReferenceBook():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@soemployee_blueprint.route('/num-of-subjects',methods = ['POST'])
+@soemployee_blueprint.route('/num-of-subjects', methods=['POST'])
 def numOfSubjects():
     '''PROCEDURE numOfSubjects()'''
 
@@ -518,7 +522,7 @@ def numOfSubjects():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
         return Response(
             response="Bad Request",
@@ -526,10 +530,10 @@ def numOfSubjects():
         )
 
     '''Get request data'''
-    
+
     '''Execute Stored Procedure'''
     params = []
-    res = execute_sp(engine,stored_procedure.numOfSubjects,params)
+    res = execute_sp(engine, stored_procedure.numOfSubjects, params)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -538,7 +542,7 @@ def numOfSubjects():
             mimetype='application/json'
         )
 
-    if not res['payload']:  
+    if not res['payload']:
         return Response(
             response=json.dumps('Empty'),
             status=400,
@@ -546,13 +550,13 @@ def numOfSubjects():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@soemployee_blueprint.route('/num-of-classes',methods = ['POST'])
+@soemployee_blueprint.route('/num-of-classes', methods=['POST'])
 def numOfClasses():
     '''PROCEDURE numOfClasses()'''
 
@@ -562,7 +566,7 @@ def numOfClasses():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
         return Response(
             response="Bad Request",
@@ -570,10 +574,10 @@ def numOfClasses():
         )
 
     '''Get request data'''
-    
+
     '''Execute Stored Procedure'''
     params = []
-    res = execute_sp(engine,stored_procedure.numOfClasses,params)
+    res = execute_sp(engine, stored_procedure.numOfClasses, params)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -582,7 +586,7 @@ def numOfClasses():
             mimetype='application/json'
         )
 
-    if not res['payload']:  
+    if not res['payload']:
         return Response(
             response=json.dumps('Empty'),
             status=400,
@@ -590,13 +594,13 @@ def numOfClasses():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@soemployee_blueprint.route('/num-of-students-class-sem',methods = ['POST'])
+@soemployee_blueprint.route('/num-of-students-class-sem', methods=['POST'])
 def numOfStudents_class_sem():
     '''PROCEDURE numOfStudents_class_sem(
             @subject_id varchar(10),
@@ -609,7 +613,7 @@ def numOfStudents_class_sem():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
         return Response(
             response="Bad Request",
@@ -617,10 +621,10 @@ def numOfStudents_class_sem():
         )
 
     '''Get request data'''
-    subject_id,semester_id = req_data['subject_id'],req_data['semester_id']
+    subject_id, semester_id = req_data['subject_id'], req_data['semester_id']
     '''Execute Stored Procedure'''
-    params = [subject_id,semester_id]
-    res = execute_sp(engine,stored_procedure.numOfStudents_class_sem,params)
+    params = [subject_id, semester_id]
+    res = execute_sp(engine, stored_procedure.numOfStudents_class_sem, params)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -629,7 +633,7 @@ def numOfStudents_class_sem():
             mimetype='application/json'
         )
 
-    if not res['payload']:  
+    if not res['payload']:
         return Response(
             response=json.dumps('Empty'),
             status=400,
@@ -637,13 +641,13 @@ def numOfStudents_class_sem():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@soemployee_blueprint.route('/num-of-students-sub-sem',methods = ['POST'])
+@soemployee_blueprint.route('/num-of-students-sub-sem', methods=['POST'])
 def numOfStudents_sub_sem():
     '''PROCEDURE numOfStudents_sub_sem(
             @semester_id varchar(10)
@@ -655,7 +659,7 @@ def numOfStudents_sub_sem():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
         return Response(
             response="Bad Request",
@@ -666,7 +670,7 @@ def numOfStudents_sub_sem():
     semester_id = req_data['semester_id']
     '''Execute Stored Procedure'''
     params = [semester_id]
-    res = execute_sp(engine,stored_procedure.numOfStudents_sub_sem,params)
+    res = execute_sp(engine, stored_procedure.numOfStudents_sub_sem, params)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -675,7 +679,7 @@ def numOfStudents_sub_sem():
             mimetype='application/json'
         )
 
-    if not res['payload']:  
+    if not res['payload']:
         return Response(
             response=json.dumps('Empty'),
             status=400,
@@ -683,13 +687,13 @@ def numOfStudents_sub_sem():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
 
 
-@soemployee_blueprint.route('/num-of-students-sub-dep',methods = ['POST'])
+@soemployee_blueprint.route('/num-of-students-sub-dep', methods=['POST'])
 def numOfStudents_sub_dep():
     '''PROCEDURE numOfStudents_sub_dep()'''
 
@@ -699,7 +703,7 @@ def numOfStudents_sub_dep():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=False):
         return Response(
             response="Bad Request",
@@ -707,10 +711,10 @@ def numOfStudents_sub_dep():
         )
 
     '''Get request data'''
-    
+
     '''Execute Stored Procedure'''
     params = []
-    res = execute_sp(engine,stored_procedure.numOfStudents_sub_dep,params)
+    res = execute_sp(engine, stored_procedure.numOfStudents_sub_dep, params)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -719,7 +723,7 @@ def numOfStudents_sub_dep():
             mimetype='application/json'
         )
 
-    if not res['payload']:  
+    if not res['payload']:
         return Response(
             response=json.dumps('Empty'),
             status=400,
@@ -727,9 +731,7 @@ def numOfStudents_sub_dep():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
-
-

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Input, Button, Space, Tabs } from 'antd';
+import { Table, Input, Button, Space, Tabs, Switch } from 'antd';
 import Highlighter from 'react-highlight-words';
 import {
   SearchOutlined,
@@ -170,31 +170,67 @@ function MainPage() {
       width: '10%',
       ...getColumnSearchProps('Ma_lop'),
     },
-    {
-      title: 'Total',
-      dataIndex: 'total',
-      sorter: true,
-      width: '10%',
-    },
   ];
 
-  const [filter, setFilter] = useState(['Ma_hoc_ky', 'Total']);
+  const [filter, setFilter] = useState([
+    'Ma_hoc_ky',
+    'Ma_mon_hoc',
+    'Ma_lop',
+    'Ma_khoa',
+  ]);
   const [tableData, setTableData] = useState(data);
+  const [tab, setTab] = useState(1);
   const [tableColumns, setTableColumns] = useState(detail_columns);
+
+  const onFilterChange = (e, field) => {
+    if (e) {
+      if (!filter.includes(field)) {
+        setFilter([...filter, field]);
+      }
+    }
+    if (filter.includes(field)) {
+      setFilter(filter.filter(value => value !== field));
+    }
+  };
 
   const changeTab = e => {
     if (e === '1') {
+      setTab(e);
       setTableColumns(detail_columns);
       setTableData(data);
     } else {
+      setTab(e);
       let filteredColumns = detail_columns.filter(value => {
         return filter.includes(value.dataIndex);
+      });
+      filteredColumns.push({
+        title: 'Total Student',
+        dataIndex: 'total',
+        sorter: (a, b) => a.total - b.total,
+        width: '10%',
       });
       const filteredData = aggregateJson(data, filter);
       setTableColumns(filteredColumns);
       setTableData(filteredData);
     }
   };
+
+  React.useEffect(() => {
+    if (tab !== 1) {
+      let filteredColumns = detail_columns.filter(value => {
+        return filter.includes(value.dataIndex);
+      });
+      filteredColumns.push({
+        title: 'Total Student',
+        dataIndex: 'total',
+        sorter: (a, b) => a.total - b.total,
+        width: '10%',
+      });
+      const filteredData = aggregateJson(data, filter);
+      setTableColumns(filteredColumns);
+      setTableData(filteredData);
+    }
+  }, [filter]);
 
   return (
     <div>
@@ -228,6 +264,29 @@ function MainPage() {
           }
           key="2"
         >
+          <div>
+            <Switch
+              checkedChildren="Subject"
+              unCheckedChildren="Subject"
+              defaultChecked
+              style={{ margin: 10 }}
+              onChange={e => onFilterChange(e, 'Ma_mon_hoc')}
+            />
+            <Switch
+              checkedChildren="Class"
+              unCheckedChildren="Class"
+              defaultChecked
+              style={{ margin: 10 }}
+              onChange={e => onFilterChange(e, 'Ma_lop')}
+            />
+            <Switch
+              checkedChildren="Department"
+              unCheckedChildren="Department"
+              defaultChecked
+              style={{ margin: 10 }}
+              onChange={e => onFilterChange(e, 'Ma_khoa')}
+            />
+          </div>
           <Table
             columns={tableColumns}
             dataSource={tableData}

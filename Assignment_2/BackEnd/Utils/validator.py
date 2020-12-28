@@ -1,7 +1,7 @@
 from cerberus import Validator
 
 
-def validate_request(req_data, token, route_role, user_info, schema, required_data=True):
+def validate_request(req_data, token, route_role, user_info, schema, required_data=True, check_role=True):
     '''Bad request'''
     if required_data:
         if req_data is None or not Validator(schema).validate(req_data):
@@ -14,7 +14,7 @@ def validate_request(req_data, token, route_role, user_info, schema, required_da
         return False
 
     '''Invalid Role'''
-    if user_info['role'] != route_role:
+    if user_info['role'] != route_role and check_role:
         print('Wrong Role')
         return False
 

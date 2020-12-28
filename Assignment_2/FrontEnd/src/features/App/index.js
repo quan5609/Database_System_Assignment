@@ -106,6 +106,7 @@ function App(props) {
     dispatch(onLogout());
   };
   const toggle = () => setCollapsed(!collapsed);
+  const { role } = useSelector(state => state.app.userInfo);
 
   return (
     <div className="app">
@@ -161,6 +162,9 @@ function App(props) {
                 <Switch>
                   {/* <PrivateRoute path="/" component={User} /> */}
                   <Redirect exact from="/" to="/resources" />
+                  {role === 'student' && (
+                    <Redirect exact from="/students" to="/resources" />
+                  )}
                   <PrivateRoute path="/resources" component={Resource} />
                   <PrivateRoute path="/subjects" component={Subject} />
                   <PrivateRoute path="/teachers" component={Teacher} />

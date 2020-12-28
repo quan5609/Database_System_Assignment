@@ -559,16 +559,17 @@ BEGIN
 END;
 --iv.2: Xem danh sach mon hoc, lop hoc, va cac giang vien phu trach cho moi lop cua moi mon hoc o hoc ky duoc dang ky.
 GO
+
 CREATE PROCEDURE SubjectClassTeacher(
     @studentId AS varchar(10)
 )
 AS
 BEGIN
-    SELECT DISTINCT Semester_id Ma_hoc_ky,Class_id Ma_lop, Subject_id Ma_mon, Teacher_ssn Ma_giang_vien
+    SELECT DISTINCT Semester_id Ma_hoc_ky,Class_id Ma_lop, Subject_id Ma_mon_hoc, Teacher_ssn Ma_giang_vien
     FROM dbo.Responsible
     WHERE Semester_id IN (SELECT semesterId 
                                 FROM dbo.StudyStatus
-                                WHERE [sid] = '1600002' AND [status] = 'normal')
+                                WHERE [sid] = @studentId AND [status] = 'normal')
 END;
 
 --iv.3: Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc ma minh dang ky o mot hoc ky.
