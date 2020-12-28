@@ -156,13 +156,11 @@ CREATE PROCEDURE listStudent
 AS
 BEGIN
     SELECT DISTINCT Department_id Ma_khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, c.id Ma_lop_hoc,
-            s.ssn,firstName Ten, lastName Ho
-            
-    FROM Student s, Register, Class c, Opens o
-    WHERE s.ssn = Student_id 
-        AND Class_id = c.id
-        AND c.Semester_id = o.Semester_id
-        AND c.Subject_id = o.Subject_id
+            s.ssn Ma_sinh_vien,firstName Ten, lastName Ho
+
+    FROM Student s JOIN Register r ON s.ssn = r.Student_id
+        JOIN Class c ON r.Class_id = c.id AND r.Semester_id = c.Semester_id AND r.Subject_id = c.Subject_id
+        JOIN Opens o ON r.Semester_id = o.Semester_id AND r.Subject_id = o.Subject_id
     ORDER BY Department_id, c.Semester_id, c.Subject_id, c.id, s.ssn,firstName,lastName
 END;
 
@@ -186,7 +184,8 @@ CREATE PROCEDURE listReferenceBook
 AS
 BEGIN
     SELECT DISTINCT dId Ma_khoa, u.Semester_id Ma_hoc_ky, u.Subject_id Ma_mon_hoc, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
-    FROM Uses u JOIN SubjectDepartment s ON u.Subject_id = s.Subject_id JOIN ReferenceBook r ON u.Referencebook_id = r.id
+    FROM Uses u JOIN SubjectDepartment s ON u.Subject_id = s.Subject_id 
+        JOIN ReferenceBook r ON u.Referencebook_id = r.id
     ORDER BY did,u.Semester_id,u.Subject_id,ReferenceBook_id,[name]
 END;
 
@@ -211,6 +210,7 @@ BEGIN
             COUNT(c.id) So_lop_hoc
     FROM Opens o, Class c
     WHERE o.Subject_id = c.Subject_id
+        AND o.Semester_id = c.Semester_id
     GROUP BY Department_id , o.Semester_id 
     ORDER BY Department_id, o.Semester_id
 END;
@@ -601,15 +601,12 @@ BEGIN
         ELSE
 			-- Code chinh
 			SELECT DISTINCT rp.Subject_id Ma_mon_hoc,rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
-			FROM Responsible rp, Register rg, Student st
-			WHERE rp.Class_id = rg.Class_id
-				AND rg.Student_id = st.ssn
-				AND Teacher_ssn = @teacherSsn
+			FROM Responsible rp JOIN Register rg ON rp.Semester_id = rg.Semester_id AND rp.Subject_id = rg.Subject_id AND rp.Class_id = rg.Class_id
+                JOIN Student st ON rg.Student_id = st.ssn
+			WHERE Teacher_ssn = @teacherSsn
 				AND rp.Semester_id = @semesterId
-			GROUP BY rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
 			ORDER BY rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
 END;
-
 -- (iii.4). Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc do minh phu trach o mot hoc ky.
 GO
 CREATE PROCEDURE referenceBookOfResponsibleSubject 
@@ -642,10 +639,8 @@ BEGIN
         ELSE
 			-- Code chinh
 			SELECT rp.Subject_id Ma_mon_hoc,rp.Class_id Ma_lop_hoc, COUNT(DISTINCT rg.Student_id) tong_so_sinh_vien
-			FROM Responsible rp, Register rg
-			WHERE rp.Class_id = rg.Class_id
-				AND Teacher_ssn = @teacherSsn
-				AND rp.Semester_id = @semesterId
+			FROM Responsible rp JOIN Register rg ON rp.Class_id = rg.Class_id AND rp.Semester_id = rg.Semester_id AND rp.Subject_id = rg.Subject_id
+			WHERE Teacher_ssn = @teacherSsn
 				AND rg.Semester_id = @semesterId
 			GROUP BY rp.Subject_id, rp.Class_id
 END;
