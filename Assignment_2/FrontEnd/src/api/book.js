@@ -1,11 +1,16 @@
 import axios from 'axios';
 import { getCookie } from 'utils/cookies';
 
-export const getBookApi = () => {
+export const getBookApi = role => {
+  const apiUrl = {
+    student: 'http://localhost:5000/student/subject-reference-book',
+    soemployee: 'http://localhost:5000/soemployee/list-reference-book',
+    deemployee: 'http://localhost:5000/soemployee/list-reference-book',
+  };
   return new Promise((resolve, reject) => {
     return axios({
       method: 'post',
-      url: 'http://localhost:5000/soemployee/list-reference-book',
+      url: apiUrl[role],
       data: {
         token: getCookie('token'),
       },

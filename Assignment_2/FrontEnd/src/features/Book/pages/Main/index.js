@@ -116,7 +116,7 @@ function MainPage() {
 
   const fetch_detail = (params = {}) => {
     setLoading(true);
-    return getBookApi().then(data => {
+    return getBookApi(role).then(data => {
       setLoading(false);
       setData(data.res);
       setTableData(data.res);
@@ -127,18 +127,18 @@ function MainPage() {
     });
   };
 
-  const detail_columns = [
+  let detail_columns = [
     {
       title: 'Book Number',
-      dataIndex: 'Ma_sach',
+      dataIndex: 'Ma_giao_trinh',
       width: '20%',
-      ...getColumnSearchProps('Ma_sach'),
+      ...getColumnSearchProps('Ma_giao_trinh'),
     },
     {
       title: 'Name',
-      dataIndex: 'Ten_sach',
+      dataIndex: 'Ten_giao_trinh',
       width: '20%',
-      ...getColumnSearchProps('Ten_sach'),
+      ...getColumnSearchProps('Ten_giao_trinh'),
     },
     {
       title: 'Department',
@@ -159,6 +159,29 @@ function MainPage() {
       ...getColumnSearchProps('Ma_mon_hoc'),
     },
   ];
+
+  if (role === 'student') {
+    detail_columns = [
+      {
+        title: 'Book Number',
+        dataIndex: 'Ma_giao_trinh',
+        width: '10%',
+        ...getColumnSearchProps('Ma_giao_trinh'),
+      },
+      {
+        title: 'Name',
+        dataIndex: 'Ten_giao_trinh',
+        width: '10%',
+        ...getColumnSearchProps('Ten_giao_trinh'),
+      },
+      {
+        title: 'Subject',
+        dataIndex: 'Ma_mon_hoc',
+        width: '10%',
+        ...getColumnSearchProps('Ma_mon_hoc'),
+      },
+    ];
+  }
 
   const [filter, setFilter] = useState(['Ma_hoc_ky', 'Ma_mon_hoc', 'Ma_khoa']);
   const [tableData, setTableData] = useState(data);
@@ -238,39 +261,41 @@ function MainPage() {
             loading={loading}
           />
         </TabPane>
-        <TabPane
-          tab={
-            <span>
-              <InfoCircleOutlined />
-              Summary
-            </span>
-          }
-          key="2"
-        >
-          <div>
-            <Switch
-              checkedChildren="Subject"
-              unCheckedChildren="Subject"
-              defaultChecked
-              style={{ margin: 10 }}
-              onChange={e => onFilterChange(e, 'Ma_mon_hoc')}
+        {role !== 'student' && (
+          <TabPane
+            tab={
+              <span>
+                <InfoCircleOutlined />
+                Summary
+              </span>
+            }
+            key="2"
+          >
+            <div>
+              <Switch
+                checkedChildren="Subject"
+                unCheckedChildren="Subject"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_mon_hoc')}
+              />
+              <Switch
+                checkedChildren="Department"
+                unCheckedChildren="Department"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_khoa')}
+              />
+            </div>
+            <Table
+              columns={tableColumns}
+              dataSource={tableData}
+              // pagination={{ pageSize: 50 }}
+              scroll={{ y: 480 }}
+              loading={loading}
             />
-            <Switch
-              checkedChildren="Department"
-              unCheckedChildren="Department"
-              defaultChecked
-              style={{ margin: 10 }}
-              onChange={e => onFilterChange(e, 'Ma_khoa')}
-            />
-          </div>
-          <Table
-            columns={tableColumns}
-            dataSource={tableData}
-            // pagination={{ pageSize: 50 }}
-            scroll={{ y: 480 }}
-            loading={loading}
-          />
-        </TabPane>
+          </TabPane>
+        )}
       </Tabs>
     </div>
   );

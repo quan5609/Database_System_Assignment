@@ -3,8 +3,9 @@ import { getCookie } from 'utils/cookies';
 
 export const getSubjectApi = role => {
   const apiUrl = {
-    student: 'http://localhost:5000/student/subject-class-teacher',
+    student: 'http://localhost:5000/student/class-of-subject',
     soemployee: 'http://localhost:5000/soemployee/list-subject',
+    deemployee: 'http://localhost:5000/soemployee/list-subject',
   };
   return new Promise((resolve, reject) => {
     return axios({

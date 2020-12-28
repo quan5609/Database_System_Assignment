@@ -170,11 +170,12 @@ END;
 
 GO
 --(i.6). Xem danh sach giang vien phu trach o moi lop o moi hoc ky o moi khoa.
+-- DROP PROCEDURE listTeacher
 CREATE PROCEDURE listTeacher
 AS
 BEGIN
     SELECT DISTINCT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, Class_id Ma_lop_hoc, 
-        Teacher_ssn SSN, firstName Ten, lastName Ho
+        Teacher_ssn SSN, firstName Ten, lastName Ho, Week_id Ma_tuan_hoc
             
     FROM Responsible,Employee,Class c,Opens o
     WHERE Teacher_ssn = ssn 
@@ -596,23 +597,23 @@ END;
 DROP PROCEDURE studentOfResopnsibleClass
 GO
 CREATE PROCEDURE studentOfResopnsibleClass 
-    (@teacherSsn AS varchar(10),
-     @semesterId AS varchar(10)
+    (@teacherSsn AS varchar(10)
+     --@semesterId AS varchar(10)
     )
 AS
 BEGIN
-	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+	/*IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
             RAISERROR('Invalid Semester',16,0)
         ELSE
-			-- Code chinh
-			SELECT DISTINCT rp.Subject_id Ma_mon_hoc,rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
+			-- Code chinh*/
+			SELECT DISTINCT rp.Semester_id Ma_hoc_ky, rp.Subject_id Ma_mon_hoc,rp.Class_id Ma_lop_hoc,Student_id Ma_sinh_vien, firstName Ten, lastName Ho
 			FROM Responsible rp, Register rg, Student st
 			WHERE rp.Class_id = rg.Class_id
 				AND rg.Student_id = st.ssn
 				AND Teacher_ssn = @teacherSsn
-				AND rp.Semester_id = @semesterId
-			GROUP BY rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
-			ORDER BY rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
+				--AND rp.Semester_id = @semesterId
+			GROUP BY rp.Semester_id, rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
+			ORDER BY rp.Semester_id, rp.Subject_id, rp.Class_id,Student_id, firstName, lastName
 END;
 
 -- (iii.4). Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc do minh phu trach o mot hoc ky.
@@ -721,54 +722,62 @@ BEGIN
 END;
 --iv.2: Xem danh sach mon hoc, lop hoc, va cac giang vien phu trach cho moi lop cua moi mon hoc o hoc ky duoc dang ky.
 GO
-
+--DROP PROCEDURE SubjectClassTeacher
 CREATE PROCEDURE SubjectClassTeacher(
     @studentId AS varchar(10)
 )
 AS
 BEGIN
-    SELECT DISTINCT Semester_id Ma_hoc_ky,Class_id Ma_lop_hoc, Subject_id Ma_mon_hoc, Teacher_ssn Ma_giang_vien
+	SELECT t1.Ma_hoc_ky, t1.Ma_lop_hoc, t1.Ma_mon_hoc, e.firstName Ten, e.lastName Ho
+	FROM 
+    (SELECT DISTINCT Semester_id Ma_hoc_ky,Class_id Ma_lop_hoc, Subject_id Ma_mon_hoc, Teacher_ssn Ma_giang_vien
     FROM dbo.Responsible
     WHERE Semester_id IN (SELECT semesterId 
                                 FROM dbo.StudyStatus
-                                WHERE [sid] = @studentId AND [status] = 'normal')
+                                WHERE [sid] = @studentId AND [status] = 'normal')) t1
+	INNER JOIN Employee e ON t1.Ma_giang_vien = e.ssn
 END;
 
 --iv.3: Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc ma minh dang ky o mot hoc ky.
 GO
+-- DROP PROCEDURE SubjectReferenceBook
 CREATE PROCEDURE SubjectReferenceBook(
-    @studentId AS varchar(10),
-    @semesterId AS VARCHAR(10)
+    @studentId AS varchar(10)
+    --@semesterId AS VARCHAR(10)
 )
 AS
 BEGIN
-	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+	/*IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
             RAISERROR('Invalid Semester',16,0)
-        ELSE
+        ELSE*/
 			-- Code chinh
 			SELECT DISTINCT Register.Subject_id Ma_mon_hoc, ReferenceBook_id Ma_giao_trinh, [name] Ten_giao_trinh
 			FROM dbo.Register JOIN dbo.Uses ON Register.Subject_id = Uses.Subject_id
 				JOIN ReferenceBook ON Uses.ReferenceBook_id = ReferenceBook.id
-			WHERE Student_id = @studentId AND Register.Semester_id = @semesterId
+			WHERE Student_id = @studentId --AND Register.Semester_id = @semesterId
 END;
 
 --iv4: Xem danh sach lop hoc cua moi mon hoc ma minh dang ky o mot hoc ky.  
 GO
+--DROP PROCEDURE ClassOfSubject
 CREATE PROCEDURE ClassOfSubject(
-    @studentId AS VARCHAR(10),
-    @semesterId AS VARCHAR(10)
+    @studentId AS VARCHAR(10)
 )
 AS
 BEGIN
-	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+	/*IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
             RAISERROR('Invalid Semester',16,0)
         ELSE
 			-- Code chinh
-			SELECT DISTINCT Subject_id Ma_mon_hoc, id Ma_lop_hoc
+			SELECT DISTINCT Semester_id Ma_hoc_ky, Subject_id Ma_mon_hoc, id Ma_lop_hoc
 			FROM dbo.Class
 			WHERE Subject_id IN (SELECT DISTINCT Register.Subject_id Ma_mon_hoc
 									FROM dbo.Register
-									WHERE Student_id = @studentId AND Semester_id = @semesterId)
+									WHERE Student_id = @studentId)*/
+	SELECT DISTINCT r.Semester_id Ma_hoc_ky, r.Subject_id Ma_mon_hoc, r.Class_id Ma_lop_hoc, res.Teacher_ssn Ma_giang_vien
+	FROM dbo.Register r
+	LEFT JOIN dbo.Responsible res ON r.Semester_id = res.Semester_id AND r.Subject_id = res.Subject_id AND r.Class_id = res.Class_id
+	WHERE r.Student_id = @studentId
 END;
 
 --iv.5: Xem danh sach lop hoc cua moi mon hoc ma minh dang ky co nhieu hon 1 giang vien phu trach o mot hoc ky.

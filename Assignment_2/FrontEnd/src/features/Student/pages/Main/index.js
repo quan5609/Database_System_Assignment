@@ -116,7 +116,7 @@ function MainPage() {
 
   const fetch_detail = (params = {}) => {
     setLoading(true);
-    return getStudentApi().then(data => {
+    return getStudentApi(role).then(data => {
       setLoading(false);
       setData(data.res);
       setTableData(data.res);
@@ -127,7 +127,7 @@ function MainPage() {
     });
   };
 
-  const detail_columns = [
+  let detail_columns = [
     {
       title: 'Student Number',
       dataIndex: 'ssn',
@@ -166,16 +166,55 @@ function MainPage() {
     },
     {
       title: 'Class',
-      dataIndex: 'Ma_lop',
+      dataIndex: 'Ma_lop_hoc',
       width: '10%',
       ...getColumnSearchProps('Ma_lop'),
     },
   ];
-
+  if (role === 'teacher') {
+    detail_columns = [
+      {
+        title: 'Student Number',
+        dataIndex: 'Ma_sinh_vien',
+        width: '20%',
+        ...getColumnSearchProps('Ma_sinh_vien'),
+      },
+      {
+        title: 'Last Name',
+        dataIndex: 'Ho',
+        width: '20%',
+        ...getColumnSearchProps('Ho'),
+      },
+      {
+        title: 'First Name',
+        dataIndex: 'Ten',
+        width: '10%',
+        ...getColumnSearchProps('Ten'),
+      },
+      {
+        title: 'Semester',
+        dataIndex: 'Ma_hoc_ky',
+        width: '10%',
+        ...getColumnSearchProps('Ma_hoc_ky'),
+      },
+      {
+        title: 'Subject',
+        dataIndex: 'Ma_mon_hoc',
+        width: '10%',
+        ...getColumnSearchProps('Ma_mon_hoc'),
+      },
+      {
+        title: 'Class',
+        dataIndex: 'Ma_lop_hoc',
+        width: '10%',
+        ...getColumnSearchProps('Ma_lop'),
+      },
+    ];
+  }
   const [filter, setFilter] = useState([
     'Ma_hoc_ky',
     'Ma_mon_hoc',
-    'Ma_lop',
+    'Ma_lop_hoc',
     'Ma_khoa',
   ]);
   const [tableData, setTableData] = useState(data);
@@ -279,13 +318,15 @@ function MainPage() {
               style={{ margin: 10 }}
               onChange={e => onFilterChange(e, 'Ma_lop')}
             />
-            <Switch
-              checkedChildren="Department"
-              unCheckedChildren="Department"
-              defaultChecked
-              style={{ margin: 10 }}
-              onChange={e => onFilterChange(e, 'Ma_khoa')}
-            />
+            {role !== 'teacher' && (
+              <Switch
+                checkedChildren="Department"
+                unCheckedChildren="Department"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_khoa')}
+              />
+            )}
           </div>
           <Table
             columns={tableColumns}

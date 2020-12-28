@@ -92,7 +92,7 @@ def getAllStudent():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -282,7 +282,7 @@ def registeredClass():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -330,7 +330,7 @@ def responsibleClass():
         )
     else:
         return Response(
-            response=json.dumps({'res':res['payload']}),
+            response=json.dumps({'res': res['payload']}),
             status=200,
             mimetype='application/json'
         )
@@ -368,7 +368,7 @@ def listSubject():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -412,7 +412,7 @@ def listStudent():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -456,7 +456,7 @@ def listTeacher():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -500,7 +500,7 @@ def listReferenceBook():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -544,7 +544,7 @@ def numOfSubjects():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -588,7 +588,7 @@ def numOfClasses():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -635,7 +635,7 @@ def numOfStudents_class_sem():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -681,7 +681,7 @@ def numOfStudents_sub_sem():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -725,7 +725,7 @@ def numOfStudents_sub_dep():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )

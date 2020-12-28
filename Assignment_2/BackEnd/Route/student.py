@@ -84,7 +84,7 @@ def getAllStudent():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -177,7 +177,7 @@ def subjectClassTeacher():
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -226,7 +226,7 @@ def subjectReferenceBook():
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -262,10 +262,11 @@ def classOfSubject():
 
     '''Get request data'''
     studentId = user_info['sub']
-    semesterId = req_data['semesterId']
+    # semesterId = req_data['semesterId']
 
     '''Execute Stored Procedure'''
-    params = [studentId, semesterId]
+    # params = [studentId, semesterId]
+    params = [studentId]
     res = execute_sp(engine, stored_procedure.classOfSubject, params)
 
     '''IF SP FAILED'''
@@ -278,7 +279,7 @@ def classOfSubject():
 
     if not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=400,
             mimetype='application/json'
         )
@@ -327,7 +328,7 @@ def classOfSubjectMoreThan1Teacher():
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -376,7 +377,7 @@ def sumCredit():
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -425,7 +426,7 @@ def sumSubject():
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )
@@ -473,7 +474,7 @@ def first3MaxCredit():
         )
     elif not res['payload']:
         return Response(
-            response=json.dumps('Empty'),
+            response=json.dumps({'res': []}),
             status=200,
             mimetype='application/json'
         )

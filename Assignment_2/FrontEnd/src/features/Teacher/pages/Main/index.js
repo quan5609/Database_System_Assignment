@@ -47,7 +47,6 @@ function MainPage() {
           value={selectedKeys}
           onChange={e => {
             const values = e.target.value ? e.target.value.split(',') : [];
-            console.log(values);
             setSelectedKeys(values);
           }}
           onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
@@ -116,7 +115,7 @@ function MainPage() {
 
   const fetch_detail = (params = {}) => {
     setLoading(true);
-    return getTeacherApi().then(data => {
+    return getTeacherApi(role).then(data => {
       setLoading(false);
       setData(data.res);
       setTableData(data.res);
@@ -127,7 +126,7 @@ function MainPage() {
     });
   };
 
-  const detail_columns = [
+  let detail_columns = [
     {
       title: 'Teacher Number',
       dataIndex: 'SSN',
@@ -147,12 +146,6 @@ function MainPage() {
       ...getColumnSearchProps('Ten'),
     },
     {
-      title: 'Department',
-      dataIndex: 'Ma_khoa',
-      width: '10%',
-      ...getColumnSearchProps('Ma_khoa'),
-    },
-    {
       title: 'Semester',
       dataIndex: 'Ma_hoc_ky',
       width: '10%',
@@ -166,17 +159,51 @@ function MainPage() {
     },
     {
       title: 'Class',
-      dataIndex: 'Ma_lop',
+      dataIndex: 'Ma_lop_hoc',
       width: '10%',
       ...getColumnSearchProps('Ma_lop'),
     },
+    {
+      title: 'Week',
+      dataIndex: 'Ma_tuan_hoc',
+      width: '10%',
+      ...getColumnSearchProps('Ma_tuan_hoc'),
+    },
   ];
+  if (role === 'student') {
+    detail_columns = [
+      {
+        title: 'Semester',
+        dataIndex: 'Ma_hoc_ky',
+        width: '10%',
+        ...getColumnSearchProps('Ma_hoc_ky'),
+      },
+      {
+        title: 'Subject',
+        dataIndex: 'Ma_mon_hoc',
+        width: '10%',
+        ...getColumnSearchProps('Ma_mon_hoc'),
+      },
+      {
+        title: 'Class',
+        dataIndex: 'Ma_lop_hoc',
+        width: '10%',
+        ...getColumnSearchProps('Ma_lop_hoc'),
+      },
+      {
+        title: 'Teacher',
+        dataIndex: 'Ma_giang_vien',
+        width: '10%',
+        ...getColumnSearchProps('Ma_giang_vien'),
+      },
+    ];
+  }
 
   const [filter, setFilter] = useState([
     'Ma_hoc_ky',
     'Ma_mon_hoc',
-    'Ma_lop',
-    'Ma_khoa',
+    'Ma_lop_hoc',
+    'Ma_tuan_hoc',
   ]);
   const [tableData, setTableData] = useState(data);
   const [tab, setTab] = useState(1);
@@ -255,46 +282,49 @@ function MainPage() {
             loading={loading}
           />
         </TabPane>
-        <TabPane
-          tab={
-            <span>
-              <InfoCircleOutlined />
-              Summary
-            </span>
-          }
-          key="2"
-        >
-          <div>
-            <Switch
-              checkedChildren="Subject"
-              unCheckedChildren="Subject"
-              defaultChecked
-              style={{ margin: 10 }}
-              onChange={e => onFilterChange(e, 'Ma_mon_hoc')}
+
+        {role !== 'student' && (
+          <TabPane
+            tab={
+              <span>
+                <InfoCircleOutlined />
+                Summary
+              </span>
+            }
+            key="2"
+          >
+            <div>
+              <Switch
+                checkedChildren="Subject"
+                unCheckedChildren="Subject"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_mon_hoc')}
+              />
+              <Switch
+                checkedChildren="Class"
+                unCheckedChildren="Class"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_lop')}
+              />
+              <Switch
+                checkedChildren="Department"
+                unCheckedChildren="Department"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_khoa')}
+              />
+            </div>
+            <Table
+              columns={tableColumns}
+              dataSource={tableData}
+              // pagination={{ pageSize: 50 }}
+              scroll={{ y: 480 }}
+              loading={loading}
             />
-            <Switch
-              checkedChildren="Class"
-              unCheckedChildren="Class"
-              defaultChecked
-              style={{ margin: 10 }}
-              onChange={e => onFilterChange(e, 'Ma_lop')}
-            />
-            <Switch
-              checkedChildren="Department"
-              unCheckedChildren="Department"
-              defaultChecked
-              style={{ margin: 10 }}
-              onChange={e => onFilterChange(e, 'Ma_khoa')}
-            />
-          </div>
-          <Table
-            columns={tableColumns}
-            dataSource={tableData}
-            // pagination={{ pageSize: 50 }}
-            scroll={{ y: 480 }}
-            loading={loading}
-          />
-        </TabPane>
+          </TabPane>
+        )}
       </Tabs>
     </div>
   );

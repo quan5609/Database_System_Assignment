@@ -163,9 +163,9 @@ function MainPage() {
       },
       {
         title: 'Class',
-        dataIndex: 'Ma_lop',
+        dataIndex: 'Ma_lop_hoc',
         width: '10%',
-        ...getColumnSearchProps('Ma_lop'),
+        ...getColumnSearchProps('Ma_lop_hoc'),
       },
     ];
   }
