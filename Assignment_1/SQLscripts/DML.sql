@@ -730,7 +730,7 @@ BEGIN
     FROM dbo.Responsible
     WHERE Semester_id IN (SELECT semesterId 
                                 FROM dbo.StudyStatus
-                                WHERE [sid] = @student_id AND [status] = 'normal')
+                                WHERE [sid] = @studentId AND [status] = 'normal')
 END;
 
 --iv.3: Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc ma minh dang ky o mot hoc ky.
