@@ -173,11 +173,10 @@ AS
 BEGIN
     SELECT DISTINCT Department_id Ma_Khoa, c.Semester_id Ma_hoc_ky, c.Subject_id Ma_mon_hoc, Class_id Ma_lop_hoc, 
         Teacher_ssn SSN, firstName Ten, lastName Ho
-            
-    FROM Responsible,Employee,Class c,Opens o
-    WHERE Teacher_ssn = ssn 
-        AND Class_id = c.id
-        AND c.Subject_id = o.Subject_id
+
+    FROM Responsible r JOIN Employee e ON r.Teacher_ssn = e.ssn 
+        JOIN Class c ON r.Semester_id = c.Semester_id AND r.Subject_id = c.Subject_id AND r.Class_id = c.id
+        JOIN Opens o ON r.Semester_id = o.Semester_id AND r.Subject_id = o.Subject_id
     ORDER BY Department_id, c.Semester_id, c.Subject_id, Class_id, Teacher_ssn, firstName, lastName
 END;
 
