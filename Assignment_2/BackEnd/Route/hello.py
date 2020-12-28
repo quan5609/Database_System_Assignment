@@ -117,7 +117,6 @@ def register():
             mimetype='application/json'
         )
 
-    print(res)
     return Response(
         response=json.dumps('Your account is ready'),
         status=200,
