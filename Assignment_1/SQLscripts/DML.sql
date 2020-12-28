@@ -946,7 +946,7 @@ BEGIN
 END;
 --iv.2: Xem danh sach mon hoc, lop hoc, va cac giang vien phu trach cho moi lop cua moi mon hoc o hoc ky duoc dang ky.
 GO
---DROP PROCEDURE SubjectClassTeacher
+-- DROP PROCEDURE SubjectClassTeacher
 CREATE PROCEDURE SubjectClassTeacher(
     @studentId AS varchar(10),
 	@semesterId AS varchar(10)
@@ -955,12 +955,13 @@ AS
 BEGIN
 	SELECT t1.Ma_hoc_ky, t1.Ma_lop_hoc, t1.Ma_mon_hoc, e.firstName Ten, e.lastName Ho
 	FROM 
-    (SELECT DISTINCT Semester_id Ma_hoc_ky,Class_id Ma_lop_hoc, Subject_id Ma_mon_hoc, Teacher_ssn Ma_giang_vien
-    FROM dbo.Responsible
-    WHERE Semester_id IN (SELECT semesterId 
+    (SELECT DISTINCT o.Semester_id Ma_hoc_ky,c.id Ma_lop_hoc, o.Subject_id Ma_mon_hoc, r.MainTeacher_ssn Ma_giang_vien
+    FROM Opens o LEFT JOIN MainResponsible r ON o.Semester_id = r.Semester_id AND o.Subject_id = r.subject_id
+        JOIN Class c ON o.Semester_id = c.Semester_id AND o.Subject_id = c.subject_id
+    WHERE o.Semester_id IN (SELECT semesterId 
                                 FROM dbo.StudyStatus
                                 WHERE [sid] = @studentId AND [status] = 'normal')) t1 
-	INNER JOIN Employee e ON t1.Ma_giang_vien = e.ssn
+	LEFT JOIN Employee e ON t1.Ma_giang_vien = e.ssn
 	WHERE t1.Ma_hoc_ky = @semesterId
 END;
 
