@@ -207,6 +207,56 @@ def updateSubject():
             mimetype='application/json'
         )
 
+@deemployee_blueprint.route('/add-class', methods=['POST'])
+def addClass():
+    '''
+    PROCEDURE addClass(
+        @semesterId AS varchar(10),
+        @departmentId AS VARCHAR(10),
+        @subjectId AS VARCHAR(10),
+        @classId AS VARCHAR(10)
+    )
+    '''
+    '''Define Schema'''
+    schema = request_schema.addClass
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+    
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+    params = list(req_data.values())[1:]
+    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    if did['payload']:
+        params.insert(1,did['payload'][0]['dId'])
+    else:
+        return Response(
+            response="Invalid Token",
+            status=400
+        )
+    
+    '''Execute Stored Procedure'''
+    res = execute_sp(engine,stored_procedure.addClass,params,False)
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps(res['error']),
+            status=500,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps('OK'),
+            status=200,
+            mimetype='application/json'
+        )
+
 @deemployee_blueprint.route('/add-teacher-of-class', methods=['POST'])
 def addTeacherOfClass():
     '''

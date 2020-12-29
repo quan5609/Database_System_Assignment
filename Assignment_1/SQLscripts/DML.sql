@@ -411,6 +411,37 @@ BEGIN
             AND Semester_id = @semesterId
             AND Subject_id = @oldSubjectId
 END;
+
+DROP PROCEDURE addClass
+GO
+CREATE PROCEDURE addClass(
+    @semesterId AS varchar(10),
+    @departmentId AS VARCHAR(10),
+    @subjectId AS VARCHAR(10),
+    @classId AS VARCHAR(10)
+)
+AS
+BEGIN
+	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+        RAISERROR('Invalid SemesterID',16,0)
+    ELSE
+        IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
+            RAISERROR('Invalid DepartmentID',16,0)
+        ELSE
+			IF NOT EXISTS (SELECT 1 FROM Subject WHERE id = @subjectId)
+				RAISERROR('Invalid SubjectID',16,0)
+			ELSE
+				IF EXISTS (
+					SELECT 1 FROM Class
+					WHERE Semester_id = @semesterId
+						AND Subject_id = @subjectId
+                        AND id = @classId
+				)
+					RAISERROR('Existed Class',16,0)
+				ELSE
+					-- Code chinh
+					INSERT INTO dbo.Class VALUES(@classId,60,@semesterId, @subjectId)
+END;
 --ii.2: Cap nhat danh sach giang vien phu trach moi lop hoc duoc mo truoc dau moi hoc ky.
 GO
 CREATE PROCEDURE addTeacherOfClass(

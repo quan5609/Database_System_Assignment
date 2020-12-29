@@ -5,6 +5,7 @@ class StoredProcedure():
         self.addSubject = 'EXEC addSubject ?,?,?'
         self.removeSubject = 'EXEC removeSubject ?,?,?'
         self.updateSubject = 'EXEC updateSubject ?,?,?,?'
+        self.addClass = 'EXEC addClass ?,?,?,?'
         self.addTeacherOfClass = 'EXEC addTeacherOfClass ?,?,?,?,?'
         self.removeTeacherOfClass = 'EXEC removeTeacherOfClass ?,?,?,?,?'
         self.updateTeacherOfClass = 'EXEC updateTeacherOfClass ?,?,?,?,?,?'

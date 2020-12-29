@@ -80,6 +80,7 @@ GRANT EXECUTE ON OBJECT::top5Semester_mostClass TO teachers
 GRANT EXECUTE ON OBJECT::addSubject TO deemployees
 GRANT EXECUTE ON OBJECT::removeSubject TO deemployees
 GRANT EXECUTE ON OBJECT::updateSubject TO deemployees
+GRANT EXECUTE ON OBJECT::addClass TO deemployees
 GRANT EXECUTE ON OBJECT::addTeacherOfClass TO deemployees
 GRANT EXECUTE ON OBJECT::removeTeacherOfClass TO deemployees
 GRANT EXECUTE ON OBJECT::updateTeacherOfClass TO deemployees

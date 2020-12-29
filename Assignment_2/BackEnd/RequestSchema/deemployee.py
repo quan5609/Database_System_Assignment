@@ -20,6 +20,13 @@ class Schema():
             'newSubjectId': {'type': 'string', 'required': True}
         }
 
+        self.addClass = {
+            'token': {'type': 'string', 'required': True},
+            'semesterId': {'type': 'string', 'required': True},
+            'subjectId': {'type': 'string', 'required': True},
+            'classId': {'type': 'string', 'required': True}
+        }
+
         self.addTeacherOfClass = {
             'token': {'type': 'string', 'required': True},
             'teacherSsn': {'type': 'string', 'required': True},

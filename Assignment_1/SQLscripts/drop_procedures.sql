@@ -16,6 +16,7 @@ DROP PROCEDURE [dbo].[numOfStudents_sub_dep];
 DROP PROCEDURE [dbo].[addSubject];
 DROP PROCEDURE [dbo].[removeSubject];
 DROP PROCEDURE [dbo].[updateSubject];
+DROP PROCEDURE [dbo].[addClass];
 DROP PROCEDURE [dbo].[addTeacherOfClass];
 DROP PROCEDURE [dbo].[removeTeacherOfClass];
 DROP PROCEDURE [dbo].[updateTeacherOfClass];
