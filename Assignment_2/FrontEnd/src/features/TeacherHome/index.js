@@ -184,7 +184,11 @@ function Resource() {
   };
 
   const [visible, setVisible] = useState(false);
-  const showModal = () => {
+  const [currentRecord, setCurrentRecord] = useState('');
+  const showModal = record => {
+    setCurrentRecord(
+      `${record['Ma_hoc_ky']}_${record['Ma_mon_hoc']}_${record['Ma_giao_trinh']}`,
+    );
     setVisible(true);
   };
 
@@ -237,13 +241,17 @@ function Resource() {
               type="primary"
               style={{ marginRight: 10 }}
               // onClick={() => onAddBook(text, record)}
-              onClick={showModal}
+              onClick={() => showModal(record)}
             >
               Add
             </Button>
             <Modal
-              visible={visible}
-              title="Title"
+              visible={
+                visible &&
+                currentRecord ===
+                  `${record['Ma_hoc_ky']}_${record['Ma_mon_hoc']}_${record['Ma_giao_trinh']}`
+              }
+              title={`${record['Ma_hoc_ky']}_${record['Ma_mon_hoc']}_${record['Ma_giao_trinh']}`}
               onCancel={handleCancel}
               footer={[
                 <Button key="back" onClick={handleCancel}>

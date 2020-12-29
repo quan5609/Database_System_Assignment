@@ -365,10 +365,11 @@ BEGIN
 END;
 
 GO
+--DROP PROCEDURE removeSubject
 CREATE PROCEDURE removeSubject(
     @semesterId AS varchar(10),
-    @departmentId AS VARCHAR(10),
-    @subjectId AS VARCHAR(10)
+    @subjectId AS VARCHAR(10),
+	@departmentId AS VARCHAR(10)
 )
 AS
 BEGIN
