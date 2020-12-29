@@ -162,7 +162,7 @@ def subjectClassTeacher():
         )
 
     '''Get request data'''
-    params = [user_info['sub'], req_data['semesterId']]
+    params = [user_info['sub']]
     '''Execute Stored Procedure'''
     res = execute_sp(
         engine, stored_procedure.subjectClassTeacher, params, getResult=True)

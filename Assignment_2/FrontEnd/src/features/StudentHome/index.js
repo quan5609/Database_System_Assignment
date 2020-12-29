@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Input, Button, Space, Tabs, Typography } from 'antd';
+import { Table, Input, Button, Space, Tabs, Typography, message } from 'antd';
 import Highlighter from 'react-highlight-words';
 import {
   SearchOutlined,
@@ -9,7 +9,7 @@ import {
 
 // import './index.scss';
 
-import { getSubjectApi } from 'api/subject';
+import { getAvailableSubjectApi, registerClass } from 'api/subject';
 import { useSelector } from 'react-redux';
 import { aggregateJson, multiAggregate } from 'utils/aggregate';
 import { mock_data } from './mock';
@@ -120,45 +120,70 @@ function Resource() {
   };
 
   const fetch_detail = (params = {}) => {
-    // setLoading(true);
-    // return getSubjectApi(role).then(data => {
-    //   setLoading(false);
-    //   setData(data.res);
-    //   setTableData(data.res);
-    //   setPagination({
-    //     ...params.pagination,
-    //     total: data.res.length,
-    //   });
-    // });
-    setData(mock_data.res);
-    setTableData(mock_data.res);
-    setPagination({
-      ...params.pagination,
-      total: mock_data.res.length,
+    setLoading(true);
+    return getAvailableSubjectApi(role).then(data => {
+      setLoading(false);
+      setData(data.res);
+      setTableData(data.res);
+      setPagination({
+        ...params.pagination,
+        total: data.res.length,
+      });
     });
-    return mock_data;
+    // setData(mock_data.res);
+    // setTableData(mock_data.res);
+    // setPagination({
+    //   ...params.pagination,
+    //   total: mock_data.res.length,
+    // });
+    // return mock_data;
   };
 
-  const onRegister = (text, record) => console.log(record);
+  const onRegister = (text, record) => {
+    const body_params = {
+      classId: record['Ma_lop_hoc'],
+      semesterId: record['Ma_hoc_ky'],
+      subjectId: record['Ma_mon_hoc'],
+    };
+    setLoading(true);
+    return registerClass(role, body_params)
+      .then(() => {
+        setLoading(false);
+        message.success(
+          `Register class ${body_params.classId} of subject ${body_params.subjectId} in semester ${body_params.semesterId} successfully!`,
+        );
+        fetch_detail({ pagination });
+      })
+      .catch(error => {
+        message.error(error.response.data);
+        fetch_detail({ pagination });
+      });
+  };
 
   const detail_columns = [
     {
       title: 'Subject',
-      dataIndex: 'Ma_mon',
+      dataIndex: 'Ma_mon_hoc',
       width: '10%',
-      ...getColumnSearchProps('Ma_mon'),
+      ...getColumnSearchProps('Ma_mon_hoc'),
     },
     {
       title: 'Class',
-      dataIndex: 'Ma_lop',
+      dataIndex: 'Ma_lop_hoc',
       width: '10%',
-      ...getColumnSearchProps('Ma_lop'),
+      ...getColumnSearchProps('Ma_lop_hoc'),
     },
     {
-      title: 'Main Teacher',
-      dataIndex: 'Ma_giang_vien',
+      title: 'Main Teacher First Name',
+      dataIndex: 'Ten',
       width: '10%',
-      ...getColumnSearchProps('Ma_giang_vien'),
+      ...getColumnSearchProps('Ten'),
+    },
+    {
+      title: 'Main Teacher Last Name',
+      dataIndex: 'Ho',
+      width: '10%',
+      ...getColumnSearchProps('Ho'),
     },
     {
       title: 'Action',

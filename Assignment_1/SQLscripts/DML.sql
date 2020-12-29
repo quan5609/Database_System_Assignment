@@ -946,10 +946,11 @@ BEGIN
 END;
 --iv.2: Xem danh sach mon hoc, lop hoc, va cac giang vien phu trach cho moi lop cua moi mon hoc o hoc ky duoc dang ky.
 GO
+
 -- DROP PROCEDURE SubjectClassTeacher
 CREATE PROCEDURE SubjectClassTeacher(
-    @studentId AS varchar(10),
-	@semesterId AS varchar(10)
+    @studentId AS varchar(10)
+	--@semesterId AS varchar(10)
 )
 AS
 BEGIN
@@ -962,7 +963,8 @@ BEGIN
                                 FROM dbo.StudyStatus
                                 WHERE [sid] = @studentId AND [status] = 'normal')) t1 
 	LEFT JOIN Employee e ON t1.Ma_giang_vien = e.ssn
-	WHERE t1.Ma_hoc_ky = @semesterId
+	--WHERE NOT EXISTS (SELECT 1 FROM dbo.Register t2 WHERE t1.Ma_hoc_ky = t2.Semester_id AND t1.Ma_lop_hoc = t2.Class_id AND t1.Ma_mon_hoc = t2.Subject_id
+	--AND @studentId = t2.Student_id)
 END;
 
 --iv.3: Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc ma minh dang ky o mot hoc ky.
