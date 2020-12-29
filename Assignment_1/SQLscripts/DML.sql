@@ -346,22 +346,21 @@ BEGIN
 	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
         RAISERROR('Invalid SemesterID',16,0)
     ELSE
-        IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
-            RAISERROR('Invalid DepartmentID',16,0)
+        IF NOT EXISTS (SELECT 1 FROM SujectDepartment 
+                    WHERE did = @departmentId
+                    AND subject_id = @subjectId)
+            RAISERROR('This subject does not belong to your department',16,0)
         ELSE
-			IF NOT EXISTS (SELECT 1 FROM Subject WHERE id = @subjectId)
-				RAISERROR('Invalid SubjectID',16,0)
-			ELSE
-				IF EXISTS (
-					SELECT 1 FROM Opens
-					WHERE Department_id = @departmentId
-						AND Semester_id = @semesterId
-						AND Subject_id = @subjectId
-				)
-					RAISERROR('Existed Opens',16,0)
-				ELSE
-					-- Code chinh
-					INSERT INTO dbo.Opens VALUES(@semesterId, @subjectId, @departmentId)
+            IF EXISTS (
+                SELECT 1 FROM Opens
+                WHERE Department_id = @departmentId
+                    AND Semester_id = @semesterId
+                    AND Subject_id = @subjectId
+            )
+                RAISERROR('Existed Opens',16,0)
+            ELSE
+                -- Code chinh
+                INSERT INTO dbo.Opens VALUES(@semesterId, @subjectId, @departmentId)
 END;
 
 GO
@@ -373,19 +372,27 @@ CREATE PROCEDURE removeSubject(
 )
 AS
 BEGIN
-    IF NOT EXISTS (
-        SELECT 1 FROM Opens
-        WHERE Department_id = @departmentId
-            AND Semester_id = @semesterId
-            AND Subject_id = @subjectId
-    )
-        RAISERROR('Subject not exist',16,0)
+    IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+        RAISERROR('Invalid SemesterID',16,0)
     ELSE
-        -- Code chinh
-        DELETE FROM dbo.Opens 
-        WHERE Department_id = @departmentId
-            AND Semester_id = @semesterId
-            AND Subject_id = @subjectId
+        IF NOT EXISTS (SELECT 1 FROM SujectDepartment 
+                    WHERE did = @departmentId
+                    AND subject_id = @subjectId)
+            RAISERROR('This subject does not belong to your department',16,0)
+        ELSE
+            IF NOT EXISTS (
+                SELECT 1 FROM Opens
+                WHERE Department_id = @departmentId
+                    AND Semester_id = @semesterId
+                    AND Subject_id = @subjectId
+            )
+                RAISERROR('Subject not exist',16,0)
+            ELSE
+                -- Code chinh
+                DELETE FROM dbo.Opens 
+                WHERE Department_id = @departmentId
+                    AND Semester_id = @semesterId
+                    AND Subject_id = @subjectId
 END;
 
 GO
@@ -397,20 +404,28 @@ CREATE PROCEDURE updateSubject(
 )
 AS
 BEGIN
-    IF NOT EXISTS (
-        SELECT 1 FROM Opens
-        WHERE Department_id = @departmentId
-            AND Semester_id = @semesterId
-            AND Subject_id = @oldSubjectId
-    )
-        RAISERROR('Subject not exist',16,0)
+    IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+        RAISERROR('Invalid SemesterID',16,0)
     ELSE
-        -- Code chinh
-        UPDATE dbo.Opens 
-        SET Subject_id = @newSubjectId
-        WHERE Department_id = @departmentId
-            AND Semester_id = @semesterId
-            AND Subject_id = @oldSubjectId
+        IF NOT EXISTS (SELECT 1 FROM SujectDepartment 
+                    WHERE did = @departmentId
+                    AND subject_id = @subjectId)
+            RAISERROR('This subject does not belong to your department',16,0)
+        ELSE
+            IF NOT EXISTS (
+                SELECT 1 FROM Opens
+                WHERE Department_id = @departmentId
+                    AND Semester_id = @semesterId
+                    AND Subject_id = @oldSubjectId
+            )
+                RAISERROR('Subject not exist',16,0)
+            ELSE
+                -- Code chinh
+                UPDATE dbo.Opens 
+                SET Subject_id = @newSubjectId
+                WHERE Department_id = @departmentId
+                    AND Semester_id = @semesterId
+                    AND Subject_id = @oldSubjectId
 END;
 
 DROP PROCEDURE addClass
@@ -423,25 +438,24 @@ CREATE PROCEDURE addClass(
 )
 AS
 BEGIN
-	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+    IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
         RAISERROR('Invalid SemesterID',16,0)
     ELSE
-        IF NOT EXISTS (SELECT 1 FROM Department WHERE id = @departmentId)
-            RAISERROR('Invalid DepartmentID',16,0)
+        IF NOT EXISTS (SELECT 1 FROM SujectDepartment 
+                    WHERE did = @departmentId
+                    AND subject_id = @subjectId)
+            RAISERROR('This subject does not belong to your department',16,0)
         ELSE
-			IF NOT EXISTS (SELECT 1 FROM Subject WHERE id = @subjectId)
-				RAISERROR('Invalid SubjectID',16,0)
-			ELSE
-				IF EXISTS (
-					SELECT 1 FROM Class
-					WHERE Semester_id = @semesterId
-						AND Subject_id = @subjectId
-                        AND id = @classId
-				)
-					RAISERROR('Existed Class',16,0)
-				ELSE
-					-- Code chinh
-					INSERT INTO dbo.Class VALUES(@classId,60,@semesterId, @subjectId)
+            IF EXISTS (
+                SELECT 1 FROM Class
+                WHERE Semester_id = @semesterId
+                    AND Subject_id = @subjectId
+                    AND id = @classId
+            )
+                RAISERROR('Existed Class',16,0)
+            ELSE
+                -- Code chinh
+                INSERT INTO dbo.Class VALUES(@classId,60,@semesterId, @subjectId)
 END;
 --ii.2: Cap nhat danh sach giang vien phu trach moi lop hoc duoc mo truoc dau moi hoc ky.
 GO
