@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Input, Button, Space, Tabs, Switch } from 'antd';
+import { Table, Input, Button, Space, Tabs, Switch, message } from 'antd';
 import Highlighter from 'react-highlight-words';
 import {
   SearchOutlined,
@@ -9,7 +9,7 @@ import {
 
 import './index.scss';
 
-import { getTeacherApi } from 'api/teacher';
+import { getTeacherApi, removeTeacher } from 'api/teacher';
 import { useSelector } from 'react-redux';
 import { aggregateJson } from 'utils/aggregate';
 
@@ -126,6 +126,28 @@ function MainPage() {
     });
   };
 
+  const onRemoveTeacher = record => {
+    console.log(record);
+    const body_params = {
+      teacherSsn: record['SSN'],
+      semesterId: record['Ma_hoc_ky'],
+      subjectId: record['Ma_mon_hoc'],
+      weekId: record['Ma_tuan_hoc'].toString(),
+      classId: record['Ma_lop_hoc'],
+    };
+    setLoading(true);
+    return removeTeacher(role, body_params)
+      .then(() => {
+        setLoading(false);
+        message.success(`Remove successfully!`);
+        fetch_detail({ pagination });
+      })
+      .catch(error => {
+        message.error(error.response.data);
+        fetch_detail({ pagination });
+      });
+  };
+
   let detail_columns = [
     {
       title: 'Teacher Number',
@@ -204,6 +226,27 @@ function MainPage() {
       },
     ];
   }
+  if (role === 'deemployee')
+    detail_columns.push({
+      title: 'Action',
+      dataIndex: '',
+      key: 'x',
+      width: '10%',
+      render: (text, record) => {
+        return (
+          <div>
+            <Button
+              type="primary"
+              danger
+              style={{ marginRight: 10 }}
+              onClick={() => onRemoveTeacher(record)}
+            >
+              Delete
+            </Button>
+          </div>
+        );
+      },
+    });
 
   const [filter, setFilter] = useState([
     'Ma_hoc_ky',

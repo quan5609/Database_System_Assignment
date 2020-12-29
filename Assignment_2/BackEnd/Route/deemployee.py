@@ -58,6 +58,7 @@ def hello():
     )
     return response
 
+
 @deemployee_blueprint.route('/add-subject', methods=['POST'])
 def addSubject():
     '''
@@ -73,7 +74,7 @@ def addSubject():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -82,17 +83,17 @@ def addSubject():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
-        params.insert(1,did['payload'][0]['dId'])
+        params.insert(1, did['payload'][0]['dId'])
     else:
         return Response(
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.addSubject,params,False)
+    res = execute_sp(engine, stored_procedure.addSubject, params, False)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -106,6 +107,7 @@ def addSubject():
             status=200,
             mimetype='application/json'
         )
+
 
 @deemployee_blueprint.route('/remove-subject', methods=['POST'])
 def removeSubject():
@@ -122,7 +124,7 @@ def removeSubject():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -131,17 +133,18 @@ def removeSubject():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
-    did = execute_sp(engine,stored_procedure.getDId,user_info['sub'],True)
+    did = execute_sp(engine, stored_procedure.getDId, user_info['sub'], True)
     if did['payload']:
-        params.insert(1,did['payload'][0]['dId'])
+        params.append(did['payload'][0]['dId'])
     else:
         return Response(
             response="Invalid Token",
             status=400
         )
-    
+
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.removeSubject,params,False)
+    print(params)
+    res = execute_sp(engine, stored_procedure.removeSubject, params, False)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -274,7 +277,7 @@ def addTeacherOfClass():
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -284,7 +287,7 @@ def addTeacherOfClass():
     '''Get request data'''
     params = list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.addTeacherOfClass,params,False)
+    res = execute_sp(engine, stored_procedure.addTeacherOfClass, params, False)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -298,6 +301,7 @@ def addTeacherOfClass():
             status=200,
             mimetype='application/json'
         )
+
 
 @deemployee_blueprint.route('/remove-teacher-of-class', methods=['POST'])
 def removeTeacherOfClass():
@@ -313,10 +317,11 @@ def removeTeacherOfClass():
     '''Define Schema'''
     schema = request_schema.removeTeacherOfClass
     req_data = request.get_json()
+    # print(req_data)
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
-    
+
     if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
         return Response(
             response="Bad Request",
@@ -325,8 +330,10 @@ def removeTeacherOfClass():
 
     '''Get request data'''
     params = list(req_data.values())[1:]
+    # print(params)
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.removeTeacherOfClass,params,False)
+    res = execute_sp(
+        engine, stored_procedure.removeTeacherOfClass, params, False)
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
@@ -340,6 +347,8 @@ def removeTeacherOfClass():
             status=200,
             mimetype='application/json'
         )
+
+
 @deemployee_blueprint.route('/update-teacher-of-class', methods=['POST'])
 def updateTeacherOfClass():
     '''
@@ -383,6 +392,7 @@ def updateTeacherOfClass():
             status=200,
             mimetype='application/json'
         )
+
 
 @deemployee_blueprint.route('/subject-on-semester', methods=['POST'])
 def subjectOnSemester():
