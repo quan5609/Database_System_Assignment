@@ -147,7 +147,7 @@ function MainPage() {
       ...getColumnSearchProps('Ma_mon_hoc'),
     },
   ];
-  if (role === 'student' || role === 'teacher') {
+  if (role === 'student') {
     detail_columns = [
       {
         title: 'Semester',
@@ -172,6 +172,29 @@ function MainPage() {
         dataIndex: 'So_tin_chi',
         width: '10%',
         ...getColumnSearchProps('So_tin_chi'),
+      },
+    ];
+  }
+
+  if (role === 'teacher') {
+    detail_columns = [
+      {
+        title: 'Semester',
+        dataIndex: 'Ma_hoc_ky',
+        width: '10%',
+        ...getColumnSearchProps('Ma_hoc_ky'),
+      },
+      {
+        title: 'Subject',
+        dataIndex: 'Ma_mon_hoc',
+        width: '10%',
+        ...getColumnSearchProps('Ma_mon_hoc'),
+      },
+      {
+        title: 'Class',
+        dataIndex: 'Ma_lop_hoc',
+        width: '10%',
+        ...getColumnSearchProps('Ma_lop_hoc'),
       },
     ];
   }
@@ -292,6 +315,17 @@ function MainPage() {
                 style={{ margin: 10 }}
                 onChange={e => onFilterChange(e, 'Ma_khoa')}
               />
+              <Switch
+                checkedChildren="Subject"
+                unCheckedChildren="Subject"
+                defaultChecked
+                style={{ margin: 10 }}
+                onChange={e => onFilterChange(e, 'Ma_mon_hoc')}
+              />
+            </div>
+          )}
+          {role === 'teacher' && (
+            <div>
               <Switch
                 checkedChildren="Subject"
                 unCheckedChildren="Subject"

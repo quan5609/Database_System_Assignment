@@ -809,21 +809,22 @@ END;
 
 -- (iii.2). Xem danh sach lop hoc cua moi mon hoc do minh phu trach o mot hoc ky.
 GO
+--DROP PROCEDURE responsibleClasses 
 CREATE PROCEDURE responsibleClasses 
-    (@teacherSsn AS varchar(10),
-     @semesterId AS varchar(10)
+    (@teacherSsn AS varchar(10)
+    -- @semesterId AS varchar(10)
     )
 AS
 BEGIN
-	IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+	/*IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
             RAISERROR('Invalid Semester',16,0)
         ELSE
-			-- Code chinh
-			SELECT Subject_id Ma_mon_hoc,Class_id Ma_lop_hoc
+			-- Code chinh*/
+			SELECT Semester_id Ma_hoc_ky, Subject_id Ma_mon_hoc,Class_id Ma_lop_hoc
 			FROM Responsible
-			WHERE Teacher_ssn = @teacherSsn AND Semester_id = @semesterId
-			GROUP BY Subject_id,Class_id
-			ORDER BY Subject_id,Class_id
+			WHERE Teacher_ssn = @teacherSsn --AND Semester_id = @semesterId
+			GROUP BY Semester_id, Subject_id,Class_id
+			ORDER BY Semester_id, Subject_id,Class_id
 END;
 
 -- (iii.3). Xem danh sach sinh vien cua moi lop hoc do minh phu trach o mot hoc ky.
@@ -862,6 +863,26 @@ BEGIN
 				JOIN ReferenceBook r ON u.ReferenceBook_id = r.id
 			--WHERE rp.Semester_id = @semesterId AND u.Semester_id = @semesterId
 			WHERE rp.Teacher_ssn = @teacherSsn
+			GROUP BY rp.Semester_id, rp.Subject_id,r.[name], r.id 
+END;
+
+-- (iii.4*). Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc do minh phu trach chinh o mot hoc ky.
+GO
+CREATE PROCEDURE referenceBookOfMainResponsibleSubject 
+    (@teacherSsn AS varchar(10)
+     --@semesterId AS varchar(10)
+    )
+AS
+BEGIN
+	/*IF NOT EXISTS (SELECT 1 FROM Semester WHERE id = @semesterId)
+            RAISERROR('Invalid Semester',16,0)
+        ELSE
+			-- Code chinh*/
+			SELECT rp.Semester_id Ma_hoc_ky, rp.Subject_id Ma_mon_hoc, r.[name] Ten_giao_trinh, r.id Ma_giao_trinh
+			FROM MainResponsible rp JOIN Uses u ON rp.Subject_id = u.Subject_id AND rp.Semester_id = u.Semester_id
+				JOIN ReferenceBook r ON u.ReferenceBook_id = r.id
+			--WHERE rp.Semester_id = @semesterId AND u.Semester_id = @semesterId
+			WHERE rp.MainTeacher_ssn = @teacherSsn
 			GROUP BY rp.Semester_id, rp.Subject_id,r.[name], r.id 
 END;
 
@@ -963,8 +984,8 @@ BEGIN
                                 FROM dbo.StudyStatus
                                 WHERE [sid] = @studentId AND [status] = 'normal')) t1 
 	LEFT JOIN Employee e ON t1.Ma_giang_vien = e.ssn
-	--WHERE NOT EXISTS (SELECT 1 FROM dbo.Register t2 WHERE t1.Ma_hoc_ky = t2.Semester_id AND t1.Ma_lop_hoc = t2.Class_id AND t1.Ma_mon_hoc = t2.Subject_id
-	--AND @studentId = t2.Student_id)
+	WHERE NOT EXISTS (SELECT 1 FROM dbo.Register t2 WHERE t1.Ma_hoc_ky = t2.Semester_id AND t1.Ma_lop_hoc = t2.Class_id AND t1.Ma_mon_hoc = t2.Subject_id
+	AND @studentId = t2.Student_id)
 END;
 
 --iv.3: Xem danh sach mon hoc va giao trinh chinh cho moi mon hoc ma minh dang ky o mot hoc ky.

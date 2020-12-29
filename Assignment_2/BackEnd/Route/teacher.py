@@ -60,7 +60,8 @@ def hello():
     )
     return response
 
-@teacher_blueprint.route('/add-reference-book',methods = ['POST'])
+
+@teacher_blueprint.route('/add-reference-book', methods=['POST'])
 def addReferenceBook():
     '''
     PROCEDURE addReferenceBook(
@@ -88,12 +89,13 @@ def addReferenceBook():
     '''Get request data'''
     params = [user_info['sub']] + list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.addReferenceBook,params, getResult=False)
+    res = execute_sp(engine, stored_procedure.addReferenceBook,
+                     params, getResult=False)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#(res['error'])
+            response=json.dumps('INTERNAL SERVER ERROR'),  # (res['error'])
             status=500,
             mimetype='application/json'
         )
@@ -104,7 +106,8 @@ def addReferenceBook():
             mimetype='application/json'
         )
 
-@teacher_blueprint.route('/remove-reference-book',methods = ['POST'])
+
+@teacher_blueprint.route('/remove-reference-book', methods=['POST'])
 def removeReferenceBook():
     '''
     PROCEDURE removeReferenceBook(
@@ -132,12 +135,13 @@ def removeReferenceBook():
     '''Get request data'''
     params = [user_info['sub']] + list(req_data.values())[1:]
     '''Execute Stored Procedure'''
-    res = execute_sp(engine,stored_procedure.removeReferenceBook,params, getResult=False)
+    res = execute_sp(
+        engine, stored_procedure.removeReferenceBook, params, getResult=False)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':
         return Response(
-            response=json.dumps('INTERNAL SERVER ERROR'),#(res['error'])
+            response=json.dumps('INTERNAL SERVER ERROR'),  # (res['error'])
             status=500,
             mimetype='application/json'
         )
@@ -148,7 +152,8 @@ def removeReferenceBook():
             mimetype='application/json'
         )
 
-@teacher_blueprint.route('/update-reference-book',methods = ['POST'])
+
+@teacher_blueprint.route('/update-reference-book', methods=['POST'])
 def updateReferenceBook():
     '''
     PROCEDURE updateReferenceBook(
@@ -320,6 +325,55 @@ def referenceBookOfResponsibleSubject():
     '''Execute Stored Procedure'''
     res = execute_sp(
         engine, stored_procedure.referenceBookOfResponsibleSubject, params, getResult=True)
+
+    '''IF SP FAILED'''
+    if res['status'] == 'ERROR':
+        return Response(
+            response=json.dumps('INTERNAL SERVER ERROR'),  # (res['error'])
+            status=500,
+            mimetype='application/json'
+        )
+    elif not res['payload']:
+        return Response(
+            response=json.dumps({'res': []}),
+            status=200,
+            mimetype='application/json'
+        )
+    else:
+        return Response(
+            response=json.dumps({'res': res['payload']}),
+            status=200,
+            mimetype='application/json'
+        )
+
+
+@teacher_blueprint.route('/reference-book-of-main-responsible-subject', methods=['POST'])
+def referenceBookOfMainResponsibleSubject():
+    '''
+    PROCEDURE referenceBookOfResponsibleSubject 
+        (@teacherSsn AS varchar(10),
+        @semesterId AS varchar(10)
+        )
+    '''
+
+    '''Define Schema'''
+    schema = request_schema.referenceBookOfMainResponsibleSubject
+    req_data = request.get_json()
+    token = req_data['token']
+    route_role = request.url_rule.rule.split('/')[1]
+    user_info = decode_auth_token(token)
+
+    if not validate_request(req_data, token, route_role, user_info, schema, required_data=True):
+        return Response(
+            response="Bad Request",
+            status=400
+        )
+
+    '''Get request data'''
+    params = [user_info['sub']] + list(req_data.values())[1:]
+    '''Execute Stored Procedure'''
+    res = execute_sp(
+        engine, stored_procedure.referenceBookOfMainResponsibleSubject, params, getResult=True)
 
     '''IF SP FAILED'''
     if res['status'] == 'ERROR':

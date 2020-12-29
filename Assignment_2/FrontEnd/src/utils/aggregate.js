@@ -1,5 +1,6 @@
 import groupBy from 'lodash/groupBy';
 import alasql from 'alasql';
+import _ from 'lodash';
 
 export const aggregateJson = (data, filters) => {
   let filteredData = data.map((value, index) => {
