@@ -116,6 +116,7 @@ def addRegister():
     '''Define Schema'''
     schema = request_schema.addRegister
     req_data = request.get_json()
+    print(req_data)
     token = req_data['token']
     route_role = request.url_rule.rule.split('/')[1]
     user_info = decode_auth_token(token)
