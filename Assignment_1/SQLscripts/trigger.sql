@@ -116,3 +116,22 @@ BEGIN
         ROLLBACK TRANSACTION
     END
 END
+
+-- Check for total credit of a student in a semester <= 18
+DROP TRIGGER IF EXISTS total_participation_class_2
+GO
+CREATE TRIGGER sum_credit_leq_18 ON Register
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    IF EXISTS
+        (SELECT Student_id, Semester_id,SUM(credit)
+        FROM Register JOIN Subject ON Subject_id = id
+        GROUP BY Student_id,Semester_id
+        HAVING SUM(credit) > 18
+        )
+    BEGIN
+        RAISERROR ('Total credit in a semester must less or equal than 18',-1,-1)
+        ROLLBACK TRANSACTION
+    END
+END

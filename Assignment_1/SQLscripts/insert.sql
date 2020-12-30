@@ -2505,1260 +2505,1080 @@ VALUES
 --!SECTION
 --SECTION Week
 -------------------------------------------------------------------------------------------------------------------
-/* INSERT QUERY NO: 1 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq171', '2017-09-24'
 );
 
-/* INSERT QUERY NO: 2 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq171', '2017-10-01'
 );
 
-/* INSERT QUERY NO: 3 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq171', '2017-10-08'
 );
 
-/* INSERT QUERY NO: 4 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq171', '2017-10-15'
 );
 
-/* INSERT QUERY NO: 5 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq171', '2017-10-22'
 );
 
-/* INSERT QUERY NO: 6 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq171', '2017-10-29'
 );
 
-/* INSERT QUERY NO: 7 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq171', '2017-11-05'
 );
 
-/* INSERT QUERY NO: 8 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq171', '2017-11-12'
 );
 
-/* INSERT QUERY NO: 9 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq171', '2017-11-19'
 );
 
-/* INSERT QUERY NO: 10 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 10, 'cq171', '2017-11-26'
 );
 
-/* INSERT QUERY NO: 11 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 11, 'cq171', '2017-12-03'
 );
 
-/* INSERT QUERY NO: 12 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 12, 'cq171', '2017-12-10'
 );
 
-/* INSERT QUERY NO: 13 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 13, 'cq171', '2017-12-17'
 );
 
-/* INSERT QUERY NO: 14 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 14, 'cq171', '2017-12-24'
 );
 
-/* INSERT QUERY NO: 15 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 15, 'cq171', '2017-12-31'
 );
 
-/* INSERT QUERY NO: 16 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 16, 'cq171', '2018-01-07'
 );
 
-/* INSERT QUERY NO: 17 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 17, 'cq171', '2018-01-14'
 );
 
-/* INSERT QUERY NO: 18 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 18, 'cq171', '2018-01-21'
 );
 
-/* INSERT QUERY NO: 19 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq172', '2018-02-20'
 );
 
-/* INSERT QUERY NO: 20 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq172', '2018-02-27'
 );
 
-/* INSERT QUERY NO: 21 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq172', '2018-03-06'
 );
 
-/* INSERT QUERY NO: 22 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq172', '2018-03-13'
 );
 
-/* INSERT QUERY NO: 23 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq172', '2018-03-20'
 );
 
-/* INSERT QUERY NO: 24 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq172', '2018-03-27'
 );
 
-/* INSERT QUERY NO: 25 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq172', '2018-04-03'
 );
 
-/* INSERT QUERY NO: 26 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq172', '2018-04-10'
 );
 
-/* INSERT QUERY NO: 27 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq172', '2018-04-17'
 );
 
-/* INSERT QUERY NO: 28 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 10, 'cq172', '2018-04-24'
 );
 
-/* INSERT QUERY NO: 29 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 11, 'cq172', '2018-05-01'
 );
 
-/* INSERT QUERY NO: 30 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 12, 'cq172', '2018-05-08'
 );
 
-/* INSERT QUERY NO: 31 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 13, 'cq172', '2018-05-15'
 );
 
-/* INSERT QUERY NO: 32 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 14, 'cq172', '2018-05-22'
 );
 
-/* INSERT QUERY NO: 33 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 15, 'cq172', '2018-05-29'
 );
 
-/* INSERT QUERY NO: 34 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 16, 'cq172', '2018-06-05'
 );
 
-/* INSERT QUERY NO: 35 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 17, 'cq172', '2018-06-12'
 );
 
-/* INSERT QUERY NO: 36 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 18, 'cq172', '2018-06-19'
 );
 
-/* INSERT QUERY NO: 37 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq173', '2018-06-26'
 );
 
-/* INSERT QUERY NO: 38 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq173', '2018-07-03'
 );
 
-/* INSERT QUERY NO: 39 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq173', '2018-07-10'
 );
 
-/* INSERT QUERY NO: 40 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq173', '2018-07-17'
 );
 
-/* INSERT QUERY NO: 41 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq173', '2018-07-24'
 );
 
-/* INSERT QUERY NO: 42 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq173', '2018-07-31'
 );
 
-/* INSERT QUERY NO: 43 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq173', '2018-08-07'
 );
 
-/* INSERT QUERY NO: 44 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq173', '2018-08-14'
 );
 
-/* INSERT QUERY NO: 45 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq173', '2018-08-21'
 );
 
-/* INSERT QUERY NO: 46 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq181', '2018-09-25'
 );
 
-/* INSERT QUERY NO: 47 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq181', '2018-10-02'
 );
 
-/* INSERT QUERY NO: 48 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq181', '2018-10-09'
 );
 
-/* INSERT QUERY NO: 49 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq181', '2018-10-16'
 );
 
-/* INSERT QUERY NO: 50 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq181', '2018-10-23'
 );
 
-/* INSERT QUERY NO: 51 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq181', '2018-10-30'
 );
 
-/* INSERT QUERY NO: 52 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq181', '2018-11-06'
 );
 
-/* INSERT QUERY NO: 53 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq181', '2018-11-13'
 );
 
-/* INSERT QUERY NO: 54 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq181', '2018-11-20'
 );
 
-/* INSERT QUERY NO: 55 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 10, 'cq181', '2018-11-27'
 );
 
-/* INSERT QUERY NO: 56 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 11, 'cq181', '2018-12-04'
 );
 
-/* INSERT QUERY NO: 57 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 12, 'cq181', '2018-12-11'
 );
 
-/* INSERT QUERY NO: 58 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 13, 'cq181', '2018-12-18'
 );
 
-/* INSERT QUERY NO: 59 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 14, 'cq181', '2018-12-25'
 );
 
-/* INSERT QUERY NO: 60 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 15, 'cq181', '2019-01-01'
 );
 
-/* INSERT QUERY NO: 61 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 16, 'cq181', '2019-01-08'
 );
 
-/* INSERT QUERY NO: 62 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 17, 'cq181', '2019-01-15'
 );
 
-/* INSERT QUERY NO: 63 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 18, 'cq181', '2019-01-22'
 );
 
-/* INSERT QUERY NO: 64 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq182', '2019-02-26'
 );
 
-/* INSERT QUERY NO: 65 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq182', '2019-03-05'
 );
 
-/* INSERT QUERY NO: 66 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq182', '2019-03-12'
 );
 
-/* INSERT QUERY NO: 67 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq182', '2019-03-19'
 );
 
-/* INSERT QUERY NO: 68 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq182', '2019-03-26'
 );
 
-/* INSERT QUERY NO: 69 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq182', '2019-04-02'
 );
 
-/* INSERT QUERY NO: 70 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq182', '2019-04-09'
 );
 
-/* INSERT QUERY NO: 71 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq182', '2019-04-16'
 );
 
-/* INSERT QUERY NO: 72 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq182', '2019-04-23'
 );
 
-/* INSERT QUERY NO: 73 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 10, 'cq182', '2019-04-30'
 );
 
-/* INSERT QUERY NO: 74 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 11, 'cq182', '2019-05-07'
 );
 
-/* INSERT QUERY NO: 75 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 12, 'cq182', '2019-05-14'
 );
 
-/* INSERT QUERY NO: 76 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 13, 'cq182', '2019-05-21'
 );
 
-/* INSERT QUERY NO: 77 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 14, 'cq182', '2019-05-28'
 );
 
-/* INSERT QUERY NO: 78 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 15, 'cq182', '2019-06-04'
 );
 
-/* INSERT QUERY NO: 79 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 16, 'cq182', '2019-06-11'
 );
 
-/* INSERT QUERY NO: 80 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 17, 'cq182', '2019-06-18'
 );
 
-/* INSERT QUERY NO: 81 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 18, 'cq182', '2019-06-25'
 );
 
-/* INSERT QUERY NO: 82 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq183', '2019-06-30'
 );
 
-/* INSERT QUERY NO: 83 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq183', '2019-07-07'
 );
 
-/* INSERT QUERY NO: 84 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq183', '2019-07-14'
 );
 
-/* INSERT QUERY NO: 85 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq183', '2019-07-21'
 );
 
-/* INSERT QUERY NO: 86 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq183', '2019-07-28'
 );
 
-/* INSERT QUERY NO: 87 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq183', '2019-08-04'
 );
 
-/* INSERT QUERY NO: 88 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq183', '2019-08-11'
 );
 
-/* INSERT QUERY NO: 89 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq183', '2019-08-18'
 );
 
-/* INSERT QUERY NO: 90 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq183', '2019-08-25'
 );
 
-/* INSERT QUERY NO: 91 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq191', '2019-09-21'
 );
 
-/* INSERT QUERY NO: 92 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq191', '2019-09-28'
 );
 
-/* INSERT QUERY NO: 93 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq191', '2019-10-05'
 );
 
-/* INSERT QUERY NO: 94 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq191', '2019-10-12'
 );
 
-/* INSERT QUERY NO: 95 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq191', '2019-10-19'
 );
 
-/* INSERT QUERY NO: 96 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq191', '2019-10-26'
 );
 
-/* INSERT QUERY NO: 97 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq191', '2019-11-02'
 );
 
-/* INSERT QUERY NO: 98 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq191', '2019-11-09'
 );
 
-/* INSERT QUERY NO: 99 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq191', '2019-11-16'
 );
 
-/* INSERT QUERY NO: 100 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 10, 'cq191', '2019-11-23'
 );
 
-/* INSERT QUERY NO: 101 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 11, 'cq191', '2019-11-30'
 );
 
-/* INSERT QUERY NO: 102 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 12, 'cq191', '2019-12-07'
 );
 
-/* INSERT QUERY NO: 103 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 13, 'cq191', '2019-12-14'
 );
 
-/* INSERT QUERY NO: 104 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 14, 'cq191', '2019-12-21'
 );
 
-/* INSERT QUERY NO: 105 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 15, 'cq191', '2019-12-28'
 );
 
-/* INSERT QUERY NO: 106 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 16, 'cq191', '2020-01-04'
 );
 
-/* INSERT QUERY NO: 107 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 17, 'cq191', '2020-01-11'
 );
 
-/* INSERT QUERY NO: 108 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 18, 'cq191', '2020-01-18'
 );
 
-/* INSERT QUERY NO: 109 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq192', '2020-02-22'
 );
 
-/* INSERT QUERY NO: 110 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq192', '2020-02-29'
 );
 
-/* INSERT QUERY NO: 111 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq192', '2020-03-07'
 );
 
-/* INSERT QUERY NO: 112 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq192', '2020-03-14'
 );
 
-/* INSERT QUERY NO: 113 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq192', '2020-03-21'
 );
 
-/* INSERT QUERY NO: 114 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq192', '2020-03-28'
 );
 
-/* INSERT QUERY NO: 115 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq192', '2020-04-04'
 );
 
-/* INSERT QUERY NO: 116 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq192', '2020-04-11'
 );
 
-/* INSERT QUERY NO: 117 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq192', '2020-04-18'
 );
 
-/* INSERT QUERY NO: 118 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 10, 'cq192', '2020-04-25'
 );
 
-/* INSERT QUERY NO: 119 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 11, 'cq192', '2020-05-02'
 );
 
-/* INSERT QUERY NO: 120 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 12, 'cq192', '2020-05-09'
 );
 
-/* INSERT QUERY NO: 121 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 13, 'cq192', '2020-05-16'
 );
 
-/* INSERT QUERY NO: 122 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 14, 'cq192', '2020-05-23'
 );
 
-/* INSERT QUERY NO: 123 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 15, 'cq192', '2020-05-30'
 );
 
-/* INSERT QUERY NO: 124 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 16, 'cq192', '2020-06-06'
 );
 
-/* INSERT QUERY NO: 125 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 17, 'cq192', '2020-06-13'
 );
 
-/* INSERT QUERY NO: 126 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 18, 'cq192', '2020-06-20'
 );
 
-/* INSERT QUERY NO: 127 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq193', '2020-06-28'
 );
 
-/* INSERT QUERY NO: 128 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq193', '2020-07-05'
 );
 
-/* INSERT QUERY NO: 129 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq193', '2020-07-12'
 );
 
-/* INSERT QUERY NO: 130 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq193', '2020-07-19'
 );
 
-/* INSERT QUERY NO: 131 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq193', '2020-07-26'
 );
 
-/* INSERT QUERY NO: 132 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq193', '2020-08-02'
 );
 
-/* INSERT QUERY NO: 133 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq193', '2020-08-09'
 );
 
-/* INSERT QUERY NO: 134 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq193', '2020-08-16'
 );
 
-/* INSERT QUERY NO: 135 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq193', '2020-08-23'
 );
 
-/* INSERT QUERY NO: 136 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq201', '2020-09-21'
 );
 
-/* INSERT QUERY NO: 137 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq201', '2020-09-28'
 );
 
-/* INSERT QUERY NO: 138 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq201', '2020-10-05'
 );
 
-/* INSERT QUERY NO: 139 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq201', '2020-10-12'
 );
 
-/* INSERT QUERY NO: 140 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq201', '2020-10-19'
 );
 
-/* INSERT QUERY NO: 141 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq201', '2020-10-26'
 );
 
-/* INSERT QUERY NO: 142 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq201', '2020-11-02'
 );
 
-/* INSERT QUERY NO: 143 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq201', '2020-11-09'
 );
 
-/* INSERT QUERY NO: 144 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq201', '2020-11-16'
 );
 
-/* INSERT QUERY NO: 145 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 10, 'cq201', '2020-11-23'
 );
 
-/* INSERT QUERY NO: 146 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 11, 'cq201', '2020-11-30'
 );
 
-/* INSERT QUERY NO: 147 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 12, 'cq201', '2020-12-07'
 );
 
-/* INSERT QUERY NO: 148 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 13, 'cq201', '2020-12-14'
 );
 
-/* INSERT QUERY NO: 149 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 14, 'cq201', '2020-12-21'
 );
 
-/* INSERT QUERY NO: 150 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 15, 'cq201', '2020-12-28'
 );
 
-/* INSERT QUERY NO: 151 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 16, 'cq201', '2021-01-04'
 );
 
-/* INSERT QUERY NO: 152 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 17, 'cq201', '2021-01-11'
 );
 
-/* INSERT QUERY NO: 153 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 18, 'cq201', '2021-01-18'
 );
 
-/* INSERT QUERY NO: 154 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq202', '2021-02-22'
 );
 
-/* INSERT QUERY NO: 155 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq202', '2021-03-01'
 );
 
-/* INSERT QUERY NO: 156 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq202', '2021-03-08'
 );
 
-/* INSERT QUERY NO: 157 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq202', '2021-03-15'
 );
 
-/* INSERT QUERY NO: 158 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq202', '2021-03-22'
 );
 
-/* INSERT QUERY NO: 159 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq202', '2021-03-29'
 );
 
-/* INSERT QUERY NO: 160 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq202', '2021-04-05'
 );
 
-/* INSERT QUERY NO: 161 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq202', '2021-04-12'
 );
 
-/* INSERT QUERY NO: 162 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 9, 'cq202', '2021-04-19'
 );
 
-/* INSERT QUERY NO: 163 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 10, 'cq202', '2021-04-26'
 );
 
-/* INSERT QUERY NO: 164 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 11, 'cq202', '2021-05-03'
 );
 
-/* INSERT QUERY NO: 165 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 12, 'cq202', '2021-05-10'
 );
 
-/* INSERT QUERY NO: 166 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 13, 'cq202', '2021-05-17'
 );
 
-/* INSERT QUERY NO: 167 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 14, 'cq202', '2021-05-24'
 );
 
-/* INSERT QUERY NO: 168 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 15, 'cq202', '2021-05-31'
 );
 
-/* INSERT QUERY NO: 169 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 16, 'cq202', '2021-06-07'
 );
 
-/* INSERT QUERY NO: 170 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 17, 'cq202', '2021-06-14'
 );
 
-/* INSERT QUERY NO: 171 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 18, 'cq202', '2021-06-21'
 );
 
-/* INSERT QUERY NO: 172 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 1, 'cq203', '2021-06-28'
 );
 
-/* INSERT QUERY NO: 173 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 2, 'cq203', '2021-07-05'
 );
 
-/* INSERT QUERY NO: 174 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 3, 'cq203', '2021-07-12'
 );
 
-/* INSERT QUERY NO: 175 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 4, 'cq203', '2021-07-19'
 );
 
-/* INSERT QUERY NO: 176 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 5, 'cq203', '2021-07-26'
 );
 
-/* INSERT QUERY NO: 177 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 6, 'cq203', '2021-08-02'
 );
 
-/* INSERT QUERY NO: 178 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 7, 'cq203', '2021-08-09'
 );
 
-/* INSERT QUERY NO: 179 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
 8, 'cq203', '2021-08-16'
 );
 
-/* INSERT QUERY NO: 180 */
 INSERT INTO Week(id, Semester_id, startDate)
 VALUES
 (
@@ -4085,79 +3905,25 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq172', 'AS1003'
+'L02', 60, 'cq171', 'AS1003'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L02', 60, 'cq172', 'AS1003'
+'L03', 60, 'cq171', 'AS1003'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L03', 60, 'cq172', 'AS1003'
+'L04', 60, 'cq171', 'AS1003'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq173', 'AS1003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'AS1003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'AS1003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'AS1003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'AS1003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'AS1003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'AS1003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'AS1003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'AS1003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'AS1003'
+'L05', 60, 'cq171', 'AS1003'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -4169,145 +3935,7 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq172', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L02', 60, 'cq192', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'AS2001'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
 'L01', 60, 'cq171', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq172', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'CH1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'CH1007'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -4319,211 +3947,7 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq172', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'CH2013'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
 'L01', 60, 'cq171', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq172', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'CH2021'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq171', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq172', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'CI1007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'CI1007'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -4535,139 +3959,7 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq172', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'CI1033'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
 'L01', 60, 'cq171', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq172', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'CI2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'CI2003'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -4679,139 +3971,7 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq172', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'CO1009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
 'L01', 60, 'cq171', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq172', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'CO2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'CO2007'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -4823,139 +3983,7 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq172', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'CO2017'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
 'L01', 60, 'cq171', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq172', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'EE1011'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'EE1011'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -4967,139 +3995,7 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq172', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'EE1015'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
 'L01', 60, 'cq171', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq172', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'EE2007'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'EE2007'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -5111,139 +4007,7 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq172', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'GE2009'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
 'L01', 60, 'cq171', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq172', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'IM3047'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'IM3047'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -5255,139 +4019,7 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq172', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'IM3051'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
 'L01', 60, 'cq171', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq172', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'IM3061'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'IM3061'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -5399,73 +4031,121 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq172', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq173', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq181', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq182', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq183', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq191', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq192', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq193', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq201', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq202', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
-'L01', 60, 'cq203', 'ME2003'
-);
-
-INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
-VALUES
-(
 'L01', 60, 'cq171', 'ME2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'AS1003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'AS2001'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'CH1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'CH2013'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'CH2021'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'CI1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'CO2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'CO2017'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'IM3061'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq172', 'ME2003'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -5477,7 +4157,217 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq173', 'ME2007'
+'L01', 60, 'cq173', 'AS1003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'AS2001'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'CH2013'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'CH2021'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'CI1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'CO2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'IM3061'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq173', 'ME2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'AS1003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'AS2001'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'CH1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'CH2013'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'CH2021'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'CI1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'CO2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'CO2017'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'IM3061'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq181', 'ME2003'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -5489,13 +4379,307 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
+'L01', 60, 'cq182', 'AS1003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'AS2001'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'CH1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'CH2013'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'CH2021'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'CI1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'CO2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'CO2017'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'IM3061'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq182', 'ME2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
 'L01', 60, 'cq182', 'ME2007'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
-'L01', 60, 'cq183', 'ME2007'
+'L01', 60, 'cq183', 'AS1003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'CH1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'CH2013'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'CH2021'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'CO2017'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq183', 'IM3061'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'CH1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'CH2013'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'CH2021'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'CI1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'CO2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'CO2017'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq191', 'IM3061'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -5507,7 +4691,217 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
+'L01', 60, 'cq192', 'AS1003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'AS2001'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'CH1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'CH2013'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'CH2021'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'CI1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'CO2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'CO2017'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq192', 'IM3061'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
 'L01', 60, 'cq192', 'ME2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'AS2001'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'CH1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'CH2013'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'CH2021'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'CI1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'CO2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'CO2017'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq193', 'IM3061'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -5519,7 +4913,223 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
+'L01', 60, 'cq201', 'AS1003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'AS2001'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'CH1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'CH2013'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'CH2021'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'CI1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'CO2017'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq201', 'IM3061'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
 'L01', 60, 'cq201', 'ME2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'AS1003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'AS2001'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'CH1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'CH2013'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'CH2021'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'CI1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'CO2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'CO2017'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'IM3061'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq202', 'ME2003'
 );
 
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
@@ -5531,218 +5141,2389 @@ VALUES
 INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
 VALUES
 (
+'L01', 60, 'cq203', 'AS1003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'AS2001'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'CH1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'CI1007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'CI1033'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'CI2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'CO1009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'CO2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'CO2017'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'EE1011'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'EE1015'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'EE2007'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'GE2009'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'IM3047'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'IM3051'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'IM3061'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
+'L01', 60, 'cq203', 'ME2003'
+);
+
+INSERT INTO Class(id, maxStudent, Semester_id, Subject_id)
+VALUES
+(
 'L01', 60, 'cq203', 'ME2007'
 );
+
 --!SECTION
 --SECTION Responsible
 -------------------------------------------------------------------------------------------------
-insert into Responsible values('cq171', 'CO1009', 'L01', 1, 'cq171', 'teach70001')
-insert into Responsible values('cq171', 'IM3061', 'L01', 1, 'cq171', 'teach70001')
-
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq171', 'AS1003', 'L01', 1, 'cq171', 'teach00003'
+'cq171', 'AS1003', 'L01', 1, 'cq171', 'teach70001'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq171', 'CH1007', 'L01', 2, 'cq171', 'teach10005'
+'cq171', 'AS1003', 'L01', 2, 'cq171', 'teach10018'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq172', 'CH2021', 'L01', 1, 'cq172', 'teach10018'
+'cq171', 'AS1003', 'L01', 3, 'cq171', 'teach40004'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq172', 'CI1007', 'L01', 2, 'cq172', 'teach30009'
+'cq171', 'AS1003', 'L01', 4, 'cq171', 'teach30013'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq173', 'CI1033', 'L01', 1, 'cq173', 'teach30013'
+'cq171', 'AS1003', 'L01', 5, 'cq171', 'teach40008'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq181', 'CI2003', 'L01', 1, 'cq181', 'teach40004'
+'cq171', 'AS1003', 'L02', 1, 'cq171', 'teach70001'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq181', 'CO1009', 'L01', 2, 'cq181', 'teach40008'
+'cq171', 'AS1003', 'L03', 1, 'cq171', 'teach70001'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq182', 'CO2007', 'L01', 1, 'cq182', 'teach40016'
+'cq171', 'AS1003', 'L04', 1, 'cq171', 'teach70001'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq182', 'EE2007', 'L01', 2, 'cq182', 'teach50000'
+'cq171', 'AS1003', 'L05', 1, 'cq171', 'teach70001'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq183', 'GE2009', 'L01', 1, 'cq183', 'teach50010'
+'cq171', 'AS2001', 'L01', 1, 'cq171', 'teach30009'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq191', 'IM3047', 'L01', 1, 'cq191', 'teach60006'
+'cq171', 'CH1007', 'L01', 1, 'cq171', 'teach70001'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq191', 'IM3051', 'L01', 2, 'cq191', 'teach60017'
+'cq171', 'CH2013', 'L01', 1, 'cq171', 'teach10018'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq192', 'AS1003', 'L01', 1, 'cq192', 'teach70001'
+'cq171', 'CH2021', 'L01', 1, 'cq171', 'teach40004'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq192', 'CH1007', 'L01', 2, 'cq192', 'teach70002'
+'cq171', 'CI1033', 'L01', 1, 'cq171', 'teach30013'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq193', 'CH2021', 'L01', 1, 'cq193', 'teach70007'
+'cq171', 'CI2003', 'L01', 1, 'cq171', 'teach40008'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq201', 'CI1007', 'L01', 1, 'cq201', 'teach80011'
+'cq171', 'CO1009', 'L01', 1, 'cq171', 'teach30009'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq201', 'CI1033', 'L01', 2, 'cq201', 'teach80014'
+'cq171', 'CO2007', 'L01', 1, 'cq171', 'teach70001'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq202', 'CI2003', 'L01', 1, 'cq202', 'teach90012'
+'cq171', 'CO2017', 'L01', 1, 'cq171', 'teach50000'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq202', 'CO1009', 'L01', 2, 'cq202', 'teach50000'
+'cq171', 'EE1011', 'L01', 1, 'cq171', 'teach70001'
 );
 
 INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
 VALUES
 (
-'cq203', 'CO2007', 'L01', 1, 'cq203', 'teach50010'
+'cq171', 'EE1015', 'L01', 1, 'cq171', 'teach30009'
 );
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq171', 'EE2007', 'L01', 1, 'cq171', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq171', 'GE2009', 'L01', 1, 'cq171', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq171', 'IM3047', 'L01', 1, 'cq171', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq171', 'IM3051', 'L01', 1, 'cq171', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq171', 'IM3061', 'L01', 1, 'cq171', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq171', 'ME2003', 'L01', 1, 'cq171', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq171', 'ME2007', 'L01', 1, 'cq171', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'AS1003', 'L01', 1, 'cq172', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'AS2001', 'L01', 1, 'cq172', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CH1007', 'L01', 1, 'cq172', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CH2013', 'L01', 1, 'cq172', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CH2021', 'L01', 1, 'cq172', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CI1007', 'L01', 1, 'cq172', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CI1033', 'L01', 1, 'cq172', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CI2003', 'L01', 1, 'cq172', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CO1009', 'L01', 1, 'cq172', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CO2007', 'L01', 1, 'cq172', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'CO2017', 'L01', 1, 'cq172', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'EE1011', 'L01', 1, 'cq172', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'EE1015', 'L01', 1, 'cq172', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'EE2007', 'L01', 1, 'cq172', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'GE2009', 'L01', 1, 'cq172', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'IM3047', 'L01', 1, 'cq172', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'IM3051', 'L01', 1, 'cq172', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'IM3061', 'L01', 1, 'cq172', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'ME2003', 'L01', 1, 'cq172', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq172', 'ME2007', 'L01', 1, 'cq172', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'AS1003', 'L01', 1, 'cq173', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'AS2001', 'L01', 1, 'cq173', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'CH2013', 'L01', 1, 'cq173', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'CH2021', 'L01', 1, 'cq173', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'CI1007', 'L01', 1, 'cq173', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'CI1033', 'L01', 1, 'cq173', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'CI2003', 'L01', 1, 'cq173', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'CO1009', 'L01', 1, 'cq173', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'CO2007', 'L01', 1, 'cq173', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'EE1011', 'L01', 1, 'cq173', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'EE1015', 'L01', 1, 'cq173', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'EE2007', 'L01', 1, 'cq173', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'GE2009', 'L01', 1, 'cq173', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'IM3047', 'L01', 1, 'cq173', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'IM3051', 'L01', 1, 'cq173', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'IM3061', 'L01', 1, 'cq173', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq173', 'ME2003', 'L01', 1, 'cq173', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'AS1003', 'L01', 1, 'cq181', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'AS2001', 'L01', 1, 'cq181', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CH1007', 'L01', 1, 'cq181', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CH2013', 'L01', 1, 'cq181', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CH2021', 'L01', 1, 'cq181', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CI1007', 'L01', 1, 'cq181', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CI1033', 'L01', 1, 'cq181', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CI2003', 'L01', 1, 'cq181', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CO1009', 'L01', 1, 'cq181', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CO2007', 'L01', 1, 'cq181', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'CO2017', 'L01', 1, 'cq181', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'EE1011', 'L01', 1, 'cq181', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'EE1015', 'L01', 1, 'cq181', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'EE2007', 'L01', 1, 'cq181', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'GE2009', 'L01', 1, 'cq181', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'IM3047', 'L01', 1, 'cq181', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'IM3051', 'L01', 1, 'cq181', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'IM3061', 'L01', 1, 'cq181', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'ME2003', 'L01', 1, 'cq181', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq181', 'ME2007', 'L01', 1, 'cq181', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'AS1003', 'L01', 1, 'cq182', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'AS2001', 'L01', 1, 'cq182', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'CH1007', 'L01', 1, 'cq182', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'CH2013', 'L01', 1, 'cq182', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'CH2021', 'L01', 1, 'cq182', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'CI1007', 'L01', 1, 'cq182', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'CI1033', 'L01', 1, 'cq182', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'CI2003', 'L01', 1, 'cq182', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'CO1009', 'L01', 1, 'cq182', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'CO2007', 'L01', 1, 'cq182', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'CO2017', 'L01', 1, 'cq182', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'EE1011', 'L01', 1, 'cq182', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'EE1015', 'L01', 1, 'cq182', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'EE2007', 'L01', 1, 'cq182', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'GE2009', 'L01', 1, 'cq182', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'IM3047', 'L01', 1, 'cq182', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'IM3051', 'L01', 1, 'cq182', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'IM3061', 'L01', 1, 'cq182', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'ME2003', 'L01', 1, 'cq182', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq182', 'ME2007', 'L01', 1, 'cq182', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'AS1003', 'L01', 1, 'cq183', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'CH1007', 'L01', 1, 'cq183', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'CH2013', 'L01', 1, 'cq183', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'CH2021', 'L01', 1, 'cq183', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'CI1033', 'L01', 1, 'cq183', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'CI2003', 'L01', 1, 'cq183', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'CO1009', 'L01', 1, 'cq183', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'CO2017', 'L01', 1, 'cq183', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'EE1011', 'L01', 1, 'cq183', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'EE1015', 'L01', 1, 'cq183', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'EE2007', 'L01', 1, 'cq183', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'GE2009', 'L01', 1, 'cq183', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'IM3047', 'L01', 1, 'cq183', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'IM3051', 'L01', 1, 'cq183', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq183', 'IM3061', 'L01', 1, 'cq183', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'CH1007', 'L01', 1, 'cq191', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'CH2013', 'L01', 1, 'cq191', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'CH2021', 'L01', 1, 'cq191', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'CI1007', 'L01', 1, 'cq191', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'CI1033', 'L01', 1, 'cq191', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'CI2003', 'L01', 1, 'cq191', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'CO1009', 'L01', 1, 'cq191', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'CO2007', 'L01', 1, 'cq191', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'CO2017', 'L01', 1, 'cq191', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'EE1011', 'L01', 1, 'cq191', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'EE1015', 'L01', 1, 'cq191', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'EE2007', 'L01', 1, 'cq191', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'GE2009', 'L01', 1, 'cq191', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'IM3047', 'L01', 1, 'cq191', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'IM3051', 'L01', 1, 'cq191', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'IM3061', 'L01', 1, 'cq191', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq191', 'ME2007', 'L01', 1, 'cq191', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'AS1003', 'L01', 1, 'cq192', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'AS2001', 'L01', 1, 'cq192', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'CH1007', 'L01', 1, 'cq192', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'CH2013', 'L01', 1, 'cq192', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'CH2021', 'L01', 1, 'cq192', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'CI1007', 'L01', 1, 'cq192', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'CI1033', 'L01', 1, 'cq192', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'CI2003', 'L01', 1, 'cq192', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'CO1009', 'L01', 1, 'cq192', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'CO2007', 'L01', 1, 'cq192', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'CO2017', 'L01', 1, 'cq192', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'EE1011', 'L01', 1, 'cq192', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'EE1015', 'L01', 1, 'cq192', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'EE2007', 'L01', 1, 'cq192', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'GE2009', 'L01', 1, 'cq192', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'IM3047', 'L01', 1, 'cq192', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'IM3051', 'L01', 1, 'cq192', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'IM3061', 'L01', 1, 'cq192', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq192', 'ME2007', 'L01', 1, 'cq192', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'AS2001', 'L01', 1, 'cq193', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'CH1007', 'L01', 1, 'cq193', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'CH2013', 'L01', 1, 'cq193', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'CH2021', 'L01', 1, 'cq193', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'CI1007', 'L01', 1, 'cq193', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'CI1033', 'L01', 1, 'cq193', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'CI2003', 'L01', 1, 'cq193', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'CO1009', 'L01', 1, 'cq193', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'CO2007', 'L01', 1, 'cq193', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'CO2017', 'L01', 1, 'cq193', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'EE1011', 'L01', 1, 'cq193', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'EE1015', 'L01', 1, 'cq193', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'EE2007', 'L01', 1, 'cq193', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'GE2009', 'L01', 1, 'cq193', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'IM3047', 'L01', 1, 'cq193', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'IM3051', 'L01', 1, 'cq193', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'IM3061', 'L01', 1, 'cq193', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq193', 'ME2007', 'L01', 1, 'cq193', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'AS1003', 'L01', 1, 'cq201', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'AS2001', 'L01', 1, 'cq201', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'CH1007', 'L01', 1, 'cq201', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'CH2013', 'L01', 1, 'cq201', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'CH2021', 'L01', 1, 'cq201', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'CI1007', 'L01', 1, 'cq201', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'CI1033', 'L01', 1, 'cq201', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'CI2003', 'L01', 1, 'cq201', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'CO1009', 'L01', 1, 'cq201', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'CO2017', 'L01', 1, 'cq201', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'EE1011', 'L01', 1, 'cq201', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'EE1015', 'L01', 1, 'cq201', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'EE2007', 'L01', 1, 'cq201', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'GE2009', 'L01', 1, 'cq201', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'IM3047', 'L01', 1, 'cq201', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'IM3051', 'L01', 1, 'cq201', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'IM3061', 'L01', 1, 'cq201', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq201', 'ME2007', 'L01', 1, 'cq201', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'AS1003', 'L01', 1, 'cq202', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'AS2001', 'L01', 1, 'cq202', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CH1007', 'L01', 1, 'cq202', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CH2013', 'L01', 1, 'cq202', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CH2021', 'L01', 1, 'cq202', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CI1007', 'L01', 1, 'cq202', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CI1033', 'L01', 1, 'cq202', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CI2003', 'L01', 1, 'cq202', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CO1009', 'L01', 1, 'cq202', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CO2007', 'L01', 1, 'cq202', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'CO2017', 'L01', 1, 'cq202', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'EE1011', 'L01', 1, 'cq202', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'EE1015', 'L01', 1, 'cq202', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'EE2007', 'L01', 1, 'cq202', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'GE2009', 'L01', 1, 'cq202', 'teach70001'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'IM3047', 'L01', 1, 'cq202', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'IM3051', 'L01', 1, 'cq202', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'IM3061', 'L01', 1, 'cq202', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'ME2003', 'L01', 1, 'cq202', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq202', 'ME2007', 'L01', 1, 'cq202', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'AS1003', 'L01', 1, 'cq203', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'AS2001', 'L01', 1, 'cq203', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'CH1007', 'L01', 1, 'cq203', 'teach40008'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'CI1007', 'L01', 1, 'cq203', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'CI1033', 'L01', 1, 'cq203', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'CI2003', 'L01', 1, 'cq203', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'CO1009', 'L01', 1, 'cq203', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'CO2007', 'L01', 1, 'cq203', 'teach10005'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'CO2017', 'L01', 1, 'cq203', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'EE1011', 'L01', 1, 'cq203', 'teach50000'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'EE1015', 'L01', 1, 'cq203', 'teach40004'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'EE2007', 'L01', 1, 'cq203', 'teach40016'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'GE2009', 'L01', 1, 'cq203', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'IM3047', 'L01', 1, 'cq203', 'teach30013'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'IM3051', 'L01', 1, 'cq203', 'teach10018'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'IM3061', 'L01', 1, 'cq203', 'teach30009'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'ME2003', 'L01', 1, 'cq203', 'teach70002'
+);
+
+INSERT INTO Responsible(Semester_id, Subject_id, Class_id, Week_id, Week_Semester_id, Teacher_ssn)
+VALUES
+(
+'cq203', 'ME2007', 'L01', 1, 'cq203', 'teach40004'
+);
+
 --!SECTION
 --SECTION MainResponsible 
 -----------------------------------------------------------------------------------------------------------
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq171', 'AS1003', 'teach10005'
+'cq171', 'AS1003', 'teach70001'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq171', 'CH1007', 'teach10018'
+'cq171', 'AS2001', 'teach30009'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq172', 'CH2021', 'teach30009'
+'cq171', 'CH1007', 'teach70001'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq172', 'CI1007', 'teach30013'
+'cq171', 'CH2013', 'teach10018'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq173', 'CI1033', 'teach40004'
+'cq171', 'CH2021', 'teach40004'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq181', 'CI2003', 'teach40008'
+'cq171', 'CI1033', 'teach30013'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq181', 'CO1009', 'teach40016'
+'cq171', 'CI2003', 'teach40008'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq182', 'CO2007', 'teach50000'
+'cq171', 'CO1009', 'teach30009'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq182', 'EE2007', 'teach70001'
+'cq171', 'CO2007', 'teach70001'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq183', 'GE2009', 'teach70002'
+'cq171', 'CO2017', 'teach50000'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq191', 'IM3047', 'teach70001'
+'cq171', 'EE1011', 'teach70001'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq191', 'IM3051', 'teach70002'
+'cq171', 'EE1015', 'teach30009'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq192', 'AS1003', 'teach10005'
+'cq171', 'EE2007', 'teach10018'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq192', 'CH1007', 'teach10018'
+'cq171', 'GE2009', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq171', 'IM3047', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq171', 'IM3051', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq171', 'IM3061', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq171', 'ME2003', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq171', 'ME2007', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'AS1003', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'AS2001', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CH1007', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CH2013', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CH2021', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CI1007', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CI1033', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CI2003', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CO1009', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CO2007', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'CO2017', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'EE1011', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'EE1015', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'EE2007', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'GE2009', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'IM3047', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'IM3051', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'IM3061', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'ME2003', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq172', 'ME2007', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'AS1003', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'AS2001', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'CH2013', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'CH2021', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'CI1007', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'CI1033', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'CI2003', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'CO1009', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'CO2007', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'EE1011', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'EE1015', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'EE2007', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'GE2009', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'IM3047', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'IM3051', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'IM3061', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq173', 'ME2003', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'AS1003', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'AS2001', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CH1007', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CH2013', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CH2021', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CI1007', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CI1033', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CI2003', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CO1009', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CO2007', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'CO2017', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'EE1011', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'EE1015', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'EE2007', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'GE2009', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'IM3047', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'IM3051', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'IM3061', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'ME2003', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq181', 'ME2007', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'AS1003', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'AS2001', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'CH1007', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'CH2013', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'CH2021', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'CI1007', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'CI1033', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'CI2003', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'CO1009', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'CO2007', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'CO2017', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'EE1011', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'EE1015', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'EE2007', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'GE2009', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'IM3047', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'IM3051', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'IM3061', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'ME2003', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq182', 'ME2007', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'AS1003', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'CH1007', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'CH2013', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'CH2021', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'CI1033', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'CI2003', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'CO1009', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'CO2017', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'EE1011', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'EE1015', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'EE2007', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'GE2009', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'IM3047', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'IM3051', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq183', 'IM3061', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'CH1007', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'CH2013', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'CH2021', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'CI1007', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'CI1033', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'CI2003', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'CO1009', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'CO2007', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'CO2017', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'EE1011', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'EE1015', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'EE2007', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'GE2009', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'IM3047', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'IM3051', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'IM3061', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq191', 'ME2007', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'AS1003', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'AS2001', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'CH1007', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'CH2013', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'CH2021', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'CI1007', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'CI1033', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'CI2003', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'CO1009', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'CO2007', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'CO2017', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'EE1011', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'EE1015', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'EE2007', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'GE2009', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'IM3047', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'IM3051', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'IM3061', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq192', 'ME2007', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'AS2001', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'CH1007', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'CH2013', 'teach40008'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
@@ -5754,230 +7535,1764 @@ VALUES
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq201', 'CI1007', 'teach30013'
+'cq193', 'CI1007', 'teach70001'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq201', 'CI1033', 'teach40004'
+'cq193', 'CI1033', 'teach30013'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq202', 'CI2003', 'teach40008'
+'cq193', 'CI2003', 'teach10005'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq202', 'CO1009', 'teach40016'
+'cq193', 'CO1009', 'teach40016'
 );
 
 INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
 VALUES
 (
-'cq203', 'CO2007', 'teach50000'
+'cq193', 'CO2007', 'teach10018'
 );
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'CO2017', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'EE1011', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'EE1015', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'EE2007', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'GE2009', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'IM3047', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'IM3051', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'IM3061', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq193', 'ME2007', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'AS1003', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'AS2001', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'CH1007', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'CH2013', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'CH2021', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'CI1007', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'CI1033', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'CI2003', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'CO1009', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'CO2017', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'EE1011', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'EE1015', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'EE2007', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'GE2009', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'IM3047', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'IM3051', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'IM3061', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq201', 'ME2007', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'AS1003', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'AS2001', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CH1007', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CH2013', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CH2021', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CI1007', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CI1033', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CI2003', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CO1009', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CO2007', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'CO2017', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'EE1011', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'EE1015', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'EE2007', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'GE2009', 'teach70001'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'IM3047', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'IM3051', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'IM3061', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'ME2003', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq202', 'ME2007', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'AS1003', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'AS2001', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'CH1007', 'teach40008'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'CI1007', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'CI1033', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'CI2003', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'CO1009', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'CO2007', 'teach10005'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'CO2017', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'EE1011', 'teach50000'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'EE1015', 'teach40004'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'EE2007', 'teach40016'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'GE2009', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'IM3047', 'teach30013'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'IM3051', 'teach10018'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'IM3061', 'teach30009'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'ME2003', 'teach70002'
+);
+
+INSERT INTO MainResponsible(Semester_id, Subject_id, MainTeacher_ssn)
+VALUES
+(
+'cq203', 'ME2007', 'teach40004'
+);
+
 --!SECTION
 --SECTION Uses
 ----------------------------------------------------------------------------------------------------------
-/* INSERT QUERY NO: 1 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq171', 'AS1003', 'L01', 'teach30009', 0
+'cq171', 'AS1003', 'L01', 'teach70001', 17
 );
 
-/* INSERT QUERY NO: 2 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq171', 'CI2003', 'L01', 'teach30013', 1
+'cq171', 'AS1003', 'L03', 'teach70001', 28
 );
 
-/* INSERT QUERY NO: 3 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq171', 'EE1011', 'L01', 'teach40004', 2
+'cq171', 'AS1003', 'L05', 'teach70001', 21
 );
 
-/* INSERT QUERY NO: 4 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq171', 'CI2003', 'L01', 'teach40008', 3
+'cq171', 'AS2001', 'L01', 'teach30009', 5
 );
 
-/* INSERT QUERY NO: 5 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq171', 'CO2007', 'L01', 'teach10005', 4
+'cq171', 'CH1007', 'L01', 'teach30009', 13
 );
 
-/* INSERT QUERY NO: 6 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq172', 'CH2021', 'L01', 'teach10018', 5
+'cq171', 'CH2013', 'L01', 'teach70001', 25
 );
 
-/* INSERT QUERY NO: 7 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq172', 'AS2001', 'L01', 'teach30009', 6
+'cq171', 'CH2021', 'L01', 'teach10018', 19
 );
 
-/* INSERT QUERY NO: 8 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq172', 'CI1033', 'L01', 'teach30013', 7
+'cq171', 'CI1033', 'L01', 'teach40004', 15
 );
 
-/* INSERT QUERY NO: 9 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq172', 'IM3047', 'L01', 'teach40004', 8
+'cq171', 'CI2003', 'L01', 'teach30013', 27
 );
 
-/* INSERT QUERY NO: 10 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq173', 'EE1015', 'L01', 'teach40008', 0
+'cq171', 'CO1009', 'L01', 'teach40008', 21
 );
 
-/* INSERT QUERY NO: 11 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq173', 'AS1003', 'L01', 'teach40016', 1
+'cq171', 'CO2007', 'L01', 'teach30009', 13
 );
 
-/* INSERT QUERY NO: 12 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq181', 'CI2003', 'L01', 'teach50000', 2
+'cq171', 'CO2017', 'L01', 'teach70001', 16
 );
 
-/* INSERT QUERY NO: 13 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq181', 'EE1011', 'L01', 'teach70001', 9
+'cq171', 'EE1011', 'L01', 'teach50000', 9
 );
 
-/* INSERT QUERY NO: 14 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq181', 'CI2003', 'L01', 'teach70002', 10
+'cq171', 'EE1015', 'L01', 'teach70001', 13
 );
 
-/* INSERT QUERY NO: 15 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq181', 'CO2007', 'L01', 'teach10018', 12
+'cq171', 'EE2007', 'L01', 'teach30009', 19
 );
 
-/* INSERT QUERY NO: 16 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq182', 'CI2003', 'L01', 'teach30009', 13
+'cq171', 'GE2009', 'L01', 'teach10018', 9
 );
 
-/* INSERT QUERY NO: 17 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq182', 'IM3047', 'L01', 'teach30013', 14
+'cq171', 'IM3047', 'L01', 'teach50000', 0
 );
 
-/* INSERT QUERY NO: 18 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq182', 'EE1011', 'L01', 'teach40004', 15
+'cq171', 'IM3051', 'L01', 'teach70001', 13
 );
 
-/* INSERT QUERY NO: 19 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq183', 'CO2007', 'L01', 'teach40008', 16
+'cq171', 'IM3061', 'L01', 'teach10018', 23
 );
 
-/* INSERT QUERY NO: 20 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq183', 'CH2021', 'L01', 'teach40016', 17
+'cq171', 'ME2003', 'L01', 'teach10005', 7
 );
 
-/* INSERT QUERY NO: 21 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq191', 'AS2001', 'L01', 'teach50000', 18
+'cq171', 'ME2007', 'L01', 'teach10005', 2
 );
 
-/* INSERT QUERY NO: 22 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq191', 'CI1033', 'L01', 'teach70001', 19
+'cq172', 'AS1003', 'L01', 'teach40008', 26
 );
 
-/* INSERT QUERY NO: 23 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq192', 'IM3047', 'L01', 'teach30013', 0
+'cq172', 'AS2001', 'L01', 'teach30013', 9
 );
 
-/* INSERT QUERY NO: 24 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq193', 'EE1015', 'L01', 'teach40004', 1
+'cq172', 'CH1007', 'L01', 'teach70002', 21
 );
 
-/* INSERT QUERY NO: 25 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq201', 'AS1003', 'L01', 'teach40008', 1
+'cq172', 'CH2013', 'L01', 'teach40004', 6
 );
 
-/* INSERT QUERY NO: 26 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq201', 'CI2003', 'L01', 'teach40016', 3
+'cq172', 'CH2021', 'L01', 'teach10018', 26
 );
 
-/* INSERT QUERY NO: 27 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq202', 'EE1011', 'L01', 'teach50000', 5
+'cq172', 'CI1007', 'L01', 'teach30013', 3
 );
 
-/* INSERT QUERY NO: 28 */
 INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
 VALUES
 (
-'cq203', 'CI2003', 'L01', 'teach70001', 8
+'cq172', 'CI1033', 'L01', 'teach10005', 19
 );
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'CI2003', 'L01', 'teach30013', 17
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'CO1009', 'L01', 'teach30013', 8
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'CO2007', 'L01', 'teach50000', 7
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'CO2017', 'L01', 'teach40004', 29
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'EE1011', 'L01', 'teach70001', 5
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'EE1015', 'L01', 'teach70001', 18
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'EE2007', 'L01', 'teach40016', 11
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'GE2009', 'L01', 'teach40008', 23
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'IM3047', 'L01', 'teach50000', 8
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'IM3051', 'L01', 'teach50000', 26
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'IM3061', 'L01', 'teach40004', 23
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'ME2003', 'L01', 'teach70002', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq172', 'ME2007', 'L01', 'teach40016', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'AS1003', 'L01', 'teach50000', 19
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'AS2001', 'L01', 'teach40016', 14
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'CH2013', 'L01', 'teach70002', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'CH2021', 'L01', 'teach40016', 16
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'CI1007', 'L01', 'teach30009', 29
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'CI1033', 'L01', 'teach30013', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'CI2003', 'L01', 'teach40016', 6
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'CO1009', 'L01', 'teach50000', 27
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'CO2007', 'L01', 'teach10005', 28
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'EE1011', 'L01', 'teach50000', 4
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'EE1015', 'L01', 'teach50000', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'EE2007', 'L01', 'teach70002', 1
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'GE2009', 'L01', 'teach40016', 27
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'IM3047', 'L01', 'teach40008', 18
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'IM3051', 'L01', 'teach40016', 23
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'IM3061', 'L01', 'teach40004', 19
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq173', 'ME2003', 'L01', 'teach40016', 20
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'AS1003', 'L01', 'teach40004', 13
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'AS2001', 'L01', 'teach30013', 11
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CH1007', 'L01', 'teach30013', 20
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CH2013', 'L01', 'teach40008', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CH2021', 'L01', 'teach40016', 25
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CI1007', 'L01', 'teach70002', 9
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CI1033', 'L01', 'teach70002', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CI2003', 'L01', 'teach10018', 27
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CO1009', 'L01', 'teach70001', 8
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CO2007', 'L01', 'teach30013', 9
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'CO2017', 'L01', 'teach50000', 3
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'EE1011', 'L01', 'teach40008', 28
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'EE1015', 'L01', 'teach30013', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'EE2007', 'L01', 'teach40004', 20
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'GE2009', 'L01', 'teach70002', 14
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'IM3047', 'L01', 'teach40016', 22
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'IM3051', 'L01', 'teach70002', 19
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'IM3061', 'L01', 'teach30013', 28
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'ME2003', 'L01', 'teach70001', 8
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq181', 'ME2007', 'L01', 'teach40004', 11
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'AS1003', 'L01', 'teach70001', 5
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'AS2001', 'L01', 'teach30013', 19
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'CH1007', 'L01', 'teach40004', 14
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'CH2013', 'L01', 'teach70001', 7
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'CH2021', 'L01', 'teach70001', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'CI1007', 'L01', 'teach10005', 27
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'CI1033', 'L01', 'teach70002', 10
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'CI2003', 'L01', 'teach50000', 11
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'CO1009', 'L01', 'teach40008', 15
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'CO2007', 'L01', 'teach10018', 12
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'CO2017', 'L01', 'teach70002', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'EE1011', 'L01', 'teach30009', 16
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'EE1015', 'L01', 'teach40016', 9
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'EE2007', 'L01', 'teach40004', 4
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'GE2009', 'L01', 'teach30009', 7
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'IM3047', 'L01', 'teach70001', 13
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'IM3051', 'L01', 'teach30009', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'IM3061', 'L01', 'teach30013', 10
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'ME2003', 'L01', 'teach40016', 5
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq182', 'ME2007', 'L01', 'teach40004', 28
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'AS1003', 'L01', 'teach70001', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'CH1007', 'L01', 'teach10005', 5
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'CH2013', 'L01', 'teach10018', 24
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'CH2021', 'L01', 'teach40016', 22
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'CI1033', 'L01', 'teach40004', 29
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'CI2003', 'L01', 'teach30009', 7
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'CO1009', 'L01', 'teach70001', 11
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'CO2017', 'L01', 'teach70002', 23
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'EE1011', 'L01', 'teach70002', 22
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'EE1015', 'L01', 'teach10005', 9
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'EE2007', 'L01', 'teach30013', 4
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'GE2009', 'L01', 'teach40008', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'IM3047', 'L01', 'teach70001', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'IM3051', 'L01', 'teach30009', 11
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq183', 'IM3061', 'L01', 'teach50000', 9
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'CH1007', 'L01', 'teach70002', 13
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'CH2013', 'L01', 'teach70001', 21
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'CH2021', 'L01', 'teach70001', 27
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'CI1007', 'L01', 'teach40016', 6
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'CI1033', 'L01', 'teach40008', 29
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'CI2003', 'L01', 'teach30009', 5
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'CO1009', 'L01', 'teach40004', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'CO2007', 'L01', 'teach40016', 25
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'CO2017', 'L01', 'teach30013', 23
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'EE1011', 'L01', 'teach30009', 18
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'EE1015', 'L01', 'teach50000', 3
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'EE2007', 'L01', 'teach70002', 10
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'GE2009', 'L01', 'teach70001', 17
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'IM3047', 'L01', 'teach70002', 20
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'IM3051', 'L01', 'teach40004', 10
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'IM3061', 'L01', 'teach40008', 15
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq191', 'ME2007', 'L01', 'teach70001', 8
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'AS1003', 'L01', 'teach40004', 14
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'AS2001', 'L01', 'teach50000', 17
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'CH1007', 'L01', 'teach30013', 25
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'CH2013', 'L01', 'teach40008', 11
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'CH2021', 'L01', 'teach10018', 6
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'CI1007', 'L01', 'teach40016', 8
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'CI1033', 'L01', 'teach40016', 11
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'CI2003', 'L01', 'teach40008', 4
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'CO1009', 'L01', 'teach70001', 25
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'CO2007', 'L01', 'teach70002', 5
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'CO2017', 'L01', 'teach10005', 14
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'EE1011', 'L01', 'teach40016', 26
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'EE1015', 'L01', 'teach70002', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'EE2007', 'L01', 'teach40008', 13
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'GE2009', 'L01', 'teach10018', 18
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'IM3047', 'L01', 'teach30009', 21
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'IM3051', 'L01', 'teach10005', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'IM3061', 'L01', 'teach70002', 29
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq192', 'ME2007', 'L01', 'teach10005', 18
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'AS2001', 'L01', 'teach30013', 7
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'CH1007', 'L01', 'teach30013', 15
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'CH2013', 'L01', 'teach40004', 7
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'CH2021', 'L01', 'teach40008', 29
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'CI1007', 'L01', 'teach30009', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'CI1033', 'L01', 'teach70001', 16
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'CI2003', 'L01', 'teach30013', 28
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'CO1009', 'L01', 'teach10005', 6
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'CO2007', 'L01', 'teach40016', 23
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'CO2017', 'L01', 'teach10018', 20
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'EE1011', 'L01', 'teach30013', 19
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'EE1015', 'L01', 'teach40008', 12
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'EE2007', 'L01', 'teach70002', 12
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'GE2009', 'L01', 'teach40008', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'IM3047', 'L01', 'teach10005', 28
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'IM3051', 'L01', 'teach70002', 26
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'IM3061', 'L01', 'teach40016', 22
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq193', 'ME2007', 'L01', 'teach30013', 4
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'AS1003', 'L01', 'teach40016', 16
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'AS2001', 'L01', 'teach30013', 19
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'CH1007', 'L01', 'teach70002', 19
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'CH2013', 'L01', 'teach70001', 1
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'CH2021', 'L01', 'teach30009', 1
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'CI1007', 'L01', 'teach30009', 1
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'CI1033', 'L01', 'teach10005', 22
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'CI2003', 'L01', 'teach10005', 22
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'CO1009', 'L01', 'teach30009', 23
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'CO2017', 'L01', 'teach70001', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'EE1011', 'L01', 'teach40004', 13
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'EE1015', 'L01', 'teach70001', 9
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'EE2007', 'L01', 'teach50000', 8
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'GE2009', 'L01', 'teach50000', 16
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'IM3047', 'L01', 'teach40008', 23
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'IM3051', 'L01', 'teach30013', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'IM3061', 'L01', 'teach30013', 21
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq201', 'ME2007', 'L01', 'teach10018', 4
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'AS1003', 'L01', 'teach40016', 19
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'AS2001', 'L01', 'teach50000', 23
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'CH1007', 'L01', 'teach40008', 17
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'CH2013', 'L01', 'teach30013', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'CH2021', 'L01', 'teach40016', 17
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'CI1007', 'L01', 'teach30013', 24
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'CI1033', 'L01', 'teach30009', 7
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'CI2003', 'L01', 'teach70001', 15
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'CO1009', 'L01', 'teach10018', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'CO2007', 'L01', 'teach40004', 14
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'CO2017', 'L01', 'teach70001', 24
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'EE1011', 'L01', 'teach40004', 24
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'EE1015', 'L01', 'teach30009', 5
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'EE2007', 'L01', 'teach10018', 9
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'GE2009', 'L01', 'teach70001', 25
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'IM3047', 'L01', 'teach70001', 17
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'IM3051', 'L01', 'teach10018', 9
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'IM3061', 'L01', 'teach10005', 21
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'ME2003', 'L01', 'teach30009', 25
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq202', 'ME2007', 'L01', 'teach30013', 12
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'AS1003', 'L01', 'teach40008', 6
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'AS2001', 'L01', 'teach40004', 6
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'CH1007', 'L01', 'teach30013', 14
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'CI1007', 'L01', 'teach40008', 24
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'CI1033', 'L01', 'teach30013', 21
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'CI2003', 'L01', 'teach40016', 21
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'CO1009', 'L01', 'teach50000', 14
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'CO2007', 'L01', 'teach10005', 12
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'CO2017', 'L01', 'teach10005', 25
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'EE1011', 'L01', 'teach40004', 26
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'EE1015', 'L01', 'teach50000', 9
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'EE2007', 'L01', 'teach40004', 24
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'GE2009', 'L01', 'teach40016', 0
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'IM3047', 'L01', 'teach10018', 24
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'IM3051', 'L01', 'teach30013', 10
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'IM3061', 'L01', 'teach10018', 2
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'ME2003', 'L01', 'teach30009', 13
+);
+
+INSERT INTO Uses(Semester_id, Subject_id, Class_id, MainTeacher_ssn, ReferenceBook_id)
+VALUES
+(
+'cq203', 'ME2007', 'L01', 'teach70002', 19
+);
+
 --!SECTION
 --SECTION Field 
 -----------------------------------------------------------------------------------------------------------------------------
@@ -6163,1135 +9478,7 @@ VALUES
 --!SECTION
 --SECTION Register 
 -----------------------------------------------------------------------------------------------------------------------------
--- Them
-/* INSERT QUERY NO: 1 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640064, 'L01', 'cq192', 'EE1015'
-);
 
-/* INSERT QUERY NO: 2 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640067, 'L01', 'cq192', 'EE1015'
-);
-
-/* INSERT QUERY NO: 3 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640077, 'L01', 'cq192', 'EE1015'
-);
-
-/* INSERT QUERY NO: 4 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640090, 'L01', 'cq192', 'EE1015'
-);
-
-/* INSERT QUERY NO: 5 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640094, 'L01', 'cq192', 'EE1015'
-);
-
-/* INSERT QUERY NO: 6 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650015, 'L01', 'cq192', 'EE1015'
-);
-
-/* INSERT QUERY NO: 7 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650018, 'L01', 'cq192', 'EE1015'
-);
-
-/* INSERT QUERY NO: 8 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650027, 'L01', 'cq192', 'EE1015'
-);
-
-/* INSERT QUERY NO: 9 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650046, 'L01', 'cq192', 'EE1015'
-);
-
-/* INSERT QUERY NO: 10 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650049, 'L01', 'cq192', 'EE1015'
-);
-
-/* INSERT QUERY NO: 11 */
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650056, 'L01', 'cq192', 'EE1015'
-);
-
-
-----
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600002, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600012, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600026, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600045, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600047, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600050, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600057, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600063, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600070, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600079, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600098, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610008, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610025, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610028, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610035, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610053, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610082, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610086, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610091, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610093, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610095, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620007, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620032, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620041, 'L01', 'cq171', 'CO1009'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600050, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600057, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600063, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600070, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600079, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600098, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610008, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610025, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610028, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610035, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610053, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610082, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610086, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610091, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610093, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610095, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620007, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620032, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620041, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620044, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620051, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620052, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620054, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620072, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620085, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630001, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630003, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630016, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630023, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630034, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630038, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630040, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630055, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630062, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630066, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630076, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630080, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640004, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640010, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640011, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640014, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640031, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640036, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640059, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640064, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640067, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640077, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640090, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640094, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650015, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650018, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650027, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650046, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650049, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650056, 'L01', 'cq201', 'EE1015'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600045, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600047, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600050, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600057, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600063, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600070, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600079, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1600098, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610008, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610025, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610028, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610035, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610053, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610082, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610086, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610091, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610093, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1610095, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620007, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620032, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620041, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620044, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620051, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620052, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620054, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620072, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1620085, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630001, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630003, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630016, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630023, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630034, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630038, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630040, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630055, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630062, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630066, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630076, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1630080, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640004, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640010, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640011, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640014, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640031, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640036, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640059, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640064, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640067, 'L01', 'cq171', 'IM3061'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1680000, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1680020, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1680024, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1680029, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1680042, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1680065, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1680073, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1680081, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1680083, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1680092, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1690006, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1690009, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1690017, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1690030, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1690039, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1690058, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1690060, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1690071, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1690099, 'L01', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640090, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1640094, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650015, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650018, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650027, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650046, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650049, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650056, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650068, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650069, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650074, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650078, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1650089, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1660005, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1660013, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1660019, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1660033, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1660043, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1660061, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1660075, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1660084, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1670021, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1670022, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1670037, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1670048, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1670087, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1670088, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1670096, 'L02', 'cq172', 'AS1003'
-);
-
-INSERT INTO Register(Student_id, Class_id, Semester_id, Subject_id)
-VALUES
-(
-1670097, 'L02', 'cq172', 'AS1003'
-);
 --!SECTION
 --SECTION Opens 
 -----------------------------------------------------------------------------------------------------------------------------
@@ -8626,13 +10813,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600002, 'cq171', 'pause'
+1600002, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600002, 'cq172', 'stop'
+1600002, 'cq172', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8668,13 +10855,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600002, 'cq192', 'stop'
+1600002, 'cq192', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600002, 'cq193', 'normal'
+1600002, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8716,7 +10903,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600012, 'cq181', 'stop'
+1600012, 'cq181', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8734,7 +10921,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600012, 'cq191', 'pause'
+1600012, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8752,13 +10939,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600012, 'cq201', 'stop'
+1600012, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600012, 'cq202', 'normal'
+1600012, 'cq202', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8782,7 +10969,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600026, 'cq173', 'pause'
+1600026, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8800,13 +10987,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600026, 'cq183', 'normal'
+1600026, 'cq183', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600026, 'cq191', 'normal'
+1600026, 'cq191', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8872,7 +11059,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600045, 'cq183', 'pause'
+1600045, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8884,7 +11071,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600045, 'cq192', 'normal'
+1600045, 'cq192', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8902,19 +11089,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600045, 'cq202', 'normal'
+1600045, 'cq202', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600045, 'cq203', 'pause'
+1600045, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600047, 'cq171', 'stop'
+1600047, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8938,7 +11125,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600047, 'cq182', 'normal'
+1600047, 'cq182', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8962,31 +11149,31 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600047, 'cq193', 'normal'
+1600047, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600047, 'cq201', 'pause'
+1600047, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600047, 'cq202', 'normal'
+1600047, 'cq202', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600047, 'cq203', 'pause'
+1600047, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600050, 'cq171', 'normal'
+1600050, 'cq171', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -8998,7 +11185,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600050, 'cq173', 'normal'
+1600050, 'cq173', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9010,7 +11197,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600050, 'cq182', 'stop'
+1600050, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9058,13 +11245,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600057, 'cq171', 'stop'
+1600057, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600057, 'cq172', 'normal'
+1600057, 'cq172', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9076,25 +11263,25 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600057, 'cq181', 'pause'
+1600057, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600057, 'cq182', 'pause'
+1600057, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600057, 'cq183', 'pause'
+1600057, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600057, 'cq191', 'pause'
+1600057, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9196,7 +11383,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600063, 'cq203', 'normal'
+1600063, 'cq203', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9208,13 +11395,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600070, 'cq172', 'normal'
+1600070, 'cq172', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600070, 'cq173', 'normal'
+1600070, 'cq173', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9226,7 +11413,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600070, 'cq182', 'pause'
+1600070, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9250,7 +11437,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600070, 'cq193', 'normal'
+1600070, 'cq193', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9268,13 +11455,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600070, 'cq203', 'stop'
+1600070, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600079, 'cq171', 'normal'
+1600079, 'cq171', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9304,7 +11491,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600079, 'cq183', 'stop'
+1600079, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9316,7 +11503,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600079, 'cq192', 'normal'
+1600079, 'cq192', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9358,7 +11545,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600098, 'cq173', 'stop'
+1600098, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9370,7 +11557,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600098, 'cq182', 'stop'
+1600098, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9382,7 +11569,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600098, 'cq191', 'stop'
+1600098, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9394,7 +11581,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600098, 'cq193', 'normal'
+1600098, 'cq193', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9406,7 +11593,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1600098, 'cq202', 'stop'
+1600098, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9418,7 +11605,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610008, 'cq171', 'normal'
+1610008, 'cq171', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9442,7 +11629,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610008, 'cq182', 'stop'
+1610008, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9460,13 +11647,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610008, 'cq192', 'pause'
+1610008, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610008, 'cq193', 'normal'
+1610008, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9478,13 +11665,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610008, 'cq202', 'pause'
+1610008, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610008, 'cq203', 'normal'
+1610008, 'cq203', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9496,13 +11683,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610025, 'cq172', 'normal'
+1610025, 'cq172', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610025, 'cq173', 'stop'
+1610025, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9520,7 +11707,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610025, 'cq183', 'pause'
+1610025, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9562,19 +11749,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610028, 'cq171', 'stop'
+1610028, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610028, 'cq172', 'stop'
+1610028, 'cq172', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610028, 'cq173', 'stop'
+1610028, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9586,7 +11773,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610028, 'cq182', 'pause'
+1610028, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9598,7 +11785,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610028, 'cq191', 'stop'
+1610028, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9610,13 +11797,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610028, 'cq193', 'normal'
+1610028, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610028, 'cq201', 'stop'
+1610028, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9628,13 +11815,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610028, 'cq203', 'pause'
+1610028, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610035, 'cq171', 'stop'
+1610035, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9646,7 +11833,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610035, 'cq173', 'pause'
+1610035, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9664,19 +11851,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610035, 'cq183', 'normal'
+1610035, 'cq183', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610035, 'cq191', 'normal'
+1610035, 'cq191', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610035, 'cq192', 'pause'
+1610035, 'cq192', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9688,13 +11875,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610035, 'cq201', 'pause'
+1610035, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610035, 'cq202', 'pause'
+1610035, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9718,7 +11905,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610053, 'cq173', 'normal'
+1610053, 'cq173', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9742,7 +11929,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610053, 'cq191', 'pause'
+1610053, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9754,7 +11941,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610053, 'cq193', 'normal'
+1610053, 'cq193', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9790,13 +11977,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610082, 'cq173', 'pause'
+1610082, 'cq173', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610082, 'cq181', 'normal'
+1610082, 'cq181', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9820,19 +12007,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610082, 'cq192', 'normal'
+1610082, 'cq192', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610082, 'cq193', 'stop'
+1610082, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610082, 'cq201', 'pause'
+1610082, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9844,7 +12031,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610082, 'cq203', 'normal'
+1610082, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9868,7 +12055,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610086, 'cq181', 'normal'
+1610086, 'cq181', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9880,13 +12067,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610086, 'cq183', 'stop'
+1610086, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610086, 'cq191', 'normal'
+1610086, 'cq191', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9898,7 +12085,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610086, 'cq193', 'pause'
+1610086, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9922,7 +12109,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610091, 'cq171', 'normal'
+1610091, 'cq171', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -9964,19 +12151,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610091, 'cq192', 'pause'
+1610091, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610091, 'cq193', 'stop'
+1610091, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610091, 'cq201', 'normal'
+1610091, 'cq201', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10018,7 +12205,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610093, 'cq182', 'pause'
+1610093, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10030,7 +12217,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610093, 'cq191', 'normal'
+1610093, 'cq191', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10060,13 +12247,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610093, 'cq203', 'pause'
+1610093, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610095, 'cq171', 'stop'
+1610095, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10108,7 +12295,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610095, 'cq192', 'pause'
+1610095, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10120,19 +12307,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610095, 'cq201', 'normal'
+1610095, 'cq201', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610095, 'cq202', 'stop'
+1610095, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1610095, 'cq203', 'normal'
+1610095, 'cq203', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10156,7 +12343,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620007, 'cq181', 'pause'
+1620007, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10180,7 +12367,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620007, 'cq192', 'normal'
+1620007, 'cq192', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10198,7 +12385,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620007, 'cq202', 'normal'
+1620007, 'cq202', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10228,19 +12415,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620032, 'cq181', 'normal'
+1620032, 'cq181', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620032, 'cq182', 'normal'
+1620032, 'cq182', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620032, 'cq183', 'normal'
+1620032, 'cq183', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10258,7 +12445,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620032, 'cq193', 'normal'
+1620032, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10270,7 +12457,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620032, 'cq202', 'pause'
+1620032, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10282,13 +12469,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620041, 'cq171', 'pause'
+1620041, 'cq171', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620041, 'cq172', 'pause'
+1620041, 'cq172', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10300,7 +12487,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620041, 'cq181', 'pause'
+1620041, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10312,7 +12499,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620041, 'cq183', 'stop'
+1620041, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10354,7 +12541,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620044, 'cq171', 'stop'
+1620044, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10390,7 +12577,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620044, 'cq191', 'normal'
+1620044, 'cq191', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10408,7 +12595,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620044, 'cq201', 'normal'
+1620044, 'cq201', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10432,7 +12619,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620051, 'cq172', 'normal'
+1620051, 'cq172', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10444,7 +12631,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620051, 'cq181', 'stop'
+1620051, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10462,7 +12649,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620051, 'cq191', 'normal'
+1620051, 'cq191', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10474,13 +12661,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620051, 'cq193', 'stop'
+1620051, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620051, 'cq201', 'normal'
+1620051, 'cq201', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10492,7 +12679,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620051, 'cq203', 'normal'
+1620051, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10510,7 +12697,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620052, 'cq173', 'normal'
+1620052, 'cq173', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10522,19 +12709,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620052, 'cq182', 'normal'
+1620052, 'cq182', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620052, 'cq183', 'stop'
+1620052, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620052, 'cq191', 'stop'
+1620052, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10558,19 +12745,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620052, 'cq202', 'pause'
+1620052, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620052, 'cq203', 'normal'
+1620052, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620054, 'cq171', 'pause'
+1620054, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10594,13 +12781,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620054, 'cq182', 'normal'
+1620054, 'cq182', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620054, 'cq183', 'pause'
+1620054, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10612,7 +12799,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620054, 'cq192', 'normal'
+1620054, 'cq192', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10642,7 +12829,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620072, 'cq171', 'pause'
+1620072, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10654,7 +12841,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620072, 'cq173', 'stop'
+1620072, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10678,37 +12865,37 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620072, 'cq191', 'normal'
+1620072, 'cq191', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620072, 'cq192', 'normal'
+1620072, 'cq192', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620072, 'cq193', 'pause'
+1620072, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620072, 'cq201', 'normal'
+1620072, 'cq201', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620072, 'cq202', 'normal'
+1620072, 'cq202', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620072, 'cq203', 'normal'
+1620072, 'cq203', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10726,7 +12913,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620085, 'cq173', 'pause'
+1620085, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10750,13 +12937,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620085, 'cq191', 'pause'
+1620085, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1620085, 'cq192', 'stop'
+1620085, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10798,13 +12985,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630001, 'cq173', 'normal'
+1630001, 'cq173', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630001, 'cq181', 'normal'
+1630001, 'cq181', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10816,7 +13003,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630001, 'cq183', 'stop'
+1630001, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10864,7 +13051,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630003, 'cq172', 'normal'
+1630003, 'cq172', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10876,13 +13063,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630003, 'cq181', 'normal'
+1630003, 'cq181', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630003, 'cq182', 'normal'
+1630003, 'cq182', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -10918,13 +13105,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630003, 'cq202', 'normal'
+1630003, 'cq202', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630003, 'cq203', 'normal'
+1630003, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11014,7 +13201,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630023, 'cq173', 'stop'
+1630023, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11056,13 +13243,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630023, 'cq201', 'stop'
+1630023, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630023, 'cq202', 'pause'
+1630023, 'cq202', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11086,7 +13273,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630034, 'cq173', 'normal'
+1630034, 'cq173', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11116,7 +13303,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630034, 'cq192', 'pause'
+1630034, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11146,7 +13333,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630038, 'cq171', 'normal'
+1630038, 'cq171', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11170,13 +13357,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630038, 'cq182', 'stop'
+1630038, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630038, 'cq183', 'stop'
+1630038, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11194,13 +13381,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630038, 'cq193', 'stop'
+1630038, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630038, 'cq201', 'stop'
+1630038, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11212,7 +13399,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630038, 'cq203', 'normal'
+1630038, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11230,7 +13417,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630040, 'cq173', 'stop'
+1630040, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11248,25 +13435,25 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630040, 'cq183', 'pause'
+1630040, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630040, 'cq191', 'stop'
+1630040, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630040, 'cq192', 'normal'
+1630040, 'cq192', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630040, 'cq193', 'stop'
+1630040, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11326,7 +13513,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630055, 'cq191', 'pause'
+1630055, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11362,13 +13549,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630062, 'cq171', 'stop'
+1630062, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630062, 'cq172', 'pause'
+1630062, 'cq172', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11386,13 +13573,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630062, 'cq182', 'pause'
+1630062, 'cq182', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630062, 'cq183', 'stop'
+1630062, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11464,19 +13651,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630066, 'cq183', 'normal'
+1630066, 'cq183', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630066, 'cq191', 'stop'
+1630066, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630066, 'cq192', 'normal'
+1630066, 'cq192', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11494,7 +13681,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630066, 'cq202', 'pause'
+1630066, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11542,13 +13729,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630076, 'cq191', 'pause'
+1630076, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630076, 'cq192', 'stop'
+1630076, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11566,7 +13753,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630076, 'cq202', 'pause'
+1630076, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11620,13 +13807,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630080, 'cq192', 'normal'
+1630080, 'cq192', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630080, 'cq193', 'stop'
+1630080, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11644,13 +13831,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1630080, 'cq203', 'stop'
+1630080, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640004, 'cq171', 'normal'
+1640004, 'cq171', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11662,7 +13849,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640004, 'cq173', 'pause'
+1640004, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11692,7 +13879,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640004, 'cq192', 'pause'
+1640004, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11716,7 +13903,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640004, 'cq203', 'normal'
+1640004, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11728,7 +13915,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640010, 'cq172', 'normal'
+1640010, 'cq172', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11758,7 +13945,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640010, 'cq191', 'stop'
+1640010, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11770,13 +13957,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640010, 'cq193', 'normal'
+1640010, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640010, 'cq201', 'normal'
+1640010, 'cq201', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11800,7 +13987,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640011, 'cq172', 'stop'
+1640011, 'cq172', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11824,7 +14011,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640011, 'cq183', 'normal'
+1640011, 'cq183', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11878,13 +14065,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640014, 'cq173', 'pause'
+1640014, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640014, 'cq181', 'stop'
+1640014, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11902,7 +14089,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640014, 'cq191', 'pause'
+1640014, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11914,13 +14101,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640014, 'cq193', 'stop'
+1640014, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640014, 'cq201', 'normal'
+1640014, 'cq201', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11950,7 +14137,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640031, 'cq173', 'normal'
+1640031, 'cq173', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11968,13 +14155,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640031, 'cq183', 'normal'
+1640031, 'cq183', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640031, 'cq191', 'pause'
+1640031, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -11998,7 +14185,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640031, 'cq202', 'normal'
+1640031, 'cq202', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12028,7 +14215,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640036, 'cq181', 'pause'
+1640036, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12040,7 +14227,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640036, 'cq183', 'stop'
+1640036, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12082,13 +14269,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640059, 'cq171', 'normal'
+1640059, 'cq171', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640059, 'cq172', 'normal'
+1640059, 'cq172', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12100,7 +14287,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640059, 'cq181', 'pause'
+1640059, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12112,13 +14299,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640059, 'cq183', 'pause'
+1640059, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640059, 'cq191', 'normal'
+1640059, 'cq191', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12130,7 +14317,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640059, 'cq193', 'pause'
+1640059, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12148,37 +14335,37 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640059, 'cq203', 'stop'
+1640059, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640064, 'cq171', 'pause'
+1640064, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640064, 'cq172', 'stop'
+1640064, 'cq172', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640064, 'cq173', 'stop'
+1640064, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640064, 'cq181', 'normal'
+1640064, 'cq181', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640064, 'cq182', 'stop'
+1640064, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12196,7 +14383,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640064, 'cq192', 'normal'
+1640064, 'cq192', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12226,7 +14413,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640067, 'cq171', 'normal'
+1640067, 'cq171', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12250,19 +14437,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640067, 'cq182', 'pause'
+1640067, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640067, 'cq183', 'normal'
+1640067, 'cq183', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640067, 'cq191', 'stop'
+1640067, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12274,7 +14461,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640067, 'cq193', 'normal'
+1640067, 'cq193', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12298,7 +14485,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640077, 'cq171', 'normal'
+1640077, 'cq171', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12352,13 +14539,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640077, 'cq201', 'pause'
+1640077, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640077, 'cq202', 'normal'
+1640077, 'cq202', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12370,7 +14557,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640090, 'cq171', 'stop'
+1640090, 'cq171', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12388,7 +14575,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640090, 'cq181', 'stop'
+1640090, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12412,19 +14599,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640090, 'cq192', 'normal'
+1640090, 'cq192', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640090, 'cq193', 'normal'
+1640090, 'cq193', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640090, 'cq201', 'normal'
+1640090, 'cq201', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12436,13 +14623,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640090, 'cq203', 'normal'
+1640090, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640094, 'cq171', 'stop'
+1640094, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12460,13 +14647,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640094, 'cq181', 'stop'
+1640094, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640094, 'cq182', 'normal'
+1640094, 'cq182', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12478,7 +14665,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640094, 'cq191', 'stop'
+1640094, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12490,7 +14677,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1640094, 'cq193', 'normal'
+1640094, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12514,7 +14701,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650015, 'cq171', 'normal'
+1650015, 'cq171', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12526,25 +14713,25 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650015, 'cq173', 'normal'
+1650015, 'cq173', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650015, 'cq181', 'normal'
+1650015, 'cq181', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650015, 'cq182', 'normal'
+1650015, 'cq182', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650015, 'cq183', 'pause'
+1650015, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12574,13 +14761,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650015, 'cq202', 'normal'
+1650015, 'cq202', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650015, 'cq203', 'normal'
+1650015, 'cq203', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12634,7 +14821,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650018, 'cq193', 'normal'
+1650018, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12670,7 +14857,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650027, 'cq173', 'stop'
+1650027, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12682,13 +14869,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650027, 'cq182', 'stop'
+1650027, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650027, 'cq183', 'normal'
+1650027, 'cq183', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12706,7 +14893,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650027, 'cq193', 'normal'
+1650027, 'cq193', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12724,7 +14911,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650027, 'cq203', 'normal'
+1650027, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12742,13 +14929,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650046, 'cq173', 'stop'
+1650046, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650046, 'cq181', 'normal'
+1650046, 'cq181', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12766,7 +14953,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650046, 'cq191', 'normal'
+1650046, 'cq191', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12796,7 +14983,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650046, 'cq203', 'normal'
+1650046, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12844,7 +15031,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650049, 'cq192', 'stop'
+1650049, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12856,37 +15043,37 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650049, 'cq201', 'pause'
+1650049, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650049, 'cq202', 'pause'
+1650049, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650049, 'cq203', 'stop'
+1650049, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650056, 'cq171', 'normal'
+1650056, 'cq171', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650056, 'cq172', 'normal'
+1650056, 'cq172', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650056, 'cq173', 'normal'
+1650056, 'cq173', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12898,13 +15085,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650056, 'cq182', 'normal'
+1650056, 'cq182', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650056, 'cq183', 'stop'
+1650056, 'cq183', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -12958,19 +15145,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650068, 'cq173', 'stop'
+1650068, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650068, 'cq181', 'pause'
+1650068, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650068, 'cq182', 'stop'
+1650068, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13006,7 +15193,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650068, 'cq202', 'normal'
+1650068, 'cq202', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13060,13 +15247,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650069, 'cq192', 'pause'
+1650069, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650069, 'cq193', 'normal'
+1650069, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13090,13 +15277,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650074, 'cq171', 'stop'
+1650074, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650074, 'cq172', 'normal'
+1650074, 'cq172', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13126,7 +15313,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650074, 'cq191', 'stop'
+1650074, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13144,7 +15331,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650074, 'cq201', 'stop'
+1650074, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13168,7 +15355,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650078, 'cq172', 'normal'
+1650078, 'cq172', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13210,7 +15397,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650078, 'cq193', 'normal'
+1650078, 'cq193', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13222,7 +15409,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650078, 'cq202', 'pause'
+1650078, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13240,13 +15427,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650089, 'cq172', 'normal'
+1650089, 'cq172', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650089, 'cq173', 'pause'
+1650089, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13264,13 +15451,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650089, 'cq183', 'normal'
+1650089, 'cq183', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650089, 'cq191', 'pause'
+1650089, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13282,13 +15469,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650089, 'cq193', 'pause'
+1650089, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650089, 'cq201', 'pause'
+1650089, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13300,7 +15487,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1650089, 'cq203', 'normal'
+1650089, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13330,7 +15517,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660005, 'cq182', 'pause'
+1660005, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13366,7 +15553,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660005, 'cq202', 'normal'
+1660005, 'cq202', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13426,13 +15613,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660013, 'cq193', 'pause'
+1660013, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660013, 'cq201', 'normal'
+1660013, 'cq201', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13444,13 +15631,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660013, 'cq203', 'normal'
+1660013, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660019, 'cq171', 'stop'
+1660019, 'cq171', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13468,7 +15655,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660019, 'cq181', 'pause'
+1660019, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13480,13 +15667,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660019, 'cq183', 'pause'
+1660019, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660019, 'cq191', 'stop'
+1660019, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13504,25 +15691,25 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660019, 'cq201', 'pause'
+1660019, 'cq201', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660019, 'cq202', 'pause'
+1660019, 'cq202', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660019, 'cq203', 'stop'
+1660019, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660033, 'cq171', 'stop'
+1660033, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13552,7 +15739,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660033, 'cq183', 'normal'
+1660033, 'cq183', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13570,7 +15757,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660033, 'cq193', 'pause'
+1660033, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13588,7 +15775,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660033, 'cq203', 'pause'
+1660033, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13624,7 +15811,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660043, 'cq183', 'pause'
+1660043, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13648,7 +15835,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660043, 'cq201', 'stop'
+1660043, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13702,7 +15889,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660061, 'cq191', 'pause'
+1660061, 'cq191', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13714,7 +15901,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660061, 'cq193', 'pause'
+1660061, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13726,19 +15913,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660061, 'cq202', 'stop'
+1660061, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660061, 'cq203', 'pause'
+1660061, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660075, 'cq171', 'pause'
+1660075, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13756,25 +15943,25 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660075, 'cq181', 'normal'
+1660075, 'cq181', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660075, 'cq182', 'pause'
+1660075, 'cq182', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660075, 'cq183', 'stop'
+1660075, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660075, 'cq191', 'normal'
+1660075, 'cq191', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13786,7 +15973,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660075, 'cq193', 'normal'
+1660075, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13798,7 +15985,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660075, 'cq202', 'stop'
+1660075, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13816,7 +16003,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660084, 'cq172', 'normal'
+1660084, 'cq172', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13828,7 +16015,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660084, 'cq181', 'normal'
+1660084, 'cq181', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13840,7 +16027,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660084, 'cq183', 'stop'
+1660084, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13852,13 +16039,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660084, 'cq192', 'normal'
+1660084, 'cq192', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1660084, 'cq193', 'pause'
+1660084, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13882,7 +16069,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670021, 'cq171', 'stop'
+1670021, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13900,13 +16087,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670021, 'cq181', 'pause'
+1670021, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670021, 'cq182', 'normal'
+1670021, 'cq182', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13918,13 +16105,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670021, 'cq191', 'stop'
+1670021, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670021, 'cq192', 'stop'
+1670021, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13936,13 +16123,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670021, 'cq201', 'normal'
+1670021, 'cq201', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670021, 'cq202', 'normal'
+1670021, 'cq202', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13966,7 +16153,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670022, 'cq173', 'normal'
+1670022, 'cq173', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -13978,13 +16165,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670022, 'cq182', 'normal'
+1670022, 'cq182', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670022, 'cq183', 'normal'
+1670022, 'cq183', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14032,7 +16219,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670037, 'cq172', 'pause'
+1670037, 'cq172', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14062,7 +16249,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670037, 'cq191', 'pause'
+1670037, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14080,7 +16267,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670037, 'cq201', 'pause'
+1670037, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14104,7 +16291,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670048, 'cq172', 'stop'
+1670048, 'cq172', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14116,7 +16303,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670048, 'cq181', 'normal'
+1670048, 'cq181', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14140,13 +16327,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670048, 'cq192', 'stop'
+1670048, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670048, 'cq193', 'stop'
+1670048, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14182,7 +16369,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670087, 'cq173', 'normal'
+1670087, 'cq173', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14194,7 +16381,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670087, 'cq182', 'stop'
+1670087, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14206,7 +16393,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670087, 'cq191', 'normal'
+1670087, 'cq191', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14224,7 +16411,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670087, 'cq201', 'pause'
+1670087, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14236,19 +16423,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670087, 'cq203', 'stop'
+1670087, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670088, 'cq171', 'stop'
+1670088, 'cq171', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670088, 'cq172', 'stop'
+1670088, 'cq172', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14278,7 +16465,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670088, 'cq191', 'normal'
+1670088, 'cq191', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14296,13 +16483,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670088, 'cq201', 'pause'
+1670088, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670088, 'cq202', 'normal'
+1670088, 'cq202', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14344,13 +16531,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670096, 'cq183', 'pause'
+1670096, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670096, 'cq191', 'pause'
+1670096, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14368,7 +16555,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670096, 'cq201', 'normal'
+1670096, 'cq201', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14380,7 +16567,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670096, 'cq203', 'normal'
+1670096, 'cq203', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14404,7 +16591,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670097, 'cq181', 'stop'
+1670097, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14428,13 +16615,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670097, 'cq192', 'pause'
+1670097, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1670097, 'cq193', 'pause'
+1670097, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14470,7 +16657,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680000, 'cq173', 'pause'
+1680000, 'cq173', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14488,7 +16675,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680000, 'cq183', 'normal'
+1680000, 'cq183', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14518,13 +16705,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680000, 'cq202', 'pause'
+1680000, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680000, 'cq203', 'normal'
+1680000, 'cq203', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14560,7 +16747,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680020, 'cq183', 'normal'
+1680020, 'cq183', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14614,7 +16801,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680024, 'cq173', 'normal'
+1680024, 'cq173', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14638,13 +16825,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680024, 'cq191', 'pause'
+1680024, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680024, 'cq192', 'stop'
+1680024, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14680,19 +16867,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680029, 'cq172', 'stop'
+1680029, 'cq172', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680029, 'cq173', 'normal'
+1680029, 'cq173', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680029, 'cq181', 'stop'
+1680029, 'cq181', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14722,13 +16909,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680029, 'cq193', 'normal'
+1680029, 'cq193', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680029, 'cq201', 'stop'
+1680029, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14740,7 +16927,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680029, 'cq203', 'pause'
+1680029, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14800,7 +16987,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680042, 'cq201', 'stop'
+1680042, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14818,13 +17005,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680065, 'cq171', 'normal'
+1680065, 'cq171', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680065, 'cq172', 'stop'
+1680065, 'cq172', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14836,7 +17023,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680065, 'cq181', 'normal'
+1680065, 'cq181', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14854,7 +17041,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680065, 'cq191', 'normal'
+1680065, 'cq191', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14866,13 +17053,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680065, 'cq193', 'stop'
+1680065, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680065, 'cq201', 'normal'
+1680065, 'cq201', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14896,13 +17083,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680073, 'cq172', 'normal'
+1680073, 'cq172', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680073, 'cq173', 'normal'
+1680073, 'cq173', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14938,13 +17125,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680073, 'cq193', 'normal'
+1680073, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680073, 'cq201', 'stop'
+1680073, 'cq201', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -14986,7 +17173,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680081, 'cq182', 'stop'
+1680081, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15064,13 +17251,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680083, 'cq183', 'stop'
+1680083, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680083, 'cq191', 'stop'
+1680083, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15082,7 +17269,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680083, 'cq193', 'normal'
+1680083, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15100,7 +17287,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680083, 'cq203', 'stop'
+1680083, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15118,7 +17305,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680092, 'cq173', 'normal'
+1680092, 'cq173', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15142,7 +17329,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680092, 'cq191', 'normal'
+1680092, 'cq191', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15172,7 +17359,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1680092, 'cq203', 'normal'
+1680092, 'cq203', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15208,25 +17395,25 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690006, 'cq183', 'stop'
+1690006, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690006, 'cq191', 'pause'
+1690006, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690006, 'cq192', 'normal'
+1690006, 'cq192', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690006, 'cq193', 'normal'
+1690006, 'cq193', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15238,19 +17425,19 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690006, 'cq202', 'pause'
+1690006, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690006, 'cq203', 'stop'
+1690006, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690009, 'cq171', 'stop'
+1690009, 'cq171', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15274,7 +17461,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690009, 'cq182', 'stop'
+1690009, 'cq182', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15286,7 +17473,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690009, 'cq191', 'normal'
+1690009, 'cq191', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15298,7 +17485,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690009, 'cq193', 'normal'
+1690009, 'cq193', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15346,7 +17533,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690017, 'cq182', 'normal'
+1690017, 'cq182', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15364,7 +17551,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690017, 'cq192', 'normal'
+1690017, 'cq192', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15382,7 +17569,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690017, 'cq202', 'normal'
+1690017, 'cq202', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15406,13 +17593,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690030, 'cq173', 'stop'
+1690030, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690030, 'cq181', 'pause'
+1690030, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15424,13 +17611,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690030, 'cq183', 'stop'
+1690030, 'cq183', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690030, 'cq191', 'pause'
+1690030, 'cq191', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15454,7 +17641,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690030, 'cq202', 'stop'
+1690030, 'cq202', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15508,13 +17695,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690039, 'cq192', 'stop'
+1690039, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690039, 'cq193', 'pause'
+1690039, 'cq193', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15544,13 +17731,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690058, 'cq172', 'normal'
+1690058, 'cq172', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690058, 'cq173', 'pause'
+1690058, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15562,7 +17749,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690058, 'cq182', 'normal'
+1690058, 'cq182', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15580,7 +17767,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690058, 'cq192', 'stop'
+1690058, 'cq192', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15604,7 +17791,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690058, 'cq203', 'stop'
+1690058, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15628,7 +17815,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690060, 'cq181', 'pause'
+1690060, 'cq181', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15640,7 +17827,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690060, 'cq183', 'normal'
+1690060, 'cq183', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15670,7 +17857,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690060, 'cq202', 'normal'
+1690060, 'cq202', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15694,7 +17881,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690071, 'cq173', 'normal'
+1690071, 'cq173', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15730,13 +17917,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690071, 'cq193', 'normal'
+1690071, 'cq193', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690071, 'cq201', 'normal'
+1690071, 'cq201', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15748,13 +17935,13 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690071, 'cq203', 'stop'
+1690071, 'cq203', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690099, 'cq171', 'normal'
+1690099, 'cq171', 'stop'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15766,7 +17953,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690099, 'cq173', 'pause'
+1690099, 'cq173', 'normal'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15790,7 +17977,7 @@ VALUES
 INSERT INTO StudyStatus(sid, semesterId, status)
 VALUES
 (
-1690099, 'cq191', 'normal'
+1690099, 'cq191', 'pause'
 );
 
 INSERT INTO StudyStatus(sid, semesterId, status)
@@ -15822,4 +18009,5 @@ VALUES
 (
 1690099, 'cq203', 'normal'
 );
+
 --!SECTION
