@@ -1,3 +1,4 @@
 Pipfile*
 sqltools_*
 .env
+__pycache__
